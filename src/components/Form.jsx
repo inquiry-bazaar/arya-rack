@@ -14,10 +14,10 @@ import {
  * - image: optional photo for the centre panel (a built-in SVG rack scene is used otherwise)
  */
 
-const NAVY = "#12347a";
-const INK = "#0b1b4a";
-const BLUE = "#0a5be0";
-const ORANGE = "#f7931e";
+const NAVY = "#F67516";
+const INK = "#12469C";
+const BLUE = "#12469C";
+const ORANGE = "#F67516";
 
 const storeTypes = ["Pharmacy / Medical store", "Supermarket / Kirana", "General store", "Stationery / Gift shop", "Garments / Fashion", "Electronics / Mobile", "Warehouse / Godown", "Other"];
 const areas = ["Below 200 sq. ft.", "200 – 500 sq. ft.", "500 – 1,000 sq. ft.", "1,000 – 2,500 sq. ft.", "Above 2,500 sq. ft."];

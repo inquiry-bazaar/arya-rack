@@ -301,8 +301,8 @@ export default function Banner() {
           initial={reduce ? false : { opacity: 0, clipPath: "inset(0 50% 0 50%)" }}
           animate={{ opacity: 1, clipPath: "inset(-20% -10% -20% -10%)" }}
           transition={{ duration: 1, ease: EASE }}
-          className="absolute inset-0 -skew-x-[14deg] rounded-[22px] border-[3px] border-white/90 bg-white/85 shadow-[0_24px_50px_rgba(10,36,87,0.18)] backdrop-blur-md lg:-skew-x-[18deg] lg:rounded-[1.5vw]"
-        >
+className="absolute inset-0 -skew-x-[14deg] rounded-[22px] border-[3px] border-white/60 
+bg-white/35 shadow-[0_24px_50px_rgba(10,36,87,0.18)] backdrop-blur-sm lg:-skew-x-[18deg] lg:rounded-[1.5vw]"        >
           {/* blue accent strokes (top-left, bottom-right) */}
           <span className="absolute -left-[3px] -top-[3px] h-[42%] w-[26%] rounded-tl-[inherit] border-l-[3px] border-t-[3px]" style={{ borderColor: C.blue }} />
           <span className="absolute -bottom-[3px] -right-[3px] h-[42%] w-[26%] rounded-br-[inherit] border-b-[3px] border-r-[3px]" style={{ borderColor: C.blue }} />

@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import HowWork from "@/components/HowWork";
 import Industries from "@/components/Industries";
+import VideosSection from "@/components/VideosSection";
 import { Heading2 } from "lucide-react";
 import Image from "next/image";
 
@@ -14,6 +15,7 @@ export default function Home() {
     <>
   <Hero/>
   <About/>
+  <VideosSection/>
   <Categories/>
   <Industries/>
   <HowWork/>

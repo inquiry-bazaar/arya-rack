@@ -8,9 +8,9 @@ import { Phone, FileText, ClipboardCheck, Factory, Wrench, Headset, ArrowRight }
  * Photos: set `image: "/images/step-1.jpg"` on any step to replace the built-in SVG scene.
  */
 
-const NAVY = "#12347a";
-const INK = "#0b1b4a";
-const BLUE = "#0a3cff";
+const NAVY = "#12469C";
+const INK = "#12469C";
+const BLUE = "#12469C";
 const ORANGE = "#f7931e";
 
 /* ---------- Built-in scenes (stand-ins for the photos) ---------- */
@@ -254,7 +254,8 @@ export default function HowWork() {
           <p className="hw-sub">A simple, end-to-end process to plan, manufacture and set up the right racking solution for your store.</p>
         </motion.header>
 
-        <motion.ol className="hw-grid" variants={list} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.08 }}>
+        <motion.ol className="hw-grid" variants={list} initial="hidden" whileInView="show" 
+        viewport={{ once: true, amount: 0.08 }}>
           {steps.map((s, i) => {
             const Icon = s.icon;
             return (
@@ -264,14 +265,14 @@ export default function HowWork() {
                   whileHover={reduce ? undefined : { y: -8 }}
                   transition={{ type: "spring", stiffness: 260, damping: 20 }}
                 >
-                  <div className="hw-num" aria-hidden="true">{String(i + 1).padStart(2, "0")}</div>
+                  {/* <div className="hw-num" aria-hidden="true">{String(i + 1).padStart(2, "0")}</div> */}
 
-                  <div className="hw-media">
+                  {/* <div className="hw-media">
                     {s.image ? <img src={s.image} alt="" loading="lazy" /> : <s.Scene />}
                     <svg className="hw-edge" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
                       <line x1="52" y1="78" x2="100" y2="56" stroke={ORANGE} strokeWidth="2.6" vectorEffect="non-scaling-stroke" strokeLinecap="round" />
                     </svg>
-                  </div>
+                  </div> */}
 
                   <motion.div
                     className="hw-icon"

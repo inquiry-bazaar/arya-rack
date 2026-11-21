@@ -9,9 +9,9 @@ import { PencilRuler, Truck, ShieldCheck, Headset, ChevronDown, ChevronUp } from
  * <FAQ image="/images/shelves.jpg" showLogo={false} />
  */
 
-const NAVY = "#0b2a6b";
-const BLUE = "#0d5bc0";
-const ORANGE = "#f7931e";
+const NAVY = "#F67516";
+const BLUE = "#12469C";
+const ORANGE = "#F67516";
 
 const RackIcon = ({ size = 56, color = "#fff" }) => (
   <svg width={size} height={size} viewBox="0 0 56 56" fill="none" stroke={color} strokeWidth="3.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">

@@ -21,10 +21,10 @@ import {
 /* ------------------------------------------------------------------ */
 
 const C = {
-  bgDeep: "#061630",
+  bgDeep: "#12469C",
   bgMid: "#0B2B52",
-  blue: "#1E7BFF",
-  blueLight: "#2E8BFF",
+  blue: "#12469C",
+  blueLight: "white",
   blueDark: "#0A4DDB",
   orange: "#F26A12",
   orangeLight: "#FF8A1F",
@@ -353,17 +353,14 @@ function Card({ item, index, reduce }) {
                 ))}
               </p>
 
-              <motion.span
+              {/* <motion.span
                 variants={arrowVariants}
                 className="mt-4 flex h-11 w-11 items-center justify-center rounded-full text-white shadow-[0_8px_18px_rgba(242,106,18,0.45)] lg:mt-auto lg:h-[clamp(40px,2.8vw,54px)] lg:w-[clamp(40px,2.8vw,54px)]"
                 style={{
                   background: `linear-gradient(135deg,${C.orangeLight},${C.orange})`,
                 }}
               >
-                <motion.span variants={arrowIconVariants} className="flex">
-                  <ArrowRight strokeWidth={2.8} className="h-[52%] w-[52%] min-h-[20px] min-w-[20px]" />
-                </motion.span>
-              </motion.span>
+              </motion.span> */}
             </div>
           </div>
         </motion.a>

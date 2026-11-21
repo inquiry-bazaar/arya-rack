@@ -16,12 +16,12 @@ import {
 /* ------------------------------------------------------------------ */
 
 const C = {
-  navy: "#0A2457",
-  navyDeep: "#06183E",
+  navy: "#12469C",
+  navyDeep: "#12469C",
   blue: "#0B4FC4",
-  orange: "#F26A12",
-  orangeLight: "#FF8A1F",
-  tint: "#FFEBD9",
+  orange: "#F67516",
+  orangeLight: "#F67516",
+  tint: "#F67516",
   sub: "#5B6B84",
 };
 
@@ -37,43 +37,44 @@ const CATEGORIES = [
     icon: ShoppingBasket,
     image: "/Cosmetic-Display-Racks.webp",
     href: "/products/supermarket-grocery-display-racks",
-    geo: { l: 6.48, t: 32.8, w: 14.4, h: 48.3 },
+    geo: { l: 4, t: 32.8, w: 16, h: 48.3 },
   },
   {
     title: ["Fruit & Vegetable", "Display Racks"],
     icon: Apple,
     image: "/supermarket.webp",
     href: "/products/fruit-vegetable-display-racks",
-    geo: { l: 20.54, t: 31.8, w: 14.4, h: 50.9 },
+   geo: { l: 23, t: 31.8, w: 16, h: 50.9 },
   },
   {
     title: ["Garment & Clothing", "Display Racks"],
     icon: Shirt,
     image: "/clothes.webp",
     href: "/products/garment-clothing-display-racks",
-    geo: { l: 34.7, t: 29.7, w: 14.9, h: 52.5 },
+  geo: { l: 42, t: 29.7, w: 16, h: 52.5 },
+
   },
   {
     title: ["Footwear & Shoe", "Display Racks"],
     icon: Footprints,
     image: "/shoe rack.webp",
     href: "/products/footwear-shoe-display-racks",
-    geo: { l: 50.4, t: 29.5, w: 14.9, h: 53.6 },
+   geo: { l: 61, t: 29.5, w: 16, h: 53.6 },
   },
   {
     title: ["Pharmacy & Medical", "Store Racks"],
     icon: BriefcaseMedical,
     image: "/medical.webp",
     href: "/products/pharmacy-medical-store-racks",
-    geo: { l: 65.1, t: 31.8, w: 14.5, h: 50.6 },
+  geo: { l: 80, t: 31.8, w: 16, h: 50.6 },
   },
-  {
-    title: ["Mobile & Electronics", "Display Racks"],
-    icon: Smartphone,
-    image: "/electronics.webp",
-    href: "/products/mobile-electronics-display-racks",
-    geo: { l: 79.5, t: 33.2, w: 14.1, h: 47.8 },
-  },
+  // {
+  //   title: ["Mobile & Electronics", "Display Racks"],
+  //   icon: Smartphone,
+  //   image: "/electronics.webp",
+  //   href: "/products/mobile-electronics-display-racks",
+  //   geo: { l: 79.5, t: 33.2, w: 14.1, h: 47.8 },
+  // },
 ];
 
 const START_ACTIVE = 2;
@@ -227,13 +228,13 @@ function Card({ item, index, active, onActivate, reduce }) {
           </motion.span>
 
           {/* title */}
-          <div className="flex flex-1 items-center justify-center mt-10">
+          <div className="flex flex-1 items-center justify-center mt-14">
             <motion.h3
               initial={false}
               animate={{ color: active ? "#FFFFFF" : C.navy }}
               transition={{ duration: 0.4 }}
-              className="text-center text-[16px] font-extrabold leading-[1.16] tracking-tight 
-              lg:text-[16px]"
+             className="text-center text-[13px] font-extrabold leading-[1.2] tracking-tight 
+lg:text-[14px]"
             >
               {item.title.map((line) => (
                 <span key={line} className="block">
@@ -584,13 +585,15 @@ export default function Categories() {
             whileHover={{ y: -4 }}
             whileTap={{ scale: 0.97 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            className="group relative inline-flex h-[58px] items-center gap-8 overflow-hidden rounded-full pl-8 pr-[6px] text-[16px] font-bold text-white shadow-[0_14px_30px_rgba(242,106,18,0.4)] ring-2 ring-white/70 lg:h-[clamp(58px,3.95vw,76px)] lg:gap-[2.6vw] lg:pl-[2.9vw] lg:text-[clamp(16px,1.42vw,27px)]"
+            className="group relative inline-flex h-[58px] items-center gap-8 
+            overflow-hidden rounded-full pl-8 pr-[6px] text-[16px] font-bold !text-white shadow-[0_14px_30px_rgba(242,106,18,0.4)] ring-2 ring-white/70 lg:h-[clamp(58px,3.95vw,76px)] lg:gap-[2.6vw] lg:pl-[2.9vw] lg:text-[clamp(16px,1.42vw,27px)]"
             style={{
               background: `linear-gradient(90deg,#F4620C,${C.orangeLight})`,
             }}
           >
             View All Categories
-            <span className="flex h-[46px] w-[46px] items-center justify-center rounded-full bg-white lg:h-[clamp(46px,3.3vw,64px)] lg:w-[clamp(46px,3.3vw,64px)]">
+            <span className="flex h-[46px] w-[46px] items-center justify-center rounded-full
+             bg-white lg:h-[clamp(46px,3.3vw,64px)] lg:w-[clamp(46px,3.3vw,64px)]">
               <motion.span
                 animate={reduce ? undefined : { x: [0, 4, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}

@@ -22,10 +22,10 @@ import {
 /* ------------------------------------------------------------------ */
 
 const C = {
-  navy: "#0A2457",
-  blue: "#1B5FB4",
+  navy: "#12469C",
+  blue: "#12469C",
   blueDark: "#0F4C9C",
-  orange: "#F26A12",
+  orange: "#F67516",
   orangeLight: "#FF8A1F",
   body: "#3F4A63",
   divider: "#C9D1DF",
@@ -474,7 +474,8 @@ export default function About() {
           {/* Heading */}
           <motion.h2
             variants={words}
-            className="mt-[2.4vw] text-[clamp(30px,3.65vw,72px)] font-extrabold leading-[1.1] tracking-[-0.035em] max-lg:mt-5 xl:whitespace-nowrap"
+            className="mt-[2.4vw] text-[clamp(30px,3.65vw,72px)] font-extrabold leading-[1.1] mb-5   
+            tracking-[-0.035em] max-lg:mt-5 xl:whitespace-nowrap"
           >
             <Word>Built</Word> <Word>for</Word> <Word orange>Modern</Word>{" "}
             <Word orange>Retail</Word> <Word orange>Spaces</Word>
@@ -483,18 +484,17 @@ export default function About() {
           {/* Paragraph */}
           <motion.p
             variants={rise}
-            className="mt-[2.2vw] max-w-[50ch] text-[15px] leading-[1.45] sm:text-base lg:max-w-[47vw] lg:text-[clamp(14px,1.28vw,25px)] max-lg:mt-5"
+            className="mt-[2.2vw] max-w-[50ch] text-[16px] leading-[1.45] sm:text-base 
+            lg:max-w-[47vw] lg:text-[clamp(17px,1.28vw,25px)] max-lg:mt-5"
             style={{ color: C.body }}
           >
-            We are a leading manufacturer and supplier of supermarket display
-            racks, shelving systems, and retail fixtures in India. With in-house
-            manufacturing and a focus on quality, durability, and smart design,
-            we help retailers create organized, efficient, and visually
-            appealing store spaces.
+         We are a leading manufacturer and supplier of supermarket display racks, shelving systems, and retail fixtures in India, committed to delivering innovative and reliable retail storage solutions. With advanced in-house manufacturing facilities and a strong focus on quality, durability, and smart design, we create products that help retailers maximize available space, improve product visibility, and maintain well-organized store environments.
+
+Our extensive range of display racks and shelving solutions is designed to meet the diverse requirements of supermarkets, grocery stores, shopping malls, pharmacies, garment outlets, footwear stores, and other retail establishments. From heavy-duty storage shelving to attractive product display systems, every solution is developed with attention to functionality, strength, and modern retail aesthetics.
           </motion.p>
 
           {/* Features */}
-          <motion.div
+          {/* <motion.div
             variants={rise}
             className="mt-[3.6vw] flex flex-wrap items-center justify-between gap-x-4 gap-y-8 lg:flex-nowrap lg:gap-[1.2vw] max-lg:mt-9"
           >
@@ -541,7 +541,7 @@ export default function About() {
                 )}
               </div>
             ))}
-          </motion.div>
+          </motion.div> */}
 
           {/* CTA */}
           <motion.div variants={rise} className="mt-[3.8vw] max-lg:mt-9">
@@ -550,10 +550,11 @@ export default function About() {
               whileHover={{ y: -4 }}
               whileTap={{ scale: 0.97 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              className="group relative inline-flex h-[58px] items-center gap-[2.6vw] overflow-hidden rounded-full pl-8 pr-[6px] text-[16px] font-bold text-white shadow-[0_14px_30px_rgba(242,106,18,0.35)] max-lg:gap-8 lg:h-[clamp(58px,4vw,78px)] lg:pl-[2.8vw] lg:text-[clamp(16px,1.3vw,25px)]"
-              style={{
-                background: `linear-gradient(90deg,#F4620C,${C.orangeLight})`,
-              }}
+              className="group relative inline-flex h-[58px] items-center gap-[2.6vw] overflow-hidden 
+              rounded-full pl-8 pr-[6px] text-[16px] font-bold !text-white bg-[#12469C]
+              shadow-[0_14px_30px_rgba(242,106,18,0.35)] max-lg:gap-8 
+              lg:h-[clamp(58px,4vw,78px)] lg:pl-[2.8vw] lg:text-[clamp(16px,1.3vw,25px)]"
+            
             >
               More About Us
               <span className="flex h-[46px] w-[46px] items-center justify-center rounded-full bg-white lg:h-[clamp(46px,3.3vw,64px)] lg:w-[clamp(46px,3.3vw,64px)]">
