@@ -103,7 +103,8 @@ export default function AboutUs() {
             </div>
 
             {/* OVERLAPPING IMAGE */}
-            <div className="absolute -bottom-12 right-0 z-20 h-[155px] w-[48%] overflow-hidden rounded-[25px] border-[5px] border-white shadow-xl sm:-right-8 sm:h-[205px]">
+            <div className="absolute -bottom-12 right-0 z-20 h-[185px] w-[48%] overflow-hidden 
+            rounded-[25px] border-[5px] border-white shadow-xl sm:-right-8 sm:h-[205px]">
               <img
                 src="/hand-shake.webp"
                 alt="Supermarket shelving and display racks"
@@ -135,7 +136,7 @@ export default function AboutUs() {
           <motion.div {...animation} className="relative z-10">
             <div className="mb-5 flex items-center gap-3">
               <span className="h-[3px] w-10 rounded-full bg-[#F26A12]" />
-              <span className="text-sm font-bold uppercase tracking-[0.2em] text-[#F26A12] text-white">
+              <span className="text-sm font-bold uppercase tracking-[0.2em] text-[#F26A12] ">
                 About Arya Industry
               </span>
             </div>

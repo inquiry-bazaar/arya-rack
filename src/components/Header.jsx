@@ -332,7 +332,7 @@ export default function Header() {
 
             {/* RIGHT CTAs */}
             <div className="flex shrink-0 items-center gap-3">
-              <motion.a
+              {/* <motion.a
                 href="/brochure.pdf"
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.97 }}
@@ -340,10 +340,10 @@ export default function Header() {
               >
                 <Download size={17} />
                 Brochure
-              </motion.a>
+              </motion.a> */}
 
               <motion.a
-                href="/contact"
+                href="/contact-us"
                 whileHover={{ y: -3 }}
                 whileTap={{ scale: 0.97 }}
                 className="group relative hidden h-[46px] items-center gap-3 overflow-hidden rounded-full pl-6 pr-2 text-sm font-extrabold text-white shadow-[0_12px_24px_-8px_rgba(242,106,18,0.7)] md:flex"

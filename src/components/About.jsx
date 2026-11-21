@@ -546,7 +546,7 @@ Our extensive range of display racks and shelving solutions is designed to meet 
           {/* CTA */}
           <motion.div variants={rise} className="mt-[3.8vw] max-lg:mt-9">
             <motion.a
-              href="/about"
+              href="/about-us"
               whileHover={{ y: -4 }}
               whileTap={{ scale: 0.97 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
