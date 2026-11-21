@@ -180,10 +180,10 @@ export default function Footer() {
         <div className="ft-bar">
           <div className="ft-wrap">
             <span>© {year} {site.name}. All rights reserved.</span>
-            <div className="ft-legal">
-              <a href="/privacy">Privacy Policy</a>
-              <a href="/terms">Terms of Service</a>
+            <div>
+  Website Designed By Inquiry Bazaar Pvt. Ltd.  <a className="underline" href="https://inquirybazaar.com/">B2B Marketplace</a>
             </div>
+          
           </div>
         </div>
 
