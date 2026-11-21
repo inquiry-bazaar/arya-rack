@@ -1,26 +1,298 @@
+
 @import "tailwindcss";
 
+/* =========================================
+   GLOBAL BRAND COLORS
+========================================= */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Primary Brand Blue */
+  --primary: #0071B4;
+  --primary-hover: #0071B4;
+  --primary-light: #EAF1FF;
+
+  /* Accent Orange */
+  --accent: #EC531B;
+  --accent-hover: #EC531B;
+  --accent-light: #FFF7E8;
+
+  /* Text Colors */
+  --heading-color: #0B1F3A;
+  --text: #334155;
+  --secondary: #64748B;
+  --muted: #94A3B8;
+  --paragraph-color: #64748B;
+  --foreground: #0B1F3A;
+
+  /* Background Colors */
+  --background: #FFFFFF;
+  --background-light: #F1F5F9;
+  --background-blue: #F5F8FF;
+  --background-dark: #0B1F3A;
+
+  /* Borders */
+  --border: #E2E8F0;
+  --border-blue: #D6E3FF;
+
+  /* Shadows */
+  --shadow-color: rgba(0, 113, 180, 0.10);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* =========================================
+   RESET
+========================================= */
+
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
 }
 
 body {
+  margin: 0;
+  padding: 0;
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  font-family: var(--font-urbanist), Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* =========================================
+   TYPOGRAPHY
+========================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-urbanist), Arial, sans-serif;
+  color: var(--heading-color);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: clamp(36px, 5vw, 60px);
+  font-weight: 800;
+}
+
+h2 {
+  font-size: clamp(30px, 4vw, 46px);
+  font-weight: 800;
+}
+
+h3 {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+h5 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+h6 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+p {
+  color: var(--paragraph-color);
+  font-size: 16px;
+  line-height: 1.7;
+  margin-top: 0;
+}
+
+/* =========================================
+   LINKS
+========================================= */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* =========================================
+   GLOBAL BUTTON STYLES
+========================================= */
+
+/* Primary Blue Button */
+
+.btn-primary {
+  background: var(--primary);
+  color: #FFFFFF !important;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+  color: #FFFFFF !important;
+  box-shadow: 0 8px 20px rgba(0, 113, 180, 0.18);
+}
+
+/* Orange Accent Button */
+
+.btn-accent {
+  background: var(--accent);
+  color: #FFFFFF !important;
+  transition: all 0.3s ease;
+}
+
+.btn-accent:hover {
+  background: var(--accent-hover);
+  color: #FFFFFF !important;
+  box-shadow: 0 8px 20px rgba(236, 83, 27, 0.18);
+}
+
+/* Outline Button */
+
+.btn-outline {
+  background: transparent;
+  color: var(--primary) !important;
+  border: 1px solid var(--primary);
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: #FFFFFF !important;
+}
+
+/* Keep nested text and icons white on filled buttons */
+
+.btn-primary *,
+.btn-accent * {
+  color: #FFFFFF !important;
+}
+
+/* =========================================
+   SELECTION
+========================================= */
+
+::selection {
+  background: var(--primary);
+  color: #FFFFFF;
+}
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-hover);
+}
+
+/* =========================================
+   IMAGES
+========================================= */
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* =========================================
+   FORM ELEMENTS
+========================================= */
+
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline-color: var(--primary);
+}
+
+/* =========================================
+   GLOBAL UTILITIES
+========================================= */
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.bg-accent {
+  background-color: var(--accent);
+}
+
+.bg-light {
+  background-color: var(--background-light);
+}
+
+.bg-blue-light {
+  background-color: var(--background-blue);
+}
+
+.border-default {
+  border-color: var(--border);
+}
+
+.border-blue {
+  border-color: var(--border-blue);
+}
+
+/* =========================================
+   INTERACTION
+========================================= */
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
