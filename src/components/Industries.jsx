@@ -1,187 +1,634 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
 import {
-  Layers3,
-  PanelsTopLeft,
+  motion,
+  useReducedMotion,
+} from "framer-motion";
+import {
+  ArrowRight,
   Box,
+  Layers,
+  Layers3,
+  LayoutGrid,
+  PanelsTopLeft,
+  ShieldCheck,
   ShoppingBasket,
-  ArrowUpRight,
+  ShoppingCart,
 } from "lucide-react";
 
-const industries = [
+/* ------------------------------------------------------------------ */
+/*  CONFIG                                                             */
+/* ------------------------------------------------------------------ */
+
+const C = {
+  bgDeep: "#061630",
+  bgMid: "#0B2B52",
+  blue: "#1E7BFF",
+  blueLight: "#2E8BFF",
+  blueDark: "#0A4DDB",
+  orange: "#F26A12",
+  orangeLight: "#FF8A1F",
+  ink: "#0B1B3A",
+  inkSoft: "#2B3650",
+  para: "#D5DFF0",
+};
+
+// Optional blurred supermarket shelves for the top-right background
+const STORE_BG = "/industries/store-blur.webp";
+
+const STAGE = { w: 1855, h: 848 }; // design canvas (desktop)
+
+/*
+  card  = position/size on the 1855x848 canvas (px)
+  img   = photo panel, in % of the card
+  tl/tw = left edge / width of the text block, in % of the card
+*/
+const INDUSTRIES = [
   {
-    title: "Wall Rack",
-    description:
-      "Durable wall-mounted shelving designed to keep products organised and easy to access.",
+    title: ["Wall Rack"],
+    lines: ["Durable wall-mounted", "shelving designed to make", "products organized."],
     image: "/images/industries/wall-rack.jpg",
     icon: PanelsTopLeft,
+    href: "/products/wall-racks",
     alt: "Wall-mounted retail shelving",
+    card: { x: 590, y: 130, w: 627, h: 290 },
+    img: { l: 2.7, t: 2.4, w: 56.3, h: 94.2 },
+    text: { l: 56.3, w: 30 },
   },
   {
-    title: "Corner Rack",
-    description:
-      "Smart, space-saving corner displays that make every inch of your store count.",
+    title: ["Corner Rack"],
+    lines: ["Smart, space-saving", "corner displays that", "maximize your store space."],
     image: "/images/industries/corner-rack.jpg",
     icon: Box,
+    href: "/products/corner-racks",
     alt: "Corner retail rack shelving",
+    card: { x: 1150, y: 130, w: 675, h: 290 },
+    img: { l: 2.2, t: 2.4, w: 55.1, h: 94.2 },
+    text: { l: 55.6, w: 32 },
   },
   {
-    title: "Gondolas",
-    description:
-      "Versatile freestanding display systems for supermarkets, retail chains and showrooms.",
+    title: ["Gondolas"],
+    lines: ["Versatile free-standing", "display systems for", "supermarkets and", "showrooms."],
     image: "/images/industries/gondolas.jpg",
     icon: Layers3,
+    href: "/products/gondola-racks",
     alt: "Freestanding gondola display shelving",
+    card: { x: 465, y: 457, w: 690, h: 298 },
+    img: { l: 2.2, t: 1.7, w: 59.9, h: 96 },
+    text: { l: 57, w: 30 },
   },
   {
-    title: "Fruits & Vegetable Rack",
-    description:
-      "Fresh-produce displays designed for clear visibility, neat presentation and easy browsing.",
+    title: ["Fruits &", "Vegetable Rack"],
+    lines: ["Fresh-produce displays", "designed for clear visibility", "and easy browsing."],
     image: "/images/industries/fruits-vegetable-rack.jpg",
     icon: ShoppingBasket,
+    href: "/products/fruit-vegetable-racks",
     alt: "Fresh fruit and vegetable display rack",
+    card: { x: 1082, y: 456, w: 721, h: 302 },
+    img: { l: 1.1, t: 2, w: 56.2, h: 93.7 },
+    text: { l: 54, w: 33 },
   },
 ];
 
-export default function Industries() {
-  const sectionRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
+const FEATURES = [
+  { icon: Layers, label: "Space Optimization" },
+  { icon: ShieldCheck, label: "Durable & Long-Lasting" },
+  { icon: LayoutGrid, label: "Versatile Applications" },
+];
 
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
+const EASE = [0.22, 1, 0.36, 1];
+const VIEW = { once: true, amount: 0.2 };
 
-    if (!("IntersectionObserver" in window)) {
-      setIsVisible(true);
-      return;
-    }
+/* ------------------------------------------------------------------ */
+/*  ROUNDED SLANTED CLIP PATHS (objectBoundingBox units)               */
+/* ------------------------------------------------------------------ */
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
-    );
+function roundedPath(pts, ts) {
+  const n = pts.length;
+  const seg = pts.map((p, i) => {
+    const prev = pts[(i - 1 + n) % n];
+    const next = pts[(i + 1) % n];
+    const t = ts[i];
+    return {
+      a: [p[0] + (prev[0] - p[0]) * t, p[1] + (prev[1] - p[1]) * t],
+      p,
+      b: [p[0] + (next[0] - p[0]) * t, p[1] + (next[1] - p[1]) * t],
+    };
+  });
+  let d = `M${seg[0].b[0]} ${seg[0].b[1]}`;
+  for (let i = 1; i <= n; i++) {
+    const s = seg[i % n];
+    d += ` L${s.a[0]} ${s.a[1]} Q${s.p[0]} ${s.p[1]} ${s.b[0]} ${s.b[1]}`;
+  }
+  return d + "Z";
+}
 
-    observer.observe(section);
-    return () => observer.disconnect();
-  }, []);
+// "/" leaning parallelogram; slant is 0.34 px per px of height
+function slantPath(w, h, ts) {
+  const s = Math.min(0.45, (0.34 * h) / w);
+  return roundedPath([[s, 0], [1, 0], [1 - s, 1], [0, 1]], ts);
+}
+
+const CLIPS = INDUSTRIES.map((it) => {
+  const cw = it.card.w;
+  const ch = it.card.h;
+  const iw = (it.img.w / 100) * cw;
+  const ih = (it.img.h / 100) * ch;
+  return {
+    card: slantPath(cw, ch, [0.09, 0.1, 0.09, 0.1]),
+    img: slantPath(iw, ih, [0.08, 0.11, 0.08, 0.11]),
+  };
+});
+
+/* ------------------------------------------------------------------ */
+/*  VARIANTS                                                           */
+/* ------------------------------------------------------------------ */
+
+const stack = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.12, delayChildren: 0.15 } },
+};
+const rise = {
+  hidden: { opacity: 0, y: 26 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: EASE } },
+};
+const words = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.08, delayChildren: 0.1 } },
+};
+const word = {
+  hidden: { y: "115%" },
+  show: { y: "0%", transition: { duration: 0.75, ease: EASE } },
+};
+const slideIn = {
+  hidden: { opacity: 0, x: -40 },
+  show: { opacity: 1, x: 0, transition: { duration: 0.65, ease: EASE } },
+};
+
+function Word({ children, blue = false, reduce }) {
+  return (
+    <span className="inline-block overflow-hidden align-bottom pb-[0.16em] -mb-[0.16em]">
+      <motion.span variants={word} className="inline-block">
+        {blue ? (
+          <motion.span
+            className="inline-block"
+            style={{
+              backgroundImage: `linear-gradient(90deg,${C.blueLight},#1665E8,${C.blueLight})`,
+              backgroundSize: "200% 100%",
+              WebkitBackgroundClip: "text",
+              backgroundClip: "text",
+              color: "transparent",
+            }}
+            animate={
+              reduce ? undefined : { backgroundPosition: ["0% 0%", "200% 0%"] }
+            }
+            transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
+          >
+            {children}
+          </motion.span>
+        ) : (
+          <span className="text-white">{children}</span>
+        )}
+      </motion.span>
+    </span>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  CARD                                                               */
+/* ------------------------------------------------------------------ */
+
+const cardVariants = {
+  rest: { y: 0 },
+  hover: { y: -8, transition: { type: "spring", stiffness: 260, damping: 18 } },
+};
+const tabVariants = {
+  rest: { x: 0, y: 0, opacity: 0.95 },
+  hover: { x: -5, y: -5, opacity: 1, transition: { duration: 0.3 } },
+};
+const imgVariants = {
+  rest: { scale: 1 },
+  hover: { scale: 1.07, transition: { duration: 0.6, ease: EASE } },
+};
+const arrowVariants = {
+  rest: { scale: 1, rotate: 0 },
+  hover: { scale: 1.14, rotate: -8, transition: { type: "spring", stiffness: 320, damping: 14 } },
+};
+const arrowIconVariants = {
+  rest: { x: 0 },
+  hover: { x: 3 },
+};
+
+function Card({ item, index, reduce }) {
+  const Icon = item.icon;
+  const { x, y, w, h } = item.card;
+  const fromLeft = index % 2 === 0;
 
   return (
-    <section
-      ref={sectionRef}
-      aria-labelledby="industries-heading"
-      className="relative isolate overflow-hidden 
-      bg-[radial-gradient(ellipse_at_50%_2%,rgba(255,255,255,0.99)_0%,rgba(247,249,253,0.96)_48%,rgba(241,245,252,1)_100%)] 
-      px-4 py-20 sm:px-6 sm:py-12 lg:px-8 lg:py-15"
+    <motion.div
+      className="relative lg:absolute lg:left-[var(--l)] lg:top-[var(--t)] lg:h-[var(--h)] lg:w-[var(--w)]"
+      style={{
+        "--l": `${(x / STAGE.w) * 100}%`,
+        "--t": `${(y / STAGE.h) * 100}%`,
+        "--w": `${(w / STAGE.w) * 100}%`,
+        "--h": `${(h / STAGE.h) * 100}%`,
+        "--clip": `url(#ind-card-${index})`,
+        "--iclip": `url(#ind-img-${index})`,
+        "--il": `${item.img.l}%`,
+        "--it": `${item.img.t}%`,
+        "--iw": `${item.img.w}%`,
+        "--ih": `${item.img.h}%`,
+        "--tl": `${item.text.l}%`,
+        "--tw": `${item.text.w}%`,
+      }}
+      initial={reduce ? false : { opacity: 0, x: fromLeft ? -90 : 90, y: 50 }}
+      whileInView={{ opacity: 1, x: 0, y: 0 }}
+      viewport={VIEW}
+      transition={{
+        delay: 0.35 + index * 0.14,
+        type: "spring",
+        stiffness: 90,
+        damping: 18,
+      }}
     >
-      {/* Soft background details */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -left-56 top-[28%] -z-10 h-[360px] w-[360px] rounded-full bg-orange-200/50 blur-[85px]"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-56 top-[16%] -z-10 h-[360px] w-[360px] rounded-full bg-blue-200/50 blur-[85px]"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-28 -top-[430px] -z-10 h-[650px] w-[650px] rounded-full border border-slate-900/[0.06] shadow-[0_0_0_28px_rgba(255,255,255,0.3),0_0_0_58px_rgba(16,36,73,0.02)]"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -bottom-[420px] -left-32 -z-10 h-[530px] w-[530px] rounded-full border border-slate-900/[0.06] shadow-[0_0_0_30px_rgba(255,255,255,0.3),0_0_0_62px_rgba(244,81,22,0.03)]"
-      />
-
-      <div className="mx-auto w-full max-w-[1500px]">
-        <header
-          className={`mx-auto mb-11 max-w-[900px] text-center transition-all duration-700 ease-out motion-reduce:transform-none motion-reduce:transition-none sm:mb-14 lg:mb-16 ${
-            isVisible ? "translate-y-0 opacity-100" : "translate-y-7 opacity-0"
-          }`}
+      {/* gentle float */}
+      <motion.div
+        className="h-full w-full"
+        animate={reduce ? undefined : { y: [0, -5, 0] }}
+        transition={{
+          duration: 5 + index * 0.6,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: index * 0.4,
+        }}
+      >
+        <motion.a
+          href={item.href}
+          aria-label={item.title.join(" ")}
+          variants={cardVariants}
+          initial="rest"
+          animate="rest"
+          whileHover="hover"
+          className="group relative block h-full w-full outline-none"
         >
-          <div className="mb-5 flex items-center justify-center gap-3 sm:gap-[17px]">
-            <span className="h-[2px] w-7 rounded-full bg-[#f45116] sm:w-11" />
-            <p className="m-0 text-[11px] font-extrabold uppercase tracking-[0.14em] text-[#f45116] sm:text-sm sm:tracking-[0.17em]">
-              Industries We Serve
-            </p>
-            <span className="h-[2px] w-7 rounded-full bg-[#f45116] sm:w-11" />
-          </div>
-
-          <h2
-            id="industries-heading"
-            className="m-0 text-[2rem] font-extrabold leading-[1.13] tracking-[-0.055em] text-[#102449] sm:text-4xl md:text-5xl lg:text-[4.15rem] lg:leading-[1.08]"
+          {/* blue glowing tab behind the photo (desktop) */}
+          <motion.span
+            aria-hidden
+            variants={tabVariants}
+            className="absolute hidden lg:ml-[-0.7vw] lg:mt-[-0.65vw] lg:block lg:h-[var(--ih)] lg:w-[var(--iw)] lg:left-[var(--il)] lg:top-[var(--it)] drop-shadow-[0_0_14px_rgba(46,123,255,0.65)]"
           >
-            Retail Solutions for{" "}
-            <span className="relative inline-block whitespace-normal text-[#f45116] sm:whitespace-nowrap">
-              Every Industry
-              <span
-                aria-hidden="true"
-                className="absolute -bottom-2 left-[5%] right-[4%] h-[5px] rounded-[50%] border-t-[3px] border-[#f45116] sm:-bottom-[9px] sm:h-[7px]"
-                style={{ transform: "rotate(-2deg)" }}
-              />
+            <span
+              className="block h-full w-full lg:[clip-path:var(--iclip)]"
+              style={{
+                background: `linear-gradient(135deg,${C.blueLight},${C.blueDark})`,
+              }}
+            />
+          </motion.span>
+
+          {/* white body */}
+          <div className="relative overflow-hidden rounded-3xl bg-white shadow-[0_20px_40px_rgba(0,0,0,0.35)] max-lg:pb-1 lg:absolute lg:inset-0 lg:overflow-visible lg:rounded-none lg:bg-transparent lg:shadow-none">
+            <span
+              aria-hidden
+              className="pointer-events-none absolute inset-0 hidden lg:block lg:drop-shadow-[0_22px_26px_rgba(0,0,0,0.4)]"
+            >
+              <span className="relative block h-full w-full bg-white lg:[clip-path:var(--clip)]">
+                <span
+                  className="absolute inset-[3px] block lg:[clip-path:var(--clip)]"
+                  style={{
+                    background:
+                      "linear-gradient(180deg,#FFFFFF 0%,#EEF3FB 100%)",
+                  }}
+                />
+              </span>
             </span>
-          </h2>
 
-          <p className="mx-auto mt-6 max-w-[720px] text-sm leading-7 text-[#58657b] sm:text-base md:text-lg md:leading-[1.75]">
-            Versatile, durable, and space-efficient racking systems designed to
-            meet the unique needs of retail and commercial spaces.
-          </p>
-        </header>
-
-        <div className="grid grid-cols-1 items-stretch gap-6 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4 lg:gap-7">
-          {industries.map((item, index) => {
-            const Icon = item.icon;
-
-            return (
-              <article
-                key={item.title}
-                className={`group relative min-w-0 overflow-hidden rounded-[25px] border border-white/95 bg-white/[0.9] shadow-[0_18px_45px_rgba(25,43,77,0.075),0_3px_10px_rgba(25,43,77,0.035)] transition-[transform,opacity,box-shadow,border-color] duration-700 ease-[cubic-bezier(.2,.75,.25,1)] hover:-translate-y-2.5 hover:border-[#f45116]/25 hover:shadow-[0_26px_55px_rgba(25,43,77,0.13),0_8px_20px_rgba(244,81,22,0.07)] motion-reduce:transform-none motion-reduce:transition-none sm:rounded-[30px] ${
-                  isVisible
-                    ? "translate-y-0 opacity-100"
-                    : "translate-y-7 opacity-0"
-                }`}
-                style={{ transitionDelay: `${index * 110}ms` }}
-              >
-                <div className="absolute right-0 top-0 z-10 h-[7px] w-[34%] rounded-bl-xl bg-gradient-to-r from-orange-400 to-[#f45116]" />
-                <div className="absolute -bottom-px -right-px z-10 h-[9px] w-[44%] rounded-tl-[100%] bg-gradient-to-r from-orange-400 to-[#f45116] transition-all duration-500 group-hover:w-[70%]" />
-
-                <div className="relative mx-[9px] mt-[9px] h-[245px] overflow-hidden rounded-[20px] bg-slate-100 sm:h-[clamp(220px,25vw,300px)] sm:rounded-[24px] lg:h-[clamp(190px,19vw,285px)]">
-                  <img
+            {/* photo */}
+            <div className="relative h-52 w-full lg:absolute lg:left-[var(--il)] lg:top-[var(--it)] lg:h-[var(--ih)] lg:w-[var(--iw)] lg:bg-white lg:[clip-path:var(--iclip)]">
+              <div className="h-full w-full overflow-hidden lg:absolute lg:inset-[5px] lg:h-auto lg:w-auto lg:[clip-path:var(--iclip)]">
+                <motion.div
+                  className="h-full w-full"
+                  initial={reduce ? false : { scale: 1.25 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={VIEW}
+                  transition={{ duration: 1.6, ease: EASE, delay: 0.4 + index * 0.14 }}
+                >
+                  <motion.img
                     src={item.image}
                     alt={item.alt}
                     loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.055] motion-reduce:transition-none"
+                    variants={imgVariants}
+                    className="h-full w-full object-cover"
                   />
-                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#0b1b36]/10 to-transparent" />
-                </div>
+                </motion.div>
+              </div>
+            </div>
 
-                <div className="relative z-20 mx-auto -mt-8 grid h-[66px] w-[66px] place-items-center rounded-full border-[5px] border-white bg-white text-[#f45116] shadow-[0_7px_18px_rgba(16,36,73,0.11)] transition-all duration-400 group-hover:-translate-y-1 group-hover:-rotate-6 group-hover:bg-[#f45116] group-hover:text-white">
-                  <Icon size={27} strokeWidth={1.7} aria-hidden="true" />
-                </div>
+            {/* text */}
+            <div className="relative flex flex-col items-start p-5 lg:absolute lg:bottom-[7.5%] lg:left-[var(--tl)] lg:top-[10.5%] lg:w-[var(--tw)] lg:p-0">
+              <Icon
+                strokeWidth={1.8}
+                style={{ color: C.ink }}
+                className="h-[34px] w-[34px] lg:ml-[2.3vw] lg:h-[clamp(30px,2.3vw,46px)] lg:w-[clamp(30px,2.3vw,46px)]"
+              />
 
-                <div className="relative z-10 px-5 pb-9 pt-2 text-center sm:px-6 sm:pb-10">
-                  <h3 className="mb-3 text-xl font-extrabold leading-tight tracking-[-0.035em] text-[#102449] sm:text-[22px]">
-                    {item.title}
-                  </h3>
-                  <p className="min-h-0 text-sm leading-[1.65] text-[#58657b] sm:min-h-[76px] sm:text-[15px]">
-                    {item.description}
-                  </p>
-                  <div className="mt-[18px] flex items-center justify-center gap-2 text-[#f45116]">
-                    <span className="h-[2px] w-[34px] rounded-full bg-current transition-all duration-300 group-hover:w-[58px]" />
-                    <ArrowUpRight
-                      size={18}
-                      strokeWidth={2}
-                      aria-hidden="true"
-                    />
-                  </div>
-                </div>
-              </article>
-            );
-          })}
+              <h3
+                className="mt-2 text-[22px] font-extrabold leading-[1.1] tracking-[-0.03em] lg:ml-[1.9vw] lg:mt-[0.45vw] lg:text-[clamp(17px,1.52vw,30px)]"
+                style={{ color: C.ink }}
+              >
+                {item.title.map((t) => (
+                  <span key={t} className="block">
+                    {t}
+                  </span>
+                ))}
+              </h3>
+
+              <p
+                className="mt-2 text-[14px] font-medium leading-[1.5] lg:ml-[0.95vw] lg:mt-[0.6vw] lg:text-[clamp(11px,0.87vw,17px)]"
+                style={{ color: C.inkSoft }}
+              >
+                {item.lines.map((l) => (
+                  <span key={l} className="lg:block">
+                    {l}{" "}
+                  </span>
+                ))}
+              </p>
+
+              <motion.span
+                variants={arrowVariants}
+                className="mt-4 flex h-11 w-11 items-center justify-center rounded-full text-white shadow-[0_8px_18px_rgba(242,106,18,0.45)] lg:mt-auto lg:h-[clamp(40px,2.8vw,54px)] lg:w-[clamp(40px,2.8vw,54px)]"
+                style={{
+                  background: `linear-gradient(135deg,${C.orangeLight},${C.orange})`,
+                }}
+              >
+                <motion.span variants={arrowIconVariants} className="flex">
+                  <ArrowRight strokeWidth={2.8} className="h-[52%] w-[52%] min-h-[20px] min-w-[20px]" />
+                </motion.span>
+              </motion.span>
+            </div>
+          </div>
+        </motion.a>
+      </motion.div>
+    </motion.div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  SECTION                                                            */
+/* ------------------------------------------------------------------ */
+
+export default function Industries() {
+  const reduce = useReducedMotion();
+
+  return (
+    <section
+      aria-labelledby="industries-heading"
+      className="relative isolate overflow-hidden"
+      style={{
+        background: `radial-gradient(60% 85% at 28% 55%,${C.bgMid} 0%,#082244 52%,${C.bgDeep} 100%)`,
+      }}
+    >
+      {/* clip-path definitions */}
+      <svg aria-hidden className="absolute h-0 w-0">
+        <defs>
+          {CLIPS.map((c, i) => (
+            <g key={i}>
+              <clipPath id={`ind-card-${i}`} clipPathUnits="objectBoundingBox">
+                <path d={c.card} />
+              </clipPath>
+              <clipPath id={`ind-img-${i}`} clipPathUnits="objectBoundingBox">
+                <path d={c.img} />
+              </clipPath>
+            </g>
+          ))}
+        </defs>
+      </svg>
+
+      {/* blurred shelves, top-right */}
+      <div
+        aria-hidden
+        className="absolute right-0 top-0 -z-10 h-[55%] w-[48%] opacity-35"
+        style={{
+          backgroundImage: `url(${STORE_BG})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          filter: "blur(4px)",
+          WebkitMaskImage:
+            "linear-gradient(270deg,#000 25%,transparent 100%), linear-gradient(180deg,#000 40%,transparent 100%)",
+          maskImage:
+            "linear-gradient(270deg,#000 25%,transparent 100%), linear-gradient(180deg,#000 40%,transparent 100%)",
+          WebkitMaskComposite: "source-in",
+          maskComposite: "intersect",
+        }}
+      />
+
+      {/* ---------- corner shapes ---------- */}
+      <motion.svg
+        aria-hidden
+        viewBox="0 0 330 200"
+        className="pointer-events-none absolute left-0 top-0 z-[1] w-[17.8%]"
+        initial={reduce ? false : { opacity: 0, x: -70, y: -70 }}
+        whileInView={{ opacity: 1, x: 0, y: 0 }}
+        viewport={VIEW}
+        transition={{ duration: 1, ease: EASE }}
+      >
+        <defs>
+          <linearGradient id="ind-tl" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stopColor={C.blueLight} />
+            <stop offset="1" stopColor={C.blueDark} />
+          </linearGradient>
+        </defs>
+        <motion.g
+          animate={reduce ? undefined : { opacity: [0.85, 1, 0.85] }}
+          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <path d="M0 0 H132 L0 196Z" fill="url(#ind-tl)" />
+          <path d="M128 0 H278 L246 44 Q240 50 226 50 H98 Z" fill="url(#ind-tl)" opacity="0.85" />
+        </motion.g>
+        <path d="M278 0 L322 0 L290 50" fill="none" stroke={C.blue} strokeOpacity="0.5" strokeWidth="1.5" />
+      </motion.svg>
+
+      <motion.svg
+        aria-hidden
+        viewBox="0 0 320 100"
+        className="pointer-events-none absolute bottom-0 left-0 z-[1] w-[17.2%]"
+        initial={reduce ? false : { opacity: 0, x: -60, y: 60 }}
+        whileInView={{ opacity: 1, x: 0, y: 0 }}
+        viewport={VIEW}
+        transition={{ duration: 1, delay: 0.2, ease: EASE }}
+      >
+        <defs>
+          <linearGradient id="ind-bl" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stopColor="#1458C8" />
+            <stop offset="1" stopColor="#0B2E78" />
+          </linearGradient>
+        </defs>
+        <path d="M125 0 H280 L210 100 H65Z" fill="url(#ind-bl)" opacity="0.9" />
+        <path d="M300 2 L240 100" stroke={C.blue} strokeOpacity="0.55" strokeWidth="1.5" />
+      </motion.svg>
+
+      <motion.svg
+        aria-hidden
+        viewBox="0 0 335 210"
+        className="pointer-events-none absolute bottom-0 right-0 z-[1] w-[18%]"
+        initial={reduce ? false : { opacity: 0, x: 70, y: 70 }}
+        whileInView={{ opacity: 1, x: 0, y: 0 }}
+        viewport={VIEW}
+        transition={{ duration: 1, delay: 0.3, ease: EASE }}
+      >
+        <defs>
+          <linearGradient id="ind-br" x1="0" y1="1" x2="1" y2="0">
+            <stop offset="0" stopColor={C.blueDark} />
+            <stop offset="1" stopColor={C.blueLight} />
+          </linearGradient>
+          <linearGradient id="ind-br2" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stopColor="#0B3F9E" />
+            <stop offset="1" stopColor="#1565D8" />
+          </linearGradient>
+        </defs>
+        <motion.path
+          d="M335 2 V210 H220Z"
+          fill="url(#ind-br)"
+          animate={reduce ? undefined : { opacity: [0.85, 1, 0.85] }}
+          transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <path d="M0 210 Q25 157 80 152 H260 L220 210Z" fill="url(#ind-br2)" />
+        <path d="M335 2 L232 150" stroke={C.blue} strokeOpacity="0.6" strokeWidth="1.5" />
+      </motion.svg>
+
+      {/* ---------- STAGE ---------- */}
+      <div className="relative z-10 mx-auto max-w-[1920px] lg:aspect-[1855/848]">
+        {/* LEFT COLUMN */}
+        <motion.div
+          variants={stack}
+          initial="hidden"
+          whileInView="show"
+          viewport={VIEW}
+          className="px-6 pb-12 pt-16 sm:px-10 lg:absolute lg:left-[4.4%] lg:top-[18.4%] lg:w-[31.5%] lg:p-0"
+        >
+          {/* eyebrow */}
+          <motion.div variants={rise} className="flex items-center gap-4 lg:gap-[1vw]">
+            <motion.span
+              variants={{
+                hidden: { opacity: 0, scale: 0.5, rotate: -20 },
+                show: {
+                  opacity: 1,
+                  scale: 1,
+                  rotate: 0,
+                  transition: { type: "spring", stiffness: 240, damping: 14 },
+                },
+              }}
+              className="flex h-[46px] w-[46px] items-center justify-center rounded-[10px] border-[1.5px] lg:h-[2.7vw] lg:w-[2.7vw] lg:min-h-[44px] lg:min-w-[44px]"
+              style={{
+                borderColor: C.blue,
+                background: "linear-gradient(145deg,#0D3171,#08183A)",
+                boxShadow: "0 0 16px rgba(46,123,255,.45), inset 0 0 8px rgba(46,123,255,.3)",
+              }}
+            >
+              <ShoppingCart className="h-[52%] w-[52%] text-[#5AA2FF]" strokeWidth={1.9} />
+            </motion.span>
+
+            <span className="text-[11px] font-extrabold uppercase tracking-[0.38em] text-[#E8EEF9] sm:text-xs lg:text-[clamp(11px,0.98vw,19px)]">
+              Industries We Serve
+            </span>
+
+            <motion.span
+              aria-hidden
+              variants={{
+                hidden: { scaleX: 0 },
+                show: { scaleX: 1, transition: { duration: 0.8, delay: 0.5, ease: EASE } },
+              }}
+              style={{
+                originX: 0,
+                background: `linear-gradient(90deg,${C.blue},transparent)`,
+              }}
+              className="hidden h-[2px] w-[4.2vw] sm:block"
+            />
+          </motion.div>
+
+          {/* heading */}
+          <motion.h2
+            id="industries-heading"
+            variants={words}
+            className="mt-5 font-extrabold leading-[1.08] tracking-[-0.035em] lg:mt-[0.9vw]"
+          >
+            <span className="block text-[30px] sm:text-4xl lg:text-[clamp(24px,2.95vw,58px)]">
+              <Word>Retail</Word> <Word>Solutions</Word> <Word>for</Word>
+            </span>
+            <span className="block text-[36px] sm:text-[44px] lg:text-[clamp(28px,3.5vw,68px)]">
+              <Word className="text-white">Every</Word>{" "}
+              <Word className="text-white">Industry</Word>
+            </span>
+          </motion.h2>
+
+          {/* paragraph */}
+          <motion.p
+            variants={rise}
+            className="mt-5 max-w-[46ch] text-[15px] leading-[1.45] sm:text-base lg:mt-[1vw] lg:max-w-none lg:text-[clamp(14px,1.2vw,23px)]"
+            style={{ color: C.para }}
+          >
+            Versatile, durable, and space-efficient racking systems designed to
+            meet the unique needs of retail and commercial spaces.
+          </motion.p>
+
+          {/* features */}
+          <ul className="mt-7 space-y-5 lg:mt-[1.6vw] lg:space-y-[1.4vw]">
+            {FEATURES.map(({ icon: Icon, label }, i) => (
+              <motion.li
+                key={label}
+                variants={slideIn}
+                className="relative flex items-center gap-4 lg:gap-[1.2vw]"
+              >
+                <motion.span
+                  animate={
+                    reduce
+                      ? undefined
+                      : {
+                          boxShadow: [
+                            "0 0 10px rgba(46,123,255,.25), inset 0 0 8px rgba(46,123,255,.2)",
+                            "0 0 20px rgba(46,123,255,.55), inset 0 0 12px rgba(46,123,255,.35)",
+                            "0 0 10px rgba(46,123,255,.25), inset 0 0 8px rgba(46,123,255,.2)",
+                          ],
+                        }
+                  }
+                  transition={{ duration: 3.4, repeat: Infinity, delay: i * 0.6, ease: "easeInOut" }}
+                  whileHover={{ scale: 1.08, rotate: -4 }}
+                  className="flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-[12px] border-[1.5px] lg:h-[3.05vw] lg:w-[3.05vw] lg:min-h-[48px] lg:min-w-[48px] lg:rounded-[0.75vw]"
+                  style={{
+                    borderColor: C.blue,
+                    background: "linear-gradient(145deg,#0D3171,#08183A)",
+                  }}
+                >
+                  <Icon className="h-[48%] w-[48%] text-white" strokeWidth={1.7} />
+                </motion.span>
+
+                <span className="text-[15px] font-bold text-white sm:text-base lg:text-[clamp(13px,1.04vw,20px)]">
+                  {label}
+                </span>
+
+                {i < FEATURES.length - 1 && (
+                  <motion.span
+                    aria-hidden
+                    variants={{
+                      hidden: { scaleX: 0 },
+                      show: {
+                        scaleX: 1,
+                        transition: { duration: 0.7, delay: 0.7 + i * 0.15 },
+                      },
+                    }}
+                    style={{ originX: 0 }}
+                    className="absolute -bottom-[10px] left-[68px] hidden h-px w-[11vw] bg-white/15 sm:block lg:bottom-[-0.55vw] lg:left-[4.5vw]"
+                  />
+                )}
+              </motion.li>
+            ))}
+          </ul>
+        </motion.div>
+
+        {/* CARDS (stacked on mobile, slanted layout on desktop) */}
+        <div className="flex flex-col gap-6 px-6 pb-16 sm:px-10 lg:contents">
+          {INDUSTRIES.map((item, i) => (
+            <Card key={item.href} item={item} index={i} reduce={reduce} />
+          ))}
         </div>
       </div>
     </section>

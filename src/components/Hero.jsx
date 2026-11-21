@@ -1,258 +1,418 @@
-
 "use client";
 
 import { useEffect, useState } from "react";
-import {
-  ArrowRight,
-  ChevronLeft,
-  ChevronRight,
-  Layers,
-  LayoutGrid,
-  Settings,
-  ShieldCheck,
-} from "lucide-react";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { ChevronLeft, ChevronRight, ShoppingCart } from "lucide-react";
 
-const FEATURES = [
-  { icon: Layers, label: ["Modular", "Design"] },
-  { icon: ShieldCheck, label: ["Strong &", "Durable"] },
-  { icon: LayoutGrid, label: ["Space", "Efficient"] },
-  { icon: Settings, label: ["Custom", "Solutions"] },
-];
+/* ------------------------------------------------------------------ */
+/*  CONFIG                                                             */
+/* ------------------------------------------------------------------ */
 
+const C = {
+  navy: "#0A2457",
+  navyDeep: "#06183E",
+  blue: "#0B57E3",
+  orange: "#F26A12",
+  orangeLight: "#FF8A1F",
+  orangeDark: "#E4560A",
+};
+
+/**
+ * Full-width store photos (about 1909 x 824, 16:7). Put your real images here,
+ * e.g. src: "/banner/store-1.webp". With an empty src a built-in
+ * supermarket illustration is drawn so the banner works out of the box.
+ */
 const SLIDES = [
-  "/r2zc3tfbbmdoezexsefm.webp",
-  "/r2zc3tfbbmdoezexsefm.webp",
-  "/r2zc3tfbbmdoezexsefm.webp",
+  { src: "/r2zc3tfbbmdoezexsefm.webp", alt: "Supermarket aisle with modern white shelving", tone: "none" },
+  { src: "green rack.webp", alt: "Supermarket aisle with fresh produce shelving", tone: "hue-rotate(28deg) saturate(1.1)" },
+  { src: "r2zc3tfbbmdoezexsefm.webp", alt: "Supermarket aisle with packaged goods shelving", tone: "hue-rotate(-22deg) saturate(1.05)" },
 ];
 
-export default function Hero() {
+const INTERVAL = 6000;
+const EASE = [0.22, 1, 0.36, 1];
+
+/* ------------------------------------------------------------------ */
+/*  BUILT-IN SCENE (stand-in for the photo)                            */
+/* ------------------------------------------------------------------ */
+
+const PALETTE = ["#e8412f", "#f6b21b", "#2f8de4", "#3bb273", "#fff", "#f26a12", "#c9a36b", "#2547a8"];
+
+function Products({ x, y, w, h, n, seed = 0, gap = 6 }) {
+  const bw = (w - gap * (n - 1)) / n;
+  return Array.from({ length: n }).map((_, i) => (
+    <rect
+      key={i}
+      x={x + i * (bw + gap)}
+      y={y - h * (0.8 + ((i + seed) % 3) * 0.1)}
+      width={bw}
+      height={h * (0.8 + ((i + seed) % 3) * 0.1)}
+      rx="3"
+      fill={PALETTE[(i * 3 + seed) % PALETTE.length]}
+      stroke="#dfe4ec"
+      strokeWidth="1"
+    />
+  ));
+}
+
+function Rack({ x, y, w, h, rows, n, seed = 0, left = true }) {
+  const step = h / rows;
+  return (
+    <g>
+      <rect x={x} y={y} width={w} height={h} fill="#f4f6f9" />
+      <rect x={left ? x + w - 10 : x} y={y - 10} width="10" height={h + 10} fill="#fff" stroke="#d5dbe5" />
+      {Array.from({ length: rows }).map((_, r) => {
+        const sy = y + step * (r + 1);
+        return (
+          <g key={r}>
+            <Products x={x + 8} y={sy - 4} w={w - 28} h={step - 22} n={n} seed={seed + r * 2} gap={4} />
+            <rect x={x} y={sy - 4} width={w} height="9" fill="#ecd7b0" />
+          </g>
+        );
+      })}
+    </g>
+  );
+}
+
+function StoreScene() {
+  return (
+    <svg viewBox="0 0 1909 824" preserveAspectRatio="xMidYMid slice" className="h-full w-full" aria-hidden>
+      <defs>
+        <linearGradient id="bnWall" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="#f6f8fc" />
+          <stop offset="1" stopColor="#e3e9f2" />
+        </linearGradient>
+        <linearGradient id="bnFloor" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="#e6ebf2" />
+          <stop offset="1" stopColor="#bfc8d6" />
+        </linearGradient>
+        <filter id="bnBlur"><feGaussianBlur stdDeviation="3" /></filter>
+      </defs>
+      <rect width="1909" height="824" fill="url(#bnWall)" />
+      {[
+        [350, 6, 120], [1410, 6, 120], [140, 150, 100], [1660, 150, 100],
+      ].map(([x, y, w], i) => <rect key={i} x={x} y={y} width={w} height="38" rx="6" fill="#fff" />)}
+      <rect y="590" width="1909" height="234" fill="url(#bnFloor)" />
+      <ellipse cx="954" cy="700" rx="520" ry="60" fill="#fff" opacity=".45" />
+
+      {/* distant aisles */}
+      <g filter="url(#bnBlur)" opacity=".85">
+        {[0, 1, 2, 3].map((k) => (
+          <g key={k}>
+            <Rack x={480 + k * 28} y={440 + k * 6} w={118 - k * 8} h={170 - k * 10} rows={4} n={4} seed={k} />
+            <Rack x={1330 + k * 28} y={440 + k * 6} w={118 - k * 8} h={170 - k * 10} rows={4} n={4} seed={k + 3} left={false} />
+          </g>
+        ))}
+      </g>
+
+      {/* mid racks */}
+      <Rack x={150} y={290} w={175} h={400} rows={5} n={5} seed={1} />
+      <Rack x={1585} y={290} w={175} h={400} rows={5} n={5} seed={4} left={false} />
+      <Rack x={325} y={345} w={90} h={300} rows={5} n={3} seed={2} />
+      <Rack x={1500} y={345} w={90} h={300} rows={5} n={3} seed={5} left={false} />
+
+      {/* near racks */}
+      <Rack x={0} y={190} w={148} h={600} rows={6} n={4} seed={6} />
+      <Rack x={1765} y={190} w={144} h={600} rows={6} n={4} seed={2} left={false} />
+
+      {/* centre gondola */}
+      <g>
+        <rect x="592" y="335" width="696" height="445" fill="#f3f5f8" stroke="#d9dfe9" />
+        <rect x="938" y="335" width="4" height="445" fill="#cfd6e2" />
+        {[455, 585, 678, 760].map((y, r) => (
+          <rect key={y} x="592" y={y} width="696" height="11" fill="#efdcb8" />
+        ))}
+        <rect x="592" y="332" width="696" height="9" fill="#efdcb8" />
+        {/* row 1 */}
+        {[0, 1, 2, 3].map((i) => <rect key={i} x={634 + i * 78} y={375} width="62" height="76" rx="4" fill={i === 3 ? "#f1ece4" : "#d8b98a"} stroke="#c5a574" />)}
+        {[0, 1, 2, 3].map((i) => (
+          <g key={i}>
+            <rect x={978 + i * 76} y="420" width="30" height="30" rx="4" fill="#4a4f5a" />
+            <ellipse cx={993 + i * 76} cy="400" rx="26" ry="32" fill="#3f9a45" />
+          </g>
+        ))}
+        {/* row 2 */}
+        <Products x={612} y={583} w={320} h={100} n={9} seed={1} gap={8} />
+        <Products x={950} y={583} w={320} h={70} n={5} seed={4} gap={10} />
+        {/* row 3 */}
+        <Products x={612} y={676} w={320} h={66} n={9} seed={0} gap={6} />
+        <Products x={950} y={676} w={320} h={66} n={9} seed={3} gap={6} />
+        {/* row 4 */}
+        {[0, 1, 2, 3].map((i) => <ellipse key={i} cx={655 + i * 84} cy="738" rx="38" ry="24" fill="#d7b98c" />)}
+        {[0, 1, 2, 3, 4, 5, 6].map((i) => <rect key={i} x={955 + i * 46} y="712" width="40" height="48" rx="5" fill={i % 2 ? "#f0f2f6" : "#fff"} stroke="#d0d7e3" />)}
+        <rect x="592" y="776" width="706" height="10" fill="#efdcb8" />
+      </g>
+    </svg>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  VARIANTS                                                           */
+/* ------------------------------------------------------------------ */
+
+const bgVariants = {
+  enter: (d) => ({ opacity: 0, x: d > 0 ? 70 : -70 }),
+  center: { opacity: 1, x: 0, transition: { duration: 0.9, ease: EASE } },
+  exit: (d) => ({ opacity: 0, x: d > 0 ? -70 : 70, transition: { duration: 0.6, ease: EASE } }),
+};
+
+/* ------------------------------------------------------------------ */
+/*  BANNER                                                             */
+/* ------------------------------------------------------------------ */
+
+export default function Banner() {
+  const reduce = useReducedMotion();
   const [current, setCurrent] = useState(0);
+  const [dir, setDir] = useState(1);
+  const [paused, setPaused] = useState(false);
+
+  const goTo = (i, d = 1) => {
+    setDir(d);
+    setCurrent((i + SLIDES.length) % SLIDES.length);
+  };
 
   useEffect(() => {
-    if (SLIDES.length <= 1) return;
-
+    if (paused || reduce || SLIDES.length < 2) return;
     const id = setInterval(() => {
+      setDir(1);
       setCurrent((c) => (c + 1) % SLIDES.length);
-    }, 6000);
-
+    }, INTERVAL);
     return () => clearInterval(id);
-  }, []);
+  }, [paused, reduce, current]);
 
-  const prev = () =>
-    setCurrent((c) => (c - 1 + SLIDES.length) % SLIDES.length);
-
-  const next = () =>
-    setCurrent((c) => (c + 1) % SLIDES.length);
+  const slide = SLIDES[current];
 
   return (
-    <section className="relative isolate h-[calc(100svh-174px)] min-h-[620px] max-h-[760px] w-full overflow-hidden bg-[var(--background-light)]">
+    <section
+      className="relative isolate h-[500px] w-full overflow-hidden bg-[#eef2f8] sm:h-[560px] lg:aspect-[1909/824] lg:h-auto"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      aria-roledescription="carousel"
+      aria-label="Supermarket shelving showcase"
+    >
+      {/* ---------- BACKGROUND SLIDES ---------- */}
+      <AnimatePresence initial={false} custom={dir}>
+        <motion.div
+          key={current}
+          custom={dir}
+          variants={reduce ? undefined : bgVariants}
+          initial={reduce ? false : "enter"}
+          animate="center"
+          exit="exit"
+          drag={reduce ? false : "x"}
+          dragConstraints={{ left: 0, right: 0 }}
+          dragElastic={0.12}
+          onDragEnd={(_, info) => {
+            if (info.offset.x < -80) goTo(current + 1, 1);
+            else if (info.offset.x > 80) goTo(current - 1, -1);
+          }}
+          className="absolute inset-0 z-0 cursor-grab active:cursor-grabbing"
+        >
+          <motion.div
+            className="h-full w-full"
+            initial={{ scale: 1 }}
+            animate={reduce ? undefined : { scale: 1.06 }}
+            transition={{ duration: INTERVAL / 1000 + 2, ease: "linear" }}
+            style={{ filter: slide.tone === "none" ? undefined : slide.tone }}
+          >
+            {slide.src ? (
+              <img src={slide.src} alt={slide.alt} draggable={false} className="h-full w-full select-none object-cover object-center" />
+            ) : (
+              <StoreScene />
+            )}
+          </motion.div>
+        </motion.div>
+      </AnimatePresence>
 
-      {/* =====================================
-          BACKGROUND SLIDER IMAGE
-      ===================================== */}
+      {/* soft white wash so the title card always reads */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 z-[1]"
+        style={{ background: "linear-gradient(180deg,rgba(255,255,255,.55) 0%,rgba(255,255,255,0) 42%)" }}
+      />
 
-      <div className="absolute inset-0 z-0 bg-[#E8EAF0]">
+      {/* ---------- CORNER SWOOSHES ---------- */}
+      <motion.svg
+        aria-hidden
+        viewBox="0 0 270 170"
+        className="pointer-events-none absolute left-0 top-0 z-[2] w-[26%] min-w-[110px] max-w-[300px] lg:w-[14.2%]"
+        initial={reduce ? false : { x: -120, y: -80, opacity: 0 }}
+        animate={{ x: 0, y: 0, opacity: 1 }}
+        transition={{ duration: 1, ease: EASE }}
+      >
+        <path d="M0 0H205C150 50 70 95 0 135Z" fill={C.navy} />
+        <path d="M262 0H228C158 62 78 112 0 150V160C86 124 178 62 262 0Z" fill={C.orange} />
+      </motion.svg>
 
-        {SLIDES.map((src, i) => (
-          <img
-            key={i}
-            src={src}
-            alt="Modern supermarket display shelving"
-            fetchPriority={i === 0 ? "high" : "auto"}
-            className={`absolute inset-0 h-full w-full object-cover object-[58%_center] transition-opacity duration-1000 ${
-              current === i ? "opacity-100" : "opacity-0"
-            }`}
+      <motion.svg
+        aria-hidden
+        viewBox="0 0 460 214"
+        className="pointer-events-none absolute bottom-0 right-0 z-[2] w-[42%] min-w-[170px] max-w-[460px] lg:w-[24%]"
+        initial={reduce ? false : { x: 140, y: 80, opacity: 0 }}
+        animate={{ x: 0, y: 0, opacity: 1 }}
+        transition={{ duration: 1, delay: 0.15, ease: EASE }}
+      >
+        <path d="M460 214V36C385 120 250 178 60 214Z" fill={C.navy} />
+        <path d="M460 6C395 96 262 168 20 214H62C252 176 388 120 460 38Z" fill={C.orange} />
+      </motion.svg>
+
+      {/* ---------- TITLE CARD ---------- */}
+      <div className="absolute left-[4%] top-[17%] z-10 w-[92%] sm:top-[15%] lg:left-[19.4%] lg:top-[8.6%] lg:w-[61.5%]">
+        {/* badge + side lines */}
+        <div className="absolute left-1/2 top-0 z-20 flex w-full -translate-x-1/2 -translate-y-1/2 items-center justify-center gap-[1%]">
+          <motion.span
+            aria-hidden
+            initial={reduce ? false : { scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ delay: 1, duration: 0.8, ease: EASE }}
+            className="hidden h-[2px] w-[18%] sm:block"
+            style={{ originX: 1, background: `linear-gradient(90deg,transparent,${C.navy})` }}
           />
+          <motion.span
+            initial={reduce ? false : { scale: 0, rotate: -40 }}
+            animate={{ scale: 1, rotate: 0 }}
+            transition={{ delay: 0.5, type: "spring", stiffness: 300, damping: 14 }}
+            className="relative flex h-[50px] w-[50px] items-center justify-center rounded-full text-white shadow-[0_10px_24px_rgba(11,87,227,.45)] sm:h-[64px] sm:w-[64px] lg:h-[clamp(64px,5.2vw,100px)] lg:w-[clamp(64px,5.2vw,100px)]"
+            style={{ background: `linear-gradient(145deg,#1b6ff0,${C.navy})` }}
+          >
+            {!reduce && (
+              <motion.span
+                aria-hidden
+                className="absolute inset-0 rounded-full border-2"
+                style={{ borderColor: C.blue }}
+                animate={{ scale: [1, 1.55], opacity: [0.6, 0] }}
+                transition={{ duration: 2.2, repeat: Infinity, ease: "easeOut", delay: 1.4 }}
+              />
+            )}
+            <ShoppingCart className="h-[55%] w-[55%]" strokeWidth={1.8} />
+          </motion.span>
+          <motion.span
+            aria-hidden
+            initial={reduce ? false : { scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ delay: 1, duration: 0.8, ease: EASE }}
+            className="hidden h-[2px] w-[18%] sm:block"
+            style={{ originX: 0, background: `linear-gradient(270deg,transparent,${C.navy})` }}
+          />
+        </div>
+
+        {/* slanted white card */}
+        <motion.div
+          aria-hidden
+          initial={reduce ? false : { opacity: 0, clipPath: "inset(0 50% 0 50%)" }}
+          animate={{ opacity: 1, clipPath: "inset(-20% -10% -20% -10%)" }}
+          transition={{ duration: 1, ease: EASE }}
+          className="absolute inset-0 -skew-x-[14deg] rounded-[22px] border-[3px] border-white/90 bg-white/85 shadow-[0_24px_50px_rgba(10,36,87,0.18)] backdrop-blur-md lg:-skew-x-[18deg] lg:rounded-[1.5vw]"
+        >
+          {/* blue accent strokes (top-left, bottom-right) */}
+          <span className="absolute -left-[3px] -top-[3px] h-[42%] w-[26%] rounded-tl-[inherit] border-l-[3px] border-t-[3px]" style={{ borderColor: C.blue }} />
+          <span className="absolute -bottom-[3px] -right-[3px] h-[42%] w-[26%] rounded-br-[inherit] border-b-[3px] border-r-[3px]" style={{ borderColor: C.blue }} />
+        </motion.div>
+
+        {/* side stripes */}
+        {[
+          { side: "left-[-2.6%]", top: "top-[16%]", from: -50 },
+          { side: "right-[-2.6%]", top: "top-[22%]", from: 50 },
+        ].map(({ side, top, from }) => (
+          <motion.span
+            key={side}
+            aria-hidden
+            initial={reduce ? false : { opacity: 0, x: from }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.9, duration: 0.7, ease: EASE }}
+            className={`absolute ${side} ${top} hidden h-[50%] items-stretch gap-[0.5vw] sm:flex`}
+          >
+            <span className="block w-[0.45vw] min-w-[4px] -skew-x-[18deg]" style={{ background: C.blue }} />
+            <span className="block w-[1.5vw] min-w-[10px] -skew-x-[18deg]" style={{ background: C.orange }} />
+          </motion.span>
         ))}
 
-      </div>
-
-      {/* =====================================
-          WHITE CURVED CONTENT PANEL
-      ===================================== */}
-
-      <div
-        className="absolute inset-y-0 left-0 z-[1] w-[49%] bg-white/[0.96] backdrop-blur-[3px] max-lg:w-[55%] max-md:w-[100%]"
-        style={{
-          borderRadius: "0 50% 50% 0 / 0 50% 50% 0",
-        }}
-      />
-
-      {/* Soft curved edge */}
-      <div
-        className="pointer-events-none absolute inset-y-0 left-[45%] z-[2] hidden w-[5%] bg-white/30 blur-xl lg:block"
-        style={{
-          borderRadius: "50%",
-        }}
-      />
-
-      {/* =====================================
-          ORANGE DIAGONAL ACCENTS
-      ===================================== */}
-
-      {/* Top accent */}
-      <div
-        className="absolute left-[34%] top-0 z-[3] h-[110px] w-[125px] bg-[var(--accent)] md:h-[125px]"
-        style={{
-          clipPath: "polygon(0 0, 36% 0, 100% 100%, 65% 100%)",
-        }}
-      />
-
-      {/* Bottom accent */}
-      <div
-        className="absolute bottom-0 left-[32%] z-[3] h-[120px] w-[125px] bg-[var(--accent)] md:h-[145px]"
-        style={{
-          clipPath: "polygon(65% 0, 100% 0, 35% 100%, 0 100%)",
-        }}
-      />
-
-      {/* =====================================
-          LEFT CONTENT
-      ===================================== */}
-
-      <div className="relative z-10 mx-auto flex h-full max-w-[1800px] items-center px-6 sm:px-10 lg:px-16 xl:px-20">
-
-        <div className="w-full max-w-[740px] pb-2 md:w-[48%]">
-
-          {/* Eyebrow */}
-          <div className="mb-5 flex items-center gap-3">
-
-            <span className="text-xs font-extrabold uppercase tracking-[0.28em] text-[var(--heading-color)] sm:text-sm lg:text-[17px]">
-              Retail &amp; Display Solutions
-            </span>
-
-          </div>
-
-          {/* Main heading */}
-          <h1 className="text-[39px] font-extrabold leading-[1.08] tracking-[-1.8px] text-[var(--heading-color)] sm:text-5xl lg:text-[58px] xl:text-[66px]">
-            Shelves That Speak
-          </h1>
-
-          {/* Highlight heading */}
-          <h2 className="relative mt-1 inline-block text-[38px] font-extrabold leading-[1.1] tracking-[-1.8px] text-[var(--primary)] sm:text-5xl lg:text-[58px] xl:text-[66px]">
-
-            Your Brand's Story
-
-            <span className="absolute -bottom-3 left-1 h-[5px] w-[105px] rounded-full bg-[var(--accent)] sm:w-[140px]" />
-
-          </h2>
-
-          {/* Description */}
-          <p className="mt-9 max-w-[550px] text-[14px] font-semibold leading-[1.5] text-[#555D6B] sm:text-base lg:text-[18px]">
-            Durable, modular and space-smart shelving systems
-            for supermarkets, retail stores and modern outlets.
-          </p>
-
-          {/* =====================================
-              FEATURES
-          ===================================== */}
-
-          <div className="mt-7 flex max-w-[570px] items-center">
-
-            {FEATURES.map(({ icon: Icon, label }, i) => (
-
-              <div
-                key={label.join(" ")}
-                className="flex flex-1 items-center"
-              >
-
-                <div className="flex flex-1 flex-col items-center text-center">
-
-                  <Icon
-                    size={41}
-                    strokeWidth={1.8}
-                    className="text-[var(--primary)] transition-transform duration-300 hover:-translate-y-1 sm:h-11 sm:w-11"
-                  />
-
-                  <span className="mt-2 text-xs font-bold leading-[1.3] text-[var(--heading-color)] sm:text-sm lg:text-[16px]">
-                    {label[0]}
-                    <br />
-                    {label[1]}
-                  </span>
-
-                </div>
-
-                {i !== FEATURES.length - 1 && (
-                  <span className="mx-1 h-[54px] w-px bg-[#AEB4C2]" />
-                )}
-
-              </div>
-
-            ))}
-
-          </div>
-
-          {/* =====================================
-              CTA BUTTON
-          ===================================== */}
-
-          <a
-            href="/products"
-            className="group mt-9 inline-flex items-center gap-5 rounded-full bg-[var(--primary)] py-2 pl-7 pr-2 text-[14px] font-extrabold text-white shadow-[0_8px_22px_rgba(0,81,254,0.18)] transition-all duration-300 hover:-translate-y-1 hover:bg-[var(--primary-hover)] hover:shadow-xl sm:pl-8 sm:text-base"
+        {/* heading */}
+        <h1 className="relative z-10 flex flex-col items-center px-3 pb-3 pt-7 text-center font-extrabold leading-[1.08] tracking-[-0.03em] sm:pb-4 sm:pt-9 lg:px-[2vw] lg:pb-[1.1vw] lg:pt-[2.2vw]">
+          <motion.span
+            initial={reduce ? false : { opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7, duration: 0.8, ease: EASE }}
+            className="text-[clamp(23px,6.4vw,42px)] lg:text-[clamp(40px,4.3vw,86px)]"
+            style={{ color: C.navy }}
           >
+            Designed to Showcase,
+          </motion.span>
 
-            Explore Our Products
-
-            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[var(--primary)] transition-transform duration-300 group-hover:translate-x-1">
-
-              <ArrowRight size={21} strokeWidth={2.5} />
-
-            </span>
-
-          </a>
-
-        </div>
+          <span className="relative mt-1 inline-flex items-center justify-center lg:mt-[0.2vw]">
+            <motion.span
+              aria-hidden
+              initial={reduce ? false : { clipPath: "inset(0 100% 0 0)" }}
+              animate={{ clipPath: "inset(0 0% 0 0)" }}
+              transition={{ delay: 1.05, duration: 0.9, ease: EASE }}
+              className="absolute inset-0 -skew-x-[14deg] overflow-hidden rounded-[12px] shadow-[0_10px_24px_rgba(242,106,18,0.35)] lg:-skew-x-[18deg] lg:rounded-[1vw]"
+              style={{ background: `linear-gradient(90deg,${C.orangeDark},${C.orangeLight} 55%,${C.orange})` }}
+            >
+              {!reduce && (
+                <motion.span
+                  className="absolute inset-y-0 w-[22%] bg-white/35 blur-md"
+                  initial={{ x: "-120%" }}
+                  animate={{ x: "560%" }}
+                  transition={{ delay: 2.4, duration: 1.4, repeat: Infinity, repeatDelay: 4.5, ease: "easeInOut" }}
+                />
+              )}
+            </motion.span>
+            <motion.span
+              initial={reduce ? false : { opacity: 0, x: -24 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 1.35, duration: 0.7, ease: EASE }}
+              className="relative px-[7vw] py-[0.4vw] text-[clamp(24px,6.8vw,44px)] italic text-white sm:px-10 lg:px-[4.4vw] lg:text-[clamp(40px,4.4vw,88px)]"
+            >
+              Built to Sell.
+            </motion.span>
+          </span>
+        </h1>
       </div>
 
-      {/* =====================================
-          LEFT SLIDER ARROW
-      ===================================== */}
+      {/* ---------- ARROWS ---------- */}
+      {[
+        { side: "left", label: "Previous slide", Icon: ChevronLeft, bg: C.navy, onClick: () => goTo(current - 1, -1) },
+        { side: "right", label: "Next slide", Icon: ChevronRight, bg: C.orange, onClick: () => goTo(current + 1, 1) },
+      ].map(({ side, label, Icon, bg, onClick }) => (
+        <motion.button
+          key={side}
+          type="button"
+          onClick={onClick}
+          aria-label={label}
+          initial={reduce ? false : { opacity: 0, x: side === "left" ? -24 : 24 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 1.2, duration: 0.5 }}
+          whileHover={{ scale: 1.12 }}
+          whileTap={{ scale: 0.9 }}
+          className={`absolute top-[58%] z-30 flex h-[42px] w-[42px] -translate-y-1/2 items-center justify-center rounded-full border-[3px] border-white text-white shadow-[0_8px_22px_rgba(10,36,87,0.35)] lg:top-[52%] lg:h-[clamp(46px,3.8vw,74px)] lg:w-[clamp(46px,3.8vw,74px)] ${
+            side === "left" ? "left-2 lg:left-[3.2%]" : "right-2 lg:right-[3.2%]"
+          }`}
+          style={{ background: bg }}
+        >
+          <Icon className="h-[58%] w-[58%]" strokeWidth={3.2} />
+        </motion.button>
+      ))}
 
-      <button
-        onClick={prev}
-        aria-label="Previous slide"
-        className="absolute left-5 top-1/2 z-30 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-[var(--border)] bg-white text-[var(--heading-color)] shadow-[0_5px_20px_rgba(0,0,0,0.14)] transition-all duration-300 hover:scale-110 hover:bg-[var(--primary)] hover:text-white max-md:left-3 max-md:h-10 max-md:w-10"
-      >
-        <ChevronLeft size={27} strokeWidth={3} />
-      </button>
-
-      {/* =====================================
-          RIGHT SLIDER ARROW
-      ===================================== */}
-
-      <button
-        onClick={next}
-        aria-label="Next slide"
-        className="absolute right-5 top-1/2 z-30 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-[var(--border)] bg-white text-[var(--heading-color)] shadow-[0_5px_20px_rgba(0,0,0,0.14)] transition-all duration-300 hover:scale-110 hover:bg-[var(--primary)] hover:text-white max-md:right-3 max-md:h-10 max-md:w-10"
-      >
-        <ChevronRight size={27} strokeWidth={3} />
-      </button>
-
-      {/* =====================================
-          SLIDER DOTS
-      ===================================== */}
-
-      {SLIDES.length > 1 && (
-        <div className="absolute bottom-8 left-1/2 z-30 flex -translate-x-1/2 items-center gap-3 lg:left-[48%]">
-
-          {SLIDES.map((_, i) => (
-
-            <button
+      {/* ---------- DOTS ---------- */}
+      <div className="absolute bottom-4 left-1/2 z-30 flex -translate-x-1/2 items-center gap-3 lg:bottom-[2.4%] lg:gap-[0.9vw]" role="tablist" aria-label="Choose slide">
+        {SLIDES.map((s, i) => {
+          const active = current === i;
+          return (
+            <motion.button
               key={i}
-              onClick={() => setCurrent(i)}
+              type="button"
+              role="tab"
+              aria-selected={active}
               aria-label={`Go to slide ${i + 1}`}
-              className={`h-5 w-5 rounded-full border-[3px] border-white shadow-md transition-all duration-300 ${
-                current === i
-                  ? "scale-110 bg-[var(--accent)]"
-                  : "bg-white hover:scale-110"
-              }`}
+              onClick={() => goTo(i, i > current ? 1 : -1)}
+              whileHover={{ scale: 1.25 }}
+              whileTap={{ scale: 0.85 }}
+              animate={{ scale: active ? 1.15 : 1, background: active ? C.orange : C.navy }}
+              transition={{ type: "spring", stiffness: 400, damping: 22 }}
+              className="h-[14px] w-[14px] rounded-full shadow-[0_2px_6px_rgba(10,36,87,0.35)] lg:h-[clamp(14px,1.05vw,22px)] lg:w-[clamp(14px,1.05vw,22px)]"
             />
-
-          ))}
-
-        </div>
-      )}
-
+          );
+        })}
+      </div>
     </section>
   );
 }
