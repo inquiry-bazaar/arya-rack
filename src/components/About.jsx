@@ -20,15 +20,14 @@ import {
 /* ------------------------------------------------------------------ */
 /*  CONFIG                                                             */
 /* ------------------------------------------------------------------ */
-
 const C = {
-  navy: "#12469C",
-  blue: "#12469C",
-  blueDark: "#0F4C9C",
+  navy: "#183B67",
+  blue: "#42658F",
+  blueDark: "#345477",
   orange: "#F67516",
-  orangeLight: "#FF8A1F",
-  body: "#3F4A63",
-  divider: "#C9D1DF",
+  orangeLight: "#E5A36D",
+  body: "#596579",
+  divider: "#E2E7EE",
 };
 
 // Put your images in /public/about/

@@ -50,7 +50,7 @@ export default function VideosSection() {
             <h2 className="text-white text-4xl lg:text-5xl font-bold leading-tight">
               See Our Products
             
-              <span className="text-[#F26A12]">In Action.</span>
+              <span className="text-[#2252A3]"> In Action.</span>
             </h2>
 
             

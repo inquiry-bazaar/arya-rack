@@ -126,7 +126,8 @@ export default function Footer() {
       <ul className="ft-list">
         {items.map((l) => (
           <li key={l.label}>
-            <a href={l.href}><ChevronRight size={16} strokeWidth={2.6} aria-hidden="true" />{l.label}</a>
+            <a href={l.href}><ChevronRight size={16} strokeWidth={2.6} 
+            aria-hidden="true" />{l.label}</a>
           </li>
         ))}
       </ul>

@@ -15,8 +15,9 @@ export default function Home() {
     <>
   <Hero/>
   <About/>
-  <VideosSection/>
   <Categories/>
+  <VideosSection/>
+  
   <Industries/>
   <HowWork/>
   <FAQ/>

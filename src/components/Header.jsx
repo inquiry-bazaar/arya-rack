@@ -207,7 +207,7 @@ export default function Header() {
         <nav ref={navRef} aria-label="Main" className="relative border-b border-[#E3E9F4]">
           <div
             className={`relative mx-auto flex max-w-[1750px] items-center justify-between gap-4 px-4 transition-[height] duration-300 sm:px-6 lg:px-8 xl:px-12 ${
-              scrolled ? "h-[66px] sm:h-[72px]" : "h-[72px] sm:h-[86px] lg:h-[98px]"
+              scrolled ? "h-[66px] sm:h-[72px]" : "h-[65px] sm:h-[86px] lg:h-[75px]"
             }`}
           >
             <Logo compact={scrolled} />
