@@ -28,7 +28,7 @@ const site = {
   phone: "+91 98765 43210",
   whatsapp: "919876543210",
   email: "info@aryainsulation.com",
-  address: "Plot No. 00, Industrial Area, New Delhi, India",
+  address: "Ground Floor Plote AT Kh No-13. 18/1 And 8 G Near Cocacola Factory Najafgarh South West Delhi-110043",
   hours: "Mon – Sat, 9:30 am – 7:00 pm",
   credit: "Inquiry Bazaar Pvt. Ltd.",
   creditUrl: "https://inquirybazaar.com/",
@@ -206,7 +206,7 @@ export default function Footer() {
               <p>{site.tagline}</p>
               <div className="af-socials" aria-label="Social links">
                 <a href="https://www.instagram.com/" aria-label="Instagram" target="_blank" rel="noreferrer">
-                  <span style={{ fontSize: 16, fontWeight: 800 }}>ig</span>
+                  <span style={{ fontSize: 16, fontWeight: 800 }}>in</span>
                 </a>
                 <a href="https://www.facebook.com/" aria-label="Facebook" target="_blank" rel="noreferrer">
                   <span style={{ fontSize: 18, fontWeight: 800 }}>f</span>
@@ -270,13 +270,7 @@ export default function Footer() {
                     <div className="af-contact-value">{site.address}</div>
                   </div>
                 </div>
-                <div className="af-contact-item">
-                  <span className="af-contact-icon"><Clock3 size={16} /></span>
-                  <div>
-                    <span className="af-contact-label">Working hours</span>
-                    <div className="af-contact-value">{site.hours}</div>
-                  </div>
-                </div>
+               
               </div>
             </motion.div>
           </div>
@@ -292,9 +286,9 @@ export default function Footer() {
               <a href="/terms-and-conditions">Terms</a>
             </div>
             <span className="af-credit">
-              Website by{" "}
-              <a href={site.creditUrl} target="_blank" rel="noreferrer">
-                {site.credit}
+              Website Designed By Inquiry Bazaar Pvt. Lt{" "}
+              <a href="https://inquirybazaar.com/" target="_blank" rel="noreferrer">
+               B2B Marketplace
               </a>
             </span>
           </div>

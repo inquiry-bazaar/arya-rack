@@ -46,18 +46,11 @@ const contactDetails = [
     icon: Phone,
     title: "Call Our Team",
     value: "+91-8587901795",
-    detail: "Mon – Sat, 9 AM – 6 PM",
+
     href: "tel:+91-8587901795",
     color: "blue",
   },
-  {
-    icon: MessageCircle,
-    title: "WhatsApp Support",
-    value: "Chat with us",
-    detail: "Quick inquiry assistance",
-    href: "https://wa.me/918587901795",
-    color: "orange",
-  },
+ 
   {
     icon: Mail,
     title: "Email Us",
@@ -330,7 +323,8 @@ Message: ${formData.message}
 
       {/* CONTACT CARDS */}
       <section className="relative z-10 mx-auto -mt-10 w-7xl px-5 sm:px-8 lg:px-3">
-        <div className="grid overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-[0_15px_55px_rgba(6,24,62,0.10)] sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid overflow-hidden rounded-2xl border border-slate-100 bg-white
+         shadow-[0_15px_55px_rgba(6,24,62,0.10)] sm:grid-cols-2 lg:grid-cols-3">
 
           {contactDetails.map((item, index) => {
             const Icon = item.icon;
