@@ -265,7 +265,7 @@ ${form.message}
               </h1>
 
               <p className="mt-4 max-w-xl text-xs leading-6 text-[#6a7c8e] sm:text-sm">
-                {product.desc || product.description}
+                { product.description}
               </p>
 
               {/* QUICK SPECIFICATIONS */}
@@ -275,7 +275,9 @@ ${form.message}
                 {quickSpecs.map(({ icon: Icon, value, label }) => (
                   <div
                     key={label}
-                    className="flex min-h-[78px] flex-col items-center justify-center rounded-xl border border-[#e0e8ef] bg-white px-2 py-3 text-center shadow-[0_5px_15px_rgba(20,50,80,0.04)]"
+                    className="flex min-h-[78px] flex-col items-center justify-center 
+                    rounded-xl border border-[#e0e8ef] bg-white px-2 py-3 text-center 
+                    shadow-[0_5px_15px_rgba(20,50,80,0.04)]"
                   >
                     <Icon
                       size={18}
@@ -510,42 +512,70 @@ ${form.message}
 
         <div className="mx-auto max-w-[1360px]">
 
-          {/* TAB NAVIGATION */}
+        {/* TAB NAVIGATION */}
 
-          <div className="flex max-w-[590px] overflow-hidden rounded-t-2xl border border-[#e0e8ef] border-b-0 bg-white">
+<div className="flex max-w-[780px] overflow-hidden rounded-t-2xl border border-[#e0e8ef] border-b-0 bg-white">
 
-            {[
-              {
-                id: "specifications",
-                label: "Specifications",
-                icon: FileText,
-              },
-              {
-                id: "overview",
-                label: "Description",
-                icon: Package,
-              },
-            ].map(({ id, label, icon: Icon }) => (
-              <button
-                type="button"
-                key={id}
-                onClick={() => setActiveTab(id)}
-                className={`flex flex-1 items-center justify-center gap-2 px-3 py-3 text-[15px] font-extrabold transition sm:text-xs ${
-                  activeTab === id
-                    ? "bg-[#174f7e] text-white shadow-md"
-                    : "bg-white text-[#314d68] hover:bg-[#f4f7fa]"
-                }`}
-              >
-                <Icon size={13} />
-                {label}
-              </button>
-            ))}
+  {[
+    { id: "overview", label: "Overview", icon: Package },
+    { id: "specifications", label: "Specifications", icon: FileText },
+    { id: "description", label: "Description", icon: Layers3 },
+  
+  ].map(({ id, label, icon: Icon }) => (
+    <button
+      type="button"
+      key={id}
+      onClick={() => setActiveTab(id)}
+      className={`flex flex-1 items-center justify-center gap-2 px-3 py-3 text-[10px] font-extrabold transition sm:text-xs ${
+        activeTab === id
+          ? "bg-[#174f7e] text-white shadow-md"
+          : "bg-white text-[#314d68] hover:bg-[#f4f7fa]"
+      }`}
+    >
+      <Icon size={13} />
+      {label}
+    </button>
+  ))}
 
-          </div>
+</div>
 
           {/* TAB CONTENT */}
 
           <div className="rounded-b-2xl rounded-tr-2xl border border-[#e0e8ef] bg-white p-4 shadow-[0_12px_30px_rgba(20,50,80,0.05)] sm:p-6">
+
+           
+           {/* OVERVIEW TAB */}
+{activeTab === "overview" && (
+  <div className="w-full">
+    <h3 className="text-2xl font-black text-[#102b49]">
+      Product Overview
+    </h3>
+
+    <div className="mt-3 h-[3px] w-10 bg-[#f47721]" />
+
+    <p className="mt-5 text-xs leading-7 text-[#64798c]">
+      {product.shortDescription ||
+        product.desc ||
+        product.description}
+    </p>
+  </div>
+)}
+
+{/* DESCRIPTION TAB */}
+{activeTab === "description" && (
+  <div className="w-full">
+    <h3 className="text-2xl font-black text-[#102b49]">
+      Product Description
+    </h3>
+
+    <div className="mt-3 h-[3px] w-10 bg-[#f47721]" />
+
+    <p className="mt-5 whitespace-pre-line text-xs leading-7 text-[#64798c]">
+      {product.desc || product.description}
+    </p>
+  </div>
+)}
+
 
             {/* SPECIFICATIONS - FULL WIDTH */}
 

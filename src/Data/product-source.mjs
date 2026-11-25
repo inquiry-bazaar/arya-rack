@@ -35,26 +35,115 @@ export const CATEGORIES = [
 
 export const raw = [
   // ===================== Supermarket & Grocery Display Racks =====================
-  {
-    title: "Supermarket Display Rack",
-    image: "/imgi_148_supermarket-rack-1.webp",
-    category: "Supermarket & Grocery Display Racks",
-    subtitle: "Wall-mounted / Free-standing, 6–7 ft",
-    desc: "Heavy-duty mild steel supermarket racking with adjustable shelves and powder-coated finish.",
-    page: "supermarket-display-rack",
-    alts: ["Supermarket Display Racks", "7 Feet Supermarket Display Rack"],
-    specs: {
-      "Rack Type": "Wall / Free Standing",
-      "Material": "Mild Steel",
-      "Height": "6–7 ft",
-      "No. of Shelves": "5–6 Shelves",
-      "Load Capacity": "50–60 kg per shelf",
-      "Finish": "Powder Coated",
-      "Brand": "Arya Industry",
-      "Usage/Application": "Supermarket, Grocery Store",
-    },
+{
+  slug: "double-sided-gondola-supermarket-rack",
+
+  title: "Double Sided Gondola Supermarket Rack",
+
+  category: "Supermarket & Grocery Display Racks",
+
+  // Product Images
+  image: "/images/products/double-sided-gondola-rack.webp",
+
+  gallery: [
+    "/images/products/double-sided-gondola-rack.webp",
+    // Add additional product images here
+  ],
+
+  // Hero Section
+  shortDescription:
+    "MS steel freestanding floor display rack by Arya Insulation Pvt Ltd, designed for central aisles, supermarkets and hypermarket product displays. Custom configurations are available as per product and store requirements.",
+
+  // Quick Specifications
+  quickSpecs: {
+    height: "As per requirement",
+    displayLevels: "As per configuration",
+    material: "Mild Steel",
+    finish: "Powder Coated",
   },
- 
+
+  // SEO Details
+  seo: {
+    title:
+      "Double Sided Gondola Manufacturer | Arya Insulation",
+
+    description:
+      "Arya Insulation Pvt Ltd manufactures double sided gondola supermarket rack in MS steel. Contact us for sizes, finishes and customized display options.",
+
+    slug: "double-sided-gondola-supermarket-rack",
+  },
+
+  // Overview Tab
+  shortDescription:
+    "Double Sided Gondola Supermarket Rack is a retail merchandising solution manufactured by Arya Insulation Pvt Ltd for central aisles, supermarkets and hypermarket product displays. It is planned around an MS (mild steel) primary structure to provide a stable framework for displaying, organizing and presenting merchandise. The product layout can be configured according to the dimensions, weight and packaging of the items being displayed, as well as the available floor, wall or counter space. Depending on the model, compatible accessories such as shelves, rails, hooks, wire sections, acrylic or plastic bins, glass panels, MDF or wood-finish elements, branding panels, castors or lighting can be added. Arya Insulation Pvt Ltd can customize the rack height, width, depth, number of display levels, finish and accessory arrangement against the buyer's store layout and product requirements. This helps retailers create a more organized display, group products by category and make merchandise easier for customers to view. The double sided gondola supermarket rack can be considered for central aisles, supermarkets and hypermarket product displays. Final dimensions, finish, shelf arrangement and load capacity should be confirmed against the approved product specification before manufacturing.",
+
+  // Specifications Tab
+  specs: {
+    "Rack Type": "Freestanding floor display rack",
+
+    "Material":
+      "MS steel primary structure;",
+
+    "Height": "As per requirement",
+
+    "No. of Shelves / Display Levels":
+      "Shelf / rail / display-level count as per product configuration",
+
+    "Load Capacity":
+      "To be confirmed by Arya Insulation Pvt Ltd according to design, dimensions and intended product weight",
+
+    "Finish":
+      "Powder-coated MS finish; other finishes on request",
+
+    "Brand": "Arya Insulation Pvt Ltd",
+
+    "Usage / Application":
+      "Central aisles, supermarkets and hypermarket product displays",
+  },
+
+  // Description Tab
+  desc: `As a display rack manufacturer, Arya Insulation Pvt Ltd develops double sided gondola supermarket rack for retail environments that need practical product presentation and organized merchandising. The MS steel primary frame is configured to suit the intended application, while the display components are selected according to the type of merchandise. MS Powder Coated are listed as typical material options in the supplied product schedule; where used, these are treated as compatible accessories, panels or finish elements alongside the MS steel structure.
+
+The design can be discussed in terms of overall dimensions, mounting or floor-standing format, number of shelves or display levels, rail or hook arrangement, finish and optional branding. For projects involving heavier merchandise, the required load per shelf or display section must be shared so that the manufacturer can confirm a suitable configuration.
+
+These display racks are intended for central aisles, supermarkets and hypermarket product displays. Retailers, dealers, store planners and fit-out contractors can contact Arya Insulation Pvt Ltd with product dimensions, site measurements, quantity and preferred finish to request a suitable display rack proposal.`,
+
+  // Key Highlights
+  features: [
+    "MS steel primary frame for a structured retail display",
+    "Single-sided or multi-sided merchandising configuration, as applicable",
+    "Customizable dimensions and display configuration",
+    "Finish and accessory options to suit the store interior",
+    "Designed to organize products and improve in-store visibility",
+  ],
+
+  // Brochure
+  brochure: "",
+
+  // Related Products
+  relatedProducts: [
+    {
+      title: "Supermarket Wall Rack",
+      slug: "supermarket-wall-rack",
+      image: "/images/products/supermarket-wall-rack.webp",
+    },
+    {
+      title: "Supermarket Center Rack (Island Rack)",
+      slug: "supermarket-center-rack",
+      image: "/images/products/supermarket-center-rack.webp",
+    },
+    {
+      title: "Gondola Display Rack",
+      slug: "gondola-display-rack",
+      image: "/images/products/gondola-display-rack.webp",
+    },
+    {
+      title: "Double Sided Display Rack",
+      slug: "double-sided-display-rack",
+      image: "/images/products/double-sided-display-rack.webp",
+    },
+  ],
+},
   {
   // BASIC PRODUCT DETAILS
   id: "double-sided-gondola-supermarket-rack",
@@ -73,12 +162,7 @@ export const raw = [
   // PRODUCT IMAGES
   image: "/images/products/double-sided-gondola-rack/main.webp",
 
-  gallery: [
-    "/images/products/double-sided-gondola-rack/front-view.webp",
-    "/images/products/double-sided-gondola-rack/side-view.webp",
-    "/images/products/double-sided-gondola-rack/shelf-detail.webp",
-    "/images/products/double-sided-gondola-rack/installation.webp",
-  ],
+
 
   // QUICK SPECIFICATIONS
   quickSpecs: {
@@ -175,8 +259,7 @@ These display racks are intended for central aisles, supermarkets and hypermarke
     slug: "double-sided-gondola-supermarket-rack",
   },
 
-  // BROCHURE
-  brochure: "",
+
 
   // RELATED PRODUCTS
   relatedProducts: [],
