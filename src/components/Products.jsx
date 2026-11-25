@@ -1,86 +1,29 @@
-
 "use client";
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { raw } from "@/Data/product-source.mjs";
+import {
+  ArrowUpRight,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 
+// Categories automatically generated from product data
 const categories = [
   "All Products",
-  "Supermarket Racks",
-  "Display Racks",
-  "Gondola Racks",
-  "Warehouse Racks",
-  "Storage Racks",
-  "Accessories",
+  ...new Set(raw.map((product) => product.category)),
 ];
 
-const products = [
-  {
-    id: 1,
-    name: "Supermarket Display Rack",
-    category: "Supermarket Racks",
-    image: "/images/supermarket-rack.webp",
-    slug: "supermarket-display-rack",
-    description: "Durable shelving for organised supermarket displays.",
-  },
-  {
-    id: 2,
-    name: "Wall Display Rack",
-    category: "Display Racks",
-    image: "/images/wall-display-rack.webp",
-    slug: "wall-display-rack",
-    description: "Space-saving display solutions for retail environments.",
-  },
-  {
-    id: 3,
-    name: "Double Side Gondola Rack",
-    category: "Gondola Racks",
-    image: "/images/gondola-rack.webp",
-    slug: "double-side-gondola-rack",
-    description: "Versatile shelving for high-visibility product placement.",
-  },
-  {
-    id: 4,
-    name: "Heavy Duty Warehouse Rack",
-    category: "Warehouse Racks",
-    image: "/images/warehouse-rack.webp",
-    slug: "heavy-duty-warehouse-rack",
-    description: "Strong storage systems for industrial applications.",
-  },
-  {
-    id: 5,
-    name: "Corner Display Rack",
-    category: "Display Racks",
-    image: "/images/corner-display-rack.webp",
-    slug: "corner-display-rack",
-    description: "Make better use of available retail floor space.",
-  },
-  {
-    id: 6,
-    name: "Slotted Angle Rack",
-    category: "Storage Racks",
-    image: "/images/slotted-angle-rack.webp",
-    slug: "slotted-angle-rack",
-    description: "Flexible storage for shops, offices and warehouses.",
-  },
-  {
-    id: 7,
-    name: "Checkout Counter",
-    category: "Accessories",
-    image: "/images/checkout-counter.webp",
-    slug: "checkout-counter",
-    description: "Functional checkout solutions for modern retail stores.",
-  },
-  {
-    id: 8,
-    name: "Retail Storage Rack",
-    category: "Supermarket Racks",
-    image: "/images/retail-storage-rack.webp",
-    slug: "retail-storage-rack",
-    description: "Practical shelving for everyday retail requirements.",
-  },
-];
+// Products automatically generated from raw data
+const products = raw.map((product, index) => ({
+  id: index + 1,
+  name: product.title,
+  category: product.category,
+  image: product.image,
+  slug: product.page,
+  description: product.desc,
+}));
 
 const ITEMS_PER_PAGE = 4;
 
@@ -111,12 +54,12 @@ export default function Products() {
   };
 
   return (
-    <section className="overflow-hidden bg-white py-10 sm:py-10 lg:py-10">
+    <section className="overflow-hidden bg-white py-8 sm:py-10">
       <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12">
 
         {/* Heading */}
-        <div className="mb-10 text-center">
-          <div className="mb-4 flex items-center justify-center gap-3">
+        <div className="mb-7 text-center">
+          <div className="mb-3 flex items-center justify-center gap-3">
             <span className="h-[2px] w-8 bg-[#D98A4A]" />
             <span className="text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-500">
               Explore Our Collection
@@ -126,15 +69,13 @@ export default function Products() {
 
           <h2 className="text-3xl font-semibold tracking-tight text-[#183B67] sm:text-4xl lg:text-5xl">
             Products Designed for
-            <span className="text-slate-400"> Every Space.</span>
+            <span className="text-[#2252A3]"> Every Space.</span>
           </h2>
-
         </div>
 
         {/* Category Tabs */}
-        <div className="mb-9 overflow-x-auto pb-3 scrollbar-hide">
+        <div className="mb-7 overflow-x-auto pb-2 scrollbar-hide">
           <div className="flex min-w-max items-center justify-center gap-2.5 px-1">
-
             {categories.map((category) => {
               const isActive = activeCategory === category;
 
@@ -144,27 +85,26 @@ export default function Products() {
                   onClick={() => handleCategoryChange(category)}
                   className={`rounded-full border px-5 py-2.5 text-xs font-medium transition-all duration-300 sm:text-sm ${
                     isActive
-                      ? "border-[#183B67] bg-[#183B67] text-white shadow-sm"
-                      : "border-slate-200 bg-white text-slate-600 hover:border-[#183B67] hover:text-[#183B67]"
+                      ? "border-[#183B67] bg-[#183B67] text-white shadow-md shadow-[#183B67]/15"
+                      : "border-slate-200 bg-white text-slate-600 hover:border-[#183B67] hover:bg-[#183B67]/5 hover:text-[#183B67]"
                   }`}
                 >
                   {category}
                 </button>
               );
             })}
-
           </div>
         </div>
 
         {/* Product Grid */}
         <div
           key={activeCategory + currentPage}
-          className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4"
+          className="grid grid-cols-1 gap-x-6 gap-y-7 sm:grid-cols-2 lg:grid-cols-4"
         >
           {visibleProducts.map((product, index) => (
             <article
               key={product.id}
-              className="group animate-[fadeIn_0.45s_ease_both]"
+              className="group animate-[fadeIn_0.45s_ease_both] transition-transform duration-500 hover:-translate-y-1"
               style={{ animationDelay: `${index * 80}ms` }}
             >
 
@@ -173,39 +113,37 @@ export default function Products() {
                 href={`/products/${product.slug}`}
                 className="relative block overflow-hidden rounded-xl bg-[#F3F5F7]"
               >
-                <div className="relative aspect-[4/4.4] overflow-hidden">
-
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="h-full w-full object-contain p-5 transition-transform duration-700 group-hover:scale-105 sm:p-6"
-                  />
-
-                  <span className="absolute left-4 top-4 rounded-full border border-white/80 bg-white/90 px-3 py-1.5 text-[9px] font-semibold uppercase tracking-wider text-[#183B67]">
+            <div className="relative aspect-square w-full overflow-hidden">
+<img
+  src={product.image}
+  alt={product.name}
+  className="h-full w-full object-contain p-3 transition-transform duration-700 ease-out group-hover:scale-105"
+/>
+                  <span className="absolute left-3 top-3 rounded-full border border-white/80 bg-white/90 px-3 py-1.5 text-[9px] font-semibold uppercase tracking-wider text-[#183B67] backdrop-blur-sm">
                     {product.category}
                   </span>
 
-                  <span className="absolute bottom-4 right-4 flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#183B67] shadow-sm transition-all duration-300 group-hover:bg-[#183B67] group-hover:text-white">
-                    <ArrowUpRight size={18} />
+                  <span className="absolute bottom-3 right-3 flex h-9 w-9 items-center justify-center rounded-full bg-white text-[#183B67] shadow-md transition-all duration-300 group-hover:bg-[#183B67] group-hover:text-white group-hover:rotate-45">
+                    <ArrowUpRight size={17} />
                   </span>
+
+                  <div className="absolute bottom-0 left-0 h-[3px] w-0 bg-[#D98A4A] transition-all duration-500 group-hover:w-full" />
 
                 </div>
               </Link>
 
               {/* Product Details */}
-              <div className="pt-5">
-                <h3 className="text-base font-semibold text-[#183B67] transition-colors group-hover:text-[#42658F] sm:text-lg">
+              <div className="pt-3">
+                <h3 className="text-base font-semibold text-[#183B67] transition-colors duration-300 group-hover:text-[#42658F] sm:text-lg">
                   {product.name}
                 </h3>
 
-            
-
                 <Link
                   href={`/products/${product.slug}`}
-                  className="mt-4 inline-flex items-center gap-2 border-b border-[#183B67]/30 pb-1.5 text-xs font-semibold text-[#183B67] transition-all hover:border-[#D98A4A] hover:text-[#D98A4A]"
+                  className="mt-2.5 inline-flex items-center gap-2 border-b border-[#183B67]/30 pb-1 text-xs font-semibold text-[#183B67] transition-all duration-300 hover:border-[#D98A4A] hover:text-[#D98A4A]"
                 >
                   Read More
-                  <ArrowUpRight size={15} />
+                  <ArrowUpRight size={14} />
                 </Link>
               </div>
 
@@ -215,7 +153,7 @@ export default function Products() {
 
         {/* Empty State */}
         {visibleProducts.length === 0 && (
-          <div className="py-16 text-center">
+          <div className="py-12 text-center">
             <p className="text-base font-medium text-[#183B67]">
               No products available in this category.
             </p>
@@ -224,7 +162,7 @@ export default function Products() {
 
         {/* Pagination */}
         {totalPages > 1 && (
-          <div className="mt-12 flex items-center justify-center gap-4">
+          <div className="mt-9 flex items-center justify-center gap-4">
 
             <button
               onClick={() =>

@@ -16,12 +16,9 @@ import {
   ArrowRight,
   ArrowUpRight,
   BadgeCheck,
-  Building2,
   Check,
   ChevronRight,
-  Factory,
   Layers,
-  LayoutGrid,
   MessageCircle,
   PackageCheck,
   Paintbrush,
@@ -29,12 +26,8 @@ import {
   Ruler,
   Send,
   ShieldCheck,
-  ShoppingBasket,
-  ShoppingCart,
   Star,
-  Store,
   Timer,
-  Wrench,
   X,
   ZoomIn,
 } from "lucide-react";
@@ -64,7 +57,7 @@ const BRAND = {
 };
 
 const PRODUCT = {
-  name: "Supermarket Display Rack",
+  name: "End Display Rack",
   category: "Supermarket Display Rack",
   categoryHref: "/products/supermarket-display-rack",
   image:
@@ -89,48 +82,19 @@ const SPECS = [
   ["Durability", "Long-lasting, low maintenance"],
 ];
 
-const FEATURES = [
-  { icon: Layers, title: "4 Spacious Shelves", text: "Organised, eye-catching product display across four tiers." },
-  { icon: ShieldCheck, title: "Strong Backsheet", text: "Added stability and support for busy, high-traffic aisles." },
-  { icon: PackageCheck, title: "Beading & Stoppers", text: "Panel beading and stoppers keep products from slipping or falling." },
-  { icon: Ruler, title: "Graduated Depths", text: "18″, 15″, 12″ and 1″ shelf depths suit products of different sizes." },
-  { icon: Paintbrush, title: "Powder-Coated Finish", text: "Resists rust, corrosion and scratches with minimal upkeep." },
-  { icon: Factory, title: "Made by Arya Industry", text: "Built by an experienced display rack manufacturer for long-term performance." },
-];
-
-const APPLICATIONS = [
-  { icon: ShoppingCart, name: "Supermarkets", text: "Lift visibility and sales with display solutions positioned at aisle ends." },
-  { icon: Store, name: "Retail Stores", text: "Showcase promotional items, seasonal products and impulse buys near aisle ends." },
-  { icon: Building2, name: "Showrooms", text: "Organised, visually appealing display systems for showroom floors." },
-  { icon: ShoppingBasket, name: "Convenience Stores", text: "Capture customer attention with strategic end-cap product placement." },
-  { icon: LayoutGrid, name: "Departmental Stores", text: "Present products category-wise and improve the browsing experience." },
-  { icon: Wrench, name: "Commercial Retail", text: "Durable, low-maintenance racks for varied commercial retail environments." },
-];
-
-const WHY = [
-  { title: "Durable & space-efficient", text: "High-quality display solutions that make every square foot count." },
-  { title: "Strict quality standards", text: "A trusted manufacturer following strict quality checks for superior performance." },
-  { title: "Advanced manufacturing", text: "Modern technology and premium raw materials for strong, long-lasting racks." },
-  { title: "Customisable", text: "Adaptable to store layouts, branding needs and product display requirements." },
-  { title: "Cost-effective", text: "Low-maintenance products that suit retail businesses of every size." },
-  { title: "Timely delivery & support", text: "On-time delivery and responsive customer support." },
-];
-
 const RELATED = [
   { name: "Wooden Center Rack", href: "/products/wooden-center-rack", icon: Layers },
-  { name: "Store Display Racks", href: "/products/store-display-racks", icon: LayoutGrid },
-  { name: "Supermarket Storage Racks", href: "/products/supermarket-storage-racks", icon: Store },
-  { name: "Wall Faced Side Display Rack", href: "/products/wall-faced-side-display-racks", icon: Building2 },
+  { name: "Store Display Racks", href: "/products/store-display-racks", icon: Layers },
+  { name: "Supermarket Storage Racks", href: "/products/supermarket-storage-racks", icon: PackageCheck },
+  { name: "Wall Faced Side Display Rack", href: "/products/wall-faced-side-display-racks", icon: ShieldCheck },
 ];
 
 const SECTIONS = [
   { id: "overview", label: "Overview" },
   { id: "anatomy", label: "Anatomy" },
-  { id: "specs", label: "Specs" },
-  { id: "features", label: "Features" },
+  { id: "specs", label: "Specifications" },
   { id: "enquiry", label: "Enquiry" },
-  { id: "applications", label: "Applications" },
-  { id: "why", label: "Why Arya" },
+  { id: "related", label: "Related Products" },
 ];
 
 const EASE = [0.22, 1, 0.36, 1];
@@ -387,7 +351,6 @@ export default function ProductPage() {
   const [showBar, setShowBar] = useState(false);
   const [section, setSection] = useState("");
   const [shelf, setShelf] = useState(0);
-  const [app, setApp] = useState(0);
   const [form, setForm] = useState({ name: "", phone: "", qty: "", msg: "" });
   const [sent, setSent] = useState(false);
 
@@ -770,7 +733,7 @@ export default function ProductPage() {
         </section>
 
         {/* ================= ANATOMY / BLUEPRINT ================= */}
-        {/* <section id="anatomy" className="scroll-mt-24 px-5 sm:px-8">
+        <section id="anatomy" className="scroll-mt-24 px-5 sm:px-8">
           <div className="relative mx-auto max-w-[1280px] overflow-hidden rounded-[36px] border border-white bg-white p-6 shadow-[0_24px_60px_rgba(12,41,97,0.08)] sm:p-10 lg:p-14">
             <div
               aria-hidden
@@ -851,7 +814,7 @@ export default function ProductPage() {
               </div>
             </div>
           </div>
-        </section> */}
+        </section>
 
         {/* ================= SPECIFICATIONS ================= */}
         <section id="specs" className="scroll-mt-24 px-5 py-20 sm:px-8 lg:py-14">
@@ -860,7 +823,7 @@ export default function ProductPage() {
               Technical <Accent>details</Accent>
             </SectionHead>
 
-            {/* <div className="mt-12 overflow-hidden rounded-[28px] border border-white bg-white shadow-[0_20px_50px_rgba(12,41,97,0.08)]">
+            <div className="mt-12 overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_20px_50px_rgba(12,41,97,0.08)]">
               {SPECS.map(([k, v], i) => (
                 <motion.div
                   key={k}
@@ -881,46 +844,14 @@ export default function ProductPage() {
                   <span className="text-base font-extrabold" style={{ color: C.ink }}>{v}</span>
                 </motion.div>
               ))}
-            </div> */}
+            </div>
           </div>
         </section>
 
-        {/* ================= KEY FEATURES + ENQUIRY (same row) ================= */}
-        <section className="px-5 pb-20 sm:px-8 lg:pb-28">
-          <div className="mx-auto grid max-w-[1280px] items-start gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
-            {/* LEFT: key features */}
-            <div id="features" className="scroll-mt-24">
-              <SectionHead eyebrow="Key Features">
-                Built to <Accent>work as hard</Accent> as your store
-              </SectionHead>
-
-              <div className="mt-10 grid gap-4 sm:grid-cols-2">
-                {FEATURES.map(({ title, text }, i) => (
-                  <motion.article
-                    key={title}
-                    initial={{ opacity: 0, y: 36 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={VIEW}
-                    transition={{ duration: 0.65, delay: (i % 2) * 0.1 + Math.floor(i / 2) * 0.08, ease: EASE }}
-                    whileHover={{ y: -2 }}
-                    className="group relative overflow-hidden rounded-[24px] border border-white bg-white p-6 shadow-[0_12px_32px_rgba(12,41,97,0.07)]"
-                  >
-                    <span className="absolute -right-2 -top-4 text-[72px] font-black leading-none text-slate-100 transition-colors duration-500 group-hover:text-orange-100">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <h3 className="relative mt-4 text-lg font-extrabold tracking-tight">{title}</h3>
-                    <p className="relative mt-1.5 text-sm leading-relaxed" style={{ color: C.muted }}>{text}</p>
-                    <span
-                      className="absolute bottom-0 left-0 h-1 w-0 transition-all duration-500 group-hover:w-full"
-                      style={{ background: `linear-gradient(90deg,${C.orange},${C.orangeLight})` }}
-                    />
-                  </motion.article>
-                ))}
-              </div>
-            </div>
-
-            {/* RIGHT: enquiry form */}
-            <div id="enquiry" className="scroll-mt-24 lg:sticky lg:top-24">
+        {/* ================= ENQUIRY ================= */}
+        <section className="px-5 pb-16 sm:px-8 lg:pb-20">
+          <div className="mx-auto max-w-[1280px]">
+            <div id="enquiry" className="scroll-mt-24">
               <Reveal delay={0.1}>
                 <form
                   onSubmit={submit}
@@ -1014,117 +945,46 @@ export default function ProductPage() {
           </div>
         </section>
 
-        {/* ================= APPLICATIONS ================= */}
-        <section id="applications" className="scroll-mt-24 px-5 pb-20 sm:px-8 lg:pb-10 bg-white">
+        {/* ================= RELATED PRODUCTS ================= */}
+        <section id="related" className="scroll-mt-24 px-5 pb-24 sm:px-8 lg:pb-28">
           <div className="mx-auto max-w-[1280px]">
-            <SectionHead eyebrow="Applications">
-              Where the End Display Rack <Accent>performs</Accent>
-            </SectionHead>
-
-            <div className="mt-12 grid gap-6 lg:grid-cols-[360px_1fr]">
-              <div className="flex gap-2 overflow-x-auto pb-2 lg:flex-col lg:overflow-visible lg:pb-0">
-                {APPLICATIONS.map(({ name }, i) => (
-                  <button
-                    key={name}
-                    type="button"
-                    onClick={() => setApp(i)}
-                    onMouseEnter={() => setApp(i)}
-                    className="relative flex shrink-0 items-center gap-3 rounded-2xl px-5 py-4 text-left text-[15px] font-bold transition-colors"
-                    style={{ color: app === i ? "#fff" : C.ink }}
-                  >
-                    {app === i && (
-                      <motion.span
-                        layoutId="app-pill"
-                        className="absolute inset-0 rounded-2xl shadow-lg"
-                        style={{ background: `linear-gradient(90deg,${C.navy},${C.navyLight})` }}
-                        transition={{ type: "spring", stiffness: 380, damping: 32 }}
-                      />
-                    )}
-                    {app !== i && <span className="absolute inset-0 rounded-2xl bg-white shadow-sm" />}
-                    <span className="relative">{name}</span>
-                  </button>
-                ))}
+            <div className="flex flex-wrap items-end justify-between gap-5">
+              <div>
+                <SectionHead eyebrow="Explore More">
+                  Related <Accent>Products</Accent>
+                </SectionHead>
               </div>
-
-              <div className="relative min-h-[300px] overflow-hidden rounded-[32px] bg-white p-8 shadow-[0_20px_50px_rgba(12,41,97,0.08)] sm:p-12">
-                <span
-                  aria-hidden
-                  className="absolute -right-10 -top-10 h-48 w-48 rounded-full opacity-20 blur-2xl"
-                  style={{ background: C.orange }}
-                />
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={app}
+              <a href="/products" className="mb-1 inline-flex items-center gap-2 rounded-full border border-[#0C2961] px-5 py-3 text-sm font-bold text-[#0C2961] transition hover:bg-[#0C2961] hover:text-white">
+                View All Products <ArrowUpRight size={16} />
+              </a>
+            </div>
+            <div className="mt-9 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+              {RELATED.map((item, i) => {
+                const Icon = item.icon;
+                return (
+                  <motion.a
+                    key={item.name}
+                    href={item.href}
                     initial={{ opacity: 0, y: 24 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -16 }}
-                    transition={{ duration: 0.4, ease: EASE }}
-                    className="relative"
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={VIEW}
+                    transition={{ duration: 0.5, delay: i * 0.07, ease: EASE }}
+                    whileHover={{ y: -5 }}
+                    className="group flex min-h-[132px] items-center justify-between gap-4 rounded-[24px] border border-slate-200 bg-white p-5 shadow-[0_12px_30px_rgba(12,41,97,0.06)]"
                   >
-                    <h3 className="mt-6 text-3xl font-extrabold tracking-tight sm:text-4xl">
-                      {APPLICATIONS[app].name}
-                    </h3>
-                    <p className="mt-4 max-w-[52ch] text-lg leading-relaxed" style={{ color: C.muted }}>
-                      {APPLICATIONS[app].text}
-                    </p>
-                    <a
-                      href="#enquiry"
-                      className="mt-7 inline-flex items-center gap-2 text-sm font-extrabold"
-                      style={{ color: C.orange }}
-                    >
-                      Plan an end-cap for your store <ArrowUpRight size={18} />
-                    </a>
-                  </motion.div>
-                </AnimatePresence>
-              </div>
+                    <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-slate-50 text-[#0C2961] transition group-hover:bg-orange-50 group-hover:text-[#E75B0C]">
+                      <Icon size={34} strokeWidth={1.5} />
+                    </span>
+                    <span className="flex-1 text-sm font-extrabold leading-snug text-[#0C2961]">{item.name}</span>
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#E75B0C] text-white transition group-hover:translate-x-1">
+                      <ArrowRight size={17} />
+                    </span>
+                  </motion.a>
+                );
+              })}
             </div>
           </div>
         </section>
-
-        {/* ================= WHY ARYA ================= */}
-        <section id="why" className="scroll-mt-24 px-5 pb-20 sm:px-8 lg:pb-10">
-          <div className="relative mx-auto max-w-[1280px] overflow-hidden rounded-[36px] border border-white bg-gradient-to-br from-white to-[#F1F3F4] p-8 shadow-[0_24px_60px_rgba(12,41,97,0.08)] sm:p-12 lg:p-16">
-            <div
-              aria-hidden
-              className="absolute bottom-0 right-0 h-36 w-60"
-              style={{
-                background: `linear-gradient(135deg,${C.orangeLight},${C.orange})`,
-                clipPath: "polygon(100% 0,100% 100%,22% 100%)",
-                opacity: 0.25,
-              }}
-            />
-            <SectionHead eyebrow={`Why Choose ${BRAND.name}`}>
-              A manufacturer you can <Accent>rely on</Accent>
-            </SectionHead>
-
-            <div className="relative mt-12 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
-              {WHY.map(({ title, text }, i) => (
-                <motion.div
-                  key={title}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={VIEW}
-                  transition={{ duration: 0.6, delay: (i % 3) * 0.1, ease: EASE }}
-                  className="flex gap-4"
-                >
-                  <span
-                    className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-sm font-black"
-                    style={{ background: "rgba(196,122,74,0.13)", color: C.orange }}
-                  >
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <div>
-                    <h3 className="text-lg font-extrabold">{title}</h3>
-                    <p className="mt-1 text-sm leading-relaxed" style={{ color: C.muted }}>{text}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-   
-
         {/* ================= MOBILE ACTION BAR ================= */}
         <div className="fixed inset-x-0 bottom-0 z-50 grid grid-cols-3 gap-2 border-t border-slate-200 bg-white/95 p-3 backdrop-blur-xl lg:hidden">
           <a href={BRAND.tel} className="flex items-center justify-center gap-2 rounded-xl py-3 text-sm font-bold text-white" style={{ background: C.navy }}>

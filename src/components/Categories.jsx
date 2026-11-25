@@ -133,7 +133,7 @@ function CategoryCard({ item, index, active, reduce }) {
         </div>
 
         {/* Product Image */}
-        <div className="relative flex h-[245px] shrink-0 items-center
+        <div className="relative flex h-[305px] shrink-0 items-center
           justify-center overflow-hidden rounded-[18px] bg-white p-2">
 
           <motion.img
