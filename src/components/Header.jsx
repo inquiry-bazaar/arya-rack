@@ -516,7 +516,7 @@ export default function Header() {
             label: "Call us",
             bg: "#DC2626",
             icon: (
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-red-600">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full text-white">
                 <Phone size={21} fill="currentColor" />
               </span>
             ),
