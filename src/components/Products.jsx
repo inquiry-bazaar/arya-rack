@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import { raw } from "@/Data/product-source.mjs";
+import { raw, slugify } from "@/Data/product-source.mjs";
 import {
   ArrowUpRight,
   ChevronLeft,
@@ -21,7 +21,7 @@ const products = raw.map((product, index) => ({
   name: product.title,
   category: product.category,
   image: product.image,
-  slug: product.page,
+  slug: slugify(product.title),
   description: product.desc,
 }));
 
@@ -111,7 +111,7 @@ export default function Products() {
 
               {/* Product Image */}
               <Link
-                href={`/products/${product.slug}`}
+                href={`/${product.slug}`}
                 className="relative block overflow-hidden rounded-xl bg-[#F3F5F7]"
               >
             <div className="relative aspect-square w-full overflow-hidden">
@@ -141,7 +141,7 @@ export default function Products() {
                 </h3>
 
                 <Link
-                  href={`/products/${product.slug}`}
+                  href={`/${product.slug}`}
                   className="mt-2.5 inline-flex items-center gap-2 border-b border-[#183B67]/30 pb-1 text-xs font-semibold text-[#183B67] transition-all duration-300 hover:border-[#D98A4A] hover:text-[#D98A4A]"
                 >
                   Read More

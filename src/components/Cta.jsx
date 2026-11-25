@@ -23,7 +23,7 @@ export default function CTA() {
       transition={{ duration: 0.45 }}
       className="mb-7 flex flex-col gap-5 rounded-[20px] border border-[#E2E9F2]
         bg-[#F5F7FA] p-3 shadow-[0_8px_24px_rgba(15,42,75,0.05)]
-        sm:mb-8 sm:flex-row sm:items-center sm:justify-between sm:px-7 sm:py-5"
+        sm:mb-8 sm:flex-row sm:items-center sm:justify-between sm:px-7 py-10"
     >
       <div className="max-w-2xl">
         <span className="mb-2 block text-[10px] font-extrabold uppercase
@@ -31,9 +31,9 @@ export default function CTA() {
           Need expert assistance?
         </span>
 
-        <h3 className="!text-[30px] font-extrabold leading-snug tracking-tight
+        <h3 className="!text-[40px] font-extrabold leading-snug tracking-tight
           text-[#193653] sm:text-xl">
-          Let’s find the right display rack for your business.
+          Let’s find the right display rack <br />for your business.
         </h3>
 
         <p className="mt-1 text-xs leading-relaxed text-[#64748B] sm:text-sm">

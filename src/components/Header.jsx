@@ -177,9 +177,7 @@ export default function Header() {
               </span>
               <span className="h-4 w-px bg-white/35" />
               <span className="flex items-center gap-2 whitespace-nowrap">
-                <Clock size={16} className="shrink-0" style={{ color: C.orangeLight }} />
-                <span className="hidden sm:inline">Mon - Sat: 9:30 AM - 6:30 PM</span>
-                <span className="sm:hidden">Mon - Sat</span>
+                GSTIN - 07ECEPM6891P1ZN
               </span>
             </div>
 

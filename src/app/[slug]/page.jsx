@@ -174,7 +174,8 @@ export default function SingleProductPage() {
   const PRODUCT =
     slug === "end-display-rack"
       ? END_DISPLAY_PRODUCT
-      : raw.find((item) => slugify(item.title) === slug);
+      : raw.find((item) => slugify(item.title) === slug)
+        || raw.find((item) => slugify(item.page) === slug);
 
   if (!PRODUCT) notFound();
 
@@ -586,59 +587,7 @@ export default function SingleProductPage() {
         </div>
       </section>
 
-      {/* ENQUIRY */}
-      {/* <section id="enquiry" className="scroll-mt-24 bg-white px-5 py-9 sm:px-8 lg:py-12">
-        <motion.div
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={fadeUp}
-          className="mx-auto grid max-w-[1360px] overflow-hidden rounded-[26px] border border-[#dce5ed] bg-white shadow-[0_18px_45px_rgba(25,52,75,0.08)] lg:grid-cols-[0.72fr_1.28fr]"
-        >
-          <div className="relative overflow-hidden bg-gradient-to-br from-[#174f7e] to-[#0a365f] p-7 text-white sm:p-9">
-            <span className="absolute -bottom-20 -right-16 h-64 w-64 rounded-full border-[25px] border-white/5" />
-            <div className="relative z-10">
-              <SectionEyebrow>Send an enquiry</SectionEyebrow>
-              <h2 className="text-2xl font-black leading-tight text-white sm:text-[30px]">
-                Get a Quote for <span className="text-[#ffb078]">{PRODUCT.title}</span>
-              </h2>
-              <p className="mt-4 max-w-sm text-sm leading-6 text-blue-100">
-                Share your requirement and our team will get back to you with the right display rack solution.
-              </p>
-              <div className="mt-7 space-y-4 text-sm font-medium text-white">
-                <p className="flex items-center gap-3"><Phone size={17} className="text-white" /> Contact Our Sales Team</p>
-                <p className="flex items-center gap-3"><MessageCircle size={17} className="text-white" /> Quick WhatsApp Assistance</p>
-                <p className="flex items-center gap-3"><ShieldCheck size={17} className="text-white" /> Customised Product Solutions</p>
-              </div>
-            </div>
-          </div>
-
-          <form onSubmit={submitInquiry} className="grid items-end gap-4 p-6 sm:grid-cols-2 sm:p-8 lg:grid-cols-2">
-            {[
-              { key: "name", label: "Your Name", placeholder: "Enter your name", required: true },
-              { key: "phone", label: "Phone Number", placeholder: "Enter phone number", required: true, type: "tel" },
-              { key: "email", label: "Email Address", placeholder: "Enter your email", type: "email" },
-              { key: "location", label: "Location", placeholder: "Enter your location" },
-              { key: "message", label: "Requirement / Message", placeholder: "Tell us your requirement...", required: true },
-            ].map(({ key, label, placeholder, required, type }) => (
-              <label key={key} className="block text-xs font-extrabold text-[#263747]">
-                {label} {required && <span className="text-[#ed7628]">*</span>}
-                <input
-                  required={required}
-                  type={type || "text"}
-                  value={form[key]}
-                  onChange={update(key)}
-                  placeholder={placeholder}
-                  className="mt-2 h-12 w-full rounded-xl border border-[#dce5ed] bg-[#f4f6f8] px-4 text-sm font-medium text-[#263747] outline-none transition placeholder:text-slate-400 focus:border-[#174f7e] focus:bg-white"
-                />
-              </label>
-            ))}
-            <button type="submit" className="inline-flex h-12 items-center justify-center gap-3 rounded-xl bg-[#ed7628] px-5 text-sm font-extrabold text-white transition hover:-translate-y-0.5 hover:bg-[#dc641b]">
-              Send Enquiry <ArrowRight size={17} />
-            </button>
-          </form>
-        </motion.div>
-      </section> */}
+     
 
       {/* RELATED PRODUCTS */}
       {RELATED.length > 0 && (
