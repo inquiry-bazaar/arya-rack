@@ -37,7 +37,7 @@ export const raw = [
   // ===================== Supermarket & Grocery Display Racks =====================
   {
     title: "Supermarket Display Rack",
-    image: "/images/products/supermarket-display-rack.jpg",
+    image: "/imgi_148_supermarket-rack-1.webp",
     category: "Supermarket & Grocery Display Racks",
     subtitle: "Wall-mounted / Free-standing, 6–7 ft",
     desc: "Heavy-duty mild steel supermarket racking with adjustable shelves and powder-coated finish.",

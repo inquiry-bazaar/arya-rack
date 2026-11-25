@@ -1,43 +1,36 @@
+ "use client";
 
-"use client";
-
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { useParams, notFound } from "next/navigation";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { raw, slugify } from "@/Data/product-source.mjs";
-
 import {
   ArrowRight,
   ArrowUpRight,
-  CheckCircle2,
+  Check,
   ChevronDown,
-  Clock3,
+  ChevronLeft,
+  ChevronRight,
+  Download,
+  FileText,
+  Image as ImageIcon,
   Layers3,
-  Mail,
-  MapPin,
   MessageCircle,
   MoveVertical,
-  PackageCheck,
+  Package,
   Phone,
   ShieldCheck,
   Sparkles,
   Wrench,
+  Maximize2,
 } from "lucide-react";
 
-// ==========================================
-// BRAND DETAILS
-// ==========================================
-
+// Replace these placeholders with Arya Insulation's actual contact details.
 const BRAND = {
   name: "Arya Industry",
   whatsapp: "91XXXXXXXXXX",
   tel: "tel:+91XXXXXXXXXX",
 };
-
-// ==========================================
-// END DISPLAY RACK FALLBACK
-// Add this product to raw later if required
-// ==========================================
 
 const END_DISPLAY_PRODUCT = {
   title: "End Display Rack",
@@ -46,100 +39,130 @@ const END_DISPLAY_PRODUCT = {
   subtitle: "5 ft, 4 shelves",
   desc: "Designed to maximise product visibility at aisle ends, the End Display Rack offers a strong and organised solution for promotional and fast-moving items. Its sturdy backsheet, panel beading and stoppers keep products secure, while the powder-coated finish ensures long-term durability.",
   page: "end-display-rack",
-  alts: ["End Display Rack"],
   specs: {
     "Rack Type": "Gondola End Cap",
-    "Material": "Mild Steel",
-    "Height": "5 ft",
+    Material: "Mild Steel",
+    Height: "5 ft",
     "No. of Shelves": "4 Shelves",
-    "Backsheet": "Available",
-    "Finish": "Powder Coated",
-    "Brand": "Arya Industry",
+    Backsheet: "Available",
+    Finish: "Powder Coated",
+    Brand: "Arya Industry",
     "Usage/Application": "Supermarket, Retail Store",
   },
 };
 
-// ==========================================
-// ANIMATION
-// ==========================================
+const ease = [0.22, 1, 0.36, 1];
 
-const reveal = {
-  hidden: { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.65,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  },
+const fadeUp = {
+  hidden: { opacity: 0, y: 28 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease } },
 };
 
-// ==========================================
-// WHATSAPP LINK
-// ==========================================
+const stagger = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.1 } },
+};
 
 const waLink = (message = "") =>
-  `https://wa.me/${BRAND.whatsapp}${
-    message ? `?text=${encodeURIComponent(message)}` : ""
-  }`;
+  `https://wa.me/${BRAND.whatsapp}${message ? `?text=${encodeURIComponent(message)}` : ""}`;
 
-// ==========================================
-// SECTION LABEL
-// ==========================================
-
-function SectionLabel({ children }) {
+function SectionEyebrow({ children }) {
   return (
-    <div className="mb-4 flex items-center gap-3 text-sm font-extrabold uppercase tracking-wide text-orange-600">
-      <span className="h-[4px] w-8 rounded-full bg-orange-500" />
+    <p className="mb-3 flex items-center gap-2 text-[10px] font-extrabold uppercase tracking-[0.18em] text-[#e96b20] sm:text-[11px]">
+      <span className="h-[2px] w-7 rounded-full bg-[#ed7628]" />
       {children}
-    </div>
+    </p>
   );
 }
 
-// ==========================================
-// PRODUCT ANATOMY
-// ==========================================
-
-function AnatomyGraphic({ product, height }) {
+function SpecTile({ icon: Icon, value, label }) {
   return (
-    <div className="relative flex min-h-[330px] items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-slate-50 to-blue-50 p-4 sm:p-7">
+    <motion.div
+      variants={fadeUp}
+      whileHover={{ y: -5 }}
+      className="flex min-h-[104px] flex-col items-center justify-center rounded-2xl border border-[#dce6f0] bg-white/90 px-2 py-4 text-center shadow-[0_8px_20px_rgba(16,49,78,0.07)]"
+    >
+      <Icon size={27} strokeWidth={1.8} className="mb-2 text-[#174f7e]" />
+      <strong className="text-[13px] font-black leading-tight text-[#182b3e] sm:text-sm">
+        {value}
+      </strong>
+      <span className="mt-1 text-[11px] text-slate-500">{label}</span>
+    </motion.div>
+  );
+}
 
-      <div className="absolute left-5 top-1/2 -translate-y-1/2 text-center text-[#092b50]">
-        <MoveVertical className="mx-auto mb-2" size={25} />
+function ProductAnatomy({ product, height }) {
+  const labels = [
+    { title: "Top Canopy", sub: "(Optional)", side: "left", top: "13%" },
+    { title: "Adjustable", sub: "Shelf", side: "left", top: "43%" },
+    { title: "Base Shelf", sub: "", side: "left", top: "77%" },
+    { title: "Upright", sub: "Frame", side: "right", top: "25%" },
+    { title: "Back Panel", sub: "", side: "right", top: "62%" },
+  ];
 
-        <strong className="block text-xl sm:text-2xl">
-          {height}
-        </strong>
-
-        <span className="text-xs">Height</span>
-      </div>
-
-      <img
+  return (
+    <div className="relative min-h-[370px] overflow-hidden rounded-[28px] bg-[radial-gradient(ellipse_at_52%_48%,#ffffff_0%,#eef4f9_58%,#e6eef6_100%)] px-3 py-5 sm:min-h-[450px] sm:px-5">
+      <div className="absolute left-1/2 top-1/2 h-[78%] w-[65%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#c8d8e7]" />
+      <div className="absolute left-1/2 top-1/2 h-[66%] w-[55%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/70 shadow-[0_18px_45px_rgba(20,58,91,0.08)]" />
+      <motion.img
+        initial={{ opacity: 0, scale: 0.92, y: 12 }}
+        whileInView={{ opacity: 1, scale: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.25 }}
+        transition={{ duration: 0.85, ease }}
         src={product.image}
-        alt={product.title}
-        className="h-[290px] w-[58%] object-contain sm:h-[330px]"
-        onError={(e) => {
-          e.currentTarget.style.opacity = "0";
-        }}
+        alt={`${product.title} component overview`}
+        className="absolute left-1/2 top-1/2 z-10 max-h-[82%] w-[68%] -translate-x-1/2 -translate-y-1/2 object-contain drop-shadow-[0_20px_20px_rgba(17,42,65,0.15)]"
+        onError={(event) => { event.currentTarget.style.opacity = "0"; }}
       />
 
-      <span className="absolute bottom-3 left-1/2 -translate-x-1/2 rounded-full bg-white/90 px-3 py-1 text-[10px] font-bold tracking-wider text-slate-500">
-        PRODUCT DIMENSION GUIDE
+      {labels.map((item, index) => (
+        <motion.div
+          key={item.title + item.side}
+          initial={{ opacity: 0, x: item.side === "left" ? -14 : 14 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.12 + index * 0.08, duration: 0.5, ease }}
+          className={`absolute z-20 hidden -translate-y-1/2 items-center sm:flex ${
+            item.side === "left" ? "left-2" : "right-2"
+          }`}
+          style={{ top: item.top }}
+        >
+          {item.side === "left" ? (
+            <>
+              <span className="min-w-[94px] rounded-xl border border-[#d6e1ec] bg-white/95 px-3 py-2 text-center text-[10px] font-extrabold leading-tight text-[#173653] shadow-[0_6px_15px_rgba(17,42,65,0.08)]">
+                {item.title}<br />{item.sub}
+              </span>
+              <span className="h-px w-5 bg-[#ed7628]" />
+              <span className="h-2 w-2 rounded-full bg-[#ed7628] ring-4 ring-orange-100" />
+            </>
+          ) : (
+            <>
+              <span className="h-2 w-2 rounded-full bg-[#ed7628] ring-4 ring-orange-100" />
+              <span className="h-px w-5 bg-[#ed7628]" />
+              <span className="min-w-[94px] rounded-xl border border-[#d6e1ec] bg-white/95 px-3 py-2 text-center text-[10px] font-extrabold leading-tight text-[#173653] shadow-[0_6px_15px_rgba(17,42,65,0.08)]">
+                {item.title}<br />{item.sub}
+              </span>
+            </>
+          )}
+        </motion.div>
+      ))}
+
+      <div className="absolute bottom-4 left-4 z-20 rounded-xl border border-[#dce6ef] bg-white/90 px-3 py-2 text-center shadow-sm sm:hidden">
+        <MoveVertical size={17} className="mx-auto mb-1 text-[#174f7e]" />
+        <strong className="block text-xs text-[#173653]">{height}</strong>
+        <span className="text-[9px] text-slate-500">Height</span>
+      </div>
+      <span className="absolute bottom-3 right-3 z-20 rounded-full bg-white/90 px-3 py-1 text-[9px] font-bold uppercase tracking-wider text-slate-500 shadow-sm">
+        Product component guide
       </span>
     </div>
   );
 }
 
-// ==========================================
-// MAIN DYNAMIC PRODUCT PAGE
-// ==========================================
-
 export default function SingleProductPage() {
   const { slug } = useParams();
-
-  const [mobileMenu, setMobileMenu] = useState(false);
-
+  const [activeTab, setActiveTab] = useState("specifications");
+  const [selectedImage, setSelectedImage] = useState(0);
   const [form, setForm] = useState({
     name: "",
     phone: "",
@@ -148,37 +171,19 @@ export default function SingleProductPage() {
     message: "",
   });
 
-  const [submitting, setSubmitting] = useState(false);
-
-  // ========================================
-  // FIND PRODUCT FROM RAW ARRAY
-  // ========================================
-
   const PRODUCT =
     slug === "end-display-rack"
       ? END_DISPLAY_PRODUCT
-      : raw.find(
-          (item) => slugify(item.title) === slug
-        );
+      : raw.find((item) => slugify(item.title) === slug);
 
-  if (!PRODUCT) {
-    notFound();
-  }
-
-  // ========================================
-  // DYNAMIC PRODUCT SPECIFICATIONS
-  // ========================================
+  if (!PRODUCT) notFound();
 
   const SPECS = Object.entries(PRODUCT.specs || {});
-
   const getSpec = (keywords, fallback = "Custom") => {
-    const entry = SPECS.find(([key]) =>
-      keywords.some((word) =>
-        key.toLowerCase().includes(word.toLowerCase())
-      )
+    const match = SPECS.find(([key]) =>
+      keywords.some((word) => key.toLowerCase().includes(word.toLowerCase()))
     );
-
-    return entry?.[1] || fallback;
+    return match?.[1] || fallback;
   };
 
   const HEIGHT = getSpec(["height"]);
@@ -186,18 +191,18 @@ export default function SingleProductPage() {
   const MATERIAL = getSpec(["material"]);
   const FINISH = getSpec(["finish"]);
 
-  const LOAD = getSpec(["load capacity", "capacity"]);
-  
-  // ========================================
-  // DYNAMIC RELATED PRODUCTS
-  // ========================================
+  const galleryImages = useMemo(() => {
+    const supplied = PRODUCT.gallery || PRODUCT.images || [];
+    const images = supplied
+      .map((item) => typeof item === "string" ? item : item?.src || item?.image)
+      .filter(Boolean);
+    return images.length ? images : [PRODUCT.image];
+  }, [PRODUCT]);
+
+  const currentImage = galleryImages[selectedImage] || PRODUCT.image;
 
   const RELATED = raw
-    .filter(
-      (item) =>
-        item.category === PRODUCT.category &&
-        item.title !== PRODUCT.title
-    )
+    .filter((item) => item.category === PRODUCT.category && item.title !== PRODUCT.title)
     .slice(0, 4)
     .map((item) => ({
       name: item.title,
@@ -205,53 +210,35 @@ export default function SingleProductPage() {
       href: `/${slugify(item.title)}`,
     }));
 
-  // ========================================
-  // DYNAMIC PRODUCT FEATURES
-  // ========================================
-
   const FEATURES = [
     {
-      icon: Layers3,
-      title: SHELVES !== "Custom" ? SHELVES : "Flexible Display",
-      text: `Designed for organised product display with ${SHELVES.toLowerCase()}.`,
-    },
-    {
       icon: ShieldCheck,
-      title: MATERIAL,
-      text: `Manufactured using ${MATERIAL.toLowerCase()} for reliable everyday use.`,
+      title: "Durable & Sturdy",
+      text: "Long-lasting performance for everyday retail use.",
     },
     {
-      icon: Sparkles,
-      title: FINISH,
-      text: `Quality surface finish designed for an attractive retail presentation.`,
+      icon: Layers3,
+      title: "Space Optimisation",
+      text: "Organised product display and better floor planning.",
     },
     {
       icon: Wrench,
-      title: "Customisation",
-      text: "Available with customised sizes and configurations as per requirements.",
+      title: "Customised Options",
+      text: "Configurations tailored to your store layout.",
+    },
+    {
+      icon: Sparkles,
+      title: "Premium Finish",
+      text: "Clean, modern look with a quality surface finish.",
     },
   ];
 
-  // ========================================
-  // FORM UPDATE
-  // ========================================
-
-  const update = (key) => (event) => {
-    setForm((old) => ({
-      ...old,
-      [key]: event.target.value,
-    }));
-  };
-
-  // ========================================
-  // WHATSAPP ENQUIRY
-  // ========================================
+  const whatsappMessage = `Hello ${BRAND.name}, I am interested in ${PRODUCT.title}.`;
+  const update = (key) => (event) =>
+    setForm((old) => ({ ...old, [key]: event.target.value }));
 
   const submitInquiry = (event) => {
     event.preventDefault();
-
-    setSubmitting(true);
-
     const message = [
       `Hello ${BRAND.name}, I want to enquire about ${PRODUCT.title}.`,
       `Name: ${form.name}`,
@@ -261,683 +248,459 @@ export default function SingleProductPage() {
       `Product: ${PRODUCT.title}`,
       `Requirement: ${form.message}`,
     ].join("\n");
-
-    window.open(
-      waLink(message),
-      "_blank",
-      "noopener,noreferrer"
-    );
-
-    setSubmitting(false);
+    window.open(waLink(message), "_blank", "noopener,noreferrer");
   };
 
-  const whatsappMessage = `Hello ${BRAND.name}, I am interested in ${PRODUCT.title}.`;
+  const tabs = [
+    { id: "specifications", label: "Specifications", icon: FileText },
+    { id: "description", label: "Description", icon: Package },
+    { id: "gallery", label: "Gallery", icon: ImageIcon },
+  ];
 
-  // ========================================
-  // PAGE UI
-  // ========================================
+  const changeImage = (direction) => {
+    setSelectedImage((current) =>
+      (current + direction + galleryImages.length) % galleryImages.length
+    );
+  };
 
   return (
-    <main className="min-h-screen overflow-hidden bg-white font-sans text-[#09264b]">
+    <main className="min-h-screen overflow-hidden bg-white font-sans text-[#1c2936]">
+      {/* PRODUCT HERO */}
+      <section className="relative isolate overflow-hidden bg-[linear-gradient(118deg,#f7f9fb_0%,#eef3f8_48%,#ffffff_100%)]">
+        <div className="pointer-events-none absolute -right-28 top-0 h-full w-[43%] -skew-x-[24deg] bg-white/70" />
+        <div className="pointer-events-none absolute -right-20 top-[-18%] h-[520px] w-[520px] rounded-full border-[54px] border-[#dce7f1]/50" />
 
-      {/* =====================================
-          HERO SECTION
-      ===================================== */}
+        <div className="relative mx-auto max-w-[1440px] px-5 pb-8 pt-4 sm:px-8 lg:px-10 lg:pb-10">
+          {/* Keep the site's global header/navbar outside this component. */}
+          <nav className="mb-6 flex flex-wrap items-center gap-2 text-[11px] font-semibold text-slate-500">
+            <a href="/" className="transition hover:text-[#174f7e]">Home</a>
+            <ChevronRight size={13} />
+            <a href="/products" className="transition hover:text-[#174f7e]">Products</a>
+            <ChevronRight size={13} />
+            <span className="font-extrabold text-[#263442]">{PRODUCT.title}</span>
+          </nav>
 
-      <section className="relative isolate bg-[linear-gradient(112deg,#f8fbff_0%,#edf4fc_54%,#e1ebf7_100%)]">
-
-        <div className="pointer-events-none absolute -right-24 top-0 h-full w-[52%] -skew-x-[23deg] bg-white/50" />
-
-        <div className="relative mx-auto max-w-[1440px] px-5 pb-7 pt-5 sm:px-8 lg:px-11 lg:pb-9">
-
-          {/* Breadcrumb */}
-
-          <div className="mb-5 flex flex-wrap items-center gap-2 text-xs font-semibold text-slate-600">
-
-            <a href="/" className="hover:text-orange-600">
-              ⌂ Home
-            </a>
-
-            <span>›</span>
-
-            <a href="/products" className="hover:text-orange-600">
-              Products
-            </a>
-
-            <span>›</span>
-
-            <span className="font-extrabold text-[#09264b]">
-              {PRODUCT.title}
-            </span>
-
-          </div>
-
-          <div className="grid items-center gap-3 lg:grid-cols-[0.95fr_1.05fr] lg:gap-4">
-
-            {/* Hero Content */}
-
+          <div className="grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
+            {/* Gallery */}
             <motion.div
-              variants={reveal}
               initial="hidden"
-              animate="visible"
-              className="relative z-10 py-3 lg:py-8"
+              animate="show"
+              variants={stagger}
+              className="grid min-w-0 grid-cols-[54px_minmax(0,1fr)] items-center gap-3 sm:grid-cols-[68px_minmax(0,1fr)] sm:gap-5"
             >
+              <div className="flex flex-col items-center gap-3">
+                <button
+                  type="button"
+                  onClick={() => changeImage(-1)}
+                  aria-label="Previous image"
+                  className="flex h-8 w-8 items-center justify-center rounded-full border border-[#d5e0ea] bg-white text-[#174f7e] shadow-sm transition hover:border-[#ed7628]"
+                >
+                  <ChevronDown size={17} className="rotate-180" />
+                </button>
+                {galleryImages.slice(0, 4).map((image, index) => (
+                  <motion.button
+                    variants={fadeUp}
+                    type="button"
+                    key={`${image}-${index}`}
+                    onClick={() => setSelectedImage(index)}
+                    aria-label={`View product image ${index + 1}`}
+                    className={`h-[62px] w-[54px] overflow-hidden rounded-xl border-2 bg-white p-1 transition sm:h-[76px] sm:w-[68px] ${
+                      selectedImage === index
+                        ? "border-[#ed7628] shadow-[0_5px_15px_rgba(237,118,40,0.16)]"
+                        : "border-[#dce4ec] hover:border-[#8ba9c3]"
+                    }`}
+                  >
+                    <img src={image} alt={`${PRODUCT.title} view ${index + 1}`} className="h-full w-full object-contain" />
+                  </motion.button>
+                ))}
+                <button
+                  type="button"
+                  onClick={() => changeImage(1)}
+                  aria-label="Next image"
+                  className="flex h-8 w-8 items-center justify-center rounded-full border border-[#d5e0ea] bg-white text-[#174f7e] shadow-sm transition hover:border-[#ed7628]"
+                >
+                  <ChevronDown size={17} />
+                </button>
+              </div>
 
-              <span className="inline-flex rounded-lg bg-orange-100 px-3 py-1.5 text-xs font-black uppercase text-orange-600">
+              <div className="group relative flex min-h-[330px] items-center justify-center overflow-hidden rounded-[28px] border border-white bg-[radial-gradient(circle_at_50%_42%,#ffffff_0%,#f1f4f7_70%,#e7edf3_100%)] p-4 shadow-[0_18px_45px_rgba(29,54,77,0.08)] sm:min-h-[455px] sm:p-7">
+                <div className="absolute left-1/2 top-1/2 h-[76%] w-[76%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/70 shadow-[0_20px_55px_rgba(29,54,77,0.08)]" />
+                <AnimatePresence mode="wait">
+                  <motion.img
+                    key={currentImage}
+                    src={currentImage}
+                    alt={PRODUCT.title}
+                    initial={{ opacity: 0, scale: 0.96, y: 8 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.98 }}
+                    transition={{ duration: 0.45, ease }}
+                    className="relative z-10 max-h-[390px] w-full object-contain drop-shadow-[0_22px_20px_rgba(28,48,66,0.15)] sm:max-h-[470px]"
+                    onError={(event) => { event.currentTarget.style.opacity = "0"; }}
+                  />
+                </AnimatePresence>
+                <span className="absolute bottom-4 left-4 z-20 rounded-full border border-[#dce5ed] bg-white/90 px-3 py-1.5 text-[9px] font-extrabold uppercase tracking-wider text-slate-500">
+                  Product view {selectedImage + 1}
+                </span>
+                <span className="absolute bottom-4 right-4 z-20 flex h-9 w-9 items-center justify-center rounded-full bg-[#174f7e] text-white shadow-md transition group-hover:scale-105">
+                  <Maximize2 size={16} />
+                </span>
+              </div>
+            </motion.div>
+
+            {/* Product information */}
+            <motion.div
+              initial={{ opacity: 0, x: 28 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.75, delay: 0.12, ease }}
+              className="relative z-10 py-2 lg:pl-1"
+            >
+              <span className="inline-flex rounded-full border border-[#edc9ae] bg-[#fff5ed] px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-wide text-[#d96520] sm:text-[11px]">
                 {PRODUCT.category}
               </span>
-
-              <h1 className="mt-4 max-w-[600px] text-[42px] font-black leading-[1.03] tracking-[-0.045em] text-[#09264b] sm:text-5xl lg:text-[64px]">
+              <h1 className="mt-5 max-w-[620px] text-[39px] font-black leading-[0.99] tracking-[-0.055em] text-[#202c38] sm:text-5xl lg:text-[60px]">
                 {PRODUCT.title}
               </h1>
-
-              <span className="mt-4 block h-[5px] w-16 bg-orange-500" />
-
-              <p className="mt-5 max-w-[560px] text-[15px] leading-[1.65] text-slate-700 sm:text-base">
+              <span className="mt-4 block h-[4px] w-[66px] rounded-full bg-[#ed7628]" />
+              <p className="mt-5 max-w-[590px] text-[14px] leading-[1.7] text-slate-600 sm:text-[15px]">
                 {PRODUCT.desc}
               </p>
 
-              <div className="mt-6 flex flex-wrap gap-3">
+              <motion.div
+                variants={stagger}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.3 }}
+                className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4"
+              >
+                <SpecTile icon={MoveVertical} value={HEIGHT} label="Height" />
+                <SpecTile icon={Layers3} value={SHELVES} label="Shelves" />
+                <SpecTile icon={Wrench} value={MATERIAL} label="Material" />
+                <SpecTile icon={Sparkles} value={FINISH} label="Coated Finish" />
+              </motion.div>
 
+              <div className="mt-7 flex flex-wrap gap-3">
                 <a
                   href="#enquiry"
-                  className="inline-flex h-12 items-center gap-3 rounded-xl bg-orange-500 px-6 text-sm font-extrabold text-white shadow-lg shadow-orange-500/20 transition hover:-translate-y-0.5 hover:bg-orange-600"
+                  className="inline-flex h-12 items-center justify-center gap-3 rounded-xl bg-[#ed7628] px-7 text-sm font-extrabold text-white shadow-[0_10px_22px_rgba(237,118,40,0.2)] transition duration-300 hover:-translate-y-1 hover:bg-[#dc641b]"
                 >
-                  Request a Quote
-                  <ArrowRight size={17} />
+                  Request a Quote <ArrowRight size={17} />
                 </a>
-
                 <a
                   href={waLink(whatsappMessage)}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex h-12 items-center gap-2 rounded-xl border border-emerald-600 bg-white px-5 text-sm font-extrabold text-[#09264b] transition hover:bg-emerald-50"
+                  className="inline-flex h-12 items-center justify-center gap-2 rounded-xl border border-[#174f7e] bg-white px-5 text-sm font-extrabold text-[#174f7e] transition duration-300 hover:-translate-y-1 hover:bg-[#edf4f9]"
                 >
-                  <MessageCircle
-                    size={19}
-                    className="text-emerald-600"
-                  />
-                  WhatsApp Now
+                  <Download size={17} /> Download Brochure
                 </a>
-
               </div>
-
             </motion.div>
-
-            {/* Hero Product Image */}
-
-            <motion.div
-              initial={{ opacity: 0, x: 35 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="relative flex min-h-[330px] items-center justify-center lg:min-h-[420px]"
-            >
-
-              <div className="absolute inset-5 rounded-[48%] bg-white/70 blur-2xl" />
-
-              <img
-                src={PRODUCT.image}
-                alt={PRODUCT.title}
-                className="relative z-10 max-h-[390px] w-[78%] object-contain drop-shadow-[0_24px_22px_rgba(9,38,75,0.16)] sm:max-h-[430px] lg:w-[72%]"
-                onError={(e) => {
-                  e.currentTarget.style.opacity = "0";
-                }}
-              />
-
-              {/* Dynamic Height */}
-
-              <div className="absolute right-0 top-[14%] z-20 hidden w-[145px] items-center gap-3 rounded-xl border border-blue-100 bg-white/95 px-3 py-3 shadow-lg sm:flex">
-
-                <MoveVertical className="text-orange-500" size={28} />
-
-                <span className="text-sm font-black leading-tight">
-                  {HEIGHT}
-                  <br />
-                  HEIGHT
-                </span>
-
-              </div>
-
-              {/* Dynamic Shelves */}
-
-              <div className="absolute right-0 top-[39%] z-20 hidden w-[145px] items-center gap-3 rounded-xl border border-blue-100 bg-white/95 px-3 py-3 shadow-lg sm:flex">
-
-                <Layers3 className="text-orange-500" size={27} />
-
-                <span className="text-sm font-black leading-tight">
-                  {SHELVES}
-                  <br />
-                  SHELVES
-                </span>
-
-              </div>
-
-              {/* Dynamic Material */}
-
-              <div className="absolute right-0 top-[64%] z-20 hidden w-[145px] items-center gap-3 rounded-xl border border-blue-100 bg-white/95 px-3 py-3 shadow-lg sm:flex">
-
-                <Wrench className="text-orange-500" size={27} />
-
-                <span className="text-sm font-black leading-tight">
-                  {MATERIAL}
-                  <br />
-                  MATERIAL
-                </span>
-
-              </div>
-
-            </motion.div>
-
           </div>
 
-          {/* =================================
-              SPECIFICATION STRIP
-          ================================= */}
-
-          <div className="relative z-10 mt-5 grid grid-cols-2 gap-y-4 rounded-2xl bg-[#082b50] px-5 py-5 text-white shadow-xl sm:grid-cols-4 sm:px-7 lg:mt-1">
-
-            {[
-              {
-                icon: MoveVertical,
-                title: HEIGHT,
-                sub: "Height",
-              },
-              {
-                icon: Layers3,
-                title: SHELVES,
-                sub: "Shelves / Levels",
-              },
-              {
-                icon: ShieldCheck,
-                title: MATERIAL,
-                sub: "Material",
-              },
-              {
-                icon: PackageCheck,
-                title: FINISH,
-                sub: "Finish",
-              },
-            ].map(({ icon: Icon, title, sub }, i) => (
-
-              <div
-                key={sub}
-                className={`flex items-center justify-center gap-3 ${
-                  i > 1
-                    ? "sm:border-l sm:border-white/30"
-                    : ""
+          {/* Navy-blue benefit ribbon: blue is a strong secondary colour, orange stays restrained. */}
+          <motion.div
+            variants={stagger}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.25 }}
+            className="relative z-10 mt-8 grid grid-cols-2 gap-y-5 overflow-hidden rounded-[22px] bg-gradient-to-r from-[#174f7e] via-[#0d426f] to-[#08365f] px-4 py-5 text-white shadow-[0_15px_35px_rgba(18,66,105,0.18)] sm:grid-cols-4 sm:px-6 lg:mt-9"
+          >
+            {FEATURES.map(({ icon: Icon, title, text }, index) => (
+              <motion.div
+                variants={fadeUp}
+                key={title}
+                className={`flex items-center gap-3 px-2 sm:px-4 ${
+                  index > 0 ? "sm:border-l sm:border-white/25" : ""
                 }`}
               >
-
-                <Icon
-                  size={31}
-                  strokeWidth={1.8}
-                  className="shrink-0 text-white"
-                />
-
-                <div className="min-w-0">
-                  <strong className="block break-words text-sm sm:text-lg">
-                    {title}
-                  </strong>
-
-                  <span className="text-sm text-blue-100">
-                    {sub}
-                  </span>
-                </div>
-
-              </div>
-
-            ))}
-
-            <span className="absolute -right-1 bottom-0 top-0 hidden w-3 skew-x-[-23deg] rounded-r-xl bg-orange-500 sm:block" />
-
-          </div>
-
-        </div>
-      </section>
-
-      {/* =====================================
-          PRODUCT OVERVIEW
-      ===================================== */}
-
-      <section
-        id="overview"
-        className="bg-white px-5 py-14 sm:px-8 lg:py-16"
-      >
-
-        <div className="mx-auto grid max-w-[1360px] items-center gap-9 lg:grid-cols-[0.92fr_1.08fr] lg:gap-14">
-
-          <motion.div
-            variants={reveal}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-
-            <SectionLabel>
-              Product Overview
-            </SectionLabel>
-
-            <h2 className="max-w-[520px] text-3xl font-black leading-[1.12] tracking-tight text-[#09264b] sm:text-[39px]">
-              Reliable {PRODUCT.title} for Modern Retail Spaces
-            </h2>
-
-            <p className="mt-4 max-w-[570px] text-[15px] leading-[1.7] text-slate-600">
-              {PRODUCT.desc}
-            </p>
-
-            <div className="mt-5 flex flex-wrap gap-2">
-
-              <span className="rounded-lg bg-blue-50 px-3 py-2 text-xs font-bold text-[#09264b]">
-                {PRODUCT.category}
-              </span>
-
-              <span className="rounded-lg bg-orange-50 px-3 py-2 text-xs font-bold text-orange-600">
-                {PRODUCT.subtitle || "Customised Options Available"}
-              </span>
-
-            </div>
-
-          </motion.div>
-
-          {/* Dynamic Features */}
-
-          <div className="grid gap-4 sm:grid-cols-2">
-
-            {FEATURES.map(({ icon: Icon, title, text }, i) => (
-
-              <motion.div
-                key={title}
-                variants={reveal}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.06 }}
-                className="flex min-h-[112px] items-center gap-4 rounded-2xl border border-blue-100 bg-[#f2f6fc] p-4 transition hover:-translate-y-1 hover:shadow-lg sm:p-5"
-              >
-
-                <Icon
-                  className="shrink-0 text-orange-500"
-                  size={34}
-                  strokeWidth={1.8}
-                />
-
+                <Icon size={31} strokeWidth={1.7} className="shrink-0 text-white" />
                 <div>
-                  <h3 className="text-base font-black text-[#09264b] sm:text-lg">
-                    {title}
-                  </h3>
-
-                  <p className="mt-1 text-xs leading-relaxed text-slate-600 sm:text-sm">
-                    {text}
-                  </p>
+                  <strong className="block text-xs font-extrabold sm:text-sm">{title}</strong>
+                  <span className="mt-1 block text-[10px] leading-4 text-blue-100 sm:text-[11px]">{text}</span>
                 </div>
-
               </motion.div>
-
             ))}
+            <span className="absolute -right-1 bottom-0 top-0 hidden w-2 skew-x-[-22deg] bg-[#ed7628] sm:block" />
+          </motion.div>
+        </div>
+      </section>
 
+      {/* KEY HIGHLIGHTS + PRODUCT ANATOMY */}
+      <section className="bg-white px-5 py-11 sm:px-8 lg:py-14">
+        <div className="mx-auto grid max-w-[1360px] items-center gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:gap-10">
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.25 }}
+            className="relative rounded-[28px] border border-[#dce5ed] bg-[linear-gradient(145deg,#f7f9fb,#edf3f8)] p-6 shadow-[0_14px_35px_rgba(25,52,75,0.07)] sm:p-8"
+          >
+            <span className="absolute -left-2 -top-2 h-16 w-28 rounded-tl-[28px] border-l-[5px] border-t-[5px] border-[#174f7e]" />
+            <h2 className="relative text-2xl font-black tracking-[-0.045em] text-[#202c38] sm:text-[30px]">
+              Key <span className="text-[#174f7e]">Highlights</span>
+            </h2>
+            <span className="mt-3 block h-[4px] w-12 rounded-full bg-[#ed7628]" />
+            <ul className="mt-6 space-y-4">
+              {[
+                "Adjustable shelving for flexible display",
+                "High load-bearing capacity",
+                "Premium powder-coated finish",
+                "Ideal for supermarkets & grocery stores",
+              ].map((item, index) => (
+                <motion.li
+                  key={item}
+                  initial={{ opacity: 0, x: -12 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.08, duration: 0.45, ease }}
+                  className="flex items-center gap-3 text-[13px] font-semibold text-[#334252] sm:text-sm"
+                >
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#174f7e] text-white">
+                    <Check size={14} strokeWidth={3} />
+                  </span>
+                  {item}
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
+
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <div className="mb-3">
+              <h2 className="text-2xl font-black tracking-[-0.045em] text-[#202c38] sm:text-[30px]">
+                Product <span className="text-[#174f7e]">Anatomy</span>
+              </h2>
+              <span className="mt-3 block h-[4px] w-12 rounded-full bg-[#ed7628]" />
+            </div>
+            <ProductAnatomy product={PRODUCT} height={HEIGHT} />
+          </motion.div>
+        </div>
+      </section>
+
+      {/* PRODUCT DETAILS TABS */}
+      <section className="bg-[linear-gradient(180deg,#f7f9fb_0%,#eef3f8_100%)] px-5 pb-12 sm:px-8 lg:pb-16">
+        <div className="mx-auto max-w-[1360px]">
+          <div className="flex max-w-[690px] flex-wrap gap-1 rounded-t-[20px] border border-[#dce5ed] border-b-0 bg-white/80 p-1.5">
+            {tabs.map(({ id, label, icon: Icon }) => (
+              <button
+                key={id}
+                type="button"
+                onClick={() => setActiveTab(id)}
+                className={`flex min-w-0 flex-1 items-center justify-center gap-2 rounded-xl px-3 py-3 text-xs font-extrabold transition sm:text-sm ${
+                  activeTab === id
+                    ? "bg-[#174f7e] text-white shadow-[0_6px_15px_rgba(23,79,126,0.2)]"
+                    : "text-[#34485b] hover:bg-[#edf3f8]"
+                }`}
+              >
+                <Icon size={17} /> {label}
+              </button>
+            ))}
           </div>
 
-        </div>
-
-      </section>
-
-      {/* =====================================
-          PRODUCT ANATOMY + SPECIFICATIONS
-      ===================================== */}
-
-      <section className="bg-white px-5 pb-14 sm:px-8 lg:pb-16">
-
-        <div className="mx-auto grid max-w-[1360px] gap-6 lg:grid-cols-[1.2fr_1fr]">
-
-          {/* Product Anatomy */}
-
-          <motion.div
-            variants={reveal}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="rounded-2xl border border-blue-100 bg-white p-5 shadow-[0_10px_30px_rgba(9,38,75,0.05)] sm:p-6"
-          >
-
-            <h2 className="text-2xl font-black tracking-tight text-[#09264b] sm:text-[28px]">
-              Product Anatomy
-            </h2>
-
-            <span className="mt-2 block h-1 w-12 bg-orange-500" />
-
-            <div className="mt-3">
-              <AnatomyGraphic
-                product={PRODUCT}
-                height={HEIGHT}
-              />
-            </div>
-
-          </motion.div>
-
-          {/* Specifications */}
-
-          <motion.div
-            id="specifications"
-            variants={reveal}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="rounded-2xl border border-blue-100 bg-white p-5 shadow-[0_10px_30px_rgba(9,38,75,0.05)] sm:p-6"
-          >
-
-            <h2 className="text-2xl font-black tracking-tight text-[#09264b] sm:text-[28px]">
-              Specifications
-            </h2>
-
-            <span className="mt-2 block h-1 w-12 bg-orange-500" />
-
-            <div className="mt-4 overflow-hidden rounded-xl border border-blue-100">
-
-              {SPECS.map(([key, value], i) => (
-
-                <div
-                  key={key}
-                  className={`grid grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] text-[12px] sm:text-[13px] ${
-                    i % 2 ? "bg-white" : "bg-[#f0f4fa]"
-                  }`}
+          <div className="min-h-[275px] overflow-hidden rounded-b-[24px] rounded-tr-[24px] border border-[#dce5ed] bg-white p-5 shadow-[0_14px_35px_rgba(25,52,75,0.07)] sm:p-7">
+            <AnimatePresence mode="wait">
+              {activeTab === "specifications" && (
+                <motion.div
+                  key="specifications"
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.35, ease }}
+                  className="grid items-center gap-6 lg:grid-cols-[1.12fr_0.88fr]"
                 >
-
-                  <div className="border-r border-blue-100 px-3 py-2 font-extrabold text-[#09264b] sm:px-4">
-                    {key}
+                  <div className="overflow-hidden rounded-xl border border-[#dce5ed]">
+                    {SPECS.map(([key, value], index) => (
+                      <div
+                        key={key}
+                        className={`grid grid-cols-[0.9fr_1.1fr] text-[11px] sm:text-[13px] ${
+                          index % 2 === 0 ? "bg-[#edf3f8]" : "bg-white"
+                        }`}
+                      >
+                        <div className="border-r border-[#dce5ed] px-3 py-2 font-extrabold text-[#263747] sm:px-5">{key}</div>
+                        <div className="break-words px-3 py-2 text-slate-600 sm:px-5">{value}</div>
+                      </div>
+                    ))}
                   </div>
-
-                  <div className="break-words px-3 py-2 text-slate-700 sm:px-4">
-                    {value}
+                  <div className="flex min-h-[220px] items-center justify-center overflow-hidden rounded-2xl bg-[#eef3f7] p-4 sm:min-h-[250px]">
+                    <img src={currentImage} alt={`${PRODUCT.title} detail`} className="max-h-[250px] w-full object-contain" />
                   </div>
+                </motion.div>
+              )}
 
-                </div>
+              {activeTab === "description" && (
+                <motion.div
+                  key="description"
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.35, ease }}
+                  className="grid items-center gap-7 lg:grid-cols-[1fr_0.8fr]"
+                >
+                  <div>
+                    <SectionEyebrow>Product information</SectionEyebrow>
+                    <h3 className="text-2xl font-black tracking-tight text-[#202c38]">Built for organised retail spaces</h3>
+                    <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-600">{PRODUCT.desc}</p>
+                    <div className="mt-5 flex flex-wrap gap-2">
+                      <span className="rounded-lg bg-[#edf3f8] px-3 py-2 text-xs font-bold text-[#174f7e]">{PRODUCT.category}</span>
+                      <span className="rounded-lg bg-[#fff4eb] px-3 py-2 text-xs font-bold text-[#d96520]">{PRODUCT.subtitle || "Customised Options Available"}</span>
+                    </div>
+                  </div>
+                  <div className="flex min-h-[220px] items-center justify-center rounded-2xl bg-[#eef3f7] p-5">
+                    <img src={currentImage} alt={PRODUCT.title} className="max-h-[250px] w-full object-contain" />
+                  </div>
+                </motion.div>
+              )}
 
-              ))}
-
-            </div>
-
-          </motion.div>
-
+              {activeTab === "gallery" && (
+                <motion.div
+                  key="gallery"
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.35, ease }}
+                >
+                  <SectionEyebrow>Product images</SectionEyebrow>
+                  <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+                    {galleryImages.map((image, index) => (
+                      <button
+                        key={`${image}-tab-${index}`}
+                        type="button"
+                        onClick={() => {
+                          setSelectedImage(index);
+                          window.scrollTo({ top: 0, behavior: "smooth" });
+                        }}
+                        className="group flex aspect-[4/3] items-center justify-center overflow-hidden rounded-2xl border border-[#dce5ed] bg-[#f0f4f7] p-3 transition hover:border-[#ed7628]"
+                      >
+                        <img src={image} alt={`${PRODUCT.title} gallery ${index + 1}`} className="h-full w-full object-contain transition duration-500 group-hover:scale-105" />
+                      </button>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
         </div>
-
       </section>
 
-      {/* =====================================
-          ENQUIRY SECTION
-      ===================================== */}
-
-      <section
-        id="enquiry"
-        className="scroll-mt-20 bg-white px-5 py-5 sm:px-8 lg:py-8"
-      >
-
-        <div className="mx-auto grid max-w-[1360px] overflow-hidden rounded-[22px] border border-blue-100 bg-white shadow-[0_15px_45px_rgba(9,38,75,0.08)] lg:grid-cols-[0.72fr_1.48fr]">
-
-          {/* Enquiry Content */}
-
-          <div className="relative overflow-hidden bg-[#082b50] p-7 text-white sm:p-9">
-
-            <span className="absolute -bottom-16 -right-10 h-52 w-52 rounded-full border-[22px] border-white/5" />
-
+      {/* ENQUIRY */}
+      <section id="enquiry" className="scroll-mt-24 bg-white px-5 py-9 sm:px-8 lg:py-12">
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={fadeUp}
+          className="mx-auto grid max-w-[1360px] overflow-hidden rounded-[26px] border border-[#dce5ed] bg-white shadow-[0_18px_45px_rgba(25,52,75,0.08)] lg:grid-cols-[0.72fr_1.28fr]"
+        >
+          <div className="relative overflow-hidden bg-gradient-to-br from-[#174f7e] to-[#0a365f] p-7 text-white sm:p-9">
+            <span className="absolute -bottom-20 -right-16 h-64 w-64 rounded-full border-[25px] border-white/5" />
             <div className="relative z-10">
-
-              <div className="mb-4 flex items-center gap-2 text-sm font-bold">
-                <span className="h-[3px] w-7 bg-orange-500" />
-                Send an Enquiry
-              </div>
-
-              <h2 className="!text-2xl font-black leading-tight sm:text-[36px] !text-white">
-                Get a Quote for{" "}
-                <span className="text-orange-500">
-                  {PRODUCT.title}
-                </span>
+              <SectionEyebrow>Send an enquiry</SectionEyebrow>
+              <h2 className="text-2xl font-black leading-tight text-white sm:text-[30px]">
+                Get a Quote for <span className="text-[#ffb078]">{PRODUCT.title}</span>
               </h2>
-
-              <p className="mt-4 max-w-[300px] text-sm leading-relaxed !text-white">
+              <p className="mt-4 max-w-sm text-sm leading-6 text-blue-100">
                 Share your requirement and our team will get back to you with the right display rack solution.
               </p>
-
-              <div className="mt-7 space-y-4">
-
-                <div className="flex items-center gap-3 text-sm">
-                  <Phone size={18} className="text-orange-500" />
-                  <span>Contact Our Sales Team</span>
-                </div>
-
-                <div className="flex items-center gap-3 text-sm">
-                  <MessageCircle size={18} className="text-orange-500" />
-                  <span>Quick WhatsApp Assistance</span>
-                </div>
-
-                <div className="flex items-center gap-3 text-sm">
-                  <CheckCircle2 size={18} className="text-orange-500" />
-                  <span>Customised Product Solutions</span>
-                </div>
-
+              <div className="mt-7 space-y-4 text-sm font-medium text-white">
+                <p className="flex items-center gap-3"><Phone size={17} className="text-white" /> Contact Our Sales Team</p>
+                <p className="flex items-center gap-3"><MessageCircle size={17} className="text-white" /> Quick WhatsApp Assistance</p>
+                <p className="flex items-center gap-3"><ShieldCheck size={17} className="text-white" /> Customised Product Solutions</p>
               </div>
-
             </div>
-
           </div>
 
-          {/* Enquiry Form */}
-
-          <form
-            onSubmit={submitInquiry}
-            className="grid items-end gap-x-5 gap-y-4 p-6 sm:grid-cols-2 sm:p-8 lg:grid-cols-[1fr_1fr_auto]"
-          >
-
-            {/* Name */}
-
-            <label className="block text-xs font-extrabold text-[#09264b]">
-              Your Name <span className="text-orange-500">*</span>
-
-              <input
-                required
-                value={form.name}
-                onChange={update("name")}
-                placeholder="Enter your name"
-                className="mt-2 h-12 w-full rounded-lg border border-blue-100 bg-[#f6f8fc] px-4 text-sm font-medium outline-none transition focus:border-orange-400 focus:bg-white"
-              />
-
-            </label>
-
-            {/* Phone */}
-
-            <label className="block text-xs font-extrabold text-[#09264b]">
-              Phone Number <span className="text-orange-500">*</span>
-
-              <input
-                required
-                type="tel"
-                value={form.phone}
-                onChange={update("phone")}
-                placeholder="Enter phone number"
-                className="mt-2 h-12 w-full rounded-lg border border-blue-100 bg-[#f6f8fc] px-4 text-sm font-medium outline-none transition focus:border-orange-400 focus:bg-white"
-              />
-
-            </label>
-
-            {/* Email */}
-
-            <label className="block text-xs font-extrabold text-[#09264b]">
-              Email Address
-
-              <input
-                type="email"
-                value={form.email}
-                onChange={update("email")}
-                placeholder="Enter your email"
-                className="mt-2 h-12 w-full rounded-lg border border-blue-100 bg-[#f6f8fc] px-4 text-sm font-medium outline-none transition focus:border-orange-400 focus:bg-white"
-              />
-
-            </label>
-
-            {/* Location */}
-
-            <label className="block text-xs font-extrabold text-[#09264b]">
-              Location
-
-              <input
-                value={form.location}
-                onChange={update("location")}
-                placeholder="Enter your location"
-                className="mt-2 h-12 w-full rounded-lg border border-blue-100 bg-[#f6f8fc] px-4 text-sm font-medium outline-none transition focus:border-orange-400 focus:bg-white"
-              />
-
-            </label>
-
-            {/* Requirement */}
-
-            <label className="block text-xs font-extrabold text-[#09264b]">
-              Requirement / Message{" "}
-              <span className="text-orange-500">*</span>
-
-              <input
-                required
-                value={form.message}
-                onChange={update("message")}
-                placeholder="Tell us your requirement..."
-                className="mt-2 h-12 w-full rounded-lg border border-blue-100 bg-[#f6f8fc] px-4 text-sm font-medium outline-none transition focus:border-orange-400 focus:bg-white"
-              />
-
-            </label>
-
-            {/* Submit */}
-
-            <button
-              type="submit"
-              disabled={submitting}
-              className="inline-flex h-12 items-center justify-center gap-3 rounded-xl bg-orange-500 px-5 text-sm font-extrabold text-white transition hover:bg-orange-600 disabled:opacity-60 sm:col-span-2 lg:col-span-1"
-            >
-              Send Enquiry
-              <ArrowRight size={17} />
+          <form onSubmit={submitInquiry} className="grid items-end gap-4 p-6 sm:grid-cols-2 sm:p-8 lg:grid-cols-2">
+            {[
+              { key: "name", label: "Your Name", placeholder: "Enter your name", required: true },
+              { key: "phone", label: "Phone Number", placeholder: "Enter phone number", required: true, type: "tel" },
+              { key: "email", label: "Email Address", placeholder: "Enter your email", type: "email" },
+              { key: "location", label: "Location", placeholder: "Enter your location" },
+              { key: "message", label: "Requirement / Message", placeholder: "Tell us your requirement...", required: true },
+            ].map(({ key, label, placeholder, required, type }) => (
+              <label key={key} className="block text-xs font-extrabold text-[#263747]">
+                {label} {required && <span className="text-[#ed7628]">*</span>}
+                <input
+                  required={required}
+                  type={type || "text"}
+                  value={form[key]}
+                  onChange={update(key)}
+                  placeholder={placeholder}
+                  className="mt-2 h-12 w-full rounded-xl border border-[#dce5ed] bg-[#f4f6f8] px-4 text-sm font-medium text-[#263747] outline-none transition placeholder:text-slate-400 focus:border-[#174f7e] focus:bg-white"
+                />
+              </label>
+            ))}
+            <button type="submit" className="inline-flex h-12 items-center justify-center gap-3 rounded-xl bg-[#ed7628] px-5 text-sm font-extrabold text-white transition hover:-translate-y-0.5 hover:bg-[#dc641b]">
+              Send Enquiry <ArrowRight size={17} />
             </button>
-
           </form>
-
-        </div>
-
+        </motion.div>
       </section>
 
-      {/* =====================================
-          RELATED PRODUCTS
-      ===================================== */}
-
+      {/* RELATED PRODUCTS */}
       {RELATED.length > 0 && (
-
-        <section
-          id="related"
-          className="bg-white px-5 py-14 sm:px-8 lg:py-16"
-        >
-
+        <section className="bg-[linear-gradient(180deg,#ffffff_0%,#f3f6f9_100%)] px-5 py-11 sm:px-8 lg:py-14">
           <div className="mx-auto max-w-[1360px]">
-
-            <SectionLabel>
-              Explore More
-            </SectionLabel>
-
-            <div className="mb-6 flex items-end justify-between gap-4">
-
-              <h2 className="text-3xl font-black tracking-tight text-[#09264b] sm:text-[36px]">
-                Related Products
-              </h2>
-
-              <a
-                href="/products"
-                className="hidden items-center gap-2 rounded-lg border border-[#09264b] px-4 py-2.5 text-xs font-extrabold text-[#09264b] transition hover:bg-[#09264b] hover:text-white sm:inline-flex"
-              >
-                View All Products
-                <ArrowUpRight size={15} />
+            <div className="mb-7 flex items-end justify-between gap-4">
+              <div>
+                <SectionEyebrow>Explore more</SectionEyebrow>
+                <h2 className="text-2xl font-black tracking-[-0.045em] text-[#202c38] sm:text-[32px]">
+                  Related <span className="text-[#174f7e]">Products</span>
+                </h2>
+                <span className="mt-3 block h-[4px] w-12 rounded-full bg-[#ed7628]" />
+              </div>
+              <a href="/products" className="hidden items-center gap-2 rounded-full border border-[#174f7e] px-4 py-2.5 text-xs font-extrabold text-[#174f7e] transition hover:bg-[#174f7e] hover:text-white sm:inline-flex">
+                View All Products <ArrowUpRight size={15} />
               </a>
-
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-
-              {RELATED.map((item, i) => (
-
-                <a
+              {RELATED.map((item, index) => (
+                <motion.a
                   key={item.name}
                   href={item.href}
-                  className="group flex min-h-[118px] items-center gap-3 rounded-2xl border border-blue-100 bg-white p-3 shadow-[0_7px_20px_rgba(9,38,75,0.05)] transition hover:-translate-y-1 hover:border-orange-200 hover:shadow-lg"
+                  initial={{ opacity: 0, y: 22 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ delay: index * 0.08, duration: 0.55, ease }}
+                  whileHover={{ y: -6 }}
+                  className="group overflow-hidden rounded-[21px] border border-[#dce5ed] bg-white p-3 shadow-[0_8px_24px_rgba(25,52,75,0.06)] transition-shadow hover:shadow-[0_18px_35px_rgba(25,52,75,0.12)]"
                 >
-
-                  <div className="flex h-[88px] w-[105px] shrink-0 items-center justify-center rounded-xl bg-[#f1f5fa] p-2">
-
-                    <img
-                      src={item.image}
-                      alt={item.name}
-                      className="h-full w-full object-contain"
-                      onError={(e) => {
-                        e.currentTarget.style.opacity = "0";
-                      }}
-                    />
-
+                  <div className="flex h-36 items-center justify-center overflow-hidden rounded-xl bg-[#eef2f5] p-3">
+                    <img src={item.image} alt={item.name} className="h-full w-full object-contain transition duration-500 group-hover:scale-105" />
                   </div>
-
-                  <div className="min-w-0 flex-1">
-
-                    <span className="mb-1 block text-[9px] font-black tracking-widest text-orange-500">
-                      {String(i + 1).padStart(2, "0")}
+                  <div className="flex items-center justify-between gap-2 px-1 pb-1 pt-4">
+                    <div className="min-w-0">
+                      <span className="mb-1 block text-[9px] font-black tracking-widest text-[#ed7628]">{String(index + 1).padStart(2, "0")}</span>
+                      <h3 className="text-sm font-extrabold leading-snug text-[#263747]">{item.name}</h3>
+                    </div>
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#174f7e] text-[#174f7e] transition group-hover:bg-[#174f7e] group-hover:text-white">
+                      <ArrowRight size={16} />
                     </span>
-
-                    <h3 className="text-sm font-extrabold leading-snug text-[#09264b]">
-                      {item.name}
-                    </h3>
-
                   </div>
-
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-orange-500 text-white transition group-hover:translate-x-1">
-                    <ArrowRight size={16} />
-                  </span>
-
-                </a>
-
+                </motion.a>
               ))}
-
             </div>
-
           </div>
-
         </section>
-
       )}
 
-      {/* =====================================
-          MOBILE QUICK ACTIONS
-      ===================================== */}
-
-      <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-3 gap-2 border-t border-slate-200 bg-white/95 p-2 shadow-[0_-8px_25px_rgba(9,38,75,0.08)] backdrop-blur lg:hidden">
-
-        <a
-          href={BRAND.tel}
-          className="flex items-center justify-center gap-2 rounded-lg bg-[#082b50] py-3 text-xs font-extrabold text-white"
-        >
-          <Phone size={15} />
-          Call
+      {/* MOBILE QUICK ACTIONS */}
+      <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-3 gap-2 border-t border-[#dce5ed] bg-white/95 p-2 shadow-[0_-8px_25px_rgba(25,52,75,0.08)] backdrop-blur lg:hidden">
+        <a href={BRAND.tel} className="flex items-center justify-center gap-2 rounded-lg bg-[#174f7e] py-3 text-xs font-extrabold text-white">
+          <Phone size={15} /> Call
         </a>
-
-        <a
-          href={waLink(whatsappMessage)}
-          target="_blank"
-          rel="noreferrer"
-          className="flex items-center justify-center gap-2 rounded-lg bg-emerald-600 py-3 text-xs font-extrabold text-white"
-        >
-          <MessageCircle size={15} />
-          WhatsApp
+        <a href={waLink(whatsappMessage)} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 rounded-lg bg-[#174f7e] py-3 text-xs font-extrabold text-white">
+          <MessageCircle size={15} /> WhatsApp
         </a>
-
-        <a
-          href="#enquiry"
-          className="flex items-center justify-center gap-2 rounded-lg bg-orange-500 py-3 text-xs font-extrabold text-white"
-        >
-          Quote
-          <ArrowRight size={14} />
+        <a href="#enquiry" className="flex items-center justify-center gap-2 rounded-lg bg-[#ed7628] py-3 text-xs font-extrabold text-white">
+          Quote <ArrowRight size={14} />
         </a>
-
       </div>
-
+      <div className="h-16 lg:hidden" />
     </main>
   );
 }
