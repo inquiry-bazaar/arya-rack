@@ -156,7 +156,7 @@ function Tile({ clipId, src, alt, className, entrance, delay, px, py }) {
       <motion.div style={{ x: px, y: py }} className="h-full w-full">
         <div
           className="h-full w-full"
-          style={{ filter: "drop-shadow(0 18px 26px rgba(10,36,87,0.28))" }}
+          style={{ filter: "drop-shadow(0 14px 22px rgba(24,59,103,0.13))" }}
         >
           {/* white frame */}
           <div
@@ -273,11 +273,11 @@ export default function About() {
 
   return (
     <section
-      className="relative isolate overflow-hidden"
-      style={{
-        background:
-          "linear-gradient(110deg,#FFFFFF 0%,#F7F9FD 48%,#EDF2FA 100%)",
-      }}
+      className="relative isolate overflow-hidden bg-gray-50"
+      // style={{
+      //   background:
+      //     "linear-gradient(110deg,#FFFFFF 0%,#F7F9FD 48%,#EDF2FA 100%)",
+      // }}
     >
       {/* clip-path definitions */}
       <svg aria-hidden className="absolute h-0 w-0">
@@ -294,7 +294,7 @@ export default function About() {
       {/* blurred store photo, fading to the right */}
       <div
         aria-hidden
-        className="absolute left-0 top-0 -z-10 h-full w-[48%] opacity-60"
+        className="absolute left-0 top-0 -z-10 h-full w-[48%] opacity-35"
         style={{
           backgroundImage: `url(${IMG.storeBlur})`,
           backgroundSize: "cover",
@@ -346,8 +346,8 @@ export default function About() {
           >
             <defs>
               <linearGradient id="about-blue" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stopColor="#2468C4" />
-                <stop offset="1" stopColor={C.blueDark} />
+                <stop offset="0" stopColor="#DCE8F4" />
+                <stop offset="1" stopColor="#B8CBE0" />
               </linearGradient>
               <linearGradient id="about-orange" x1="0" y1="0" x2="1" y2="1">
                 <stop offset="0" stopColor={C.orangeLight} />
@@ -491,6 +491,45 @@ export default function About() {
 
 Our extensive range of display racks and shelving solutions is designed to meet the diverse requirements of supermarkets, grocery stores, shopping malls, pharmacies, garment outlets, footwear stores, and other retail establishments. From heavy-duty storage shelving to attractive product display systems, every solution is developed with attention to functionality, strength, and modern retail aesthetics.
           </motion.p>
+
+          {/* Company stats */}
+          <motion.div
+            variants={rise}
+            className="mt-[2.1vw] grid w-full max-w-[760px] grid-cols-2 gap-3 sm:gap-4 lg:mt-[2vw] lg:gap-[1.2vw] max-lg:mt-7"
+          >
+            <motion.div
+              variants={pop}
+              whileHover={{ y: -4 }}
+              transition={{ type: "spring", stiffness: 280, damping: 18 }}
+              className="flex min-h-[104px] flex-col justify-center rounded-xl border border-[#E8D75D]/60 
+              
+              bg-gray px-4 py-4 shadow-[0_8px_22px_rgba(32,44,64,0.06)] sm:min-h-[118px] sm:px-6 lg:min-h-[clamp(104px,9.2vw,176px)] lg:rounded-[14px] lg:px-[1.8vw]"
+            >
+              <span className="font-black leading-none tracking-[-0.06em] text-[#080B12] 
+              text-[clamp(38px,4.1vw,56px)]">
+                80+
+              </span>
+              <span className="mt-2 text-[clamp(11px,1.05vw,19px)] font-semibold leading-tight
+              text-[#182338] sm:mt-3">
+                Number of Employees
+              </span>
+            </motion.div>
+
+            <motion.div
+              variants={pop}
+              whileHover={{ y: -4 }}
+              transition={{ type: "spring", stiffness: 280, damping: 18 }}
+              className="flex min-h-[104px] flex-col justify-center rounded-xl border border-[#E0E5EB] bg-[#F0F2F4] px-4 py-4 shadow-[0_8px_22px_rgba(32,44,64,0.05)] sm:min-h-[118px] sm:px-6 lg:min-h-[clamp(104px,9.2vw,176px)] lg:rounded-[14px] lg:px-[1.8vw]"
+            >
+              <span className="font-black leading-none tracking-[-0.06em] text-[#080B12] 
+              text-[clamp(38px,4.1vw,56px)]">
+                10+
+              </span>
+              <span className="mt-2 text-[clamp(11px,1.05vw,19px)] font-semibold leading-tight text-[#182338] sm:mt-3">
+                Year Established
+              </span>
+            </motion.div>
+          </motion.div>
 
           {/* Features */}
           {/* <motion.div

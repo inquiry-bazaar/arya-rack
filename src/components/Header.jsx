@@ -511,7 +511,17 @@ export default function Header() {
       {/* ================= FLOATING CONTACT BUTTONS ================= */}
       <div className="fixed bottom-6 left-5 z-40 flex flex-col gap-3">
         {[
-          { href: `tel:${PHONE}`, label: "Call us", bg: C.navy, icon: <Phone size={23} fill="currentColor" />, ring: C.blue },
+          {
+            href: `tel:${PHONE}`,
+            label: "Call us",
+            bg: "#DC2626",
+            icon: (
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-red-600">
+                <Phone size={21} fill="currentColor" />
+              </span>
+            ),
+            ring: "#DC2626",
+          },
           { href: WHATSAPP_URL, label: "Chat on WhatsApp", bg: "#25D366", icon: <WhatsAppIcon size={28} />, ring: "#25D366", ext: true },
         ].map((b, i) => (
           <motion.a

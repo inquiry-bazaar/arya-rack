@@ -106,10 +106,8 @@ export default function Industries() {
           </div>
 
           <h2 className="text-3xl font-bold tracking-tight text-[#172B45] sm:text-4xl lg:text-[52px]">
-            Retail Solutions for
-            <span className="mt-1 block text-[#2252A3]">
-              Every Industry
-            </span>
+            Retail Solutions for Every Industry
+          
           </h2>
 
           <p className="mx-auto mt-5 max-w-[620px] text-[14px] leading-7 text-[#778394] sm:text-base">

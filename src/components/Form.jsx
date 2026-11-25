@@ -13,7 +13,7 @@ import {
   Phone,
   Mail,
   Store,
-  Maximize2,
+  MapPin,
   FileText,
   ChevronDown,
   ArrowRight,
@@ -21,6 +21,7 @@ import {
   Layers,
   Wrench,
   CheckCircle2,
+  Sparkles,
 } from "lucide-react";
 
 const BLUE = "#12469C";
@@ -37,12 +38,15 @@ const storeTypes = [
   "Other",
 ];
 
-const areas = [
-  "Below 200 sq. ft.",
-  "200 – 500 sq. ft.",
-  "500 – 1,000 sq. ft.",
-  "1,000 – 2,500 sq. ft.",
-  "Above 2,500 sq. ft.",
+const locations = [
+  "Delhi",
+  "New Delhi",
+  "Noida",
+  "Greater Noida",
+  "Ghaziabad",
+  "Gurugram",
+  "Faridabad",
+  "Other",
 ];
 
 const features = [
@@ -56,7 +60,7 @@ const empty = {
   mobile: "",
   email: "",
   storeType: "",
-  area: "",
+  location: "",
   message: "",
 };
 
@@ -78,10 +82,11 @@ export default function Form({
       [key]: e.target.value,
     }));
 
-    if (errors[key]) {
+    if (errors[key] || errors.form) {
       setErrors((prev) => ({
         ...prev,
         [key]: undefined,
+        form: undefined,
       }));
     }
   };
@@ -104,6 +109,14 @@ export default function Form({
       !/^\S+@\S+\.\S+$/.test(data.email)
     ) {
       e.email = "Enter a valid email address.";
+    }
+
+    if (!data.storeType) {
+      e.storeType = "Please select your store type.";
+    }
+
+    if (!data.location) {
+      e.location = "Please select your location.";
     }
 
     return e;
@@ -154,7 +167,7 @@ export default function Form({
     ) : null;
 
   const inputClass =
-    "h-[54px] w-full appearance-none rounded-lg border border-slate-200 bg-slate-50 pl-12 pr-4 text-[14px] font-medium text-[#12469C] outline-none transition-all duration-300 placeholder:text-slate-400 hover:border-slate-300 focus:border-[#12469C] focus:bg-white focus:ring-4 focus:ring-[#12469C]/10";
+    "h-[54px] w-full appearance-none rounded-xl border border-slate-200 bg-slate-50 pl-12 pr-4 text-[14px] font-medium text-[#12469C] outline-none transition-all duration-300 placeholder:text-slate-400 hover:border-slate-300 focus:border-[#12469C] focus:bg-white focus:ring-4 focus:ring-[#12469C]/10";
 
   const iconClass =
     "pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-[#12469C]";
@@ -163,30 +176,36 @@ export default function Form({
     <section
       id="get-a-quote"
       aria-labelledby="form-heading"
-      className="relative flex min-h-screen w-full items-center overflow-hidden bg-[#F8FAFC] px-5 
-      py-10 sm:px-8 lg:px-10 xl:px-12"
+      className="relative isolate w-full overflow-hidden bg-[#F4F7FC] px-5 py-16 
+      sm:px-8 sm:py-13 lg:px-10 lg:py-15"
     >
-      <div className="mx-auto grid w-full max-w-[1400px] grid-cols-1 items-center gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-10 xl:gap-16">
+      {/* BACKGROUND DECORATION */}
+
+      <div className="pointer-events-none absolute -left-32 top-10 h-80 w-80 rounded-full bg-blue-200/30 blur-[100px]" />
+
+      <div className="pointer-events-none absolute -bottom-40 right-0 h-96 w-96 rounded-full bg-orange-200/30 blur-[110px]" />
+
+      <div className="relative mx-auto grid w-full max-w-[1400px] grid-cols-1 items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12 xl:gap-16">
 
         {/* LEFT CONTENT */}
 
         <div className="relative z-10">
 
           <motion.div {...fade(0, 15)}>
-            <div className="mb-6 flex items-center gap-4 text-[13px] font-bold uppercase tracking-[2px] text-[#12469C]">
-              <span className="h-[2px] w-10 bg-[#F67516]" />
-              Get a Quote
+            <div className="inline-flex items-center gap-3 rounded-full border border-blue-100 bg-white px-4 py-2 text-xs font-bold uppercase tracking-[1.8px] text-[#12469C] shadow-sm">
+              <Sparkles size={15} className="text-[#F67516]" />
+              Let's Get Started
             </div>
           </motion.div>
 
           <motion.h1
             id="form-heading"
             {...fade(0.1)}
-            className="text-[38px] font-bold leading-[1.12] tracking-[-1.5px] text-[#172B4D] sm:text-5xl xl:text-[58px]"
+            className="mt-7 max-w-[600px] text-[38px] font-extrabold leading-[1.13] tracking-[-1.5px] text-[#172B4D] sm:text-5xl xl:text-[60px]"
           >
-            Let's Build Your Perfect{" "}
+            Let's Create a Store That{" "}
             <span className="relative inline-block text-[#12469C]">
-              Retail Space
+              Stands Out.
               <svg
                 viewBox="0 0 300 16"
                 preserveAspectRatio="none"
@@ -209,74 +228,75 @@ export default function Form({
 
           <motion.p
             {...fade(0.2)}
-            className="mt-8 max-w-[450px] text-[15px] leading-8 text-slate-500 sm:text-base"
+            className="mt-8 max-w-[480px] text-[15px] leading-8 text-slate-500 sm:text-base"
           >
-            From planning to installation, Arya Insulation
-            provides complete racking solutions tailored
-            to your store.
+            Planning a new retail store or upgrading your
+            existing space? Arya Insulation delivers complete
+            retail racking solutions designed around your
+            business needs.
           </motion.p>
 
           {/* FEATURES */}
 
-          <ul className="mt-10 flex items-start gap-0">
+          <ul className="mt-10 grid grid-cols-3 gap-2 sm:gap-4">
             {features.map(({ icon: Icon, label }, i) => (
               <motion.li
                 key={label}
                 {...fade(0.3 + i * 0.12, 20)}
-                className={`flex max-w-[145px] flex-1 flex-col items-center gap-3 px-2 text-center text-[12px] font-semibold leading-5 text-[#172B4D] sm:px-4 sm:text-sm ${
-                  i !== 0 ? "border-l border-slate-200" : ""
-                }`}
+                className="flex flex-col items-start gap-3"
               >
                 <motion.span
                   whileHover={
-                    reduce
-                      ? undefined
-                      : { y: -4, rotate: -3 }
+                    reduce ? undefined : { y: -5, rotate: -3 }
                   }
                   transition={{
                     type: "spring",
                     stiffness: 300,
                     damping: 15,
                   }}
-                  className="flex h-14 w-14 items-center justify-center rounded-xl bg-white text-[#12469C] shadow-sm ring-1 ring-slate-100 sm:h-[66px] sm:w-[66px]"
+                  className="flex h-12 w-12 items-center justify-center rounded-xl border border-blue-100 bg-white text-[#12469C] shadow-sm sm:h-14 sm:w-14"
                 >
-                  <Icon size={30} strokeWidth={1.7} />
+                  <Icon size={25} strokeWidth={1.7} />
                 </motion.span>
 
-                {label}
+                <span className="max-w-[130px] text-[11px] font-bold leading-5 text-[#172B4D] sm:text-sm">
+                  {label}
+                </span>
               </motion.li>
             ))}
           </ul>
 
-        </div>
-
-        {/* RIGHT IMAGE + FORM */}
-
-        <div className="relative flex min-w-0 flex-col items-center">
-
           {/* IMAGE */}
 
           <motion.div
-            initial={reduce ? false : { opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease }}
-            className="relative h-[260px] w-full overflow-hidden rounded-xl bg-slate-200 sm:h-[330px] lg:absolute lg:-left-12 lg:top-1/2 lg:h-[75%] lg:w-[65%] lg:-translate-y-1/2 xl:-left-16"
+            {...fade(0.45, 25)}
+            className="relative mt-10 hidden h-[230px] w-full max-w-[540px] overflow-hidden rounded-2xl bg-slate-200 shadow-xl shadow-blue-900/10 sm:block lg:h-[260px]"
           >
             {image && (
               <img
                 src={image}
-                alt="Blue and white retail racking in a store"
-                className="h-full w-full object-cover"
+                alt="Retail store display racks"
+                className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
               />
             )}
+
+            <div className="absolute inset-0 bg-gradient-to-t from-[#071D42]/65 via-transparent to-transparent" />
+
           </motion.div>
 
-          {/* FORM CARD */}
+        </div>
+
+        {/* RIGHT FORM */}
+
+        <div className="relative z-10 min-w-0">
+
+          {/* FORM DECORATION */}
+
+          <div className="absolute -right-4 -top-5 hidden h-24 w-24 rounded-2xl border-[10px] border-orange-100/70 sm:block" />
 
           <motion.div
             {...fade(0.2, 35)}
-            className="relative z-10 mt-[-35px] w-full max-w-[680px] rounded-2xl border border-slate-100 bg-white p-5 shadow-[0_20px_60px_-25px_rgba(18,52,122,0.18)] sm:mt-[-45px] sm:p-8 lg:mt-0 lg:ml-auto lg:w-[76%] lg:p-7 xl:w-[72%] xl:p-9"
+            className="relative w-full rounded-2xl border border-white bg-white p-5 shadow-[0_25px_80px_-25px_rgba(18,52,122,0.22)] sm:rounded-3xl sm:p-8 lg:p-8 xl:p-10"
           >
 
             <AnimatePresence mode="wait" initial={false}>
@@ -315,8 +335,8 @@ export default function Form({
 
                   <p className="max-w-sm text-sm leading-7 text-slate-500">
                     We have your request. Our team will call
-                    you on {data.mobile} with a layout and
-                    quotation.
+                    you on {data.mobile} to discuss your retail
+                    racking requirements and quotation.
                   </p>
 
                   <button
@@ -346,28 +366,26 @@ export default function Form({
 
                   {/* FORM TITLE */}
 
-                  <div className="mb-2 flex flex-col items-center gap-2 text-center sm:flex-row sm:justify-center sm:gap-3">
-                    <Store
-                      size={34}
-                      strokeWidth={1.7}
-                      className="text-[#12469C]"
-                    />
+                  <div className="mb-2 flex items-center gap-3">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-[#12469C]">
+                      <Store size={25} strokeWidth={1.8} />
+                    </div>
 
-                    <h2 className="text-[24px] font-bold tracking-tight text-[#172B4D] sm:text-[27px]">
-                      Request a{" "}
-                      <span className="text-[#F67516]">
-                        Free Quote
-                      </span>
-                    </h2>
+                    <div>
+                      <h2 className="text-[23px] font-extrabold tracking-tight text-[#172B4D] sm:text-[27px]">
+                        Request a{" "}
+                        <span className="text-[#F67516]">
+                          Free Quote
+                        </span>
+                      </h2>
+
+                      <p className="mt-1 text-xs text-slate-400">
+                        Tell us about your retail space
+                      </p>
+                    </div>
                   </div>
 
-                  <motion.div
-                    initial={reduce ? false : { scaleX: 0 }}
-                    whileInView={{ scaleX: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                    className="mx-auto mb-7 mt-3 h-1 w-20 rounded-full bg-[#12469C]"
-                  />
+                  <div className="mb-7 mt-5 h-[1px] w-full bg-slate-100" />
 
                   {/* NAME + MOBILE */}
 
@@ -375,10 +393,7 @@ export default function Form({
 
                     <div>
                       <label className="relative block">
-                        <User
-                          size={20}
-                          className={iconClass}
-                        />
+                        <User size={19} className={iconClass} />
 
                         <input
                           className={inputClass}
@@ -396,10 +411,7 @@ export default function Form({
 
                     <div>
                       <label className="relative block">
-                        <Phone
-                          size={20}
-                          className={iconClass}
-                        />
+                        <Phone size={19} className={iconClass} />
 
                         <input
                           className={inputClass}
@@ -423,10 +435,7 @@ export default function Form({
 
                   <div className="mb-4">
                     <label className="relative block">
-                      <Mail
-                        size={20}
-                        className={iconClass}
-                      />
+                      <Mail size={19} className={iconClass} />
 
                       <input
                         className={inputClass}
@@ -443,73 +452,75 @@ export default function Form({
                     <FieldError name="email" />
                   </div>
 
-                  {/* STORE TYPE + AREA */}
+                  {/* STORE TYPE + LOCATION */}
 
                   <div className="mb-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
 
-                    <label className="relative block">
-                      <Store
-                        size={20}
-                        className={iconClass}
-                      />
+                    <div>
+                      <label className="relative block">
+                        <Store size={19} className={iconClass} />
 
-                      <select
-                        className={`${inputClass} cursor-pointer pr-10 ${
-                          data.storeType ? "" : "text-slate-400"
-                        }`}
-                        required
-                        value={data.storeType}
-                        onChange={set("storeType")}
-                        aria-label="Shop or store type"
-                      >
-                        <option value="" disabled>
-                          Shop / Store Type
-                        </option>
-
-                        {storeTypes.map((type) => (
-                          <option key={type} value={type}>
-                            {type}
+                        <select
+                          className={`${inputClass} cursor-pointer pr-10 ${
+                            data.storeType ? "" : "text-slate-400"
+                          }`}
+                          value={data.storeType}
+                          onChange={set("storeType")}
+                          aria-label="Shop or store type"
+                          aria-invalid={!!errors.storeType}
+                        >
+                          <option value="" disabled>
+                            Shop / Store Type *
                           </option>
-                        ))}
-                      </select>
 
-                      <ChevronDown
-                        size={19}
-                        className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-[#12469C]"
-                      />
-                    </label>
+                          {storeTypes.map((type) => (
+                            <option key={type} value={type}>
+                              {type}
+                            </option>
+                          ))}
+                        </select>
 
-                    <label className="relative block">
-                      <Maximize2
-                        size={20}
-                        className={iconClass}
-                      />
+                        <ChevronDown
+                          size={19}
+                          className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-[#12469C]"
+                        />
+                      </label>
 
-                      <select
-                        className={`${inputClass} cursor-pointer pr-10 ${
-                          data.area ? "" : "text-slate-400"
-                        }`}
-                        required
-                        value={data.area}
-                        onChange={set("area")}
-                        aria-label="Approximate area"
-                      >
-                        <option value="" disabled>
-                          Approx. Area (sq. ft.)
-                        </option>
+                      <FieldError name="storeType" />
+                    </div>
 
-                        {areas.map((area) => (
-                          <option key={area} value={area}>
-                            {area}
+                    <div>
+                      <label className="relative block">
+                        <MapPin size={19} className={iconClass} />
+
+                        <select
+                          className={`${inputClass} cursor-pointer pr-10 ${
+                            data.location ? "" : "text-slate-400"
+                          }`}
+                          value={data.location}
+                          onChange={set("location")}
+                          aria-label="Your location"
+                          aria-invalid={!!errors.location}
+                        >
+                          <option value="" disabled>
+                            Select Location *
                           </option>
-                        ))}
-                      </select>
 
-                      <ChevronDown
-                        size={19}
-                        className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-[#12469C]"
-                      />
-                    </label>
+                          {locations.map((location) => (
+                            <option key={location} value={location}>
+                              {location}
+                            </option>
+                          ))}
+                        </select>
+
+                        <ChevronDown
+                          size={19}
+                          className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-[#12469C]"
+                        />
+                      </label>
+
+                      <FieldError name="location" />
+                    </div>
 
                   </div>
 
@@ -517,12 +528,12 @@ export default function Form({
 
                   <label className="relative block">
                     <FileText
-                      size={20}
+                      size={19}
                       className="pointer-events-none absolute left-4 top-4 text-[#12469C]"
                     />
 
                     <textarea
-                      className="min-h-[115px] w-full resize-y rounded-lg border border-slate-200 bg-slate-50 py-4 pl-12 pr-4 text-sm font-medium text-[#12469C] outline-none transition-all duration-300 placeholder:text-slate-400 hover:border-slate-300 focus:border-[#12469C] focus:bg-white focus:ring-4 focus:ring-[#12469C]/10"
+                      className="min-h-[115px] w-full resize-y rounded-xl border border-slate-200 bg-slate-50 py-4 pl-12 pr-4 text-sm font-medium text-[#12469C] outline-none transition-all duration-300 placeholder:text-slate-400 hover:border-slate-300 focus:border-[#12469C] focus:bg-white focus:ring-4 focus:ring-[#12469C]/10"
                       placeholder="Tell us your requirement..."
                       value={data.message}
                       onChange={set("message")}
@@ -543,27 +554,22 @@ export default function Form({
 
                   {/* SUBMIT BUTTON */}
 
-                  <div className="mt-7 flex justify-center">
-
+                  <div className="mt-6">
                     <motion.button
                       type="submit"
                       disabled={status === "sending"}
                       whileHover={
-                        reduce
-                          ? undefined
-                          : { y: -3, scale: 1.02 }
+                        reduce ? undefined : { y: -3, scale: 1.015 }
                       }
                       whileTap={
-                        reduce
-                          ? undefined
-                          : { scale: 0.97 }
+                        reduce ? undefined : { scale: 0.97 }
                       }
                       transition={{
                         type: "spring",
                         stiffness: 300,
                         damping: 18,
                       }}
-                      className="group flex h-[58px] w-full items-center justify-center gap-3 rounded-full bg-[#F67516] px-7 text-[17px] font-bold text-white shadow-md shadow-orange-500/20 transition-colors duration-300 hover:bg-[#E6650D] disabled:cursor-wait disabled:opacity-60 sm:max-w-[340px] sm:text-lg"
+                      className="group flex h-[58px] w-full items-center justify-center gap-3 rounded-full bg-[#F67516] px-7 text-[16px] font-bold text-white shadow-lg shadow-orange-500/20 transition-colors duration-300 hover:bg-[#E6650D] disabled:cursor-wait disabled:opacity-60 sm:text-lg"
                     >
                       {status === "sending"
                         ? "Sending..."
@@ -571,9 +577,7 @@ export default function Form({
 
                       <motion.span
                         animate={
-                          reduce
-                            ? undefined
-                            : { x: [0, 5, 0] }
+                          reduce ? undefined : { x: [0, 5, 0] }
                         }
                         transition={{
                           duration: 1.5,
@@ -581,11 +585,15 @@ export default function Form({
                           ease: "easeInOut",
                         }}
                       >
-                        <ArrowRight size={23} />
+                        <ArrowRight size={22} />
                       </motion.span>
                     </motion.button>
-
                   </div>
+
+                  <p className="mt-4 text-center text-[11px] leading-5 text-slate-400">
+                    Share your details and our team will get
+                    in touch with you shortly.
+                  </p>
 
                 </motion.form>
               )}
@@ -593,6 +601,7 @@ export default function Form({
             </AnimatePresence>
           </motion.div>
         </div>
+
       </div>
     </section>
   );

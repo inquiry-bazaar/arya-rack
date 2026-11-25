@@ -25,7 +25,7 @@ const C = {
 const SLIDES = [
   { src: "/r2zc3tfbbmdoezexsefm.webp", alt: "Supermarket aisle with modern white shelving", tone: "none" },
   { src: "green rack.webp", alt: "Supermarket aisle with fresh produce shelving", tone: "hue-rotate(28deg) saturate(1.1)" },
-  { src: "r2zc3tfbbmdoezexsefm.webp", alt: "Supermarket aisle with packaged goods shelving", tone: "hue-rotate(-22deg) saturate(1.05)" },
+
 ];
 
 const INTERVAL = 6000;

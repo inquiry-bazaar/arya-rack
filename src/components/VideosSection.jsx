@@ -34,7 +34,7 @@ const videos = [
 
 export default function VideosSection() {
   return (
-    <section className="hidden md:block bg-white  py-14 overflow-hidden">
+    <section className="hidden md:block bg-gray-100  py-14 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
 
         {/* Heading */}

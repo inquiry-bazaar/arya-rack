@@ -83,10 +83,11 @@ export default function Products() {
                 <button
                   key={category}
                   onClick={() => handleCategoryChange(category)}
-                  className={`rounded-full border px-5 py-2.5 text-xs font-medium transition-all duration-300 sm:text-sm ${
+                  className={`rounded-full border px-5 py-2.5 text-[15px] font-semibold transition-all 
+                    
                     isActive
-                      ? "border-[#183B67] bg-[#183B67] text-white shadow-md shadow-[#183B67]/15"
-                      : "border-slate-200 bg-white text-slate-600 hover:border-[#183B67] hover:bg-[#183B67]/5 hover:text-[#183B67]"
+                      ? "border-[#183B67] bg-[#183B67] text-black shadow-md shadow-[#183B67]/15"
+                      : "border-slate-200 bg-white text-black hover:bg-[#183B67] hover:bg-[#183B67]/5 hover:text-[#183B67]"
                   }`}
                 >
                   {category}
@@ -119,9 +120,10 @@ export default function Products() {
   alt={product.name}
   className="h-full w-full object-contain p-3 transition-transform duration-700 ease-out group-hover:scale-105"
 />
-                  <span className="absolute left-3 top-3 rounded-full border border-white/80 bg-white/90 px-3 py-1.5 text-[9px] font-semibold uppercase tracking-wider text-[#183B67] backdrop-blur-sm">
+                  {/* <span className="absolute left-3 top-3 rounded-full border border-white/80
+                   bg-white/90 px-3 py-1.5 text-[9px] font-semibold uppercase tracking-wider text-[#183B67] backdrop-blur-sm">
                     {product.category}
-                  </span>
+                  </span> */}
 
                   <span className="absolute bottom-3 right-3 flex h-9 w-9 items-center justify-center rounded-full bg-white text-[#183B67] shadow-md transition-all duration-300 group-hover:bg-[#183B67] group-hover:text-white group-hover:rotate-45">
                     <ArrowUpRight size={17} />

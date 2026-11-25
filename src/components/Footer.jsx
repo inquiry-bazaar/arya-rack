@@ -1,37 +1,49 @@
-"use client"
+"use client";
+
 import React from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import {
-  Phone, Mail, MapPin, Clock, MessageCircle, ArrowRight, ArrowUp,
-  Facebook, Instagram, Youtube, Linkedin, ChevronRight,
+  ArrowUpRight,
+  ArrowUp,
+  Phone,
+  Mail,
+  MapPin,
+  Clock3,
+  MessageCircle,
+  MoveUpRight,
+  Plus,
 } from "lucide-react";
 
-/**
- * footer.jsx  —  npm i framer-motion lucide-react
- * <Footer />  — replace the placeholder phone, email, address and links in the `site` object below.
- */
+/*
+  Arya Insulation — Creative Footer
+  Install: pnpm add framer-motion lucide-react
+  Replace the placeholder contact details and links in `site` before publishing.
+*/
 
 const site = {
   name: "Arya Insulation",
-  tagline: "Retail and warehouse racking, planned, manufactured and installed for your store.",
+  shortName: "ARYA",
+  tagline:
+    "Retail and warehouse racking, planned, manufactured and installed for your store.",
   phone: "+91 98765 43210",
-  whatsapp: "919876543210", // country code + number, no spaces or +
+  whatsapp: "919876543210",
   email: "info@aryainsulation.com",
   address: "Plot No. 00, Industrial Area, New Delhi, India",
   hours: "Mon – Sat, 9:30 am – 7:00 pm",
-
+  credit: "Inquiry Bazaar Pvt. Ltd.",
+  creditUrl: "https://inquirybazaar.com/",
 };
 
-const quick = [
-  { label: "Home", href: "/" },
-  { label: "About Us", href: "/about" },
-  { label: "How We Work", href: "/#how-we-work" },
-  { label: "Our Racks", href: "/products" },
-  { label: "Gallery", href: "/gallery" },
-  { label: "Contact", href: "/contact" },
+const exploreLinks = [
+  { no: "01", label: "Home", href: "/" },
+  { no: "02", label: "About Us", href: "/about" },
+  { no: "03", label: "How We Work", href: "/#how-we-work" },
+  { no: "04", label: "Our Racks", href: "/products" },
+  { no: "05", label: "Gallery", href: "/gallery" },
+  { no: "06", label: "Contact", href: "/contact" },
 ];
 
-const products = [
+const productLinks = [
   { label: "Supermarket Racks", href: "/products/supermarket" },
   { label: "Pharmacy Racks", href: "/products/pharmacy" },
   { label: "Wall & Gondola Racks", href: "/products/gondola" },
@@ -39,159 +51,266 @@ const products = [
   { label: "Custom Racks", href: "/products/custom" },
 ];
 
-const NAVY = "#12347a";
-const DEEP = "#081a47";
-const BLUE = "#0a5be0";
-const ORANGE = "#f7931e";
 const ease = [0.22, 1, 0.36, 1];
 
-const css = `
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-.ft{position:relative;font-family:Inter,"Segoe UI",system-ui,sans-serif;color:#cdd8f0;margin-top:90px}
-.ft *{box-sizing:border-box}
-.ft a{color:inherit;text-decoration:none}
-.ft-body{position:relative;overflow:hidden;background:linear-gradient(160deg,${NAVY} 0%,${DEEP} 70%);
-  clip-path:polygon(0 56px,100% 0,100% 100%,0 100%);padding:150px 24px 0}
-.ft-glow{position:absolute;top:-120px;left:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(10,91,224,.45),transparent 70%);pointer-events:none}
-.ft-slice{position:absolute;right:0;bottom:0;width:240px;height:110px;background:${ORANGE};clip-path:polygon(100% 0,100% 100%,22% 100%);opacity:.95;pointer-events:none}
-.ft-slice2{position:absolute;right:0;bottom:0;width:140px;height:70px;background:#0a2866;clip-path:polygon(100% 0,100% 100%,30% 100%);pointer-events:none}
-
-.ft-cta{position:absolute;z-index:5;top:-72px;left:50%;transform:translateX(-50%);width:min(1120px,calc(100% - 32px));
-  display:flex;align-items:center;justify-content:space-between;gap:24px;padding:30px 40px;border-radius:36px;color:#0b1b4a;
-  background:#fff;box-shadow:0 30px 60px -28px rgba(8,26,71,.6),0 0 0 1px rgba(18,52,122,.05)}
-.ft-cta::before{content:"";position:absolute;left:0;top:26px;bottom:26px;width:6px;border-radius:0 6px 6px 0;background:${ORANGE}}
-.ft-cta h2{margin:0;font-size:clamp(22px,2.6vw,32px);font-weight:800;letter-spacing:-.02em;line-height:1.2}
-.ft-cta h2 span{color:${BLUE}}
-.ft-cta p{margin:8px 0 0;color:#4a5878;font-size:16px}
-.ft-cta-btns{display:flex;gap:14px;flex-wrap:wrap;flex:none}
-.ft-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 28px;border-radius:999px;font-weight:700;font-size:17px;white-space:nowrap}
-.ft-btn.pri{color:#fff;background:linear-gradient(180deg,#ffa52e,#f4800a);box-shadow:0 14px 24px -10px rgba(244,128,10,.7)}
-.ft-btn.sec{color:#fff;background:#1f9d57;box-shadow:0 14px 24px -10px rgba(31,157,87,.6)}
-.ft a:focus-visible,.ft button:focus-visible{outline:3px solid ${ORANGE};outline-offset:3px;border-radius:8px}
-
-.ft-wrap{position:relative;z-index:2;max-width:1240px;margin:0 auto}
-.ft-grid{display:grid;grid-template-columns:1.5fr .8fr 1fr 1.3fr;gap:48px 40px;padding-bottom:56px}
-.ft-brand{display:flex;align-items:center;gap:12px;color:#fff;font-weight:800;font-size:24px;letter-spacing:-.01em}
-.ft-logo{width:46px;height:46px;border-radius:14px;background:#fff;color:${NAVY};display:flex;align-items:center;justify-content:center;font-weight:800;font-size:22px;box-shadow:0 0 0 3px ${ORANGE}}
-.ft-tag{margin:18px 0 24px;max-width:30ch;line-height:1.6;font-size:16px}
-.ft-social{display:flex;gap:10px;list-style:none;margin:0;padding:0}
-.ft-social a{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:14px;color:#fff;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);transition:background .25s,border-color .25s}
-.ft-social a:hover{background:${ORANGE};border-color:${ORANGE}}
-.ft h3{margin:0 0 22px;color:#fff;font-size:18px;font-weight:700;display:flex;flex-direction:column;gap:10px}
-.ft h3::after{content:"";display:block;width:36px;height:3px;border-radius:3px;background:${ORANGE}}
-.ft ul.ft-list{list-style:none;margin:0;padding:0;display:grid;gap:12px}
-.ft-list a{display:inline-flex;align-items:center;gap:6px;font-size:16px;transition:color .2s,transform .2s}
-.ft-list a:hover{color:#fff;transform:translateX(4px)}
-.ft-list a svg{color:${ORANGE};flex:none}
-.ft-contact{list-style:none;margin:0;padding:0;display:grid;gap:18px}
-.ft-contact li{display:flex;gap:14px;align-items:flex-start;font-size:16px;line-height:1.5}
-.ft-ci{flex:none;width:40px;height:40px;border-radius:12px;background:rgba(255,255,255,.08);color:${ORANGE};display:flex;align-items:center;justify-content:center}
-.ft-contact a:hover{color:#fff}
-.ft-bar{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.12);padding:22px 0 26px}
-.ft-bar .ft-wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:14.5px;color:#9fb0d6;padding-right:120px}
-.ft-legal{display:flex;gap:22px;flex-wrap:wrap}
-.ft-legal a:hover{color:#fff}
-.ft-top{position:absolute;z-index:4;right:28px;bottom:24px;width:52px;height:52px;border:0;border-radius:50%;cursor:pointer;color:${NAVY};background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px rgba(0,0,0,.3)}
-
-@media (max-width:1023px){
-  .ft-grid{grid-template-columns:1fr 1fr;gap:44px 32px}
-  .ft-cta{flex-direction:column;align-items:flex-start;padding:28px 28px 28px 32px}
-  .ft-body{padding-top:230px}
-}
-@media (max-width:640px){
-  .ft{margin-top:150px}
-  .ft-body{padding:290px 20px 0;clip-path:polygon(0 36px,100% 0,100% 100%,0 100%)}
-  .ft-cta{top:-120px;border-radius:28px;padding:24px 22px 24px 26px}
-  .ft-cta-btns{width:100%}.ft-btn{flex:1;min-width:0;padding:0 18px;font-size:16px}
-  .ft-grid{grid-template-columns:1fr;gap:38px}
-  .ft-bar .ft-wrap{padding-right:0;flex-direction:column;align-items:flex-start}
-  .ft-top{bottom:auto;top:-26px;right:20px;width:48px;height:48px}
-}
+const styles = `
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
+.arya-footer{--af-navy:#08264b;--af-deep:#061a35;--af-blue:#123d70;--af-orange:#f58220;position:relative;margin-top:100px;color:#eaf1fb;font-family:'DM Sans',Arial,sans-serif;isolation:isolate}
+.arya-footer *{box-sizing:border-box}
+.arya-footer a{color:inherit;text-decoration:none}
+.af-cta-wrap{position:relative;z-index:3;max-width:1280px;margin:0 auto;padding:0 28px}
+.af-cta{position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:28px;padding:34px 42px;border-radius:24px;background:#f4f6f8;color:var(--af-deep);box-shadow:0 22px 55px rgba(4,24,49,.14)}
+.af-cta:before{content:"";position:absolute;inset:0 auto 0 0;width:7px;background:var(--af-orange)}
+.af-cta:after{content:"";position:absolute;right:190px;top:-105px;width:250px;height:250px;border:1px solid rgba(8,38,75,.09);border-radius:50%;box-shadow:0 0 0 28px rgba(8,38,75,.025),0 0 0 56px rgba(8,38,75,.02);pointer-events:none}
+.af-cta-copy,.af-cta-actions{position:relative;z-index:1}
+.af-kicker{display:flex;align-items:center;gap:9px;color:var(--af-orange);font-size:11px;font-weight:800;letter-spacing:.19em;text-transform:uppercase}
+.af-kicker:before{content:"";width:25px;height:2px;background:currentColor}
+.af-cta h2{margin:12px 0 0;font:800 clamp(25px,3vw,39px)/1.12 'Manrope',sans-serif;letter-spacing:-.045em}
+.af-cta h2 span{color:#e97816}
+.af-cta p{margin:10px 0 0;color:#61718a;font-size:14px;line-height:1.65;max-width:570px}
+.af-cta-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.af-action{min-height:49px;padding:0 20px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;gap:10px;font-size:13px;font-weight:800;transition:transform .25s,background .25s,box-shadow .25s}
+.af-action:hover{transform:translateY(-3px)}
+.af-action.primary{background:var(--af-orange);color:#fff;box-shadow:0 9px 22px rgba(245,130,32,.23)}
+.af-action.primary:hover{background:#e9710e}
+.af-action.whatsapp{background:#fff;color:#16864a;border:1px solid #c9e8d6}
+.af-action.whatsapp:hover{box-shadow:0 8px 20px rgba(10,80,40,.09)}
+.af-main{position:relative;overflow:hidden;margin-top:-55px;padding:120px 28px 0;background:linear-gradient(130deg,#0b315d 0%,#08264b 48%,#061a35 100%)}
+.af-main:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:62px 62px;mask-image:linear-gradient(90deg,black,transparent 75%);pointer-events:none}
+.af-main:after{content:"";position:absolute;right:-150px;top:60px;width:470px;height:470px;border:1px solid rgba(255,255,255,.09);border-radius:50%;box-shadow:0 0 0 42px rgba(255,255,255,.018),0 0 0 84px rgba(255,255,255,.015);pointer-events:none}
+.af-container{position:relative;z-index:1;max-width:1224px;margin:0 auto}
+.af-topline{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.15)}
+.af-brand{display:flex;align-items:center;gap:13px}
+.af-mark{width:48px;height:48px;display:grid;place-items:center;background:var(--af-orange);color:#fff;border-radius:13px 13px 13px 3px;font:800 23px 'Manrope',sans-serif;transform:skew(-7deg)}
+.af-brand-name{font:800 21px 'Manrope',sans-serif;letter-spacing:-.04em;color:#fff}
+.af-brand-sub{margin-top:3px;color:#9fb3cf;font-size:10px;letter-spacing:.13em;text-transform:uppercase}
+.af-top-note{display:flex;align-items:center;gap:10px;color:#a9bad2;font-size:12px}
+.af-top-note b{color:#fff;font-weight:700}
+.af-content{display:grid;grid-template-columns:1.25fr .72fr .92fr 1.05fr;gap:48px;padding:54px 0 60px}
+.af-manifesto{min-width:0}
+.af-manifesto .af-kicker{color:#ff9b43}
+.af-manifesto h2{margin:18px 0 16px;max-width:440px;color:#fff;font:800 clamp(34px,4.2vw,58px)/.99 'Manrope',sans-serif;letter-spacing:-.065em}
+.af-manifesto h2 em{font-style:normal;color:#ff922f}
+.af-manifesto p{max-width:340px;margin:0;color:#aebed3;font-size:14px;line-height:1.8}
+.af-socials{display:flex;gap:9px;margin-top:25px}
+.af-socials a{width:38px;height:38px;border:1px solid rgba(255,255,255,.18);border-radius:50%;display:grid;place-items:center;color:#fff;transition:.25s}
+.af-socials a:hover{background:var(--af-orange);border-color:var(--af-orange);transform:translateY(-3px)}
+.af-col{padding-top:7px}
+.af-col-head{display:flex;align-items:center;gap:10px;margin:0 0 22px;color:#fff;font:800 12px 'Manrope',sans-serif;letter-spacing:.14em;text-transform:uppercase}
+.af-col-head span{color:#ff9b43;font-size:10px;letter-spacing:0}
+.af-links{list-style:none;padding:0;margin:0;display:grid;gap:15px}
+.af-links a{display:inline-flex;align-items:center;gap:8px;color:#aebed3;font-size:13px;transition:color .2s,transform .2s}
+.af-links a:hover{color:#fff;transform:translateX(4px)}
+.af-links .af-number{color:#6884a9;font-size:10px;font-weight:700}
+.af-product-links a:before{content:"";width:5px;height:5px;border-radius:50%;background:var(--af-orange);opacity:.85}
+.af-contact-list{display:grid;gap:17px}
+.af-contact-item{display:grid;grid-template-columns:36px 1fr;gap:11px;align-items:start}
+.af-contact-icon{width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);display:grid;place-items:center;color:#ff9b43}
+.af-contact-label{display:block;margin:1px 0 4px;color:#7892b5;font-size:9px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+.af-contact-value{color:#e9f0fa;font-size:12px;line-height:1.55;overflow-wrap:anywhere}
+.af-contact-value a:hover{color:#ffad65}
+.af-bigword{position:relative;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 0 24px;border-top:1px solid rgba(255,255,255,.15)}
+.af-bigword strong{font:800 clamp(42px,10vw,132px)/.82 'Manrope',sans-serif;letter-spacing:-.085em;color:rgba(255,255,255,.07);white-space:nowrap}
+.af-bigword span{flex:none;color:#ff9b43;font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;writing-mode:vertical-rl}
+.af-bottom{border-top:1px solid rgba(255,255,255,.12);background:rgba(2,13,29,.28)}
+.af-bottom-inner{max-width:1224px;margin:0 auto;padding:18px 0;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;color:#8fa5c3;font-size:11px}
+.af-bottom-links{display:flex;gap:20px;flex-wrap:wrap}
+.af-bottom a:hover{color:#fff}
+.af-credit a{color:#d9e4f4;text-decoration:underline;text-underline-offset:3px}
+.af-backtop{position:absolute;right:max(28px,calc((100vw - 1224px)/2));bottom:74px;width:46px;height:46px;border:0;border-radius:50%;display:grid;place-items:center;background:var(--af-orange);color:#fff;cursor:pointer;box-shadow:0 10px 25px rgba(0,0,0,.22);transition:transform .2s,background .2s}
+.af-backtop:hover{transform:translateY(-4px);background:#ff9a3d}
+.arya-footer a:focus-visible,.arya-footer button:focus-visible{outline:3px solid #ffb36e;outline-offset:4px}
+@media(max-width:1050px){.af-content{grid-template-columns:1.2fr 1fr 1fr;gap:42px 32px}.af-manifesto{grid-column:1/-1}.af-manifesto h2{max-width:600px}.af-contact-col{grid-column:1/-1}.af-contact-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.arya-footer{margin-top:80px}.af-cta-wrap{padding:0 16px}.af-cta{grid-template-columns:1fr;padding:27px 22px 24px;gap:20px;border-radius:18px}.af-cta:after{right:-80px}.af-cta-actions{width:100%}.af-action{flex:1;padding:0 13px;font-size:12px}.af-main{padding:105px 20px 0;margin-top:-42px}.af-topline{align-items:flex-start;flex-direction:column}.af-content{grid-template-columns:1fr 1fr;gap:36px 22px;padding:38px 0 38px}.af-manifesto{grid-column:1/-1}.af-manifesto h2{font-size:clamp(42px,12vw,58px)}.af-contact-col{grid-column:1/-1}.af-contact-list{grid-template-columns:1fr 1fr;gap:18px 12px}.af-bigword{padding:19px 0}.af-bigword strong{font-size:clamp(43px,12vw,78px)}.af-bigword span{font-size:8px}.af-backtop{right:20px;bottom:86px;width:42px;height:42px}.af-bottom-inner{padding:17px 0;align-items:flex-start;flex-direction:column}.af-bottom-links{gap:14px}}
+@media(max-width:420px){.af-content{grid-template-columns:1fr 1fr;gap:30px 16px}.af-contact-list{grid-template-columns:1fr}.af-cta-actions{flex-direction:column;align-items:stretch}.af-action{width:100%}.af-bigword strong{font-size:42px}}
+@media(prefers-reduced-motion:reduce){.arya-footer *{scroll-behavior:auto!important;transition:none!important}}
 `;
 
 export default function Footer() {
   const reduce = useReducedMotion();
   const year = new Date().getFullYear();
 
-  const reveal = (d = 0) => ({
-    initial: reduce ? false : { opacity: 0, y: 28 },
+  const reveal = (delay = 0) => ({
+    initial: reduce ? false : { opacity: 0, y: 24 },
     whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true, amount: 0.2 },
-    transition: { duration: 0.7, ease, delay: d },
+    viewport: { once: true, amount: 0.15 },
+    transition: { duration: 0.65, ease, delay },
   });
 
-  const Col = ({ title, items, d }) => (
-    <motion.nav aria-label={title} {...reveal(d)}>
-      <h3>{title}</h3>
-      <ul className="ft-list">
-        {items.map((l) => (
-          <li key={l.label}>
-            <a href={l.href}><ChevronRight size={16} strokeWidth={2.6} 
-            aria-hidden="true" />{l.label}</a>
-          </li>
-        ))}
-      </ul>
-    </motion.nav>
-  );
+  const whatsappUrl = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(
+    "Hello, I would like to discuss a rack requirement."
+  )}`;
 
   return (
-    <footer className="ft">
-      <style>{css}</style>
+    <footer className="arya-footer">
+      <style>{styles}</style>
 
-     
+      <div className="af-cta-wrap">
+        <motion.div className="af-cta" {...reveal(0)}>
+          <div className="af-cta-copy">
+            <div className="af-kicker">Have a space to organise?</div>
+            <h2>
+              Let’s build a smarter
+              <br />
+              <span>display space.</span>
+            </h2>
+            <p>
+              Tell us about your store, warehouse or project. We’ll help you
+              find a practical racking solution that fits your space.
+            </p>
+          </div>
+          <div className="af-cta-actions">
+            <a className="af-action primary" href="/contact">
+              Start a project <ArrowUpRight size={17} />
+            </a>
+            <a
+              className="af-action whatsapp"
+              href={whatsappUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <MessageCircle size={17} /> WhatsApp us
+            </a>
+          </div>
+        </motion.div>
+      </div>
 
-      <div className="ft-body">
-        <div className="ft-glow" aria-hidden="true" />
-        <div className="ft-slice" aria-hidden="true" /><div className="ft-slice2" aria-hidden="true" />
+      <div className="af-main">
+        <div className="af-container">
+          <motion.div className="af-topline" {...reveal(0.05)}>
+            <a href="/" className="af-brand" aria-label={`${site.name} home`}>
+              <span className="af-mark">A</span>
+              <span>
+                <span className="af-brand-name">{site.name}</span>
+              
+              </span>
+            </a>
+            <div className="af-top-note">
+              <Plus size={15} color="#ff9b43" />
+              <span>
+                <b>Designed around your space.</b> Built for everyday business.
+              </span>
+            </div>
+          </motion.div>
 
-        <div className="ft-wrap">
-          <div className="ft-grid">
-            <motion.div {...reveal(0)}>
-              <a href="/" className="ft-brand" aria-label={`${site.name} home`}>
-                <span className="ft-logo">A</span>{site.name}
-              </a>
-              <p className="ft-tag">{site.tagline}</p>
-              {/* <ul className="ft-social">
-                {site.social.map(({ icon: Icon, label, href }) => (
-                  <li key={label}>
-                    <motion.a href={href} aria-label={label} target="_blank" rel="noopener noreferrer"
-                      whileHover={reduce ? undefined : { y: -4 }} transition={{ type: "spring", stiffness: 300, damping: 15 }}>
-                      <Icon size={20} />
-                    </motion.a>
+          <div className="af-content">
+            <motion.div className="af-manifesto" {...reveal(0.08)}>
+              <div className="af-kicker">Space made productive</div>
+              <h2>
+                Make room
+                <br />
+                for <em>better</em>
+                <br />
+                business.
+              </h2>
+              <p>{site.tagline}</p>
+              <div className="af-socials" aria-label="Social links">
+                <a href="https://www.instagram.com/" aria-label="Instagram" target="_blank" rel="noreferrer">
+                  <span style={{ fontSize: 16, fontWeight: 800 }}>ig</span>
+                </a>
+                <a href="https://www.facebook.com/" aria-label="Facebook" target="_blank" rel="noreferrer">
+                  <span style={{ fontSize: 18, fontWeight: 800 }}>f</span>
+                </a>
+                <a href="https://www.linkedin.com/" aria-label="LinkedIn" target="_blank" rel="noreferrer">
+                  <span style={{ fontSize: 14, fontWeight: 800 }}>in</span>
+                </a>
+              </div>
+            </motion.div>
+
+            <motion.nav className="af-col" aria-label="Explore" {...reveal(0.14)}>
+              <h3 className="af-col-head"><span>01 /</span> Explore</h3>
+              <ul className="af-links">
+                {exploreLinks.map((item) => (
+                  <li key={item.no}>
+                    <a href={item.href}>
+                      <span className="af-number">{item.no}</span>
+                      {item.label}
+                    </a>
                   </li>
                 ))}
-              </ul> */}
-            </motion.div>
-
-            <Col title="Quick Links" items={quick} d={0.1} />
-            <Col title="Our Racks" items={products} d={0.2} />
-
-            <motion.div {...reveal(0.3)}>
-              <h3>Contact Us</h3>
-              <ul className="ft-contact">
-                <li><span className="ft-ci"><Phone size={20} /></span><a href={`tel:${site.phone.replace(/\s/g, "")}`}>{site.phone}</a></li>
-                <li><span className="ft-ci"><Mail size={20} /></span><a href={`mailto:${site.email}`}>{site.email}</a></li>
-                <li><span className="ft-ci"><MapPin size={20} /></span><span>{site.address}</span></li>
-                <li><span className="ft-ci"><Clock size={20} /></span><span>{site.hours}</span></li>
               </ul>
+            </motion.nav>
+
+            <motion.nav className="af-col" aria-label="Product categories" {...reveal(0.2)}>
+              <h3 className="af-col-head"><span>02 /</span> Find your rack</h3>
+              <ul className="af-links af-product-links">
+                {productLinks.map((item) => (
+                  <li key={item.label}>
+                    <a href={item.href}>{item.label}</a>
+                  </li>
+                ))}
+              </ul>
+            </motion.nav>
+
+            <motion.div className="af-col af-contact-col" {...reveal(0.26)}>
+              <h3 className="af-col-head"><span>03 /</span> Talk to our team</h3>
+              <div className="af-contact-list">
+                <div className="af-contact-item">
+                  <span className="af-contact-icon"><Phone size={16} /></span>
+                  <div>
+                    <span className="af-contact-label">Call us</span>
+                    <div className="af-contact-value">
+                      <a href={`tel:${site.phone.replace(/[^\d+]/g, "")}`}>{site.phone}</a>
+                    </div>
+                  </div>
+                </div>
+                <div className="af-contact-item">
+                  <span className="af-contact-icon"><Mail size={16} /></span>
+                  <div>
+                    <span className="af-contact-label">Email</span>
+                    <div className="af-contact-value">
+                      <a href={`mailto:${site.email}`}>{site.email}</a>
+                    </div>
+                  </div>
+                </div>
+                <div className="af-contact-item">
+                  <span className="af-contact-icon"><MapPin size={16} /></span>
+                  <div>
+                    <span className="af-contact-label">Visit</span>
+                    <div className="af-contact-value">{site.address}</div>
+                  </div>
+                </div>
+                <div className="af-contact-item">
+                  <span className="af-contact-icon"><Clock3 size={16} /></span>
+                  <div>
+                    <span className="af-contact-label">Working hours</span>
+                    <div className="af-contact-value">{site.hours}</div>
+                  </div>
+                </div>
+              </div>
             </motion.div>
           </div>
+
+     
         </div>
 
-        <div className="ft-bar">
-          <div className="ft-wrap">
+        <div className="af-bottom">
+          <div className="af-container af-bottom-inner">
             <span>© {year} {site.name}. All rights reserved.</span>
-            <div>
-  Website Designed By Inquiry Bazaar Pvt. Ltd.  <a className="underline" href="https://inquirybazaar.com/">B2B Marketplace</a>
+            <div className="af-bottom-links">
+              <a href="/privacy-policy">Privacy Policy</a>
+              <a href="/terms-and-conditions">Terms</a>
             </div>
-          
+            <span className="af-credit">
+              Website by{" "}
+              <a href={site.creditUrl} target="_blank" rel="noreferrer">
+                {site.credit}
+              </a>
+            </span>
           </div>
         </div>
 
-        <motion.button type="button" className="ft-top" aria-label="Back to top"
-          onClick={() => window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" })}
-          whileHover={reduce ? undefined : { y: -4 }} whileTap={reduce ? undefined : { scale: 0.92 }}>
-          <ArrowUp size={24} strokeWidth={2.4} />
+        <motion.button
+          type="button"
+          className="af-backtop"
+          aria-label="Back to top"
+          onClick={() =>
+            window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" })
+          }
+          whileHover={reduce ? undefined : { y: -4 }}
+          whileTap={reduce ? undefined : { scale: 0.92 }}
+        >
+          <ArrowUp size={20} />
         </motion.button>
       </div>
     </footer>
