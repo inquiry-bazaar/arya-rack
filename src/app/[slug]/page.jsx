@@ -587,7 +587,7 @@ export default function SingleProductPage() {
       </section>
 
       {/* ENQUIRY */}
-      <section id="enquiry" className="scroll-mt-24 bg-white px-5 py-9 sm:px-8 lg:py-12">
+      {/* <section id="enquiry" className="scroll-mt-24 bg-white px-5 py-9 sm:px-8 lg:py-12">
         <motion.div
           initial="hidden"
           whileInView="show"
@@ -638,7 +638,7 @@ export default function SingleProductPage() {
             </button>
           </form>
         </motion.div>
-      </section>
+      </section> */}
 
       {/* RELATED PRODUCTS */}
       {RELATED.length > 0 && (
@@ -669,8 +669,10 @@ export default function SingleProductPage() {
                   whileHover={{ y: -6 }}
                   className="group overflow-hidden rounded-[21px] border border-[#dce5ed] bg-white p-3 shadow-[0_8px_24px_rgba(25,52,75,0.06)] transition-shadow hover:shadow-[0_18px_35px_rgba(25,52,75,0.12)]"
                 >
-                  <div className="flex h-36 items-center justify-center overflow-hidden rounded-xl bg-[#eef2f5] p-3">
-                    <img src={item.image} alt={item.name} className="h-full w-full object-contain transition duration-500 group-hover:scale-105" />
+                  <div className="flex h-66 items-center justify-center overflow-hidden rounded-xl
+                   bg-[#eef2f5] p-3">
+                    <img src={item.image} alt={item.name} className="h-full w-full object-fit 
+                    transition duration-500 group-hover:scale-105" />
                   </div>
                   <div className="flex items-center justify-between gap-2 px-1 pb-1 pt-4">
                     <div className="min-w-0">
