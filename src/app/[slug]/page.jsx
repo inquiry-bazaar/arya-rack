@@ -676,7 +676,7 @@ export default function SingleProductPage() {
                   </div>
                   <div className="flex items-center justify-between gap-2 px-1 pb-1 pt-4">
                     <div className="min-w-0">
-                      <span className="mb-1 block text-[9px] font-black tracking-widest text-[#ed7628]">{String(index + 1).padStart(2, "0")}</span>
+                      {/* <span className="mb-1 block text-[9px] font-black tracking-widest text-[#ed7628]">{String(index + 1).padStart(2, "0")}</span> */}
                       <h3 className="text-sm font-extrabold leading-snug text-[#263747]">{item.name}</h3>
                     </div>
                     <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#174f7e] text-[#174f7e] transition group-hover:bg-[#174f7e] group-hover:text-white">
