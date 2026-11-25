@@ -256,8 +256,8 @@ export default function Banner() {
       </motion.svg>
 
       {/* ---------- TITLE CARD ---------- */}
-      <div className="absolute left-[4%] top-[17%] z-10 w-[92%] sm:top-[15%] lg:left-[19.4%] lg:top-[8.6%] lg:w-[61.5%]">
-        {/* badge + side lines */}
+<div className="absolute bottom-[1%] left-[4%] top-auto z-10 w-[92%] sm:bottom-[14%] sm:top-auto 
+lg:bottom-[1%] lg:left-[19.4%] lg:top-auto lg:w-[61.5%]">        {/* badge + side lines */}
         <div className="absolute left-1/2 top-0 z-20 flex w-full -translate-x-1/2 -translate-y-1/2 items-center justify-center gap-[1%]">
           <motion.span
             aria-hidden
@@ -392,27 +392,7 @@ bg-white/35 shadow-[0_24px_50px_rgba(10,36,87,0.18)] backdrop-blur-sm lg:-skew-x
         </motion.button>
       ))}
 
-      {/* ---------- DOTS ---------- */}
-      <div className="absolute bottom-4 left-1/2 z-30 flex -translate-x-1/2 items-center gap-3 lg:bottom-[2.4%] lg:gap-[0.9vw]" role="tablist" aria-label="Choose slide">
-        {SLIDES.map((s, i) => {
-          const active = current === i;
-          return (
-            <motion.button
-              key={i}
-              type="button"
-              role="tab"
-              aria-selected={active}
-              aria-label={`Go to slide ${i + 1}`}
-              onClick={() => goTo(i, i > current ? 1 : -1)}
-              whileHover={{ scale: 1.25 }}
-              whileTap={{ scale: 0.85 }}
-              animate={{ scale: active ? 1.15 : 1, background: active ? C.orange : C.navy }}
-              transition={{ type: "spring", stiffness: 400, damping: 22 }}
-              className="h-[14px] w-[14px] rounded-full shadow-[0_2px_6px_rgba(10,36,87,0.35)] lg:h-[clamp(14px,1.05vw,22px)] lg:w-[clamp(14px,1.05vw,22px)]"
-            />
-          );
-        })}
-      </div>
+      
     </section>
   );
 }
