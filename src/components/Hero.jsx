@@ -257,7 +257,7 @@ export default function Banner() {
 
       {/* ---------- TITLE CARD ---------- */}
 <div className="absolute bottom-[1%] left-[4%] top-auto z-10 w-[92%] sm:bottom-[14%] sm:top-auto 
-lg:bottom-[1%] lg:left-[19.4%] lg:top-auto lg:w-[61.5%]">        {/* badge + side lines */}
+lg:bottom-[7%] lg:left-[19.4%] lg:top-auto lg:w-[61.5%]">        {/* badge + side lines */}
         <div className="absolute left-1/2 top-0 z-20 flex w-full -translate-x-1/2 -translate-y-1/2 items-center justify-center gap-[1%]">
           <motion.span
             aria-hidden
