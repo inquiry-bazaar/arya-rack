@@ -99,7 +99,7 @@ export const raw = [
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "products/Bright White Gondola Shelf Studio Shot.webp",
+    image: "product/Bright White Gondola Shelf Studio Shot.webp",
     gallery: ["products/double-sided-gondola-rack.webp"],
 
     // Hero short description
@@ -1390,7 +1390,7 @@ These display racks are intended for fruit shops & mini marts. Retailers, dealer
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/island-fruit-and-vegetable-display-table.webp",
+    image: "/product/Fruit & Vegetable Display Rack.webp",
     gallery: ["/images/products/island-fruit-and-vegetable-display-table.webp"],
 
     // Hero short description
