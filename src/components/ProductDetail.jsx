@@ -33,7 +33,40 @@ export default function ProductDetail({ product }) {
     message: "",
   });
 
-  const specs = Object.entries(product.specs || {});
+
+ // PRODUCT SPECIFICATIONS
+const specs = Object.entries(product.specs || {});
+
+// GET QUICK SPEC VALUE
+const getSpec = (key, fallback) => {
+  return product.quickSpecs?.[key] || fallback;
+};
+
+// QUICK SPECIFICATIONS
+const quickSpecs = [
+  {
+    icon: Ruler,
+    value: getSpec("height", "6–7 ft"),
+    label: "Height",
+  },
+  {
+    icon: Layers3,
+    value: getSpec("displayLevels", "5–6 Levels"),
+    label: "Display Levels",
+  },
+  {
+    icon: Wrench,
+    value: getSpec("material", "Mild Steel"),
+    label: "Material",
+  },
+  {
+    icon: Sparkles,
+    value: getSpec("finish", "Powder Coated"),
+    label: "Finish",
+  },
+];
+
+
 
   // PRODUCT GALLERY - ONLY IN HERO
   const gallery = [
@@ -52,13 +85,6 @@ export default function ProductDetail({ product }) {
     `Hello Arya Industry, I am interested in ${product.title}.`
   )}`;
 
-  const getSpec = (keyword, fallback) => {
-    const found = specs.find(([key]) =>
-      key.toLowerCase().includes(keyword.toLowerCase())
-    );
-
-    return found?.[1] || fallback;
-  };
 
   // PRODUCT FEATURES
   const features = product.features?.length
@@ -74,28 +100,7 @@ export default function ProductDetail({ product }) {
       ];
 
   // QUICK SPECIFICATIONS
-  const quickSpecs = [
-    {
-      icon: Ruler,
-      value: getSpec("height", "6–7 ft"),
-      label: "Height",
-    },
-    {
-      icon: Layers3,
-      value: getSpec("shelves", "5–6 Shelves"),
-      label: "Shelves",
-    },
-    {
-      icon: Wrench,
-      value: getSpec("material", "Mild Steel"),
-      label: "Material",
-    },
-    {
-      icon: Sparkles,
-      value: getSpec("finish", "Powder Coated"),
-      label: "Coated Finish",
-    },
-  ];
+
 
   const handleChange = (e) => {
     setForm({
@@ -187,46 +192,12 @@ ${form.message}
 
               <div className="flex flex-col items-center gap-3">
 
-                <button
-                  type="button"
-                  onClick={previousImage}
-                  className="flex h-7 w-7 items-center justify-center rounded-full border border-[#d5e0e9] bg-white text-[#174f7e] shadow-sm transition hover:border-[#f47721]"
-                >
-                  <ChevronUp size={15} />
-                </button>
-
-                {gallery.slice(0, 5).map((image, index) => (
-                  <button
-                    type="button"
-                    key={`${image}-${index}`}
-                    onClick={() => setSelectedImage(index)}
-                    className={`h-[58px] w-[42px] overflow-hidden rounded-lg border-2 bg-white p-1 transition sm:h-[76px] sm:w-[55px] ${
-                      selectedImage === index
-                        ? "border-[#f47721] shadow-md"
-                        : "border-[#dce5ec]"
-                    }`}
-                  >
-                    <img
-                      src={image}
-                      alt={`${product.title} ${index + 1}`}
-                      className="h-full w-full object-contain"
-                    />
-                  </button>
-                ))}
-
-                <button
-                  type="button"
-                  onClick={nextImage}
-                  className="flex h-7 w-7 items-center justify-center rounded-full border border-[#d5e0e9] bg-white text-[#174f7e] shadow-sm transition hover:border-[#f47721]"
-                >
-                  <ChevronDown size={15} />
-                </button>
-
+                
               </div>
 
               {/* MAIN PRODUCT IMAGE */}
 
-              <div className="relative flex min-h-[310px] items-center justify-center overflow-hidden rounded-[20px] border border-white bg-gradient-to-br from-white to-[#eaf1f7] p-5 shadow-[0_12px_35px_rgba(15,45,75,0.07)] sm:min-h-[440px] sm:p-8">
+              <div className="relative flex min-h-[310px] items-center justify-center overflow-hidden rounded-[20px] border border-white bg-gradient-to-br from-white to-[#eaf1f7] p-5 shadow-[0_15px_35px_rgba(15,45,75,0.07)] sm:min-h-[440px] sm:p-8">
 
                 {currentImage ? (
                   <img
@@ -265,7 +236,7 @@ ${form.message}
               </h1>
 
               <p className="mt-4 max-w-xl text-xs leading-6 text-[#6a7c8e] sm:text-sm">
-                { product.description}
+                { product.desc}
               </p>
 
               {/* QUICK SPECIFICATIONS */}
@@ -284,11 +255,11 @@ ${form.message}
                       className="mb-1.5 text-[#174f7e]"
                     />
 
-                    <strong className="text-[15px] font-extrabold text-[#102b49]">
+                    <strong className="text-[15px]  text-[#102b49]">
                       {value}
                     </strong>
 
-                    <span className="mt-0.5 text-[11px] text-[#7b8c9c]">
+                    <span className="mt-0.5 text-[14px] text-[#7b8c9c]">
                       {label}
                     </span>
                   </div>
@@ -337,7 +308,7 @@ ${form.message}
           {/* BENEFIT STRIP */}
 
           <div className="mt-8 grid grid-cols-2 gap-4 rounded-xl bg-gradient-to-r from-[#174f7e] 
-          to-[#0b3c64] px-5 py-5 !text-white shadow-[0_12px_25px_rgba(20,60,100,0.2)] md:grid-cols-4">
+          to-[#0b3c64] px-5 py-5 !text-white shadow-[0_15px_25px_rgba(20,60,100,0.2)] md:grid-cols-4">
 
             {[
               {
@@ -368,11 +339,11 @@ ${form.message}
                 <Icon size={21} className="shrink-0" />
 
                 <div>
-                  <h3 className="text-[15px] font-extrabold !text-white">
+                  <h3 className="text-[14px] font-extrabold !text-white">
                     {title}
                   </h3>
 
-                  <p className="mt-1 text-[11px] leading-4 !text-white">
+                  <p className="mt-1 text-[10px] leading-4 !text-white">
                     {desc}
                   </p>
                 </div>
@@ -517,9 +488,9 @@ ${form.message}
 <div className="flex max-w-[780px] overflow-hidden rounded-t-2xl border border-[#e0e8ef] border-b-0 bg-white">
 
   {[
-    { id: "overview", label: "Overview", icon: Package },
-    { id: "specifications", label: "Specifications", icon: FileText },
     { id: "description", label: "Description", icon: Layers3 },
+    { id: "specifications", label: "Specifications", icon: FileText },
+
   
   ].map(({ id, label, icon: Icon }) => (
     <button
@@ -541,37 +512,22 @@ ${form.message}
 
           {/* TAB CONTENT */}
 
-          <div className="rounded-b-2xl rounded-tr-2xl border border-[#e0e8ef] bg-white p-4 shadow-[0_12px_30px_rgba(20,50,80,0.05)] sm:p-6">
+          <div className="rounded-b-2xl rounded-tr-2xl border border-[#e0e8ef] bg-white p-4 shadow-[0_15px_30px_rgba(20,50,80,0.05)] sm:p-6">
 
            
-           {/* OVERVIEW TAB */}
-{activeTab === "overview" && (
-  <div className="w-full">
-    <h3 className="text-2xl font-black text-[#102b49]">
-      Product Overview
-    </h3>
 
-    <div className="mt-3 h-[3px] w-10 bg-[#f47721]" />
-
-    <p className="mt-5 text-xs leading-7 text-[#64798c]">
-      {product.shortDescription ||
-        product.desc ||
-        product.description}
-    </p>
-  </div>
-)}
 
 {/* DESCRIPTION TAB */}
 {activeTab === "description" && (
   <div className="w-full">
-    <h3 className="text-2xl font-black text-[#102b49]">
+    <h3 className="text-3xl font-black text-[#102b49]">
       Product Description
     </h3>
 
     <div className="mt-3 h-[3px] w-10 bg-[#f47721]" />
 
     <p className="mt-5 whitespace-pre-line text-xs leading-7 text-[#64798c]">
-      {product.desc || product.description}
+      {product.description}
     </p>
   </div>
 )}
@@ -586,17 +542,18 @@ ${form.message}
                   specs.map(([key, value], index) => (
                     <div
                       key={key}
-                      className={`grid grid-cols-2 text-[15px] sm:text-xs ${
+                      className={`grid grid-cols-2 text-[16px] sm:text-xs ${
                         index % 2 === 0
                           ? "bg-[#edf3f8]"
                           : "bg-white"
                       }`}
                     >
-                      <div className="border-r border-[#dce5ed] px-3 py-2.5 font-extrabold text-[#243e57] sm:px-5">
+                      <div className="border-r border-[#dce5ed] px-3 py-2.5 font-extrabold 
+                      text-[#243e57] sm:px-5 text-[14px]">
                         {key}
                       </div>
 
-                      <div className="px-3 py-2.5 text-[#60778c] sm:px-5">
+                      <div className="px-3 py-2.5 text-gray-700 sm:px-5 text-[14px]">
                         {value}
                       </div>
                     </div>
