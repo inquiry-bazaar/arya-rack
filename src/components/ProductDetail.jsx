@@ -3,6 +3,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Popup from "./Popup";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -25,6 +26,7 @@ import {
 export default function ProductDetail({ product }) {
   const [activeTab, setActiveTab] = useState("specifications");
   const [selectedImage, setSelectedImage] = useState(0);
+  const [quoteOpen, setQuoteOpen] = useState(false);
 
   const [form, setForm] = useState({
     name: "",
@@ -150,6 +152,7 @@ ${form.message}
   };
 
   return (
+    <>
     <main className="overflow-hidden bg-white text-[#102b49]">
 
       {/* =========================================
@@ -271,13 +274,14 @@ ${form.message}
 
               <div className="mt-5 flex flex-wrap gap-2">
 
-                <a
-                  href="#enquiry-form"
+                <button
+                  type="button"
+                  onClick={() => setQuoteOpen(true)}
                   className="inline-flex h-10 items-center gap-2 rounded-lg bg-[#f47721] px-5 text-[15px] font-extrabold text-white shadow-md shadow-orange-100 transition hover:bg-[#e56815]"
                 >
                   Request a Quote
                   <ArrowRight size={14} />
-                </a>
+                </button>
 
                 {product.brochure ? (
                   <a
@@ -709,5 +713,7 @@ ${form.message}
       <div className="h-14 lg:hidden" />
 
     </main>
+    <Popup open={quoteOpen} onClose={() => setQuoteOpen(false)} />
+    </>
   );
 }
