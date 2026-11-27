@@ -185,7 +185,7 @@ These display racks are intended for central aisles, supermarkets and hypermarke
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "products/single-sided-wall-gondola-rack.webp",
+    image: "product/Single Sided Wall Gondola Rack.webp",
     gallery: ["products/single-sided-wall-gondola-rack.webp"],
 
     // Hero short description
@@ -271,8 +271,8 @@ These display racks are intended for supermarket wall sections. Retailers, deale
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/products/end-cap-gondola-display-rack.webp",
-    gallery: ["/products/end-cap-gondola-display-rack.webp"],
+    image: "/product/End Cap Gondola Display Rack.webp",
+    gallery: ["/product/End Cap Gondola Display Rack.webp"],
 
     // Hero short description
     desc: "MS steel freestanding floor display rack by Arya Insulation Pvt Ltd, designed for aisle ends & offer displays. Custom configurations are available as per product and store requirements.",
@@ -443,8 +443,8 @@ These display racks are intended for store corners and connecting aisle sections
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/Perforated Back Panel Grocery Rack.webp",
-    gallery: ["/images/products/perforated-back-panel-grocery-rack.webp"],
+    image: "/product/Perforated Pegboard Wall Panel.webp",
+    gallery: ["/product/Perforated Pegboard Wall Panel.webp"],
 
     // Hero short description
     desc: "MS steel wall-mounted / panel display system by Arya Insulation Pvt Ltd, designed for grocery & fmcg stores. Custom configurations are available as per product and store requirements.",
@@ -1304,8 +1304,8 @@ These display racks are intended for wet & fresh produce areas. Retailers, deale
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/basket-type-fruit-display-rack.webp",
-    gallery: ["/images/products/basket-type-fruit-display-rack.webp"],
+    image: "/product/retail_rack_light_gray_square.webp",
+    gallery: ["/product/retail_rack_light_gray_square.webp"],
 
     // Hero short description
     desc: "MS steel freestanding / wall-side display rack (as per design) by Arya Insulation Pvt Ltd, designed for fruit shops & mini marts. Custom configurations are available as per product and store requirements.",
@@ -1477,7 +1477,7 @@ These display racks are intended for store centre fresh zone. Retailers, dealers
 
     // Product images
     image: "/product/Wall Mounted Vegetable Display Rack.webp",
-    gallery: ["/images/products/wall-mounted-vegetable-display-rack.webp"],
+    gallery: ["/product/Wall Mounted Vegetable Display Rack.webp"],
 
     // Hero short description
     desc: "MS steel wall-mounted / panel display system by Arya Insulation Pvt Ltd, designed for vegetable shops (wall side). Custom configurations are available as per product and store requirements.",
@@ -1562,8 +1562,8 @@ These display racks are intended for vegetable shops (wall side). Retailers, dea
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/onion-and-potato-storage-display-rack.webp",
-    gallery: ["/images/products/onion-and-potato-storage-display-rack.webp"],
+    image: "/product/retail_rack_light_gray_square.webp",
+    gallery: ["/product/retail_rack_light_gray_square.webp"],
 
     // Hero short description
     desc: "MS steel freestanding / wall-side display rack (as per design) by Arya Insulation Pvt Ltd, designed for vegetable shops & kirana. Custom configurations are available as per product and store requirements.",
@@ -3888,7 +3888,7 @@ These display racks are intended for surgical & medical supply stores. Retailers
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/Countertop Healthcare Display Stand.webp",
+    image: "/product/Medical%20Store%20Wall%20Display%20Rack.webp",
     gallery: ["/images/products/countertop-healthcare-display-stand.webp"],
 
     // Hero short description
@@ -4663,8 +4663,8 @@ These display racks are intended for electronics hypermarkets. Retailers, dealer
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/tv-display-wall-rack.webp",
-    gallery: ["/images/products/tv-display-wall-rack.webp"],
+    image: "/product/TV Display Wall Rack.webp",
+    gallery: ["/product/TV Display Wall Rack.webp"],
 
     // Hero short description
     desc: "MS steel wall-mounted / panel display system by Arya Insulation Pvt Ltd, designed for electronics showrooms. Custom configurations are available as per product and store requirements.",
@@ -4749,8 +4749,8 @@ These display racks are intended for electronics showrooms. Retailers, dealers, 
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/home-appliance-display-rack.webp",
-    gallery: ["/images/products/home-appliance-display-rack.webp"],
+    image: "/product/Home Appliance Display Rack.webp",
+    gallery: ["/product/Home Appliance Display Rack.webp"],
 
     // Hero short description
     desc: "MS steel freestanding / wall-side display rack (as per design) by Arya Insulation Pvt Ltd, designed for appliance stores. Custom configurations are available as per product and store requirements.",
@@ -5180,8 +5180,8 @@ These display racks are intended for billing counters. Retailers, dealers, store
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/makeup-counter-display-unit.webp",
-    gallery: ["/images/products/makeup-counter-display-unit.webp"],
+    image: "/product/Makeup Counter Display Unit.webp",
+    gallery: ["/product/Makeup Counter Display Unit.webp"],
 
     // Hero short description
     desc: "MS steel countertop / freestanding display stand by Arya Insulation Pvt Ltd, designed for beauty stores & malls. Custom configurations are available as per product and store requirements.",
@@ -5438,8 +5438,8 @@ These display racks are intended for beauty & pharmacy stores. Retailers, dealer
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/salon-and-hair-care-products-display-rack.webp",
-    gallery: ["/images/products/salon-and-hair-care-products-display-rack.webp"],
+    image: "/product/Salon & Hair Care Products Display Rack.webp",
+    gallery: ["/product/Salon & Hair Care Products Display Rack.webp"],
 
     // Hero short description
     desc: "MS steel freestanding / wall-side display rack (as per design) by Arya Insulation Pvt Ltd, designed for salons & spas. Custom configurations are available as per product and store requirements.",
@@ -5610,8 +5610,8 @@ These display racks are intended for fancy & artificial jewellery stores. Retail
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/sunglasses-and-optical-display-stand.webp",
-    gallery: ["/images/products/sunglasses-and-optical-display-stand.webp"],
+    image: "/product/Sunglasses & Optical Display Stand.webp",
+    gallery: ["/product/Sunglasses & Optical Display Stand.webp"],
 
     // Hero short description
     desc: "MS steel countertop / freestanding display stand by Arya Insulation Pvt Ltd, designed for optical shops. Custom configurations are available as per product and store requirements.",
@@ -5697,8 +5697,8 @@ These display racks are intended for optical shops. Retailers, dealers, store pl
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/bakery-bread-display-rack.webp",
-    gallery: ["/images/products/bakery-bread-display-rack.webp"],
+    image: "/product/Perforated Pegboard Wall Panel.webp",
+    gallery: ["/product/Perforated Pegboard Wall Panel.webp"],
 
     // Hero short description
     desc: "MS steel freestanding / wall-side display rack (as per design) by Arya Insulation Pvt Ltd, designed for bakeries. Custom configurations are available as per product and store requirements.",
@@ -6041,8 +6041,8 @@ These display racks are intended for bakery counters. Retailers, dealers, store 
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/rusk-and-toast-display-rack.webp",
-    gallery: ["/images/products/rusk-and-toast-display-rack.webp"],
+    image: "/product/Rusk & Toast Display Rack.webp",
+    gallery: ["/product/Rusk & Toast Display Rack.webp"],
 
     // Hero short description
     desc: "MS steel freestanding / wall-side display rack (as per design) by Arya Insulation Pvt Ltd, designed for bakeries & kirana. Custom configurations are available as per product and store requirements.",
@@ -6127,8 +6127,8 @@ These display racks are intended for bakeries & kirana. Retailers, dealers, stor
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/biscuit-and-cookie-display-rack.webp",
-    gallery: ["/images/products/biscuit-and-cookie-display-rack.webp"],
+    image: "/product/Revolving Mobile Accessories Stand.webp",
+    gallery: ["/product/Biscuit & Cookie Display Rack.webp"],
 
     // Hero short description
     desc: "MS steel freestanding / wall-side display rack (as per design) by Arya Insulation Pvt Ltd, designed for bakeries & general stores. Custom configurations are available as per product and store requirements.",
@@ -6213,8 +6213,8 @@ These display racks are intended for bakeries & general stores. Retailers, deale
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/namkeen-and-snacks-display-rack.webp",
-    gallery: ["/images/products/namkeen-and-snacks-display-rack.webp"],
+    image: "/product/Namkeen & Snacks Display Rack.webp",
+    gallery: ["/product/Namkeen & Snacks Display Rack.webp"],
 
     // Hero short description
     desc: "MS steel freestanding / wall-side display rack (as per design) by Arya Insulation Pvt Ltd, designed for sweet & namkeen shops. Custom configurations are available as per product and store requirements.",
@@ -6299,8 +6299,8 @@ These display racks are intended for sweet & namkeen shops. Retailers, dealers, 
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/chips-display-rack.webp",
-    gallery: ["/images/products/chips-display-rack.webp"],
+    image: "/product/Namkeen & Snacks Display Rack.webp",
+    gallery: ["/product/chips-display-rack.webp"],
 
     // Hero short description
     desc: "MS steel freestanding / wall-side display rack (as per design) by Arya Insulation Pvt Ltd, designed for general & kirana stores. Custom configurations are available as per product and store requirements.",
@@ -6385,8 +6385,8 @@ These display racks are intended for general & kirana stores. Retailers, dealers
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/chocolate-and-candy-confectionery-display-stand.webp",
-    gallery: ["/images/products/chocolate-and-candy-confectionery-display-stand.webp"],
+    image: "/product/Chocolate & Candy Confectionery Display Stand.webp",
+    gallery: ["/product/Chocolate & Candy Confectionery Display Stand.webp"],
 
     // Hero short description
     desc: "MS steel countertop / freestanding display stand by Arya Insulation Pvt Ltd, designed for chocolates, candies, toffees and confectionery products. Custom configurations are available as per product and store requirements.",
@@ -6472,8 +6472,8 @@ These display racks are intended for chocolates, candies, toffees and confection
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/hardware-store-display-rack.webp",
-    gallery: ["/images/products/hardware-store-display-rack.webp"],
+    image: "/product/Hardware Store Display Rack.png",
+    gallery: ["/product/Hardware Store Display Rack.png"],
 
     // Hero short description
     desc: "MS steel freestanding / wall-side display rack (as per design) by Arya Insulation Pvt Ltd, designed for hardware shops. Custom configurations are available as per product and store requirements.",
@@ -6558,8 +6558,8 @@ These display racks are intended for hardware shops. Retailers, dealers, store p
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/tool-display-pegboard-rack.webp",
-    gallery: ["/images/products/tool-display-pegboard-rack.webp"],
+    image: "/product/Wooden Finish Supermarket Rack.webp",
+    gallery: ["/product/Wooden Finish Supermarket Rack.webp"],
 
     // Hero short description
     desc: "MS steel wall-mounted / panel display system by Arya Insulation Pvt Ltd, designed for tool & hardware stores. Custom configurations are available as per product and store requirements.",
@@ -6644,8 +6644,8 @@ These display racks are intended for tool & hardware stores. Retailers, dealers,
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/fastener-bin-display-rack.webp",
-    gallery: ["/images/products/fastener-bin-display-rack.webp"],
+    image: "/product/Fastener Bin Display Rack.webp",
+    gallery: ["/product/Fastener Bin Display Rack.webp"],
 
     // Hero short description
     desc: "MS steel freestanding / wall-side display rack (as per design) by Arya Insulation Pvt Ltd, designed for nut-bolt & screw stores. Custom configurations are available as per product and store requirements.",
@@ -6730,8 +6730,8 @@ These display racks are intended for nut-bolt & screw stores. Retailers, dealers
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/paint-can-display-rack.webp",
-    gallery: ["/images/products/paint-can-display-rack.webp"],
+    image: "/product/Paint Can Display Rack.webp",
+    gallery: ["/product/Paint Can Display Rack.webp"],
 
     // Hero short description
     desc: "MS steel freestanding / wall-side display rack (as per design) by Arya Insulation Pvt Ltd, designed for paint & colour shops. Custom configurations are available as per product and store requirements.",
@@ -6816,8 +6816,8 @@ These display racks are intended for paint & colour shops. Retailers, dealers, s
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/electrical-items-display-rack.webp",
-    gallery: ["/images/products/electrical-items-display-rack.webp"],
+    image: "/product/Electrical Items Display Rack.webp",
+    gallery: ["/product/Electrical Items Display Rack.webp"],
 
     // Hero short description
     desc: "MS steel freestanding / wall-side display rack (as per design) by Arya Insulation Pvt Ltd, designed for electrical shops. Custom configurations are available as per product and store requirements.",
@@ -6902,8 +6902,8 @@ These display racks are intended for electrical shops. Retailers, dealers, store
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/pipe-and-fittings-display-rack.webp",
-    gallery: ["/images/products/pipe-and-fittings-display-rack.webp"],
+    image: "/product/Pipe & Fittings Display Rack.png",
+    gallery: ["/product/Pipe & Fittings Display Rack.png"],
 
     // Hero short description
     desc: "MS steel freestanding / wall-side display rack (as per design) by Arya Insulation Pvt Ltd, designed for plumbing & sanitary stores. Custom configurations are available as per product and store requirements.",
@@ -6988,7 +6988,7 @@ These display racks are intended for plumbing & sanitary stores. Retailers, deal
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/sanitaryware-display-rack.webp",
+    image: "/product/Sanitaryware Display Rack.webp",
     gallery: ["/images/products/sanitaryware-display-rack.webp"],
 
     // Hero short description
@@ -7074,8 +7074,8 @@ These display racks are intended for sanitaryware showrooms. Retailers, dealers,
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/bathroom-fittings-display-panel.webp",
-    gallery: ["/images/products/bathroom-fittings-display-panel.webp"],
+    image: "/product/Bathroom Fittings Display Panel.png",
+    gallery: ["/product/Bathroom Fittings Display Panel.png"],
 
     // Hero short description
     desc: "MS steel wall-mounted / panel display system by Arya Insulation Pvt Ltd, designed for bath fittings showrooms. Custom configurations are available as per product and store requirements.",
@@ -7160,8 +7160,8 @@ These display racks are intended for bath fittings showrooms. Retailers, dealers
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/tiles-display-rack.webp",
-    gallery: ["/images/products/tiles-display-rack.webp"],
+    image: "/product/Tiles Display Rack.webp",
+    gallery: ["/product/Tiles Display Rack.webp"],
 
     // Hero short description
     desc: "MS steel freestanding / wall-side display rack (as per design) by Arya Insulation Pvt Ltd, designed for tiles & ceramic showrooms. Custom configurations are available as per product and store requirements.",
@@ -7246,8 +7246,8 @@ These display racks are intended for tiles & ceramic showrooms. Retailers, deale
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/plywood-and-laminate-display-rack.webp",
-    gallery: ["/images/products/plywood-and-laminate-display-rack.webp"],
+    image: "/product/Rice & Pulses Bin Display Rack.webp",
+    gallery: ["/product/Rice & Pulses Bin Display Rack.webp"],
 
     // Hero short description
     desc: "MS steel freestanding / wall-side display rack (as per design) by Arya Insulation Pvt Ltd, designed for plywood & laminate stores. Custom configurations are available as per product and store requirements.",
@@ -7332,8 +7332,8 @@ These display racks are intended for plywood & laminate stores. Retailers, deale
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/door-handle-and-lock-display-board.webp",
-    gallery: ["/images/products/door-handle-and-lock-display-board.webp"],
+    image: "/product/Door Handle & Lock Display Board.webp",
+    gallery: ["/product/Door Handle & Lock Display Board.webp"],
 
     // Hero short description
     desc: "MS steel freestanding / wall-side display rack (as per design) by Arya Insulation Pvt Ltd, designed for hardware & architectural stores. Custom configurations are available as per product and store requirements.",
@@ -7418,8 +7418,8 @@ These display racks are intended for hardware & architectural stores. Retailers,
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/automobile-spare-parts-display-rack.webp",
-    gallery: ["/images/products/automobile-spare-parts-display-rack.webp"],
+    image: "/product/Automobile Spare Parts Display Rack.webp",
+    gallery: ["/product/Automobile Spare Parts Display Rack.webp"],
 
     // Hero short description
     desc: "MS steel freestanding / wall-side display rack (as per design) by Arya Insulation Pvt Ltd, designed for auto parts shops. Custom configurations are available as per product and store requirements.",
@@ -7590,8 +7590,8 @@ These display racks are intended for auto & lubricant shops. Retailers, dealers,
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/tyre-display-rack.webp",
-    gallery: ["/images/products/tyre-display-rack.webp"],
+    image: "/product/Tyre Display Rack.webp",
+    gallery: ["/product/Tyre Display Rack.webp"],
 
     // Hero short description
     desc: "MS steel freestanding / wall-side display rack (as per design) by Arya Insulation Pvt Ltd, designed for tyre shops & service centres. Custom configurations are available as per product and store requirements.",
@@ -7677,8 +7677,8 @@ These display racks are intended for tyre shops & service centres. Retailers, de
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/stationery-display-rack.webp",
-    gallery: ["/images/products/stationery-display-rack.webp"],
+    image: "/product/Stationery Display Rack.webp",
+    gallery: ["/product/Stationery Display Rack.webp"],
 
     // Hero short description
     desc: "MS steel freestanding / wall-side display rack (as per design) by Arya Insulation Pvt Ltd, designed for stationery shops. Custom configurations are available as per product and store requirements.",
@@ -7763,8 +7763,8 @@ These display racks are intended for stationery shops. Retailers, dealers, store
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/pen-display-stand.webp",
-    gallery: ["/images/products/pen-display-stand.webp"],
+    image: "/product/Pen Display Stand.webp",
+    gallery: ["/product/Pen Display Stand.webp"],
 
     // Hero short description
     desc: "MS steel countertop / freestanding display stand by Arya Insulation Pvt Ltd, designed for stationery counters. Custom configurations are available as per product and store requirements.",
@@ -7849,8 +7849,8 @@ These display racks are intended for stationery counters. Retailers, dealers, st
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/notebook-display-rack.webp",
-    gallery: ["/images/products/notebook-display-rack.webp"],
+    image: "/product/Library Book Rack.webp",
+    gallery: ["/product/Library Book Rack.webp"],
 
     // Hero short description
     desc: "MS steel freestanding / wall-side display rack (as per design) by Arya Insulation Pvt Ltd, designed for stationery & book shops. Custom configurations are available as per product and store requirements.",
@@ -7935,8 +7935,8 @@ These display racks are intended for stationery & book shops. Retailers, dealers
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/art-and-craft-supplies-display-rack.webp",
-    gallery: ["/images/products/art-and-craft-supplies-display-rack.webp"],
+    image: "/product/Art & Craft Supplies Display Rack.webp",
+    gallery: ["/product/Art & Craft Supplies Display Rack.webp"],
 
     // Hero short description
     desc: "MS steel freestanding / wall-side display rack (as per design) by Arya Insulation Pvt Ltd, designed for stationery & hobby stores. Custom configurations are available as per product and store requirements.",
@@ -8006,10 +8006,10 @@ These display racks are intended for stationery & hobby stores. Retailers, deale
 
     // Related products (same category)
     relatedProducts: [
-      { title: "School Bag Display Rack", slug: "school-bag-display-rack", image: "/product/school-bag-display-rack.webp" },
-      { title: "Book Display Rack", slug: "book-display-rack", image: "/product/book-display-rack.webp" },
-      { title: "Book Display Stand", slug: "book-display-stand", image: "/product/book-display-stand.webp" },
-      { title: "Library Book Rack", slug: "library-book-rack", image: "/product/library-book-rack.webp" },
+      { title: "School Bag Display Rack", slug: "school-bag-display-rack", image: "/product/School Bag Display Rack.webp" },
+      { title: "Book Display Rack", slug: "book-display-rack", image: "/product/Book Display Rack.webp" },
+      { title: "Book Display Stand", slug: "book-display-stand", image: "/product/Book Display Stand.webp" },
+      { title: "Library Book Rack", slug: "library-book-rack", image: "/product/Library Book Rack.webp" },
     ],
   },
   {
@@ -8021,7 +8021,7 @@ These display racks are intended for stationery & hobby stores. Retailers, deale
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/school-bag-display-rack.webp",
+    image: "/product/Toy Display Rack.webp",
     gallery: ["/images/products/school-bag-display-rack.webp"],
 
     // Hero short description
@@ -8107,8 +8107,8 @@ These display racks are intended for bag & stationery shops. Retailers, dealers,
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/book-display-rack.webp",
-    gallery: ["/images/products/book-display-rack.webp"],
+    image: "/product/Stationery Display Rack.webp",
+    gallery: ["/product/Stationery Display Rack.webp"],
 
     // Hero short description
     desc: "MS steel freestanding / wall-side display rack (as per design) by Arya Insulation Pvt Ltd, designed for bookstores. Custom configurations are available as per product and store requirements.",
@@ -8184,92 +8184,7 @@ These display racks are intended for bookstores. Retailers, dealers, store plann
       { title: "Gift Items Display Rack", slug: "gift-items-display-rack", image: "/product/gift-items-display-rack.webp" },
     ],
   },
-  {
-    id: "book-display-stand",
-    slug: "book-display-stand",
-    title: "Book Display Stand",
-    category: "Stationery, Book & Toy Display Racks",
-    eyebrow: "STATIONERY, BOOK & TOY DISPLAY RACKS",
-    brand: "Arya Insulation Pvt Ltd",
 
-    // Product images
-    image: "/product/book-display-stand.webp",
-    gallery: ["/images/products/book-display-stand.webp"],
-
-    // Hero short description
-    desc: "MS steel countertop / freestanding display stand by Arya Insulation Pvt Ltd, designed for bookstores & airport shops. Custom configurations are available as per product and store requirements.",
-
-    // Quick specifications
-    quickSpecs: {
-      height: "Custom Height",
-      displayLevels: "Configurable Levels",
-      material: "MS Steel",
-      finish: "Powder Coated",
-    },
-
-    // Specifications tab
-    specs: {
-      "Rack Type": "Countertop / freestanding display stand",
-      "Material": "MS steel primary structure; MS Powder Coated may be used for compatible panels, shelves, bins, hooks or finish components as required.",
-      "Height": "As per requirement / approved drawing",
-      "No. of Shelves / Display Levels": "Display tiers, baskets, bins or holders as per design",
-      "Load Capacity": "To be confirmed by Arya Insulation Pvt Ltd according to design, dimensions and intended product weight",
-      "Finish": "Powder-coated MS finish; other finishes on request",
-      "Brand": "Arya Insulation Pvt Ltd",
-      "Usage / Application": "Bookstores & airport shops",
-    },
-
-    // Description tab
-    description: `As a display rack manufacturer, Arya Insulation Pvt Ltd develops book display stand for retail environments that need practical product presentation and organized merchandising. The MS steel primary frame is configured to suit the intended application, while the display components are selected according to the type of merchandise. MS Powder Coated are listed as typical material options in the supplied product schedule; where used, these are treated as compatible accessories, panels or finish elements alongside the MS steel structure.
-
-The design can be discussed in terms of overall dimensions, mounting or floor-standing format, number of shelves or display levels, rail or hook arrangement, finish and optional branding. For projects involving heavier merchandise, the required load per shelf or display section must be shared so that the manufacturer can confirm a suitable configuration.
-
-These display racks are intended for bookstores & airport shops. Retailers, dealers, store planners and fit-out contractors can contact Arya Insulation Pvt Ltd with product dimensions, site measurements, quantity and preferred finish to request a suitable display rack proposal.`,
-
-    // Key features
-    features: [
-      "MS steel primary frame for a structured retail display",
-      "Product-specific layout planned around the merchandise",
-      "Customizable dimensions and display configuration",
-      "Finish and accessory options to suit the store interior",
-      "Designed to organize products and improve in-store visibility",
-    ],
-
-    // Customization
-    customization: [
-      "Height",
-      "Width",
-      "Depth",
-      "Display Levels",
-      "Shelf or Rail Layout",
-      "Hooks",
-      "Bins",
-      "Panels",
-      "Finish",
-      "Branding Options",
-    ],
-    customizationDescription: "Height, width, depth, display levels, shelf or rail layout, hooks, bins, panels, finish and branding options can be discussed as per project requirements.",
-
-    // Enquiry CTA
-    enquiryCta: "Request a Quote from Arya Insulation Pvt Ltd for the book display stand. Share your required dimensions, product details, quantity and installation location.",
-
-    // SEO
-    seo: {
-      title: "Book Stand Manufacturer | Arya Insulation",
-      description: "Get book display stand from Arya Insulation Pvt Ltd. MS steel construction for bookstores & airport shops. Enquire about sizes and custom configurations.",
-      slug: "book-display-stand",
-    },
-
-    brochure: "",
-
-    // Related products (same category)
-    relatedProducts: [
-      { title: "Library Book Rack", slug: "library-book-rack", image: "/product/library-book-rack.webp" },
-      { title: "Magazine & Newspaper Display Stand", slug: "magazine-and-newspaper-display-stand", image: "/product/magazine-and-newspaper-display-stand.webp" },
-      { title: "Gift Items Display Rack", slug: "gift-items-display-rack", image: "/product/gift-items-display-rack.webp" },
-      { title: "Toy Display Rack", slug: "toy-display-rack", image: "/product/toy-display-rack.webp" },
-    ],
-  },
   {
     id: "library-book-rack",
     slug: "library-book-rack",
@@ -8279,7 +8194,7 @@ These display racks are intended for bookstores & airport shops. Retailers, deal
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/library-book-rack.webp",
+    image: "/product/Library Book Rack.webp",
     gallery: ["/images/products/library-book-rack.webp"],
 
     // Hero short description
@@ -8365,7 +8280,7 @@ These display racks are intended for libraries & schools. Retailers, dealers, st
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/magazine-and-newspaper-display-stand.webp",
+    image: "/product/Heavy Duty Supermarket Storage Rack.webp",
     gallery: ["/images/products/magazine-and-newspaper-display-stand.webp"],
 
     // Hero short description
@@ -8451,7 +8366,7 @@ These display racks are intended for newsstands & waiting areas. Retailers, deal
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/gift-items-display-rack.webp",
+    image: "/product/Cosmetic%20Display%20Stand%20(1).webp",
     gallery: ["/images/products/gift-items-display-rack.webp"],
 
     // Hero short description
@@ -8537,7 +8452,7 @@ These display racks are intended for gift shops. Retailers, dealers, store plann
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/toy-display-rack.webp",
+    image: "/product/Toy Display Rack.webp",
     gallery: ["/images/products/toy-display-rack.webp"],
 
     // Hero short description
@@ -8624,7 +8539,7 @@ These display racks are intended for toy stores. Retailers, dealers, store plann
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/slatwall-display-panel.webp",
+    image: "/product/Slatwall Display Panel.webp",
     gallery: ["/images/products/slatwall-display-panel.webp"],
 
     // Hero short description
@@ -8710,7 +8625,7 @@ These display racks are intended for any retail store wall. Retailers, dealers, 
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/slatwall-hooks-and-accessories.webp",
+    image: "/product/Slatwall Mobile Accessories Rack.webp",
     gallery: ["/images/products/slatwall-hooks-and-accessories.webp"],
 
     // Hero short description
@@ -8796,7 +8711,7 @@ These display racks are intended for slatwall panel add-ons. Retailers, dealers,
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/perforated-pegboard-wall-panel.webp",
+    image: "/product/Perforated Pegboard Wall Panel.webp",
     gallery: ["/images/products/perforated-pegboard-wall-panel.webp"],
 
     // Hero short description
@@ -8882,7 +8797,7 @@ These display racks are intended for hardware & accessory stores. Retailers, dea
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/grid-wall-display-panel.webp",
+    image: "/product/Grid Wall Display Panel.webp",
     gallery: ["/images/products/grid-wall-display-panel.webp"],
 
     // Hero short description
@@ -8968,7 +8883,7 @@ These display racks are intended for accessory & gift stores. Retailers, dealers
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/wall-channel-shelving-system.webp",
+    image: "/product/Perfume Display Rack.webp",
     gallery: ["/images/products/wall-channel-shelving-system.webp"],
 
     // Hero short description
@@ -9054,7 +8969,7 @@ These display racks are intended for showrooms & retail walls. Retailers, dealer
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/gondola-wall-shelving-unit.webp",
+    image: "/product/Bright White Gondola Shelf Studio Shot.webp",
     gallery: ["/images/products/gondola-wall-shelving-unit.webp"],
 
     // Hero short description
@@ -9140,7 +9055,7 @@ These display racks are intended for supermarket & retail walls. Retailers, deal
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/wall-mounted-bracket-shelf-rack.webp",
+    image: "/product/Wall Mounted Shoe Display Rack.webp",
     gallery: ["/images/products/wall-mounted-bracket-shelf-rack.webp"],
 
     // Hero short description
@@ -9226,7 +9141,7 @@ These display racks are intended for shops & offices. Retailers, dealers, store 
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/shelf-wall-display-rack.webp",
+    image: "/product/Wall Mounted Garment Display Rack.webp",
     gallery: ["/images/products/shelf-wall-display-rack.webp"],
 
     // Hero short description
@@ -9312,7 +9227,7 @@ These display racks are intended for premium showrooms. Retailers, dealers, stor
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/wall-mounted-wooden-display-rack.webp",
+    image: "/product/Perfume%20Display%20Rack.webp",
     gallery: ["/images/products/wall-mounted-wooden-display-rack.webp"],
 
     // Hero short description
@@ -9484,7 +9399,7 @@ These display racks are intended for modern showrooms. Retailers, dealers, store
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/wall-display-rack.webp",
+    image: "/product/Skin Care Products Display Rack.webp",
     gallery: ["/images/products/wall-display-rack.webp"],
 
     // Hero short description
@@ -9570,7 +9485,7 @@ These display racks are intended for branded showrooms. Retailers, dealers, stor
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/corner-wall-display-rack.webp",
+    image: "/product/Black and Yellow Retail Shelving Display.webp",
     gallery: ["/images/products/corner-wall-display-rack.webp"],
 
     // Hero short description
