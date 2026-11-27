@@ -20,6 +20,7 @@ import {
   X,
 } from "lucide-react";
 import { usePathname } from "next/navigation";
+import Popup from "./Popup";
 
 /* ------------------------------------------------------------------ */
 /*  CONFIG                                                             */
@@ -51,12 +52,18 @@ const PRODUCT_LINKS = [
   "Mobile & Electronics Display Racks",
   "Cosmetic, Beauty & Accessories Display Racks",
   "Bakery, Snacks & Confectionery Display Racks",
+  "Hardware, Paint & Tool Display Racks",
+  "Stationery, Book & Toy Display Racks",
+  "Wall Mounted & Slatwall Display Systems",
+  "Promotional & Countertop Display Stands",
 ];
 
 const PHONE = "+918587901795";
 const PHONE_DISPLAY = "+91 8587901795";
 const EMAIL = "aryaindustry36@gmail.com";
 const WHATSAPP_URL = `https://wa.me/${PHONE.replace("+", "")}`;
+
+
 
 function WhatsAppIcon({ size = 28 }) {
   return (
@@ -73,18 +80,8 @@ function WhatsAppIcon({ size = 28 }) {
 function Logo({ compact }) {
   return (
     <a href="/" aria-label="Arya Insulation home" className="group flex shrink-0 items-center gap-3">
-      <motion.span
-        whileHover={{ rotate: -6, scale: 1.05 }}
-        transition={{ type: "spring", stiffness: 300, damping: 16 }}
-        className={`relative flex items-center justify-center overflow-hidden rounded-[14px] shadow-[0_8px_18px_rgba(10,36,87,0.3)] transition-all duration-300 ${
-          compact ? "h-[48px] w-[52px]" : "h-[56px] w-[60px] sm:h-[64px] sm:w-[68px]"
-        }`}
-        style={{ background: `linear-gradient(145deg,#12418f,${C.navy})` }}
-      >
-        <span className="relative z-10 text-xl font-black tracking-tight text-white sm:text-2xl">AI</span>
-        <span className="absolute -bottom-4 -right-3 h-10 w-10 rotate-45" style={{ background: C.orange }} />
-        <span className="absolute -left-3 -top-4 h-8 w-8 rotate-45 bg-white/10" />
-      </motion.span>
+
+<img src="" alt="" />
 
       <span className="leading-tight">
         <span className="block whitespace-nowrap text-[17px] font-extrabold tracking-tight text-[#0A2457] sm:text-[21px] lg:text-[24px]">
@@ -102,32 +99,22 @@ function Logo({ compact }) {
   );
 }
 
-/* ------------------------------------------------------------------ */
-/*  HEADER                                                             */
-/* ------------------------------------------------------------------ */
-
 export default function Header() {
+  const [quoteOpen, setQuoteOpen] = useState(false);
   const reduce = useReducedMotion();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [productOpen, setProductOpen] = useState(false); // desktop mega menu
+  const [productOpen, setProductOpen] = useState(false);
   const [mobileProducts, setMobileProducts] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [hovered, setHovered] = useState(null);
-  const [path, setPath] = useState("/");
   const navRef = useRef(null);
 
   const pathname = usePathname();
-
- if (pathname.startsWith("/admin")) {
-    return null; // Don't render the navbar on admin or dashboard pages
-  }
-
   const { scrollYProgress } = useScroll();
   const progress = useSpring(scrollYProgress, { stiffness: 140, damping: 28, mass: 0.3 });
 
   useEffect(() => {
-    setPath(window.location.pathname);
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => setScrolled(window.scrollY > 10);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -159,7 +146,9 @@ export default function Header() {
     };
   }, [menuOpen]);
 
-  const isActive = (href) => (href === "/" ? path === "/" : path.startsWith(href));
+if (pathname.startsWith("/admin")) return null;
+
+  const isActive = (href) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
 
   return (
     <>
@@ -177,7 +166,8 @@ export default function Header() {
           style={{ background: `linear-gradient(100deg,${C.navy} 0%,#0d2f6b 100%)` }}
         >
           <div className="flex h-full items-center justify-between">
-            <div className="flex h-full items-center gap-3 px-4 text-[11px] font-semibold sm:gap-5 sm:px-8 sm:text-[13px] lg:px-12">
+            <div className="flex h-full items-center gap-2 px-4 text-[11px] font-semibold sm:gap-5 
+            sm:px-8 sm:text-[13px] lg:px-12">
               <span className="flex items-center gap-2 whitespace-nowrap">
                 <MapPin size={16} className="shrink-0" style={{ color: C.orangeLight }} />
                 Delhi, India
@@ -285,18 +275,19 @@ export default function Header() {
                               <span aria-hidden className="absolute -bottom-10 -right-10 h-40 w-40 rotate-45" style={{ background: C.orange, opacity: 0.95 }} />
                               <span aria-hidden className="absolute -bottom-2 -right-14 h-32 w-32 rotate-45 bg-white/10" />
                               <div className="relative">
-                                <p className="text-[11px] font-extrabold uppercase tracking-[0.25em] text-white/70">Our Products</p>
-                                <h3 className="mt-3 text-[22px] font-extrabold leading-tight">Racks built for every kind of store</h3>
-                                <p className="mt-3 text-[13px] leading-relaxed text-white/75">
+                                <p className="text-[11px] font-extrabold uppercase tracking-[0.25em] !text-white">Our Products</p>
+                                <h3 className="mt-3 text-[22px] font-extrabold leading-tight !text-white">Racks built for every kind of store</h3>
+                                <p className="mt-3 text-[13px] leading-relaxed !text-white">
                                   Cut, bent, welded and powder coated in our own factory.
                                 </p>
                               </div>
-                              <a
-                                href="/contact"
-                                className="relative mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-white px-4 py-2.5 text-[13px] font-extrabold text-[#0A2457] transition-transform hover:-translate-y-0.5"
+                              <button
+                               onClick={() => setQuoteOpen(true)}
+                                className="relative mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-white px-4 
+                                py-2.5 text-[13px] font-extrabold !text-[#0A2457] transition-transform hover:-translate-y-0.5"
                               >
                                 Free Quote <ArrowRight size={16} strokeWidth={2.6} />
-                              </a>
+                              </button>
                             </div>
 
                             {/* product grid */}
@@ -347,8 +338,8 @@ export default function Header() {
                 Brochure
               </motion.a> */}
 
-              <motion.a
-                href="/contact-us"
+              <motion.button
+                onClick={() => setQuoteOpen(true)}
                 whileHover={{ y: -3 }}
                 whileTap={{ scale: 0.97 }}
                 className="group relative hidden h-[46px] items-center gap-3 overflow-hidden rounded-full pl-6 pr-2 text-sm font-extrabold text-white shadow-[0_12px_24px_-8px_rgba(242,106,18,0.7)] md:flex"
@@ -359,7 +350,7 @@ export default function Header() {
                   <ArrowRight size={18} strokeWidth={2.8} />
                 </span>
                 <span className="pointer-events-none absolute inset-y-0 -left-1/3 w-1/4 -skew-x-[20deg] bg-white/35 opacity-0 blur-sm transition-all duration-700 group-hover:left-[110%] group-hover:opacity-100" />
-              </motion.a>
+              </motion.button>
 
               <button
                 type="button"
@@ -555,6 +546,8 @@ export default function Header() {
           </motion.a>
         ))}
       </div>
+
+        <Popup open={quoteOpen} onClose={() => setQuoteOpen(false)} />
     </>
   );
 }
