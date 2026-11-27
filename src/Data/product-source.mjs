@@ -9307,13 +9307,13 @@ These display racks are intended for boutiques & gift stores. Retailers, dealers
   {
     id: "aluminium-profile-wall-display-system",
     slug: "aluminium-profile-wall-display-system",
-    title: "Aluminium Profile Wall Display System.webp",
+    title: "Aluminium Profile Wall Display System",
     category: "Wall Mounted & Slatwall Display Systems",
     eyebrow: "WALL MOUNTED & SLATWALL DISPLAY SYSTEMS",
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/Aluminium Profile Wall Display System.webp",
+    image: "/product/Surgical%20Items%20Display%20Rack.webp",
     gallery: ["/images/products/aluminium-profile-wall-display-system.webp"],
 
     // Hero short description
@@ -9563,92 +9563,92 @@ These display racks are intended for shop corners. Retailers, dealers, store pla
     ],
   },
   // ===================== Promotional & Countertop Display Stands =====================
-  {
-    id: "countertop-promotional-display-stand",
-    slug: "countertop-promotional-display-stand",
-    title: "Countertop Promotional Display Stand",
-    category: "Promotional & Countertop Display Stands",
-    eyebrow: "PROMOTIONAL & COUNTERTOP DISPLAY STANDS",
-    brand: "Arya Insulation Pvt Ltd",
+//   {
+//     id: "countertop-promotional-display-stand",
+//     slug: "countertop-promotional-display-stand",
+//     title: "Countertop Promotional Display Stand",
+//     category: "Promotional & Countertop Display Stands",
+//     eyebrow: "PROMOTIONAL & COUNTERTOP DISPLAY STANDS",
+//     brand: "Arya Insulation Pvt Ltd",
 
-    // Product images
-    image: "/product/countertop-promotional-display-stand.webp",
-    gallery: ["/images/products/countertop-promotional-display-stand.webp"],
+//     // Product images
+//     image: "/product/countertop-promotional-display-stand.webp",
+//     gallery: ["/images/products/countertop-promotional-display-stand.webp"],
 
-    // Hero short description
-    desc: "MS steel countertop / freestanding display stand by Arya Insulation Pvt Ltd, designed for billing counters. Custom configurations are available as per product and store requirements.",
+//     // Hero short description
+//     desc: "MS steel countertop / freestanding display stand by Arya Insulation Pvt Ltd, designed for billing counters. Custom configurations are available as per product and store requirements.",
 
-    // Quick specifications
-    quickSpecs: {
-      height: "Custom Height",
-      displayLevels: "Configurable Levels",
-      material: "MS Steel",
-      finish: "Powder Coated",
-    },
+//     // Quick specifications
+//     quickSpecs: {
+//       height: "Custom Height",
+//       displayLevels: "Configurable Levels",
+//       material: "MS Steel",
+//       finish: "Powder Coated",
+//     },
 
-    // Specifications tab
-    specs: {
-      "Rack Type": "Countertop / freestanding display stand",
-      "Material": "MS steel primary structure; MS / Acrylic may be used for compatible panels, shelves, bins, hooks or finish components as required.",
-      "Height": "As per requirement / approved drawing",
-      "No. of Shelves / Display Levels": "Display tiers, baskets, bins or holders as per design",
-      "Load Capacity": "To be confirmed by Arya Insulation Pvt Ltd according to design, dimensions and intended product weight",
-      "Finish": "Powder-coated MS frame; accessory finish as specified",
-      "Brand": "Arya Insulation Pvt Ltd",
-      "Usage / Application": "Billing counters",
-    },
+//     // Specifications tab
+//     specs: {
+//       "Rack Type": "Countertop / freestanding display stand",
+//       "Material": "MS steel primary structure; MS / Acrylic may be used for compatible panels, shelves, bins, hooks or finish components as required.",
+//       "Height": "As per requirement / approved drawing",
+//       "No. of Shelves / Display Levels": "Display tiers, baskets, bins or holders as per design",
+//       "Load Capacity": "To be confirmed by Arya Insulation Pvt Ltd according to design, dimensions and intended product weight",
+//       "Finish": "Powder-coated MS frame; accessory finish as specified",
+//       "Brand": "Arya Insulation Pvt Ltd",
+//       "Usage / Application": "Billing counters",
+//     },
 
-    // Description tab
-    description: `As a display rack manufacturer, Arya Insulation Pvt Ltd develops countertop promotional display stand for retail environments that need practical product presentation and organized merchandising. The MS steel primary frame is configured to suit the intended application, while the display components are selected according to the type of merchandise. MS / Acrylic are listed as typical material options in the supplied product schedule; where used, these are treated as compatible accessories, panels or finish elements alongside the MS steel structure.
+//     // Description tab
+//     description: `As a display rack manufacturer, Arya Insulation Pvt Ltd develops countertop promotional display stand for retail environments that need practical product presentation and organized merchandising. The MS steel primary frame is configured to suit the intended application, while the display components are selected according to the type of merchandise. MS / Acrylic are listed as typical material options in the supplied product schedule; where used, these are treated as compatible accessories, panels or finish elements alongside the MS steel structure.
 
-The design can be discussed in terms of overall dimensions, mounting or floor-standing format, number of shelves or display levels, rail or hook arrangement, finish and optional branding. For projects involving heavier merchandise, the required load per shelf or display section must be shared so that the manufacturer can confirm a suitable configuration.
+// The design can be discussed in terms of overall dimensions, mounting or floor-standing format, number of shelves or display levels, rail or hook arrangement, finish and optional branding. For projects involving heavier merchandise, the required load per shelf or display section must be shared so that the manufacturer can confirm a suitable configuration.
 
-These display racks are intended for billing counters. Retailers, dealers, store planners and fit-out contractors can contact Arya Insulation Pvt Ltd with product dimensions, site measurements, quantity and preferred finish to request a suitable display rack proposal.`,
+// These display racks are intended for billing counters. Retailers, dealers, store planners and fit-out contractors can contact Arya Insulation Pvt Ltd with product dimensions, site measurements, quantity and preferred finish to request a suitable display rack proposal.`,
 
-    // Key features
-    features: [
-      "MS steel primary frame for a structured retail display",
-      "Suitable for featured products, promotions or impulse merchandising",
-      "Customizable dimensions and display configuration",
-      "Finish and accessory options to suit the store interior",
-      "Designed to organize products and improve in-store visibility",
-    ],
+//     // Key features
+//     features: [
+//       "MS steel primary frame for a structured retail display",
+//       "Suitable for featured products, promotions or impulse merchandising",
+//       "Customizable dimensions and display configuration",
+//       "Finish and accessory options to suit the store interior",
+//       "Designed to organize products and improve in-store visibility",
+//     ],
 
-    // Customization
-    customization: [
-      "Height",
-      "Width",
-      "Depth",
-      "Display Levels",
-      "Shelf or Rail Layout",
-      "Hooks",
-      "Bins",
-      "Panels",
-      "Finish",
-      "Branding Options",
-    ],
-    customizationDescription: "Height, width, depth, display levels, shelf or rail layout, hooks, bins, panels, finish and branding options can be discussed as per project requirements.",
+//     // Customization
+//     customization: [
+//       "Height",
+//       "Width",
+//       "Depth",
+//       "Display Levels",
+//       "Shelf or Rail Layout",
+//       "Hooks",
+//       "Bins",
+//       "Panels",
+//       "Finish",
+//       "Branding Options",
+//     ],
+//     customizationDescription: "Height, width, depth, display levels, shelf or rail layout, hooks, bins, panels, finish and branding options can be discussed as per project requirements.",
 
-    // Enquiry CTA
-    enquiryCta: "Request a Quote from Arya Insulation Pvt Ltd for the countertop promotional display stand. Share your required dimensions, product details, quantity and installation location.",
+//     // Enquiry CTA
+//     enquiryCta: "Request a Quote from Arya Insulation Pvt Ltd for the countertop promotional display stand. Share your required dimensions, product details, quantity and installation location.",
 
-    // SEO
-    seo: {
-      title: "Countertop Promotional Stand Manufacturer | Arya Insulation",
-      description: "Arya Insulation Pvt Ltd manufactures countertop promotional display stand in MS steel. Contact us for sizes, finishes and customized display options.",
-      slug: "countertop-promotional-display-stand",
-    },
+//     // SEO
+//     seo: {
+//       title: "Countertop Promotional Stand Manufacturer | Arya Insulation",
+//       description: "Arya Insulation Pvt Ltd manufactures countertop promotional display stand in MS steel. Contact us for sizes, finishes and customized display options.",
+//       slug: "countertop-promotional-display-stand",
+//     },
 
-    brochure: "",
+//     brochure: "",
 
-    // Related products (same category)
-    relatedProducts: [
-      { title: "Branded Floor Standing Promotional Display Rack", slug: "branded-floor-standing-promotional-display-rack", image: "/product/Single%20Sided%20Wall%20Gondola%20Rack.webp" },
-      { title: "Spinner Display Rack", slug: "spinner-display-rack", image: "/product/Socks%20Display%20Rack.webp" },
-      { title: "Dump Bin Display rack", slug: "dump-bin-display-rack", image: "/product/Dump Bin Display rack.webp" },
-      { title: "Clip Strip & Sachet Hanging Display rack", slug: "clip-strip-and-sachet-hanging-display-rack", image: "/product/Clip Strip & Sachet Hanging Display rack.webp" },
-    ],
-  },
+//     // Related products (same category)
+//     relatedProducts: [
+//       { title: "Branded Floor Standing Promotional Display Rack", slug: "branded-floor-standing-promotional-display-rack", image: "/product/Single%20Sided%20Wall%20Gondola%20Rack.webp" },
+//       { title: "Spinner Display Rack", slug: "spinner-display-rack", image: "/product/Socks%20Display%20Rack.webp" },
+//       { title: "Dump Bin Display rack", slug: "dump-bin-display-rack", image: "/product/Dump Bin Display rack.webp" },
+//       { title: "Clip Strip & Sachet Hanging Display rack", slug: "clip-strip-and-sachet-hanging-display-rack", image: "/product/Clip Strip & Sachet Hanging Display rack.webp" },
+//     ],
+//   },
   {
     id: "branded-floor-standing-promotional-display-rack",
     slug: "branded-floor-standing-promotional-display-rack",

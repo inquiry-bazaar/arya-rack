@@ -14,6 +14,8 @@ import {
   Plus,
 } from "lucide-react";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
+import { categoryList } from "@/Data/products";
 
 /*
   Arya Insulation — Creative Footer
@@ -39,20 +41,17 @@ const site = {
 
 const exploreLinks = [
   { no: "01", label: "Home", href: "/" },
-  { no: "02", label: "About Us", href: "/about" },
+  { no: "02", label: "About Us", href: "/about-us" },
   { no: "03", label: "How We Work", href: "/#how-we-work" },
   { no: "04", label: "Our Racks", href: "/products" },
-  { no: "05", label: "Gallery", href: "/gallery" },
-  { no: "06", label: "Contact", href: "/contact" },
+  { no: "05", label: "Gallery", href: "https://www.youtube.com/@aryaindustry1074", external: true },
+  { no: "06", label: "Contact", href: "/contact-us" },
 ];
 
-const productLinks = [
-  { label: "Supermarket Racks", href: "/products/supermarket" },
-  { label: "Pharmacy Racks", href: "/products/pharmacy" },
-  { label: "Wall & Gondola Racks", href: "/products/gondola" },
-  { label: "Warehouse Racks", href: "/products/warehouse" },
-  { label: "Custom Racks", href: "/products/custom" },
-];
+const productLinks = categoryList.map(({ name, slug }) => ({
+  label: name,
+  href: `/${slug}`,
+}));
 
 
 
@@ -171,9 +170,9 @@ export default function Footer() {
             </p>
           </div>
           <div className="af-cta-actions">
-            <a className="af-action primary" href="/contact">
+            <Link className="af-action primary" href="/contact-us">
               Start a project <ArrowUpRight size={17} />
-            </a>
+            </Link>
             <a
               className="af-action whatsapp"
               href={whatsappUrl}
@@ -189,13 +188,13 @@ export default function Footer() {
       <div className="af-main">
         <div className="af-container">
           <motion.div className="af-topline" {...reveal(0.05)}>
-            <a href="/" className="af-brand" aria-label={`${site.name} home`}>
+            <Link href="/" className="af-brand" aria-label={`${site.name} home`}>
               <span className="af-mark">A</span>
               <span>
                 <span className="af-brand-name">{site.name}</span>
               
               </span>
-            </a>
+            </Link>
             <div className="af-top-note">
               <Plus size={15} color="#ff9b43" />
               <span>
@@ -233,21 +232,28 @@ export default function Footer() {
               <ul className="af-links">
                 {exploreLinks.map((item) => (
                   <li key={item.no}>
-                    <a href={item.href}>
-                      <span className="af-number">{item.no}</span>
-                      {item.label}
-                    </a>
+                    {item.external ? (
+                      <a href={item.href} target="_blank" rel="noreferrer">
+                        <span className="af-number">{item.no}</span>
+                        {item.label}
+                      </a>
+                    ) : (
+                      <Link href={item.href}>
+                        <span className="af-number">{item.no}</span>
+                        {item.label}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
             </motion.nav>
 
             <motion.nav className="af-col" aria-label="Product categories" {...reveal(0.2)}>
-              <h3 className="af-col-head"><span>02 /</span> Find your rack</h3>
+              <h3 className="af-col-head"><span>02 /</span>Categories</h3>
               <ul className="af-links af-product-links">
-                {productLinks.map((item) => (
-                  <li key={item.label}>
-                    <a href={item.href}>{item.label}</a>
+                {productLinks.slice(0, 6).map((item) => (
+                  <li key={item.href}>
+                    <Link href={item.href}>{item.label}</Link>
                   </li>
                 ))}
               </ul>

@@ -201,7 +201,7 @@ export default function HowWork() {
   };
 
   return (
-    <section className="hw" aria-labelledby="hw-title">
+    <section id="how-we-work" className="hw" aria-labelledby="hw-title">
       <style>{css}</style>
 
       <svg className="hw-shelves" viewBox="0 0 600 400" preserveAspectRatio="xMaxYMin slice" aria-hidden="true">
