@@ -81,7 +81,7 @@ function Logo({ compact }) {
   return (
     <a href="/" aria-label="Arya Insulation home" className="group flex shrink-0 items-center gap-3">
 
-<img src="" alt="" />
+<img src="/dest-1.webp" alt="" className="h-full w-[60px] object-contain" />
 
       <span className="leading-tight">
         <span className="block whitespace-nowrap text-[17px] font-extrabold tracking-tight text-[#0A2457] sm:text-[21px] lg:text-[24px]">
