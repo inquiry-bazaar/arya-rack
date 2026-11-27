@@ -19,6 +19,7 @@ import {
   Phone,
   X,
 } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 /* ------------------------------------------------------------------ */
 /*  CONFIG                                                             */
@@ -114,6 +115,12 @@ export default function Header() {
   const [hovered, setHovered] = useState(null);
   const [path, setPath] = useState("/");
   const navRef = useRef(null);
+
+  const pathname = usePathname();
+
+ if (pathname.startsWith("/admin")) {
+    return null; // Don't render the navbar on admin or dashboard pages
+  }
 
   const { scrollYProgress } = useScroll();
   const progress = useSpring(scrollYProgress, { stiffness: 140, damping: 28, mass: 0.3 });

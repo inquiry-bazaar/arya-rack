@@ -9,11 +9,18 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.1178.0",
+    "bcryptjs": "^3.0.3",
     "framer-motion": "^14.14.0",
-    "lucide-react": "^1.80.0",
+    "jodit": "^4.21.0",
+    "jodit-react": "^5.11.0",
+    "jose": "^6.2.18",
+    "lucide-react": "^1.82.0",
+    "mongoose": "^9.13.1",
     "next": "16.4.6",
     "react": "19.3.0",
-    "react-dom": "19.3.0"
+    "react-dom": "19.3.0",
+    "sanitize-html": "^2.18.2"
   },
   "devDependencies": {
     "@tailwindcss/turbopack": "4.3.3",

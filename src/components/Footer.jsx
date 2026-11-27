@@ -13,12 +13,15 @@ import {
   MoveUpRight,
   Plus,
 } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 /*
   Arya Insulation — Creative Footer
   Install: pnpm add framer-motion lucide-react
   Replace the placeholder contact details and links in `site` before publishing.
 */
+
+
 
 const site = {
   name: "Arya Insulation",
@@ -50,6 +53,8 @@ const productLinks = [
   { label: "Warehouse Racks", href: "/products/warehouse" },
   { label: "Custom Racks", href: "/products/custom" },
 ];
+
+
 
 const ease = [0.22, 1, 0.36, 1];
 
@@ -129,6 +134,12 @@ const styles = `
 export default function Footer() {
   const reduce = useReducedMotion();
   const year = new Date().getFullYear();
+
+  const pathname = usePathname();
+
+ if (pathname.startsWith("/admin")) {
+    return null; // Don't render the navbar on admin or dashboard pages
+  }
 
   const reveal = (delay = 0) => ({
     initial: reduce ? false : { opacity: 0, y: 24 },
