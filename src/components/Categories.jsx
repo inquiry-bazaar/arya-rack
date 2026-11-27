@@ -9,52 +9,52 @@ const CATEGORIES = [
   {
     title: "Supermarket & Grocery Display Racks",
     image: "/Cosmetic-Display-Racks.webp",
-    href: "/products/supermarket-grocery-display-racks",
+    href: "/supermarket-grocery-display-racks",
   },
   {
     title: "Fruit & Vegetable Display Racks",
     image: "/supermarket.webp",
-    href: "/products/fruit-vegetable-display-racks",
+    href: "/fruit-vegetable-display-racks",
   },
   {
     title: "Garment & Clothing Display Racks",
     image: "/clothes.webp",
-    href: "/products/garment-clothing-display-racks",
+    href: "/garment-clothing-display-racks",
   },
   {
     title: "Footwear & Shoe Display Racks",
     image: "/shoe rack.webp",
-    href: "/products/footwear-shoe-display-racks",
+    href: "/footwear-shoe-display-racks",
   },
   {
     title: "Pharmacy & Medical Store Racks",
     image: "/medical.webp",
-    href: "/products/pharmacy-medical-store-racks",
+    href: "/pharmacy-medical-store-racks",
   },
   {
     title: "Mobile & Electronics Display Racks",
     image: "/electronics.webp",
-    href: "/products/mobile-electronics-display-racks",
+    href: "/mobile-electronics-display-racks",
   },
   {
     title: "Cosmetic & Beauty Display Racks",
     image: "/Cosmetic-Display-Racks.webp",
-    href: "/products/cosmetic-beauty-display-racks",
+    href: "/cosmetic-beauty-accessories-display-racks",
   },
   {
     title: "Books & Stationery Display Racks",
     image: "/Books & Stationery Display.jpg",
-    href: "/products/books-stationery-display-racks",
+    href: "/stationery-book-toy-display-racks",
   },
   {
     title: "Bakery & Confectionery Display Racks",
     image: "/Bakery & Display Racks.jpg",
-    href: "/products/bakery-display-racks",
+    href: "/bakery-snacks-confectionery-display-racks",
   },
   {
     title: "Home & Kitchen Display Racks",
     image: "/Home & Kitchen Display Racks.jpg",
-    href: "/products/home-kitchen-display-racks",
+    href: "/products",
   },
 ];
 

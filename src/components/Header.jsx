@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import { usePathname } from "next/navigation";
 import Popup from "./Popup";
+import { categoryList } from "@/Data/products";
 
 /* ------------------------------------------------------------------ */
 /*  CONFIG                                                             */
@@ -41,21 +42,6 @@ const NAV_LINKS = [
   { label: "Our Gallery", href: "/gallery" },
   { label: "Sitemap", href: "/sitemap" },
   { label: "Contact Us", href: "/contact-us" },
-];
-
-const PRODUCT_LINKS = [
-  "Supermarket & Grocery Display Racks",
-  "Fruit & Vegetable Display Racks",
-  "Garment & Clothing Display Racks",
-  "Footwear & Shoe Display Racks",
-  "Pharmacy & Medical Store Racks",
-  "Mobile & Electronics Display Racks",
-  "Cosmetic, Beauty & Accessories Display Racks",
-  "Bakery, Snacks & Confectionery Display Racks",
-  "Hardware, Paint & Tool Display Racks",
-  "Stationery, Book & Toy Display Racks",
-  "Wall Mounted & Slatwall Display Systems",
-  "Promotional & Countertop Display Stands",
 ];
 
 const PHONE = "+918587901795";
@@ -293,10 +279,10 @@ if (pathname.startsWith("/admin")) return null;
                             {/* product grid */}
                             <div className="p-4">
                               <div className="grid grid-cols-2 gap-1">
-                                {PRODUCT_LINKS.map((product, i) => (
+                                {categoryList.map((product, i) => (
                                   <motion.a
-                                    key={product}
-                                    href="/products"
+                                    key={product.slug}
+                                    href={`/${product.slug}`}
                                     initial={reduce ? false : { opacity: 0, x: -10 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ delay: 0.04 * i, duration: 0.3, ease: EASE }}
@@ -305,7 +291,7 @@ if (pathname.startsWith("/admin")) return null;
                                     <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[#EEF3FB] text-[10px] font-extrabold text-[#0B57E3] transition-colors group-hover/item:bg-[#0B57E3] group-hover/item:text-white">
                                       {String(i + 1).padStart(2, "0")}
                                     </span>
-                                    <span className="flex-1">{product}</span>
+                                    <span className="flex-1">{product.name}</span>
                                   </motion.a>
                                 ))}
                               </div>
@@ -438,15 +424,15 @@ if (pathname.startsWith("/admin")) return null;
                               className="overflow-hidden"
                             >
                               <div className="mb-3 rounded-xl bg-[#F6F8FC] p-2">
-                                {PRODUCT_LINKS.map((product, idx) => (
+                                {categoryList.map((product, idx) => (
                                   <a
-                                    key={product}
-                                    href="/products"
+                                    key={product.slug}
+                                    href={`/${product.slug}`}
                                     onClick={() => setMenuOpen(false)}
                                     className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-[13px] font-semibold text-[#33415f] transition-colors hover:bg-[#EEF3FB] hover:text-[#0B57E3]"
                                   >
                                     <span className="font-extrabold text-[#0B57E3]">{String(idx + 1).padStart(2, "0")}</span>
-                                    {product}
+                                    {product.name}
                                   </a>
                                 ))}
                               </div>

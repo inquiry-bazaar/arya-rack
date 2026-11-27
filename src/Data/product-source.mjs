@@ -170,10 +170,10 @@ These display racks are intended for central aisles, supermarkets and hypermarke
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Single Sided Wall Gondola Rack", slug: "single-sided-wall-gondola-rack", image: "products/single-sided-wall-gondola-rack.webp" },
-      { title: "End Cap Gondola Display Rack", slug: "end-cap-gondola-display-rack", image: "products/end-cap-gondola-display-rack.webp" },
-      { title: "Corner Gondola Display Rack", slug: "corner-gondola-display-rack", image: "products/corner-gondola-display-rack.webp" },
-      { title: "Perforated Back Panel Grocery Rack", slug: "perforated-back-panel-grocery-rack", image: "products/perforated-back-panel-grocery-rack.webp" },
+      { title: "Single Sided Wall Gondola Rack", slug: "single-sided-wall-gondola-rack", image: "/product/Single Sided Wall Gondola Rack.webp" },
+      { title: "End Cap Gondola Display Rack", slug: "end-cap-gondola-display-rack", image: "/product/End Cap Gondola Display Rack.webp" },
+      { title: "Corner Gondola Display Rack", slug: "corner-gondola-display-rack", image: "/product/Modern Green-Trimmed Supermarket Display - Copy.webp" },
+      { title: "Perforated Back Panel Grocery Rack", slug: "perforated-back-panel-grocery-rack", image: "/product/Perforated Pegboard Wall Panel.webp" },
     ],
   },
   {
@@ -256,10 +256,10 @@ These display racks are intended for supermarket wall sections. Retailers, deale
 
     // Related products (same category)
     relatedProducts: [
-      { title: "End Cap Gondola Display Rack", slug: "end-cap-gondola-display-rack", image: "/product/end-cap-gondola-display-rack.webp" },
-      { title: "Corner Gondola Display Rack", slug: "corner-gondola-display-rack", image: "/product/corner-gondola-display-rack.webp" },
-      { title: "Perforated Back Panel Grocery Rack", slug: "perforated-back-panel-grocery-rack", image: "/product/perforated-back-panel-grocery-rack.webp" },
-      { title: "Wire Mesh Back Grocery Display Rack", slug: "wire-mesh-back-grocery-display-rack", image: "/product/wire-mesh-back-grocery-display-rack.webp" },
+      { title: "End Cap Gondola Display Rack", slug: "end-cap-gondola-display-rack", image: "/product/End Cap Gondola Display Rack.webp" },
+      { title: "Corner Gondola Display Rack", slug: "corner-gondola-display-rack", image: "/product/Modern Green-Trimmed Supermarket Display - Copy.webp" },
+      { title: "Perforated Back Panel Grocery Rack", slug: "perforated-back-panel-grocery-rack", image: "/product/Perforated Pegboard Wall Panel.webp" },
+      { title: "Wire Mesh Back Grocery Display Rack", slug: "wire-mesh-back-grocery-display-rack", image: "/product/Red and White Retail Gondola Shelf.webp" },
     ],
   },
   {
@@ -342,10 +342,10 @@ These display racks are intended for aisle ends & offer displays. Retailers, dea
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Corner Gondola Display Rack", slug: "corner-gondola-display-rack", image: "/product/corner-gondola-display-rack.webp" },
-      { title: "Perforated Back Panel Grocery Rack", slug: "perforated-back-panel-grocery-rack", image: "/product/perforated-back-panel-grocery-rack.webp" },
-      { title: "Wire Mesh Back Grocery Display Rack", slug: "wire-mesh-back-grocery-display-rack", image: "/product/wire-mesh-back-grocery-display-rack.webp" },
-      { title: "Heavy Duty Supermarket Storage Rack", slug: "heavy-duty-supermarket-storage-rack", image: "/product/heavy-duty-supermarket-storage-rack.webp" },
+      { title: "Corner Gondola Display Rack", slug: "corner-gondola-display-rack", image: "/product/Modern Green-Trimmed Supermarket Display - Copy.webp" },
+      { title: "Perforated Back Panel Grocery Rack", slug: "perforated-back-panel-grocery-rack", image: "/product/Perforated Pegboard Wall Panel.webp" },
+      { title: "Wire Mesh Back Grocery Display Rack", slug: "wire-mesh-back-grocery-display-rack", image: "/product/Red and White Retail Gondola Shelf.webp" },
+      { title: "Heavy Duty Supermarket Storage Rack", slug: "heavy-duty-supermarket-storage-rack", image: "/product/Heavy Duty Supermarket Storage Rack.webp" },
     ],
   },
   {
@@ -428,10 +428,10 @@ These display racks are intended for store corners and connecting aisle sections
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Perforated Back Panel Grocery Rack", slug: "perforated-back-panel-grocery-rack", image: "/product/perforated-back-panel-grocery-rack.webp" },
-      { title: "Wire Mesh Back Grocery Display Rack", slug: "wire-mesh-back-grocery-display-rack", image: "/product/wire-mesh-back-grocery-display-rack.webp" },
-      { title: "Heavy Duty Supermarket Storage Rack", slug: "heavy-duty-supermarket-storage-rack", image: "/product/heavy-duty-supermarket-storage-rack.webp" },
-      { title: "Wooden Finish Supermarket Rack", slug: "wooden-finish-supermarket-rack", image: "/product/wooden-finish-supermarket-rack.webp" },
+      { title: "Perforated Back Panel Grocery Rack", slug: "perforated-back-panel-grocery-rack", image: "/product/Perforated Pegboard Wall Panel.webp" },
+      { title: "Wire Mesh Back Grocery Display Rack", slug: "wire-mesh-back-grocery-display-rack", image: "/product/Red and White Retail Gondola Shelf.webp" },
+      { title: "Heavy Duty Supermarket Storage Rack", slug: "heavy-duty-supermarket-storage-rack", image: "/product/Heavy Duty Supermarket Storage Rack.webp" },
+      { title: "Wooden Finish Supermarket Rack", slug: "wooden-finish-supermarket-rack", image: "/product/Wooden Finish Supermarket Rack.webp" },
     ],
   },
   {
@@ -514,10 +514,10 @@ These display racks are intended for grocery & fmcg stores. Retailers, dealers, 
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Wire Mesh Back Grocery Display Rack", slug: "wire-mesh-back-grocery-display-rack", image: "/product/wire-mesh-back-grocery-display-rack.webp" },
-      { title: "Heavy Duty Supermarket Storage Rack", slug: "heavy-duty-supermarket-storage-rack", image: "/product/heavy-duty-supermarket-storage-rack.webp" },
-      { title: "Wooden Finish Supermarket Rack", slug: "wooden-finish-supermarket-rack", image: "/product/wooden-finish-supermarket-rack.webp" },
-      { title: "Gravity Bin Dry Fruit Display Rack", slug: "gravity-bin-dry-fruit-display-rack", image: "/product/gravity-bin-dry-fruit-display-rack.webp" },
+      { title: "Wire Mesh Back Grocery Display Rack", slug: "wire-mesh-back-grocery-display-rack", image: "/product/Red and White Retail Gondola Shelf.webp" },
+      { title: "Heavy Duty Supermarket Storage Rack", slug: "heavy-duty-supermarket-storage-rack", image: "/product/Heavy Duty Supermarket Storage Rack.webp" },
+      { title: "Wooden Finish Supermarket Rack", slug: "wooden-finish-supermarket-rack", image: "/product/Wooden Finish Supermarket Rack.webp" },
+      { title: "Gravity Bin Dry Fruit Display Rack", slug: "gravity-bin-dry-fruit-display-rack", image: "/product/Gravity Bin Dry Fruit Display Rack.webp" },
     ],
   },
   {
@@ -600,10 +600,10 @@ These display racks are intended for packaged food & fmcg. Retailers, dealers, s
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Heavy Duty Supermarket Storage Rack", slug: "heavy-duty-supermarket-storage-rack", image: "/product/heavy-duty-supermarket-storage-rack.webp" },
-      { title: "Wooden Finish Supermarket Rack", slug: "wooden-finish-supermarket-rack", image: "/product/wooden-finish-supermarket-rack.webp" },
-      { title: "Gravity Bin Dry Fruit Display Rack", slug: "gravity-bin-dry-fruit-display-rack", image: "/product/gravity-bin-dry-fruit-display-rack.webp" },
-      { title: "Rice & Pulses Bin Display Rack", slug: "rice-and-pulses-bin-display-rack", image: "/product/rice-and-pulses-bin-display-rack.webp" },
+      { title: "Heavy Duty Supermarket Storage Rack", slug: "heavy-duty-supermarket-storage-rack", image: "/product/Heavy Duty Supermarket Storage Rack.webp" },
+      { title: "Wooden Finish Supermarket Rack", slug: "wooden-finish-supermarket-rack", image: "/product/Wooden Finish Supermarket Rack.webp" },
+      { title: "Gravity Bin Dry Fruit Display Rack", slug: "gravity-bin-dry-fruit-display-rack", image: "/product/Gravity Bin Dry Fruit Display Rack.webp" },
+      { title: "Rice & Pulses Bin Display Rack", slug: "rice-and-pulses-bin-display-rack", image: "/product/Rice & Pulses Bin Display Rack.webp" },
     ],
   },
   {
@@ -686,10 +686,10 @@ These display racks are intended for backstore inventory, cartons and bulk stock
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Wooden Finish Supermarket Rack", slug: "wooden-finish-supermarket-rack", image: "/product/wooden-finish-supermarket-rack.webp" },
-      { title: "Gravity Bin Dry Fruit Display Rack", slug: "gravity-bin-dry-fruit-display-rack", image: "/product/gravity-bin-dry-fruit-display-rack.webp" },
-      { title: "Rice & Pulses Bin Display Rack", slug: "rice-and-pulses-bin-display-rack", image: "/product/rice-and-pulses-bin-display-rack.webp" },
-      { title: "Double Sided Gondola Supermarket Rack", slug: "double-sided-gondola-supermarket-rack", image: "/product/double-sided-gondola-rack.webp" },
+      { title: "Wooden Finish Supermarket Rack", slug: "wooden-finish-supermarket-rack", image: "/product/Wooden Finish Supermarket Rack.webp" },
+      { title: "Gravity Bin Dry Fruit Display Rack", slug: "gravity-bin-dry-fruit-display-rack", image: "/product/Gravity Bin Dry Fruit Display Rack.webp" },
+      { title: "Rice & Pulses Bin Display Rack", slug: "rice-and-pulses-bin-display-rack", image: "/product/Rice & Pulses Bin Display Rack.webp" },
+      { title: "Double Sided Gondola Supermarket Rack", slug: "double-sided-gondola-supermarket-rack", image: "/product/Bright White Gondola Shelf Studio Shot.webp" },
     ],
   },
   {
@@ -772,10 +772,10 @@ These display racks are intended for premium & organic stores. Retailers, dealer
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Gravity Bin Dry Fruit Display Rack", slug: "gravity-bin-dry-fruit-display-rack", image: "/product/gravity-bin-dry-fruit-display-rack.webp" },
-      { title: "Rice & Pulses Bin Display Rack", slug: "rice-and-pulses-bin-display-rack", image: "/product/rice-and-pulses-bin-display-rack.webp" },
-      { title: "Double Sided Gondola Supermarket Rack", slug: "double-sided-gondola-supermarket-rack", image: "/product/double-sided-gondola-rack.webp" },
-      { title: "Single Sided Wall Gondola Rack", slug: "single-sided-wall-gondola-rack", image: "/product/single-sided-wall-gondola-rack.webp" },
+      { title: "Gravity Bin Dry Fruit Display Rack", slug: "gravity-bin-dry-fruit-display-rack", image: "/product/Gravity Bin Dry Fruit Display Rack.webp" },
+      { title: "Rice & Pulses Bin Display Rack", slug: "rice-and-pulses-bin-display-rack", image: "/product/Rice & Pulses Bin Display Rack.webp" },
+      { title: "Double Sided Gondola Supermarket Rack", slug: "double-sided-gondola-supermarket-rack", image: "/product/Bright White Gondola Shelf Studio Shot.webp" },
+      { title: "Single Sided Wall Gondola Rack", slug: "single-sided-wall-gondola-rack", image: "/product/Single Sided Wall Gondola Rack.webp" },
     ],
   },
   {
@@ -858,10 +858,10 @@ These display racks are intended for dry fruits & bulk foods. Retailers, dealers
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Rice & Pulses Bin Display Rack", slug: "rice-and-pulses-bin-display-rack", image: "/product/rice-and-pulses-bin-display-rack.webp" },
-      { title: "Double Sided Gondola Supermarket Rack", slug: "double-sided-gondola-supermarket-rack", image: "/product/double-sided-gondola-rack.webp" },
-      { title: "Single Sided Wall Gondola Rack", slug: "single-sided-wall-gondola-rack", image: "/product/single-sided-wall-gondola-rack.webp" },
-      { title: "End Cap Gondola Display Rack", slug: "end-cap-gondola-display-rack", image: "/product/end-cap-gondola-display-rack.webp" },
+      { title: "Rice & Pulses Bin Display Rack", slug: "rice-and-pulses-bin-display-rack", image: "/product/Rice & Pulses Bin Display Rack.webp" },
+      { title: "Double Sided Gondola Supermarket Rack", slug: "double-sided-gondola-supermarket-rack", image: "/product/Bright White Gondola Shelf Studio Shot.webp" },
+      { title: "Single Sided Wall Gondola Rack", slug: "single-sided-wall-gondola-rack", image: "/product/Single Sided Wall Gondola Rack.webp" },
+      { title: "End Cap Gondola Display Rack", slug: "end-cap-gondola-display-rack", image: "/product/End Cap Gondola Display Rack.webp" },
     ],
   },
   {
@@ -944,10 +944,10 @@ These display racks are intended for loose grains & staples. Retailers, dealers,
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Double Sided Gondola Supermarket Rack", slug: "double-sided-gondola-supermarket-rack", image: "/product/double-sided-gondola-rack.webp" },
-      { title: "Single Sided Wall Gondola Rack", slug: "single-sided-wall-gondola-rack", image: "/product/single-sided-wall-gondola-rack.webp" },
-      { title: "End Cap Gondola Display Rack", slug: "end-cap-gondola-display-rack", image: "/product/end-cap-gondola-display-rack.webp" },
-      { title: "Corner Gondola Display Rack", slug: "corner-gondola-display-rack", image: "/product/corner-gondola-display-rack.webp" },
+      { title: "Double Sided Gondola Supermarket Rack", slug: "double-sided-gondola-supermarket-rack", image: "/product/Bright White Gondola Shelf Studio Shot.webp" },
+      { title: "Single Sided Wall Gondola Rack", slug: "single-sided-wall-gondola-rack", image: "/product/Single Sided Wall Gondola Rack.webp" },
+      { title: "End Cap Gondola Display Rack", slug: "end-cap-gondola-display-rack", image: "/product/End Cap Gondola Display Rack.webp" },
+      { title: "Corner Gondola Display Rack", slug: "corner-gondola-display-rack", image: "/product/Modern Green-Trimmed Supermarket Display - Copy.webp" },
     ],
   },
   // ===================== Fruit & Vegetable Display Racks =====================
@@ -1031,10 +1031,10 @@ These display racks are intended for supermarket fresh section. Retailers, deale
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Stepped Fruit Display Rack", slug: "stepped-fruit-display-rack", image: "/product/stepped-fruit-display-rack.webp" },
-      { title: "Vegetable Display Stand", slug: "vegetable-display-stand", image: "/product/vegetable-display-stand.webp" },
-      { title: "Stainless Steel Vegetable Display Rack", slug: "stainless-steel-vegetable-display-rack", image: "/product/stainless-steel-vegetable-display-rack.webp" },
-      { title: "Basket Type Fruit Display Rack", slug: "basket-type-fruit-display-rack", image: "/product/basket-type-fruit-display-rack.webp" },
+      { title: "Stepped Fruit Display Rack", slug: "stepped-fruit-display-rack", image: "/product/Stepped Fruit Display Rack.webp" },
+      { title: "Vegetable Display Stand", slug: "vegetable-display-stand", image: "/product/Vegetable Display Stand.webp" },
+      { title: "Stainless Steel Vegetable Display Rack", slug: "stainless-steel-vegetable-display-rack", image: "/product/Stainless Steel Vegetable Display Rack.webp" },
+      { title: "Basket Type Fruit Display Rack", slug: "basket-type-fruit-display-rack", image: "/product/retail_rack_light_gray_square.webp" },
     ],
   },
   {
@@ -1117,10 +1117,10 @@ These display racks are intended for fruit shops & supermarkets. Retailers, deal
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Vegetable Display Stand", slug: "vegetable-display-stand", image: "/product/vegetable-display-stand.webp" },
-      { title: "Stainless Steel Vegetable Display Rack", slug: "stainless-steel-vegetable-display-rack", image: "/product/stainless-steel-vegetable-display-rack.webp" },
-      { title: "Basket Type Fruit Display Rack", slug: "basket-type-fruit-display-rack", image: "/product/basket-type-fruit-display-rack.webp" },
-      { title: "Island Fruit & Vegetable Display Table", slug: "island-fruit-and-vegetable-display-table", image: "/product/island-fruit-and-vegetable-display-table.webp" },
+      { title: "Vegetable Display Stand", slug: "vegetable-display-stand", image: "/product/Vegetable Display Stand.webp" },
+      { title: "Stainless Steel Vegetable Display Rack", slug: "stainless-steel-vegetable-display-rack", image: "/product/Stainless Steel Vegetable Display Rack.webp" },
+      { title: "Basket Type Fruit Display Rack", slug: "basket-type-fruit-display-rack", image: "/product/retail_rack_light_gray_square.webp" },
+      { title: "Island Fruit & Vegetable Display Table", slug: "island-fruit-and-vegetable-display-table", image: "/product/Fruit & Vegetable Display Rack.webp" },
     ],
   },
   {
@@ -1203,10 +1203,10 @@ These display racks are intended for organic & premium stores. Retailers, dealer
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Stainless Steel Vegetable Display Rack", slug: "stainless-steel-vegetable-display-rack", image: "/product/stainless-steel-vegetable-display-rack.webp" },
-      { title: "Basket Type Fruit Display Rack", slug: "basket-type-fruit-display-rack", image: "/product/basket-type-fruit-display-rack.webp" },
-      { title: "Island Fruit & Vegetable Display Table", slug: "island-fruit-and-vegetable-display-table", image: "/product/island-fruit-and-vegetable-display-table.webp" },
-      { title: "Wall Mounted Vegetable Display Rack", slug: "wall-mounted-vegetable-display-rack", image: "/product/wall-mounted-vegetable-display-rack.webp" },
+      { title: "Stainless Steel Vegetable Display Rack", slug: "stainless-steel-vegetable-display-rack", image: "/product/Stainless Steel Vegetable Display Rack.webp" },
+      { title: "Basket Type Fruit Display Rack", slug: "basket-type-fruit-display-rack", image: "/product/retail_rack_light_gray_square.webp" },
+      { title: "Island Fruit & Vegetable Display Table", slug: "island-fruit-and-vegetable-display-table", image: "/product/Fruit & Vegetable Display Rack.webp" },
+      { title: "Wall Mounted Vegetable Display Rack", slug: "wall-mounted-vegetable-display-rack", image: "/product/Wall Mounted Vegetable Display Rack.webp" },
     ],
   },
   {
@@ -1289,10 +1289,10 @@ These display racks are intended for wet & fresh produce areas. Retailers, deale
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Basket Type Fruit Display Rack", slug: "basket-type-fruit-display-rack", image: "/product/basket-type-fruit-display-rack.webp" },
-      { title: "Island Fruit & Vegetable Display Table", slug: "island-fruit-and-vegetable-display-table", image: "/product/island-fruit-and-vegetable-display-table.webp" },
-      { title: "Wall Mounted Vegetable Display Rack", slug: "wall-mounted-vegetable-display-rack", image: "/product/wall-mounted-vegetable-display-rack.webp" },
-      { title: "Onion & Potato Storage Display Rack", slug: "onion-and-potato-storage-display-rack", image: "/product/onion-and-potato-storage-display-rack.webp" },
+      { title: "Basket Type Fruit Display Rack", slug: "basket-type-fruit-display-rack", image: "/product/retail_rack_light_gray_square.webp" },
+      { title: "Island Fruit & Vegetable Display Table", slug: "island-fruit-and-vegetable-display-table", image: "/product/Fruit & Vegetable Display Rack.webp" },
+      { title: "Wall Mounted Vegetable Display Rack", slug: "wall-mounted-vegetable-display-rack", image: "/product/Wall Mounted Vegetable Display Rack.webp" },
+      { title: "Onion & Potato Storage Display Rack", slug: "onion-and-potato-storage-display-rack", image: "/product/retail_rack_light_gray_square.webp" },
     ],
   },
   {
@@ -1375,10 +1375,10 @@ These display racks are intended for fruit shops & mini marts. Retailers, dealer
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Island Fruit & Vegetable Display Table", slug: "island-fruit-and-vegetable-display-table", image: "/product/island-fruit-and-vegetable-display-table.webp" },
-      { title: "Wall Mounted Vegetable Display Rack", slug: "wall-mounted-vegetable-display-rack", image: "/product/wall-mounted-vegetable-display-rack.webp" },
-      { title: "Onion & Potato Storage Display Rack", slug: "onion-and-potato-storage-display-rack", image: "/product/onion-and-potato-storage-display-rack.webp" },
-      { title: "Stackable Vegetable Rack", slug: "stackable-vegetable-rack", image: "/product/stackable-vegetable-rack.webp" },
+      { title: "Island Fruit & Vegetable Display Table", slug: "island-fruit-and-vegetable-display-table", image: "/product/Fruit & Vegetable Display Rack.webp" },
+      { title: "Wall Mounted Vegetable Display Rack", slug: "wall-mounted-vegetable-display-rack", image: "/product/Wall Mounted Vegetable Display Rack.webp" },
+      { title: "Onion & Potato Storage Display Rack", slug: "onion-and-potato-storage-display-rack", image: "/product/retail_rack_light_gray_square.webp" },
+      { title: "Stackable Vegetable Rack", slug: "stackable-vegetable-rack", image: "/product/Stackable Vegetable Rack.webp" },
     ],
   },
   {
@@ -1461,10 +1461,10 @@ These display racks are intended for store centre fresh zone. Retailers, dealers
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Wall Mounted Vegetable Display Rack", slug: "wall-mounted-vegetable-display-rack", image: "/product/wall-mounted-vegetable-display-rack.webp" },
-      { title: "Onion & Potato Storage Display Rack", slug: "onion-and-potato-storage-display-rack", image: "/product/onion-and-potato-storage-display-rack.webp" },
-      { title: "Stackable Vegetable Rack", slug: "stackable-vegetable-rack", image: "/product/stackable-vegetable-rack.webp" },
-      { title: "Fruit & Vegetable Display Rack", slug: "fruit-and-vegetable-display-rack", image: "/product/fruit-and-vegetable-display-rack.webp" },
+      { title: "Wall Mounted Vegetable Display Rack", slug: "wall-mounted-vegetable-display-rack", image: "/product/Wall Mounted Vegetable Display Rack.webp" },
+      { title: "Onion & Potato Storage Display Rack", slug: "onion-and-potato-storage-display-rack", image: "/product/retail_rack_light_gray_square.webp" },
+      { title: "Stackable Vegetable Rack", slug: "stackable-vegetable-rack", image: "/product/Stackable Vegetable Rack.webp" },
+      { title: "Fruit & Vegetable Display Rack", slug: "fruit-and-vegetable-display-rack", image: "/product/Fruit & Vegetable Display Rack.webp" },
     ],
   },
   {
@@ -1547,10 +1547,10 @@ These display racks are intended for vegetable shops (wall side). Retailers, dea
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Onion & Potato Storage Display Rack", slug: "onion-and-potato-storage-display-rack", image: "/product/onion-and-potato-storage-display-rack.webp" },
-      { title: "Stackable Vegetable Rack", slug: "stackable-vegetable-rack", image: "/product/stackable-vegetable-rack.webp" },
-      { title: "Fruit & Vegetable Display Rack", slug: "fruit-and-vegetable-display-rack", image: "/product/fruit-and-vegetable-display-rack.webp" },
-      { title: "Stepped Fruit Display Rack", slug: "stepped-fruit-display-rack", image: "/product/stepped-fruit-display-rack.webp" },
+      { title: "Onion & Potato Storage Display Rack", slug: "onion-and-potato-storage-display-rack", image: "/product/retail_rack_light_gray_square.webp" },
+      { title: "Stackable Vegetable Rack", slug: "stackable-vegetable-rack", image: "/product/Stackable Vegetable Rack.webp" },
+      { title: "Fruit & Vegetable Display Rack", slug: "fruit-and-vegetable-display-rack", image: "/product/Fruit & Vegetable Display Rack.webp" },
+      { title: "Stepped Fruit Display Rack", slug: "stepped-fruit-display-rack", image: "/product/Stepped Fruit Display Rack.webp" },
     ],
   },
   {
@@ -1633,10 +1633,10 @@ These display racks are intended for vegetable shops & kirana. Retailers, dealer
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Stackable Vegetable Rack", slug: "stackable-vegetable-rack", image: "/product/stackable-vegetable-rack.webp" },
-      { title: "Fruit & Vegetable Display Rack", slug: "fruit-and-vegetable-display-rack", image: "/product/fruit-and-vegetable-display-rack.webp" },
-      { title: "Stepped Fruit Display Rack", slug: "stepped-fruit-display-rack", image: "/product/stepped-fruit-display-rack.webp" },
-      { title: "Vegetable Display Stand", slug: "vegetable-display-stand", image: "/product/vegetable-display-stand.webp" },
+      { title: "Stackable Vegetable Rack", slug: "stackable-vegetable-rack", image: "/product/Stackable Vegetable Rack.webp" },
+      { title: "Fruit & Vegetable Display Rack", slug: "fruit-and-vegetable-display-rack", image: "/product/Fruit & Vegetable Display Rack.webp" },
+      { title: "Stepped Fruit Display Rack", slug: "stepped-fruit-display-rack", image: "/product/Stepped Fruit Display Rack.webp" },
+      { title: "Vegetable Display Stand", slug: "vegetable-display-stand", image: "/product/Vegetable Display Stand.webp" },
     ],
   },
   {
@@ -1719,10 +1719,10 @@ These display racks are intended for mandi & vegetable vendors. Retailers, deale
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Fruit & Vegetable Display Rack", slug: "fruit-and-vegetable-display-rack", image: "/product/fruit-and-vegetable-display-rack.webp" },
-      { title: "Stepped Fruit Display Rack", slug: "stepped-fruit-display-rack", image: "/product/stepped-fruit-display-rack.webp" },
-      { title: "Vegetable Display Stand", slug: "vegetable-display-stand", image: "/product/vegetable-display-stand.webp" },
-      { title: "Stainless Steel Vegetable Display Rack", slug: "stainless-steel-vegetable-display-rack", image: "/product/stainless-steel-vegetable-display-rack.webp" },
+      { title: "Fruit & Vegetable Display Rack", slug: "fruit-and-vegetable-display-rack", image: "/product/Fruit & Vegetable Display Rack.webp" },
+      { title: "Stepped Fruit Display Rack", slug: "stepped-fruit-display-rack", image: "/product/Stepped Fruit Display Rack.webp" },
+      { title: "Vegetable Display Stand", slug: "vegetable-display-stand", image: "/product/Vegetable Display Stand.webp" },
+      { title: "Stainless Steel Vegetable Display Rack", slug: "stainless-steel-vegetable-display-rack", image: "/product/Stainless Steel Vegetable Display Rack.webp" },
     ],
   },
   // ===================== Garment & Clothing Display Racks =====================
@@ -1806,10 +1806,10 @@ These display racks are intended for apparel showrooms. Retailers, dealers, stor
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Two Way Garment Display Rack", slug: "two-way-garment-display-rack", image: "/product/two-way-garment-display-rack.webp" },
-      { title: "Four Way Garment Display Rack", slug: "four-way-garment-display-rack", image: "/product/four-way-garment-display-rack.webp" },
-      { title: "Single Rail Clothes Display Rack", slug: "single-rail-clothes-display-rack", image: "/product/single-rail-clothes-display-rack.webp" },
-      { title: "Double Rail Garment Display Rack", slug: "double-rail-garment-display-rack", image: "/product/double-rail-garment-display-rack.webp" },
+      { title: "Two Way Garment Display Rack", slug: "two-way-garment-display-rack", image: "/product/Two Way Garment Display Rack.webp" },
+      { title: "Four Way Garment Display Rack", slug: "four-way-garment-display-rack", image: "/product/Four Way Garment Display Rack.webp" },
+      { title: "Single Rail Clothes Display Rack", slug: "single-rail-clothes-display-rack", image: "/product/Single Rail Clothes Display Rack.webp" },
+      { title: "Double Rail Garment Display Rack", slug: "double-rail-garment-display-rack", image: "/product/Double Rail Garment Display Rack.webp" },
     ],
   },
   {
@@ -1892,10 +1892,10 @@ These display racks are intended for apparel showrooms. Retailers, dealers, stor
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Four Way Garment Display Rack", slug: "four-way-garment-display-rack", image: "/product/four-way-garment-display-rack.webp" },
-      { title: "Single Rail Clothes Display Rack", slug: "single-rail-clothes-display-rack", image: "/product/single-rail-clothes-display-rack.webp" },
-      { title: "Double Rail Garment Display Rack", slug: "double-rail-garment-display-rack", image: "/product/double-rail-garment-display-rack.webp" },
-      { title: "Wall Mounted Garment Display Rack", slug: "wall-mounted-garment-display-rack", image: "/product/wall-mounted-garment-display-rack.webp" },
+      { title: "Four Way Garment Display Rack", slug: "four-way-garment-display-rack", image: "/product/Four Way Garment Display Rack.webp" },
+      { title: "Single Rail Clothes Display Rack", slug: "single-rail-clothes-display-rack", image: "/product/Single Rail Clothes Display Rack.webp" },
+      { title: "Double Rail Garment Display Rack", slug: "double-rail-garment-display-rack", image: "/product/Double Rail Garment Display Rack.webp" },
+      { title: "Wall Mounted Garment Display Rack", slug: "wall-mounted-garment-display-rack", image: "/product/Wall Mounted Garment Display Rack.webp" },
     ],
   },
   {
@@ -1978,10 +1978,10 @@ These display racks are intended for apparel showrooms & malls. Retailers, deale
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Single Rail Clothes Display Rack", slug: "single-rail-clothes-display-rack", image: "/product/single-rail-clothes-display-rack.webp" },
-      { title: "Double Rail Garment Display Rack", slug: "double-rail-garment-display-rack", image: "/product/double-rail-garment-display-rack.webp" },
-      { title: "Wall Mounted Garment Display Rack", slug: "wall-mounted-garment-display-rack", image: "/product/wall-mounted-garment-display-rack.webp" },
-      { title: "Rolling Garment Rack", slug: "rolling-garment-rack", image: "/product/rolling-garment-rack.webp" },
+      { title: "Single Rail Clothes Display Rack", slug: "single-rail-clothes-display-rack", image: "/product/Single Rail Clothes Display Rack.webp" },
+      { title: "Double Rail Garment Display Rack", slug: "double-rail-garment-display-rack", image: "/product/Double Rail Garment Display Rack.webp" },
+      { title: "Wall Mounted Garment Display Rack", slug: "wall-mounted-garment-display-rack", image: "/product/Wall Mounted Garment Display Rack.webp" },
+      { title: "Rolling Garment Rack", slug: "rolling-garment-rack", image: "/product/Rolling Garment Rack.webp" },
     ],
   },
   {
@@ -2064,10 +2064,10 @@ These display racks are intended for boutiques. Retailers, dealers, store planne
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Double Rail Garment Display Rack", slug: "double-rail-garment-display-rack", image: "/product/double-rail-garment-display-rack.webp" },
-      { title: "Wall Mounted Garment Display Rack", slug: "wall-mounted-garment-display-rack", image: "/product/wall-mounted-garment-display-rack.webp" },
-      { title: "Rolling Garment Rack", slug: "rolling-garment-rack", image: "/product/rolling-garment-rack.webp" },
-      { title: "Saree Display Rack", slug: "saree-display-rack", image: "/product/saree-display-rack.webp" },
+      { title: "Double Rail Garment Display Rack", slug: "double-rail-garment-display-rack", image: "/product/Double Rail Garment Display Rack.webp" },
+      { title: "Wall Mounted Garment Display Rack", slug: "wall-mounted-garment-display-rack", image: "/product/Wall Mounted Garment Display Rack.webp" },
+      { title: "Rolling Garment Rack", slug: "rolling-garment-rack", image: "/product/Rolling Garment Rack.webp" },
+      { title: "Saree Display Rack", slug: "saree-display-rack", image: "/product/Saree Display Rack.webp" },
     ],
   },
   {
@@ -2150,10 +2150,10 @@ These display racks are intended for boutiques & showrooms. Retailers, dealers, 
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Wall Mounted Garment Display Rack", slug: "wall-mounted-garment-display-rack", image: "/product/wall-mounted-garment-display-rack.webp" },
-      { title: "Rolling Garment Rack", slug: "rolling-garment-rack", image: "/product/rolling-garment-rack.webp" },
-      { title: "Saree Display Rack", slug: "saree-display-rack", image: "/product/saree-display-rack.webp" },
-      { title: "Innerwear Display Rack", slug: "innerwear-display-rack", image: "/product/innerwear-display-rack.webp" },
+      { title: "Wall Mounted Garment Display Rack", slug: "wall-mounted-garment-display-rack", image: "/product/Wall Mounted Garment Display Rack.webp" },
+      { title: "Rolling Garment Rack", slug: "rolling-garment-rack", image: "/product/Rolling Garment Rack.webp" },
+      { title: "Saree Display Rack", slug: "saree-display-rack", image: "/product/Saree Display Rack.webp" },
+      { title: "Innerwear Display Rack", slug: "innerwear-display-rack", image: "/product/Innerwear Display Rack.webp" },
     ],
   },
   {
@@ -2236,10 +2236,10 @@ These display racks are intended for showroom walls. Retailers, dealers, store p
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Rolling Garment Rack", slug: "rolling-garment-rack", image: "/product/rolling-garment-rack.webp" },
-      { title: "Saree Display Rack", slug: "saree-display-rack", image: "/product/saree-display-rack.webp" },
-      { title: "Innerwear Display Rack", slug: "innerwear-display-rack", image: "/product/innerwear-display-rack.webp" },
-      { title: "Nesting Table Garment Display", slug: "nesting-table-garment-display", image: "/product/nesting-table-garment-display.webp" },
+      { title: "Rolling Garment Rack", slug: "rolling-garment-rack", image: "/product/Rolling Garment Rack.webp" },
+      { title: "Saree Display Rack", slug: "saree-display-rack", image: "/product/Saree Display Rack.webp" },
+      { title: "Innerwear Display Rack", slug: "innerwear-display-rack", image: "/product/Innerwear Display Rack.webp" },
+      { title: "Nesting Table Garment Display", slug: "nesting-table-garment-display", image: "/product/Nesting Table Garment Display.webp" },
     ],
   },
   {
@@ -2322,10 +2322,10 @@ These display racks are intended for exhibitions & stock movement. Retailers, de
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Saree Display Rack", slug: "saree-display-rack", image: "/product/saree-display-rack.webp" },
-      { title: "Innerwear Display Rack", slug: "innerwear-display-rack", image: "/product/innerwear-display-rack.webp" },
-      { title: "Nesting Table Garment Display", slug: "nesting-table-garment-display", image: "/product/nesting-table-garment-display.webp" },
-      { title: "Round Garment Display Rack", slug: "round-garment-display-rack", image: "/product/round-garment-display-rack.webp" },
+      { title: "Saree Display Rack", slug: "saree-display-rack", image: "/product/Saree Display Rack.webp" },
+      { title: "Innerwear Display Rack", slug: "innerwear-display-rack", image: "/product/Innerwear Display Rack.webp" },
+      { title: "Nesting Table Garment Display", slug: "nesting-table-garment-display", image: "/product/Nesting Table Garment Display.webp" },
+      { title: "Round Garment Display Rack", slug: "round-garment-display-rack", image: "/product/Round Garment Display Rack.webp" },
     ],
   },
   {
@@ -2408,10 +2408,10 @@ These display racks are intended for saree & ethnic wear shops. Retailers, deale
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Innerwear Display Rack", slug: "innerwear-display-rack", image: "/product/innerwear-display-rack.webp" },
-      { title: "Nesting Table Garment Display", slug: "nesting-table-garment-display", image: "/product/nesting-table-garment-display.webp" },
-      { title: "Round Garment Display Rack", slug: "round-garment-display-rack", image: "/product/round-garment-display-rack.webp" },
-      { title: "Two Way Garment Display Rack", slug: "two-way-garment-display-rack", image: "/product/two-way-garment-display-rack.webp" },
+      { title: "Innerwear Display Rack", slug: "innerwear-display-rack", image: "/product/Innerwear Display Rack.webp" },
+      { title: "Nesting Table Garment Display", slug: "nesting-table-garment-display", image: "/product/Nesting Table Garment Display.webp" },
+      { title: "Round Garment Display Rack", slug: "round-garment-display-rack", image: "/product/Round Garment Display Rack.webp" },
+      { title: "Two Way Garment Display Rack", slug: "two-way-garment-display-rack", image: "/product/Two Way Garment Display Rack.webp" },
     ],
   },
   {
@@ -2494,10 +2494,10 @@ These display racks are intended for lingerie & innerwear stores. Retailers, dea
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Nesting Table Garment Display", slug: "nesting-table-garment-display", image: "/product/nesting-table-garment-display.webp" },
-      { title: "Round Garment Display Rack", slug: "round-garment-display-rack", image: "/product/round-garment-display-rack.webp" },
-      { title: "Two Way Garment Display Rack", slug: "two-way-garment-display-rack", image: "/product/two-way-garment-display-rack.webp" },
-      { title: "Four Way Garment Display Rack", slug: "four-way-garment-display-rack", image: "/product/four-way-garment-display-rack.webp" },
+      { title: "Nesting Table Garment Display", slug: "nesting-table-garment-display", image: "/product/Nesting Table Garment Display.webp" },
+      { title: "Round Garment Display Rack", slug: "round-garment-display-rack", image: "/product/Round Garment Display Rack.webp" },
+      { title: "Two Way Garment Display Rack", slug: "two-way-garment-display-rack", image: "/product/Two Way Garment Display Rack.webp" },
+      { title: "Four Way Garment Display Rack", slug: "four-way-garment-display-rack", image: "/product/Four Way Garment Display Rack.webp" },
     ],
   },
   {
@@ -2580,10 +2580,10 @@ These display racks are intended for premium apparel stores. Retailers, dealers,
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Round Garment Display Rack", slug: "round-garment-display-rack", image: "/product/round-garment-display-rack.webp" },
-      { title: "Two Way Garment Display Rack", slug: "two-way-garment-display-rack", image: "/product/two-way-garment-display-rack.webp" },
-      { title: "Four Way Garment Display Rack", slug: "four-way-garment-display-rack", image: "/product/four-way-garment-display-rack.webp" },
-      { title: "Single Rail Clothes Display Rack", slug: "single-rail-clothes-display-rack", image: "/product/single-rail-clothes-display-rack.webp" },
+      { title: "Round Garment Display Rack", slug: "round-garment-display-rack", image: "/product/Round Garment Display Rack.webp" },
+      { title: "Two Way Garment Display Rack", slug: "two-way-garment-display-rack", image: "/product/Two Way Garment Display Rack.webp" },
+      { title: "Four Way Garment Display Rack", slug: "four-way-garment-display-rack", image: "/product/Four Way Garment Display Rack.webp" },
+      { title: "Single Rail Clothes Display Rack", slug: "single-rail-clothes-display-rack", image: "/product/Single Rail Clothes Display Rack.webp" },
     ],
   },
   // ===================== Footwear & Shoe Display Racks =====================
@@ -2667,10 +2667,10 @@ These display racks are intended for footwear showrooms. Retailers, dealers, sto
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Floor Standing Shoe Display Rack", slug: "floor-standing-shoe-display-rack", image: "/product/floor-standing-shoe-display-rack.webp" },
-      { title: "Glass & Acrylic Shelf Shoe Display Rack", slug: "glass-and-acrylic-shelf-shoe-display-rack", image: "/product/glass-and-acrylic-shelf-shoe-display-rack.webp" },
-      { title: "Shoe Display Rack", slug: "shoe-display-rack", image: "/product/shoe-display-rack.webp" },
-      { title: "Sports Shoe Display Rack", slug: "sports-shoe-display-rack", image: "/product/sports-shoe-display-rack.webp" },
+      { title: "Floor Standing Shoe Display Rack", slug: "floor-standing-shoe-display-rack", image: "/product/Floor Standing Shoe Display Rack.webp" },
+      { title: "Glass & Acrylic Shelf Shoe Display Rack", slug: "glass-and-acrylic-shelf-shoe-display-rack", image: "/product/Glass%20%26%20Acrylic%20Shelf%20Shoe%20Display%20Rack.webp" },
+      { title: "Shoe Display Rack", slug: "shoe-display-rack", image: "/product/Shoe Display Rack.webp" },
+      { title: "Sports Shoe Display Rack", slug: "sports-shoe-display-rack", image: "/product/Sports Shoe Display Rack.webp" },
     ],
   },
   {
@@ -2753,10 +2753,10 @@ These display racks are intended for footwear shops. Retailers, dealers, store p
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Glass & Acrylic Shelf Shoe Display Rack", slug: "glass-and-acrylic-shelf-shoe-display-rack", image: "/product/glass-and-acrylic-shelf-shoe-display-rack.webp" },
-      { title: "Shoe Display Rack", slug: "shoe-display-rack", image: "/product/shoe-display-rack.webp" },
-      { title: "Sports Shoe Display Rack", slug: "sports-shoe-display-rack", image: "/product/sports-shoe-display-rack.webp" },
-      { title: "Ladies & Kids Footwear Display Rack", slug: "ladies-and-kids-footwear-display-rack", image: "/product/ladies-and-kids-footwear-display-rack.webp" },
+      { title: "Glass & Acrylic Shelf Shoe Display Rack", slug: "glass-and-acrylic-shelf-shoe-display-rack", image: "/product/Glass%20%26%20Acrylic%20Shelf%20Shoe%20Display%20Rack.webp" },
+      { title: "Shoe Display Rack", slug: "shoe-display-rack", image: "/product/Shoe Display Rack.webp" },
+      { title: "Sports Shoe Display Rack", slug: "sports-shoe-display-rack", image: "/product/Sports Shoe Display Rack.webp" },
+      { title: "Ladies & Kids Footwear Display Rack", slug: "ladies-and-kids-footwear-display-rack", image: "/product/Ladies & Kids Footwear Display Rack.webp" },
     ],
   },
   
@@ -2840,10 +2840,10 @@ These display racks are intended for boutique footwear stores. Retailers, dealer
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Sports Shoe Display Rack", slug: "sports-shoe-display-rack", image: "/product/sports-shoe-display-rack.webp" },
-      { title: "Ladies & Kids Footwear Display Rack", slug: "ladies-and-kids-footwear-display-rack", image: "/product/ladies-and-kids-footwear-display-rack.webp" },
-      { title: "Slipper & Chappal Display Rack", slug: "slipper-and-chappal-display-rack", image: "/product/slipper-and-chappal-display-rack.webp" },
-      { title: "Socks Display Rack", slug: "socks-display-rack", image: "/product/socks-display-rack.webp" },
+      { title: "Sports Shoe Display Rack", slug: "sports-shoe-display-rack", image: "/product/Sports Shoe Display Rack.webp" },
+      { title: "Ladies & Kids Footwear Display Rack", slug: "ladies-and-kids-footwear-display-rack", image: "/product/Ladies & Kids Footwear Display Rack.webp" },
+      { title: "Slipper & Chappal Display Rack", slug: "slipper-and-chappal-display-rack", image: "/product/Slipper & Chappal Display Rack.webp" },
+      { title: "Socks Display Rack", slug: "socks-display-rack", image: "/product/Socks Display Rack.webp" },
     ],
   },
   {
@@ -2926,10 +2926,10 @@ These display racks are intended for sports stores. Retailers, dealers, store pl
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Ladies & Kids Footwear Display Rack", slug: "ladies-and-kids-footwear-display-rack", image: "/product/ladies-and-kids-footwear-display-rack.webp" },
-      { title: "Slipper & Chappal Display Rack", slug: "slipper-and-chappal-display-rack", image: "/product/slipper-and-chappal-display-rack.webp" },
-      { title: "Socks Display Rack", slug: "socks-display-rack", image: "/product/socks-display-rack.webp" },
-      { title: "Wall Mounted Shoe Display Rack", slug: "wall-mounted-shoe-display-rack", image: "/product/wall-mounted-shoe-display-rack.webp" },
+      { title: "Ladies & Kids Footwear Display Rack", slug: "ladies-and-kids-footwear-display-rack", image: "/product/Ladies & Kids Footwear Display Rack.webp" },
+      { title: "Slipper & Chappal Display Rack", slug: "slipper-and-chappal-display-rack", image: "/product/Slipper & Chappal Display Rack.webp" },
+      { title: "Socks Display Rack", slug: "socks-display-rack", image: "/product/Socks Display Rack.webp" },
+      { title: "Wall Mounted Shoe Display Rack", slug: "wall-mounted-shoe-display-rack", image: "/product/Wall Mounted Shoe Display Rack.webp" },
     ],
   },
   {
@@ -3012,10 +3012,10 @@ These display racks are intended for ladies' sandals, heels, children's shoes an
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Slipper & Chappal Display Rack", slug: "slipper-and-chappal-display-rack", image: "/product/slipper-and-chappal-display-rack.webp" },
-      { title: "Socks Display Rack", slug: "socks-display-rack", image: "/product/socks-display-rack.webp" },
-      { title: "Wall Mounted Shoe Display Rack", slug: "wall-mounted-shoe-display-rack", image: "/product/wall-mounted-shoe-display-rack.webp" },
-      { title: "Floor Standing Shoe Display Rack", slug: "floor-standing-shoe-display-rack", image: "/product/floor-standing-shoe-display-rack.webp" },
+      { title: "Slipper & Chappal Display Rack", slug: "slipper-and-chappal-display-rack", image: "/product/Slipper & Chappal Display Rack.webp" },
+      { title: "Socks Display Rack", slug: "socks-display-rack", image: "/product/Socks Display Rack.webp" },
+      { title: "Wall Mounted Shoe Display Rack", slug: "wall-mounted-shoe-display-rack", image: "/product/Wall Mounted Shoe Display Rack.webp" },
+      { title: "Floor Standing Shoe Display Rack", slug: "floor-standing-shoe-display-rack", image: "/product/Floor Standing Shoe Display Rack.webp" },
     ],
   },
   {
@@ -3098,10 +3098,10 @@ These display racks are intended for footwear & general stores. Retailers, deale
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Socks Display Rack", slug: "socks-display-rack", image: "/product/socks-display-rack.webp" },
-      { title: "Wall Mounted Shoe Display Rack", slug: "wall-mounted-shoe-display-rack", image: "/product/wall-mounted-shoe-display-rack.webp" },
-      { title: "Floor Standing Shoe Display Rack", slug: "floor-standing-shoe-display-rack", image: "/product/floor-standing-shoe-display-rack.webp" },
-      { title: "Glass & Acrylic Shelf Shoe Display Rack", slug: "glass-and-acrylic-shelf-shoe-display-rack", image: "/product/glass-and-acrylic-shelf-shoe-display-rack.webp" },
+      { title: "Socks Display Rack", slug: "socks-display-rack", image: "/product/Socks Display Rack.webp" },
+      { title: "Wall Mounted Shoe Display Rack", slug: "wall-mounted-shoe-display-rack", image: "/product/Wall Mounted Shoe Display Rack.webp" },
+      { title: "Floor Standing Shoe Display Rack", slug: "floor-standing-shoe-display-rack", image: "/product/Floor Standing Shoe Display Rack.webp" },
+      { title: "Glass & Acrylic Shelf Shoe Display Rack", slug: "glass-and-acrylic-shelf-shoe-display-rack", image: "/product/Glass%20%26%20Acrylic%20Shelf%20Shoe%20Display%20Rack.webp" },
     ],
   },
   {
@@ -3184,10 +3184,10 @@ These display racks are intended for footwear & apparel stores. Retailers, deale
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Wall Mounted Shoe Display Rack", slug: "wall-mounted-shoe-display-rack", image: "/product/wall-mounted-shoe-display-rack.webp" },
-      { title: "Floor Standing Shoe Display Rack", slug: "floor-standing-shoe-display-rack", image: "/product/floor-standing-shoe-display-rack.webp" },
-      { title: "Glass & Acrylic Shelf Shoe Display Rack", slug: "glass-and-acrylic-shelf-shoe-display-rack", image: "/product/glass-and-acrylic-shelf-shoe-display-rack.webp" },
-      { title: "Shoe Display Rack", slug: "shoe-display-rack", image: "/product/shoe-display-rack.webp" },
+      { title: "Wall Mounted Shoe Display Rack", slug: "wall-mounted-shoe-display-rack", image: "/product/Wall Mounted Shoe Display Rack.webp" },
+      { title: "Floor Standing Shoe Display Rack", slug: "floor-standing-shoe-display-rack", image: "/product/Floor Standing Shoe Display Rack.webp" },
+      { title: "Glass & Acrylic Shelf Shoe Display Rack", slug: "glass-and-acrylic-shelf-shoe-display-rack", image: "/product/Glass%20%26%20Acrylic%20Shelf%20Shoe%20Display%20Rack.webp" },
+      { title: "Shoe Display Rack", slug: "shoe-display-rack", image: "/product/Shoe Display Rack.webp" },
     ],
   },
   // ===================== Pharmacy & Medical Store Racks =====================
@@ -3271,10 +3271,10 @@ These display racks are intended for chemist & pharmacy shops. Retailers, dealer
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Pharmacy Gondola Display Rack", slug: "pharmacy-gondola-display-rack", image: "/product/pharmacy-gondola-display-rack.webp" },
-      { title: "Medicine Drawer Storage Rack", slug: "medicine-drawer-storage-rack", image: "/product/medicine-drawer-storage-rack.webp" },
-      { title: "Medicine Strip Storage Bin Rack", slug: "medicine-strip-storage-bin-rack", image: "/product/medicine-strip-storage-bin-rack.webp" },
-      { title: "Pharmacy Counter Display Rack", slug: "pharmacy-counter-display-rack", image: "/product/pharmacy-counter-display-rack.webp" },
+      { title: "Pharmacy Gondola Display Rack", slug: "pharmacy-gondola-display-rack", image: "/product/Pharmacy Gondola Display Rack.webp" },
+      { title: "Medicine Drawer Storage Rack", slug: "medicine-drawer-storage-rack", image: "/product/Medicine Drawer Storage Rack.webp" },
+      { title: "Medicine Strip Storage Bin Rack", slug: "medicine-strip-storage-bin-rack", image: "/product/Medicine Strip Storage Bin Rack.webp" },
+      { title: "Pharmacy Counter Display Rack", slug: "pharmacy-counter-display-rack", image: "/product/Pharmacy Counter Display Rack.webp" },
     ],
   },
   {
@@ -3357,10 +3357,10 @@ These display racks are intended for chain pharmacies. Retailers, dealers, store
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Medicine Drawer Storage Rack", slug: "medicine-drawer-storage-rack", image: "/product/medicine-drawer-storage-rack.webp" },
-      { title: "Medicine Strip Storage Bin Rack", slug: "medicine-strip-storage-bin-rack", image: "/product/medicine-strip-storage-bin-rack.webp" },
-      { title: "Pharmacy Counter Display Rack", slug: "pharmacy-counter-display-rack", image: "/product/pharmacy-counter-display-rack.webp" },
-      { title: "Medicine Display Cabinet", slug: "medicine-display-cabinet", image: "/product/medicine-display-cabinet.webp" },
+      { title: "Medicine Drawer Storage Rack", slug: "medicine-drawer-storage-rack", image: "/product/Medicine Drawer Storage Rack.webp" },
+      { title: "Medicine Strip Storage Bin Rack", slug: "medicine-strip-storage-bin-rack", image: "/product/Medicine Strip Storage Bin Rack.webp" },
+      { title: "Pharmacy Counter Display Rack", slug: "pharmacy-counter-display-rack", image: "/product/Pharmacy Counter Display Rack.webp" },
+      { title: "Medicine Display Cabinet", slug: "medicine-display-cabinet", image: "/product/Medicine Display Cabinet.webp" },
     ],
   },
   {
@@ -3443,10 +3443,10 @@ These display racks are intended for pharmacy back storage. Retailers, dealers, 
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Medicine Strip Storage Bin Rack", slug: "medicine-strip-storage-bin-rack", image: "/product/medicine-strip-storage-bin-rack.webp" },
-      { title: "Pharmacy Counter Display Rack", slug: "pharmacy-counter-display-rack", image: "/product/pharmacy-counter-display-rack.webp" },
-      { title: "Medicine Display Cabinet", slug: "medicine-display-cabinet", image: "/product/medicine-display-cabinet.webp" },
-      { title: "Perforated Pharmacy Display Rack", slug: "perforated-pharmacy-display-rack", image: "/product/perforated-pharmacy-display-rack.webp" },
+      { title: "Medicine Strip Storage Bin Rack", slug: "medicine-strip-storage-bin-rack", image: "/product/Medicine Strip Storage Bin Rack.webp" },
+      { title: "Pharmacy Counter Display Rack", slug: "pharmacy-counter-display-rack", image: "/product/Pharmacy Counter Display Rack.webp" },
+      { title: "Medicine Display Cabinet", slug: "medicine-display-cabinet", image: "/product/Medicine Display Cabinet.webp" },
+      { title: "Perforated Pharmacy Display Rack", slug: "perforated-pharmacy-display-rack", image: "/product/Perforated Pharmacy Display Rack.webp" },
     ],
   },
   {
@@ -3529,10 +3529,10 @@ These display racks are intended for chemist shops. Retailers, dealers, store pl
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Pharmacy Counter Display Rack", slug: "pharmacy-counter-display-rack", image: "/product/pharmacy-counter-display-rack.webp" },
-      { title: "Medicine Display Cabinet", slug: "medicine-display-cabinet", image: "/product/medicine-display-cabinet.webp" },
-      { title: "Perforated Pharmacy Display Rack", slug: "perforated-pharmacy-display-rack", image: "/product/perforated-pharmacy-display-rack.webp" },
-      { title: "Surgical Items Display Rack", slug: "surgical-items-display-rack", image: "/product/surgical-items-display-rack.webp" },
+      { title: "Pharmacy Counter Display Rack", slug: "pharmacy-counter-display-rack", image: "/product/Pharmacy Counter Display Rack.webp" },
+      { title: "Medicine Display Cabinet", slug: "medicine-display-cabinet", image: "/product/Medicine Display Cabinet.webp" },
+      { title: "Perforated Pharmacy Display Rack", slug: "perforated-pharmacy-display-rack", image: "/product/Perforated Pharmacy Display Rack.webp" },
+      { title: "Surgical Items Display Rack", slug: "surgical-items-display-rack", image: "/product/Surgical Items Display Rack.webp" },
     ],
   },
   {
@@ -3615,10 +3615,10 @@ These display racks are intended for pharmacy billing counter. Retailers, dealer
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Medicine Display Cabinet", slug: "medicine-display-cabinet", image: "/product/medicine-display-cabinet.webp" },
-      { title: "Perforated Pharmacy Display Rack", slug: "perforated-pharmacy-display-rack", image: "/product/perforated-pharmacy-display-rack.webp" },
-      { title: "Surgical Items Display Rack", slug: "surgical-items-display-rack", image: "/product/surgical-items-display-rack.webp" },
-      { title: "Countertop Healthcare Display Stand", slug: "countertop-healthcare-display-stand", image: "/product/countertop-healthcare-display-stand.webp" },
+      { title: "Medicine Display Cabinet", slug: "medicine-display-cabinet", image: "/product/Medicine Display Cabinet.webp" },
+      { title: "Perforated Pharmacy Display Rack", slug: "perforated-pharmacy-display-rack", image: "/product/Perforated Pharmacy Display Rack.webp" },
+      { title: "Surgical Items Display Rack", slug: "surgical-items-display-rack", image: "/product/Surgical Items Display Rack.webp" },
+      { title: "Countertop Healthcare Display Stand", slug: "countertop-healthcare-display-stand", image: "/product/Medical%20Store%20Wall%20Display%20Rack.webp" },
     ],
   },
   {
@@ -3701,10 +3701,10 @@ These display racks are intended for chemist shops. Retailers, dealers, store pl
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Perforated Pharmacy Display Rack", slug: "perforated-pharmacy-display-rack", image: "/product/perforated-pharmacy-display-rack.webp" },
-      { title: "Surgical Items Display Rack", slug: "surgical-items-display-rack", image: "/product/surgical-items-display-rack.webp" },
-      { title: "Countertop Healthcare Display Stand", slug: "countertop-healthcare-display-stand", image: "/product/countertop-healthcare-display-stand.webp" },
-      { title: "Medical Store Wall Display Rack", slug: "medical-store-wall-display-rack", image: "/product/medical-store-wall-display-rack.webp" },
+      { title: "Perforated Pharmacy Display Rack", slug: "perforated-pharmacy-display-rack", image: "/product/Perforated Pharmacy Display Rack.webp" },
+      { title: "Surgical Items Display Rack", slug: "surgical-items-display-rack", image: "/product/Surgical Items Display Rack.webp" },
+      { title: "Countertop Healthcare Display Stand", slug: "countertop-healthcare-display-stand", image: "/product/Medical%20Store%20Wall%20Display%20Rack.webp" },
+      { title: "Medical Store Wall Display Rack", slug: "medical-store-wall-display-rack", image: "/product/Medical Store Wall Display Rack.webp" },
     ],
   },
   {
@@ -3787,10 +3787,10 @@ These display racks are intended for pharmacy hanging products. Retailers, deale
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Surgical Items Display Rack", slug: "surgical-items-display-rack", image: "/product/surgical-items-display-rack.webp" },
-      { title: "Countertop Healthcare Display Stand", slug: "countertop-healthcare-display-stand", image: "/product/countertop-healthcare-display-stand.webp" },
-      { title: "Medical Store Wall Display Rack", slug: "medical-store-wall-display-rack", image: "/product/medical-store-wall-display-rack.webp" },
-      { title: "Pharmacy Gondola Display Rack", slug: "pharmacy-gondola-display-rack", image: "/product/pharmacy-gondola-display-rack.webp" },
+      { title: "Surgical Items Display Rack", slug: "surgical-items-display-rack", image: "/product/Surgical Items Display Rack.webp" },
+      { title: "Countertop Healthcare Display Stand", slug: "countertop-healthcare-display-stand", image: "/product/Medical%20Store%20Wall%20Display%20Rack.webp" },
+      { title: "Medical Store Wall Display Rack", slug: "medical-store-wall-display-rack", image: "/product/Medical Store Wall Display Rack.webp" },
+      { title: "Pharmacy Gondola Display Rack", slug: "pharmacy-gondola-display-rack", image: "/product/Pharmacy Gondola Display Rack.webp" },
     ],
   },
   {
@@ -3873,10 +3873,10 @@ These display racks are intended for surgical & medical supply stores. Retailers
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Countertop Healthcare Display Stand", slug: "countertop-healthcare-display-stand", image: "/product/countertop-healthcare-display-stand.webp" },
-      { title: "Medical Store Wall Display Rack", slug: "medical-store-wall-display-rack", image: "/product/medical-store-wall-display-rack.webp" },
-      { title: "Pharmacy Gondola Display Rack", slug: "pharmacy-gondola-display-rack", image: "/product/pharmacy-gondola-display-rack.webp" },
-      { title: "Medicine Drawer Storage Rack", slug: "medicine-drawer-storage-rack", image: "/product/medicine-drawer-storage-rack.webp" },
+      { title: "Countertop Healthcare Display Stand", slug: "countertop-healthcare-display-stand", image: "/product/Medical%20Store%20Wall%20Display%20Rack.webp" },
+      { title: "Medical Store Wall Display Rack", slug: "medical-store-wall-display-rack", image: "/product/Medical Store Wall Display Rack.webp" },
+      { title: "Pharmacy Gondola Display Rack", slug: "pharmacy-gondola-display-rack", image: "/product/Pharmacy Gondola Display Rack.webp" },
+      { title: "Medicine Drawer Storage Rack", slug: "medicine-drawer-storage-rack", image: "/product/Medicine Drawer Storage Rack.webp" },
     ],
   },
   {
@@ -3959,10 +3959,10 @@ These display racks are intended for pharmacy counters. Retailers, dealers, stor
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Medical Store Wall Display Rack", slug: "medical-store-wall-display-rack", image: "/product/medical-store-wall-display-rack.webp" },
-      { title: "Pharmacy Gondola Display Rack", slug: "pharmacy-gondola-display-rack", image: "/product/pharmacy-gondola-display-rack.webp" },
-      { title: "Medicine Drawer Storage Rack", slug: "medicine-drawer-storage-rack", image: "/product/medicine-drawer-storage-rack.webp" },
-      { title: "Medicine Strip Storage Bin Rack", slug: "medicine-strip-storage-bin-rack", image: "/product/medicine-strip-storage-bin-rack.webp" },
+      { title: "Medical Store Wall Display Rack", slug: "medical-store-wall-display-rack", image: "/product/Medical Store Wall Display Rack.webp" },
+      { title: "Pharmacy Gondola Display Rack", slug: "pharmacy-gondola-display-rack", image: "/product/Pharmacy Gondola Display Rack.webp" },
+      { title: "Medicine Drawer Storage Rack", slug: "medicine-drawer-storage-rack", image: "/product/Medicine Drawer Storage Rack.webp" },
+      { title: "Medicine Strip Storage Bin Rack", slug: "medicine-strip-storage-bin-rack", image: "/product/Medicine Strip Storage Bin Rack.webp" },
     ],
   },
   // ===================== Mobile & Electronics Display Racks =====================
@@ -4046,10 +4046,10 @@ These display racks are intended for mobile shops. Retailers, dealers, store pla
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Slatwall Mobile Accessories Rack", slug: "slatwall-mobile-accessories-rack", image: "/product/slatwall-mobile-accessories-rack.webp" },
-      { title: "Revolving Mobile Accessories Stand", slug: "revolving-mobile-accessories-stand", image: "/product/revolving-mobile-accessories-stand.webp" },
-      { title: "Earphone & Headphone Display Stand", slug: "earphone-and-headphone-display-stand", image: "/product/earphone-and-headphone-display-stand.webp" },
-      { title: "Smartwatch Display Stand", slug: "smartwatch-display-stand", image: "/product/smartwatch-display-stand.webp" },
+      { title: "Slatwall Mobile Accessories Rack", slug: "slatwall-mobile-accessories-rack", image: "/product/Slatwall Mobile Accessories Rack.webp" },
+      { title: "Revolving Mobile Accessories Stand", slug: "revolving-mobile-accessories-stand", image: "/product/Revolving Mobile Accessories Stand.webp" },
+      { title: "Earphone & Headphone Display Stand", slug: "earphone-and-headphone-display-stand", image: "/product/Earphone & Headphone Display Stand.webp" },
+      { title: "Smartwatch Display Stand", slug: "smartwatch-display-stand", image: "/electronics.webp" },
     ],
   },
   {
@@ -4132,10 +4132,10 @@ These display racks are intended for mobile accessory shops. Retailers, dealers,
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Revolving Mobile Accessories Stand", slug: "revolving-mobile-accessories-stand", image: "/product/revolving-mobile-accessories-stand.webp" },
-      { title: "Earphone & Headphone Display Stand", slug: "earphone-and-headphone-display-stand", image: "/product/earphone-and-headphone-display-stand.webp" },
-      { title: "Smartwatch Display Stand", slug: "smartwatch-display-stand", image: "/product/smartwatch-display-stand.webp" },
-      { title: "Mobile Phone Display Counter", slug: "mobile-phone-display-counter", image: "/product/mobile-phone-display-counter.webp" },
+      { title: "Revolving Mobile Accessories Stand", slug: "revolving-mobile-accessories-stand", image: "/product/Revolving Mobile Accessories Stand.webp" },
+      { title: "Earphone & Headphone Display Stand", slug: "earphone-and-headphone-display-stand", image: "/product/Earphone & Headphone Display Stand.webp" },
+      { title: "Smartwatch Display Stand", slug: "smartwatch-display-stand", image: "/electronics.webp" },
+      { title: "Mobile Phone Display Counter", slug: "mobile-phone-display-counter", image: "/product/Mobile Phone Display Counter (1).webp" },
     ],
   },
   {
@@ -4218,10 +4218,10 @@ These display racks are intended for mobile shop counters. Retailers, dealers, s
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Earphone & Headphone Display Stand", slug: "earphone-and-headphone-display-stand", image: "/product/earphone-and-headphone-display-stand.webp" },
-      { title: "Smartwatch Display Stand", slug: "smartwatch-display-stand", image: "/product/smartwatch-display-stand.webp" },
-      { title: "Mobile Phone Display Counter", slug: "mobile-phone-display-counter", image: "/product/mobile-phone-display-counter.webp" },
-      { title: "Tablet & Laptop Display Table", slug: "tablet-and-laptop-display-table", image: "/product/tablet-and-laptop-display-table.webp" },
+      { title: "Earphone & Headphone Display Stand", slug: "earphone-and-headphone-display-stand", image: "/product/Earphone & Headphone Display Stand.webp" },
+      { title: "Smartwatch Display Stand", slug: "smartwatch-display-stand", image: "/electronics.webp" },
+      { title: "Mobile Phone Display Counter", slug: "mobile-phone-display-counter", image: "/product/Mobile Phone Display Counter (1).webp" },
+      { title: "Tablet & Laptop Display Table", slug: "tablet-and-laptop-display-table", image: "/product/Tablet & Laptop Display Table.webp" },
     ],
   },
   {
@@ -4304,10 +4304,10 @@ These display racks are intended for electronics stores. Retailers, dealers, sto
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Smartwatch Display Stand", slug: "smartwatch-display-stand", image: "/product/smartwatch-display-stand.webp" },
-      { title: "Mobile Phone Display Counter", slug: "mobile-phone-display-counter", image: "/product/mobile-phone-display-counter.webp" },
-      { title: "Tablet & Laptop Display Table", slug: "tablet-and-laptop-display-table", image: "/product/tablet-and-laptop-display-table.webp" },
-      { title: "Electronics Gondola Display Rack", slug: "electronics-gondola-display-rack", image: "/product/electronics-gondola-display-rack.webp" },
+      { title: "Smartwatch Display Stand", slug: "smartwatch-display-stand", image: "/electronics.webp" },
+      { title: "Mobile Phone Display Counter", slug: "mobile-phone-display-counter", image: "/product/Mobile Phone Display Counter (1).webp" },
+      { title: "Tablet & Laptop Display Table", slug: "tablet-and-laptop-display-table", image: "/product/Tablet & Laptop Display Table.webp" },
+      { title: "Electronics Gondola Display Rack", slug: "electronics-gondola-display-rack", image: "/product/Empty Cream Gondola Shelving in Supermarket.webp" },
     ],
   },
   {
@@ -4390,10 +4390,10 @@ These display racks are intended for electronics & watch stores. Retailers, deal
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Mobile Phone Display Counter", slug: "mobile-phone-display-counter", image: "/product/mobile-phone-display-counter.webp" },
-      { title: "Tablet & Laptop Display Table", slug: "tablet-and-laptop-display-table", image: "/product/tablet-and-laptop-display-table.webp" },
-      { title: "Electronics Gondola Display Rack", slug: "electronics-gondola-display-rack", image: "/product/electronics-gondola-display-rack.webp" },
-      { title: "TV Display Wall Rack", slug: "tv-display-wall-rack", image: "/product/tv-display-wall-rack.webp" },
+      { title: "Mobile Phone Display Counter", slug: "mobile-phone-display-counter", image: "/product/Mobile Phone Display Counter (1).webp" },
+      { title: "Tablet & Laptop Display Table", slug: "tablet-and-laptop-display-table", image: "/product/Tablet & Laptop Display Table.webp" },
+      { title: "Electronics Gondola Display Rack", slug: "electronics-gondola-display-rack", image: "/product/Empty Cream Gondola Shelving in Supermarket.webp" },
+      { title: "TV Display Wall Rack", slug: "tv-display-wall-rack", image: "/product/TV Display Wall Rack.webp" },
     ],
   },
   {
@@ -4476,10 +4476,10 @@ These display racks are intended for mobile showrooms. Retailers, dealers, store
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Tablet & Laptop Display Table", slug: "tablet-and-laptop-display-table", image: "/product/tablet-and-laptop-display-table.webp" },
-      { title: "Electronics Gondola Display Rack", slug: "electronics-gondola-display-rack", image: "/product/electronics-gondola-display-rack.webp" },
-      { title: "TV Display Wall Rack", slug: "tv-display-wall-rack", image: "/product/tv-display-wall-rack.webp" },
-      { title: "Home Appliance Display Rack", slug: "home-appliance-display-rack", image: "/product/home-appliance-display-rack.webp" },
+      { title: "Tablet & Laptop Display Table", slug: "tablet-and-laptop-display-table", image: "/product/Tablet & Laptop Display Table.webp" },
+      { title: "Electronics Gondola Display Rack", slug: "electronics-gondola-display-rack", image: "/product/Empty Cream Gondola Shelving in Supermarket.webp" },
+      { title: "TV Display Wall Rack", slug: "tv-display-wall-rack", image: "/product/TV Display Wall Rack.webp" },
+      { title: "Home Appliance Display Rack", slug: "home-appliance-display-rack", image: "/product/Home Appliance Display Rack.webp" },
     ],
   },
   {
@@ -4562,10 +4562,10 @@ These display racks are intended for electronics showrooms. Retailers, dealers, 
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Electronics Gondola Display Rack", slug: "electronics-gondola-display-rack", image: "/product/electronics-gondola-display-rack.webp" },
-      { title: "TV Display Wall Rack", slug: "tv-display-wall-rack", image: "/product/tv-display-wall-rack.webp" },
-      { title: "Home Appliance Display Rack", slug: "home-appliance-display-rack", image: "/product/home-appliance-display-rack.webp" },
-      { title: "Mobile Accessories Display Rack", slug: "mobile-accessories-display-rack", image: "/product/mobile-accessories-display-rack.webp" },
+      { title: "Electronics Gondola Display Rack", slug: "electronics-gondola-display-rack", image: "/product/Empty Cream Gondola Shelving in Supermarket.webp" },
+      { title: "TV Display Wall Rack", slug: "tv-display-wall-rack", image: "/product/TV Display Wall Rack.webp" },
+      { title: "Home Appliance Display Rack", slug: "home-appliance-display-rack", image: "/product/Home Appliance Display Rack.webp" },
+      { title: "Mobile Accessories Display Rack", slug: "mobile-accessories-display-rack", image: "/product/Rice & Pulses Bin Display Rack.webp" },
     ],
   },
   {
@@ -4648,10 +4648,10 @@ These display racks are intended for electronics hypermarkets. Retailers, dealer
 
     // Related products (same category)
     relatedProducts: [
-      { title: "TV Display Wall Rack", slug: "tv-display-wall-rack", image: "/product/tv-display-wall-rack.webp" },
-      { title: "Home Appliance Display Rack", slug: "home-appliance-display-rack", image: "/product/home-appliance-display-rack.webp" },
-      { title: "Mobile Accessories Display Rack", slug: "mobile-accessories-display-rack", image: "/product/mobile-accessories-display-rack.webp" },
-      { title: "Slatwall Mobile Accessories Rack", slug: "slatwall-mobile-accessories-rack", image: "/product/slatwall-mobile-accessories-rack.webp" },
+      { title: "TV Display Wall Rack", slug: "tv-display-wall-rack", image: "/product/TV Display Wall Rack.webp" },
+      { title: "Home Appliance Display Rack", slug: "home-appliance-display-rack", image: "/product/Home Appliance Display Rack.webp" },
+      { title: "Mobile Accessories Display Rack", slug: "mobile-accessories-display-rack", image: "/product/Rice & Pulses Bin Display Rack.webp" },
+      { title: "Slatwall Mobile Accessories Rack", slug: "slatwall-mobile-accessories-rack", image: "/product/Slatwall Mobile Accessories Rack.webp" },
     ],
   },
   {
@@ -4734,10 +4734,10 @@ These display racks are intended for electronics showrooms. Retailers, dealers, 
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Home Appliance Display Rack", slug: "home-appliance-display-rack", image: "/product/home-appliance-display-rack.webp" },
-      { title: "Mobile Accessories Display Rack", slug: "mobile-accessories-display-rack", image: "/product/mobile-accessories-display-rack.webp" },
-      { title: "Slatwall Mobile Accessories Rack", slug: "slatwall-mobile-accessories-rack", image: "/product/slatwall-mobile-accessories-rack.webp" },
-      { title: "Revolving Mobile Accessories Stand", slug: "revolving-mobile-accessories-stand", image: "/product/revolving-mobile-accessories-stand.webp" },
+      { title: "Home Appliance Display Rack", slug: "home-appliance-display-rack", image: "/product/Home Appliance Display Rack.webp" },
+      { title: "Mobile Accessories Display Rack", slug: "mobile-accessories-display-rack", image: "/product/Rice & Pulses Bin Display Rack.webp" },
+      { title: "Slatwall Mobile Accessories Rack", slug: "slatwall-mobile-accessories-rack", image: "/product/Slatwall Mobile Accessories Rack.webp" },
+      { title: "Revolving Mobile Accessories Stand", slug: "revolving-mobile-accessories-stand", image: "/product/Revolving Mobile Accessories Stand.webp" },
     ],
   },
   {
@@ -4820,10 +4820,10 @@ These display racks are intended for appliance stores. Retailers, dealers, store
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Mobile Accessories Display Rack", slug: "mobile-accessories-display-rack", image: "/product/mobile-accessories-display-rack.webp" },
-      { title: "Slatwall Mobile Accessories Rack", slug: "slatwall-mobile-accessories-rack", image: "/product/slatwall-mobile-accessories-rack.webp" },
-      { title: "Revolving Mobile Accessories Stand", slug: "revolving-mobile-accessories-stand", image: "/product/revolving-mobile-accessories-stand.webp" },
-      { title: "Earphone & Headphone Display Stand", slug: "earphone-and-headphone-display-stand", image: "/product/earphone-and-headphone-display-stand.webp" },
+      { title: "Mobile Accessories Display Rack", slug: "mobile-accessories-display-rack", image: "/product/Rice & Pulses Bin Display Rack.webp" },
+      { title: "Slatwall Mobile Accessories Rack", slug: "slatwall-mobile-accessories-rack", image: "/product/Slatwall Mobile Accessories Rack.webp" },
+      { title: "Revolving Mobile Accessories Stand", slug: "revolving-mobile-accessories-stand", image: "/product/Revolving Mobile Accessories Stand.webp" },
+      { title: "Earphone & Headphone Display Stand", slug: "earphone-and-headphone-display-stand", image: "/product/Earphone & Headphone Display Stand.webp" },
     ],
   },
   // ===================== Cosmetic, Beauty & Accessories Display Racks =====================
@@ -4907,10 +4907,10 @@ These display racks are intended for cosmetic shops. Retailers, dealers, store p
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Wall Mounted Cosmetic Display Rack", slug: "wall-mounted-cosmetic-display-rack", image: "/product/wall-mounted-cosmetic-display-rack.webp" },
-      { title: "Cosmetic Display Stand", slug: "cosmetic-display-stand", image: "/product/cosmetic-display-stand.webp" },
-      { title: "Countertop Cosmetic Display Stand", slug: "countertop-cosmetic-display-stand", image: "/product/countertop-cosmetic-display-stand.webp" },
-      { title: "Makeup Counter Display Unit", slug: "makeup-counter-display-unit", image: "/product/makeup-counter-display-unit.webp" },
+      { title: "Wall Mounted Cosmetic Display Rack", slug: "wall-mounted-cosmetic-display-rack", image: "/product/Wall Mounted Cosmetic Display Rack.webp" },
+      { title: "Cosmetic Display Stand", slug: "cosmetic-display-stand", image: "/product/Cosmetic Display Stand (1).webp" },
+      { title: "Countertop Cosmetic Display Stand", slug: "countertop-cosmetic-display-stand", image: "/product/Cosmetic Display Rack.webp" },
+      { title: "Makeup Counter Display Unit", slug: "makeup-counter-display-unit", image: "/product/Makeup Counter Display Unit.webp" },
     ],
   },
   {
@@ -4993,10 +4993,10 @@ These display racks are intended for beauty stores & malls. Retailers, dealers, 
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Cosmetic Display Stand", slug: "cosmetic-display-stand", image: "/product/cosmetic-display-stand.webp" },
-      { title: "Countertop Cosmetic Display Stand", slug: "countertop-cosmetic-display-stand", image: "/product/countertop-cosmetic-display-stand.webp" },
-      { title: "Makeup Counter Display Unit", slug: "makeup-counter-display-unit", image: "/product/makeup-counter-display-unit.webp" },
-      { title: "Perfume Display Rack", slug: "perfume-display-rack", image: "/product/perfume-display-rack.webp" },
+      { title: "Cosmetic Display Stand", slug: "cosmetic-display-stand", image: "/product/Cosmetic Display Stand (1).webp" },
+      { title: "Countertop Cosmetic Display Stand", slug: "countertop-cosmetic-display-stand", image: "/product/Cosmetic Display Rack.webp" },
+      { title: "Makeup Counter Display Unit", slug: "makeup-counter-display-unit", image: "/product/Makeup Counter Display Unit.webp" },
+      { title: "Perfume Display Rack", slug: "perfume-display-rack", image: "/product/Perfume Display Rack.webp" },
     ],
   },
   {
@@ -5079,10 +5079,10 @@ These display racks are intended for cosmetic shop counters. Retailers, dealers,
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Countertop Cosmetic Display Stand", slug: "countertop-cosmetic-display-stand", image: "/product/countertop-cosmetic-display-stand.webp" },
-      { title: "Makeup Counter Display Unit", slug: "makeup-counter-display-unit", image: "/product/makeup-counter-display-unit.webp" },
-      { title: "Perfume Display Rack", slug: "perfume-display-rack", image: "/product/perfume-display-rack.webp" },
-      { title: "Skin Care Products Display Rack", slug: "skin-care-products-display-rack", image: "/product/skin-care-products-display-rack.webp" },
+      { title: "Countertop Cosmetic Display Stand", slug: "countertop-cosmetic-display-stand", image: "/product/Cosmetic Display Rack.webp" },
+      { title: "Makeup Counter Display Unit", slug: "makeup-counter-display-unit", image: "/product/Makeup Counter Display Unit.webp" },
+      { title: "Perfume Display Rack", slug: "perfume-display-rack", image: "/product/Perfume Display Rack.webp" },
+      { title: "Skin Care Products Display Rack", slug: "skin-care-products-display-rack", image: "/product/Skin Care Products Display Rack.webp" },
     ],
   },
   {
@@ -5165,10 +5165,10 @@ These display racks are intended for billing counters. Retailers, dealers, store
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Makeup Counter Display Unit", slug: "makeup-counter-display-unit", image: "/product/makeup-counter-display-unit.webp" },
-      { title: "Perfume Display Rack", slug: "perfume-display-rack", image: "/product/perfume-display-rack.webp" },
-      { title: "Skin Care Products Display Rack", slug: "skin-care-products-display-rack", image: "/product/skin-care-products-display-rack.webp" },
-      { title: "Salon & Hair Care Products Display Rack", slug: "salon-and-hair-care-products-display-rack", image: "/product/salon-and-hair-care-products-display-rack.webp" },
+      { title: "Makeup Counter Display Unit", slug: "makeup-counter-display-unit", image: "/product/Makeup Counter Display Unit.webp" },
+      { title: "Perfume Display Rack", slug: "perfume-display-rack", image: "/product/Perfume Display Rack.webp" },
+      { title: "Skin Care Products Display Rack", slug: "skin-care-products-display-rack", image: "/product/Skin Care Products Display Rack.webp" },
+      { title: "Salon & Hair Care Products Display Rack", slug: "salon-and-hair-care-products-display-rack", image: "/product/Salon & Hair Care Products Display Rack.webp" },
     ],
   },
   {
@@ -5251,10 +5251,10 @@ These display racks are intended for beauty stores & malls. Retailers, dealers, 
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Perfume Display Rack", slug: "perfume-display-rack", image: "/product/perfume-display-rack.webp" },
-      { title: "Skin Care Products Display Rack", slug: "skin-care-products-display-rack", image: "/product/skin-care-products-display-rack.webp" },
-      { title: "Salon & Hair Care Products Display Rack", slug: "salon-and-hair-care-products-display-rack", image: "/product/salon-and-hair-care-products-display-rack.webp" },
-      { title: "Imitation Jewellery Display Rack", slug: "imitation-jewellery-display-rack", image: "/product/imitation-jewellery-display-rack.webp" },
+      { title: "Perfume Display Rack", slug: "perfume-display-rack", image: "/product/Perfume Display Rack.webp" },
+      { title: "Skin Care Products Display Rack", slug: "skin-care-products-display-rack", image: "/product/Skin Care Products Display Rack.webp" },
+      { title: "Salon & Hair Care Products Display Rack", slug: "salon-and-hair-care-products-display-rack", image: "/product/Salon & Hair Care Products Display Rack.webp" },
+      { title: "Imitation Jewellery Display Rack", slug: "imitation-jewellery-display-rack", image: "/product/Imitation Jewellery Display Rack.webp" },
     ],
   },
   {
@@ -5337,10 +5337,10 @@ These display racks are intended for perfume & gift stores. Retailers, dealers, 
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Skin Care Products Display Rack", slug: "skin-care-products-display-rack", image: "/product/skin-care-products-display-rack.webp" },
-      { title: "Salon & Hair Care Products Display Rack", slug: "salon-and-hair-care-products-display-rack", image: "/product/salon-and-hair-care-products-display-rack.webp" },
-      { title: "Imitation Jewellery Display Rack", slug: "imitation-jewellery-display-rack", image: "/product/imitation-jewellery-display-rack.webp" },
-      { title: "Sunglasses & Optical Display Stand", slug: "sunglasses-and-optical-display-stand", image: "/product/sunglasses-and-optical-display-stand.webp" },
+      { title: "Skin Care Products Display Rack", slug: "skin-care-products-display-rack", image: "/product/Skin Care Products Display Rack.webp" },
+      { title: "Salon & Hair Care Products Display Rack", slug: "salon-and-hair-care-products-display-rack", image: "/product/Salon & Hair Care Products Display Rack.webp" },
+      { title: "Imitation Jewellery Display Rack", slug: "imitation-jewellery-display-rack", image: "/product/Imitation Jewellery Display Rack.webp" },
+      { title: "Sunglasses & Optical Display Stand", slug: "sunglasses-and-optical-display-stand", image: "/product/Sunglasses & Optical Display Stand.webp" },
     ],
   },
   {
@@ -5423,10 +5423,10 @@ These display racks are intended for beauty & pharmacy stores. Retailers, dealer
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Salon & Hair Care Products Display Rack", slug: "salon-and-hair-care-products-display-rack", image: "/product/salon-and-hair-care-products-display-rack.webp" },
-      { title: "Imitation Jewellery Display Rack", slug: "imitation-jewellery-display-rack", image: "/product/imitation-jewellery-display-rack.webp" },
-      { title: "Sunglasses & Optical Display Stand", slug: "sunglasses-and-optical-display-stand", image: "/product/sunglasses-and-optical-display-stand.webp" },
-      { title: "Cosmetic Display Rack", slug: "cosmetic-display-rack", image: "/product/cosmetic-display-rack.webp" },
+      { title: "Salon & Hair Care Products Display Rack", slug: "salon-and-hair-care-products-display-rack", image: "/product/Salon & Hair Care Products Display Rack.webp" },
+      { title: "Imitation Jewellery Display Rack", slug: "imitation-jewellery-display-rack", image: "/product/Imitation Jewellery Display Rack.webp" },
+      { title: "Sunglasses & Optical Display Stand", slug: "sunglasses-and-optical-display-stand", image: "/product/Sunglasses & Optical Display Stand.webp" },
+      { title: "Cosmetic Display Rack", slug: "cosmetic-display-rack", image: "/product/Cosmetic Display Rack.webp" },
     ],
   },
   {
@@ -5509,10 +5509,10 @@ These display racks are intended for salons & spas. Retailers, dealers, store pl
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Imitation Jewellery Display Rack", slug: "imitation-jewellery-display-rack", image: "/product/imitation-jewellery-display-rack.webp" },
-      { title: "Sunglasses & Optical Display Stand", slug: "sunglasses-and-optical-display-stand", image: "/product/sunglasses-and-optical-display-stand.webp" },
-      { title: "Cosmetic Display Rack", slug: "cosmetic-display-rack", image: "/product/cosmetic-display-rack.webp" },
-      { title: "Wall Mounted Cosmetic Display Rack", slug: "wall-mounted-cosmetic-display-rack", image: "/product/wall-mounted-cosmetic-display-rack.webp" },
+      { title: "Imitation Jewellery Display Rack", slug: "imitation-jewellery-display-rack", image: "/product/Imitation Jewellery Display Rack.webp" },
+      { title: "Sunglasses & Optical Display Stand", slug: "sunglasses-and-optical-display-stand", image: "/product/Sunglasses & Optical Display Stand.webp" },
+      { title: "Cosmetic Display Rack", slug: "cosmetic-display-rack", image: "/product/Cosmetic Display Rack.webp" },
+      { title: "Wall Mounted Cosmetic Display Rack", slug: "wall-mounted-cosmetic-display-rack", image: "/product/Wall Mounted Cosmetic Display Rack.webp" },
     ],
   },
   {
@@ -5595,10 +5595,10 @@ These display racks are intended for fancy & artificial jewellery stores. Retail
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Sunglasses & Optical Display Stand", slug: "sunglasses-and-optical-display-stand", image: "/product/sunglasses-and-optical-display-stand.webp" },
-      { title: "Cosmetic Display Rack", slug: "cosmetic-display-rack", image: "/product/cosmetic-display-rack.webp" },
-      { title: "Wall Mounted Cosmetic Display Rack", slug: "wall-mounted-cosmetic-display-rack", image: "/product/wall-mounted-cosmetic-display-rack.webp" },
-      { title: "Cosmetic Display Stand", slug: "cosmetic-display-stand", image: "/product/cosmetic-display-stand.webp" },
+      { title: "Sunglasses & Optical Display Stand", slug: "sunglasses-and-optical-display-stand", image: "/product/Sunglasses & Optical Display Stand.webp" },
+      { title: "Cosmetic Display Rack", slug: "cosmetic-display-rack", image: "/product/Cosmetic Display Rack.webp" },
+      { title: "Wall Mounted Cosmetic Display Rack", slug: "wall-mounted-cosmetic-display-rack", image: "/product/Wall Mounted Cosmetic Display Rack.webp" },
+      { title: "Cosmetic Display Stand", slug: "cosmetic-display-stand", image: "/product/Cosmetic Display Stand (1).webp" },
     ],
   },
   {
@@ -5681,10 +5681,10 @@ These display racks are intended for optical shops. Retailers, dealers, store pl
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Cosmetic Display Rack", slug: "cosmetic-display-rack", image: "/product/cosmetic-display-rack.webp" },
-      { title: "Wall Mounted Cosmetic Display Rack", slug: "wall-mounted-cosmetic-display-rack", image: "/product/wall-mounted-cosmetic-display-rack.webp" },
-      { title: "Cosmetic Display Stand", slug: "cosmetic-display-stand", image: "/product/cosmetic-display-stand.webp" },
-      { title: "Countertop Cosmetic Display Stand", slug: "countertop-cosmetic-display-stand", image: "/product/countertop-cosmetic-display-stand.webp" },
+      { title: "Cosmetic Display Rack", slug: "cosmetic-display-rack", image: "/product/Cosmetic Display Rack.webp" },
+      { title: "Wall Mounted Cosmetic Display Rack", slug: "wall-mounted-cosmetic-display-rack", image: "/product/Wall Mounted Cosmetic Display Rack.webp" },
+      { title: "Cosmetic Display Stand", slug: "cosmetic-display-stand", image: "/product/Cosmetic Display Stand (1).webp" },
+      { title: "Countertop Cosmetic Display Stand", slug: "countertop-cosmetic-display-stand", image: "/product/Cosmetic Display Rack.webp" },
     ],
   },
   // ===================== Bakery, Snacks & Confectionery Display Racks =====================
@@ -5768,10 +5768,10 @@ These display racks are intended for bakeries. Retailers, dealers, store planner
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Cake Display Rack", slug: "cake-display-rack", image: "/product/cake-display-rack.webp" },
-      { title: "Cup Cake Display Stand", slug: "cup-cake-display-stand", image: "/product/cup-cake-display-stand.webp" },
-      { title: "Countertop Bread Basket Stand", slug: "countertop-bread-basket-stand", image: "/product/countertop-bread-basket-stand.webp" },
-      { title: "Rusk & Toast Display Rack", slug: "rusk-and-toast-display-rack", image: "/product/rusk-and-toast-display-rack.webp" },
+      { title: "Cake Display Rack", slug: "cake-display-rack", image: "/product/Cosmetic Display Stand (1).webp" },
+      { title: "Cup Cake Display Stand", slug: "cup-cake-display-stand", image: "/product/Rice & Pulses Bin Display Rack.webp" },
+      { title: "Countertop Bread Basket Stand", slug: "countertop-bread-basket-stand", image: "/product/Medical Store Wall Display Rack.webp" },
+      { title: "Rusk & Toast Display Rack", slug: "rusk-and-toast-display-rack", image: "/product/Rusk & Toast Display Rack.webp" },
     ],
   },
   {
@@ -5854,10 +5854,10 @@ These display racks are intended for bakeries & cake shops. Retailers, dealers, 
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Cup Cake Display Stand", slug: "cup-cake-display-stand", image: "/product/cup-cake-display-stand.webp" },
-      { title: "Countertop Bread Basket Stand", slug: "countertop-bread-basket-stand", image: "/product/countertop-bread-basket-stand.webp" },
-      { title: "Rusk & Toast Display Rack", slug: "rusk-and-toast-display-rack", image: "/product/rusk-and-toast-display-rack.webp" },
-      { title: "Biscuit & Cookie Display Rack", slug: "biscuit-and-cookie-display-rack", image: "/product/biscuit-and-cookie-display-rack.webp" },
+      { title: "Cup Cake Display Stand", slug: "cup-cake-display-stand", image: "/product/Rice & Pulses Bin Display Rack.webp" },
+      { title: "Countertop Bread Basket Stand", slug: "countertop-bread-basket-stand", image: "/product/Medical Store Wall Display Rack.webp" },
+      { title: "Rusk & Toast Display Rack", slug: "rusk-and-toast-display-rack", image: "/product/Rusk & Toast Display Rack.webp" },
+      { title: "Biscuit & Cookie Display Rack", slug: "biscuit-and-cookie-display-rack", image: "/product/Revolving Mobile Accessories Stand.webp" },
     ],
   },
   {
@@ -5940,10 +5940,10 @@ These display racks are intended for bakeries & cafes. Retailers, dealers, store
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Countertop Bread Basket Stand", slug: "countertop-bread-basket-stand", image: "/product/countertop-bread-basket-stand.webp" },
-      { title: "Rusk & Toast Display Rack", slug: "rusk-and-toast-display-rack", image: "/product/rusk-and-toast-display-rack.webp" },
-      { title: "Biscuit & Cookie Display Rack", slug: "biscuit-and-cookie-display-rack", image: "/product/biscuit-and-cookie-display-rack.webp" },
-      { title: "Namkeen & Snacks Display Rack", slug: "namkeen-and-snacks-display-rack", image: "/product/namkeen-and-snacks-display-rack.webp" },
+      { title: "Countertop Bread Basket Stand", slug: "countertop-bread-basket-stand", image: "/product/Medical Store Wall Display Rack.webp" },
+      { title: "Rusk & Toast Display Rack", slug: "rusk-and-toast-display-rack", image: "/product/Rusk & Toast Display Rack.webp" },
+      { title: "Biscuit & Cookie Display Rack", slug: "biscuit-and-cookie-display-rack", image: "/product/Revolving Mobile Accessories Stand.webp" },
+      { title: "Namkeen & Snacks Display Rack", slug: "namkeen-and-snacks-display-rack", image: "/product/Namkeen & Snacks Display Rack.webp" },
     ],
   },
   {
@@ -6026,10 +6026,10 @@ These display racks are intended for bakery counters. Retailers, dealers, store 
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Rusk & Toast Display Rack", slug: "rusk-and-toast-display-rack", image: "/product/rusk-and-toast-display-rack.webp" },
-      { title: "Biscuit & Cookie Display Rack", slug: "biscuit-and-cookie-display-rack", image: "/product/biscuit-and-cookie-display-rack.webp" },
-      { title: "Namkeen & Snacks Display Rack", slug: "namkeen-and-snacks-display-rack", image: "/product/namkeen-and-snacks-display-rack.webp" },
-      { title: "Chips Display Rack", slug: "chips-display-rack", image: "/product/chips-display-rack.webp" },
+      { title: "Rusk & Toast Display Rack", slug: "rusk-and-toast-display-rack", image: "/product/Rusk & Toast Display Rack.webp" },
+      { title: "Biscuit & Cookie Display Rack", slug: "biscuit-and-cookie-display-rack", image: "/product/Revolving Mobile Accessories Stand.webp" },
+      { title: "Namkeen & Snacks Display Rack", slug: "namkeen-and-snacks-display-rack", image: "/product/Namkeen & Snacks Display Rack.webp" },
+      { title: "Chips Display Rack", slug: "chips-display-rack", image: "/product/Namkeen & Snacks Display Rack.webp" },
     ],
   },
   {
@@ -6112,10 +6112,10 @@ These display racks are intended for bakeries & kirana. Retailers, dealers, stor
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Biscuit & Cookie Display Rack", slug: "biscuit-and-cookie-display-rack", image: "/product/biscuit-and-cookie-display-rack.webp" },
-      { title: "Namkeen & Snacks Display Rack", slug: "namkeen-and-snacks-display-rack", image: "/product/namkeen-and-snacks-display-rack.webp" },
-      { title: "Chips Display Rack", slug: "chips-display-rack", image: "/product/chips-display-rack.webp" },
-      { title: "Chocolate & Candy Confectionery Display Stand", slug: "chocolate-and-candy-confectionery-display-stand", image: "/product/chocolate-and-candy-confectionery-display-stand.webp" },
+      { title: "Biscuit & Cookie Display Rack", slug: "biscuit-and-cookie-display-rack", image: "/product/Revolving Mobile Accessories Stand.webp" },
+      { title: "Namkeen & Snacks Display Rack", slug: "namkeen-and-snacks-display-rack", image: "/product/Namkeen & Snacks Display Rack.webp" },
+      { title: "Chips Display Rack", slug: "chips-display-rack", image: "/product/Namkeen & Snacks Display Rack.webp" },
+      { title: "Chocolate & Candy Confectionery Display Stand", slug: "chocolate-and-candy-confectionery-display-stand", image: "/product/Chocolate & Candy Confectionery Display Stand.webp" },
     ],
   },
   {
@@ -6198,10 +6198,10 @@ These display racks are intended for bakeries & general stores. Retailers, deale
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Namkeen & Snacks Display Rack", slug: "namkeen-and-snacks-display-rack", image: "/product/namkeen-and-snacks-display-rack.webp" },
-      { title: "Chips Display Rack", slug: "chips-display-rack", image: "/product/chips-display-rack.webp" },
-      { title: "Chocolate & Candy Confectionery Display Stand", slug: "chocolate-and-candy-confectionery-display-stand", image: "/product/chocolate-and-candy-confectionery-display-stand.webp" },
-      { title: "Bakery Bread Display Rack", slug: "bakery-bread-display-rack", image: "/product/bakery-bread-display-rack.webp" },
+      { title: "Namkeen & Snacks Display Rack", slug: "namkeen-and-snacks-display-rack", image: "/product/Namkeen & Snacks Display Rack.webp" },
+      { title: "Chips Display Rack", slug: "chips-display-rack", image: "/product/Namkeen & Snacks Display Rack.webp" },
+      { title: "Chocolate & Candy Confectionery Display Stand", slug: "chocolate-and-candy-confectionery-display-stand", image: "/product/Chocolate & Candy Confectionery Display Stand.webp" },
+      { title: "Bakery Bread Display Rack", slug: "bakery-bread-display-rack", image: "/product/Perforated Pegboard Wall Panel.webp" },
     ],
   },
   {
@@ -6284,10 +6284,10 @@ These display racks are intended for sweet & namkeen shops. Retailers, dealers, 
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Chips Display Rack", slug: "chips-display-rack", image: "/product/chips-display-rack.webp" },
-      { title: "Chocolate & Candy Confectionery Display Stand", slug: "chocolate-and-candy-confectionery-display-stand", image: "/product/chocolate-and-candy-confectionery-display-stand.webp" },
-      { title: "Bakery Bread Display Rack", slug: "bakery-bread-display-rack", image: "/product/bakery-bread-display-rack.webp" },
-      { title: "Cake Display Rack", slug: "cake-display-rack", image: "/product/cake-display-rack.webp" },
+      { title: "Chips Display Rack", slug: "chips-display-rack", image: "/product/Namkeen & Snacks Display Rack.webp" },
+      { title: "Chocolate & Candy Confectionery Display Stand", slug: "chocolate-and-candy-confectionery-display-stand", image: "/product/Chocolate & Candy Confectionery Display Stand.webp" },
+      { title: "Bakery Bread Display Rack", slug: "bakery-bread-display-rack", image: "/product/Perforated Pegboard Wall Panel.webp" },
+      { title: "Cake Display Rack", slug: "cake-display-rack", image: "/product/Cosmetic Display Stand (1).webp" },
     ],
   },
   {
@@ -6370,10 +6370,10 @@ These display racks are intended for general & kirana stores. Retailers, dealers
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Chocolate & Candy Confectionery Display Stand", slug: "chocolate-and-candy-confectionery-display-stand", image: "/product/chocolate-and-candy-confectionery-display-stand.webp" },
-      { title: "Bakery Bread Display Rack", slug: "bakery-bread-display-rack", image: "/product/bakery-bread-display-rack.webp" },
-      { title: "Cake Display Rack", slug: "cake-display-rack", image: "/product/cake-display-rack.webp" },
-      { title: "Cup Cake Display Stand", slug: "cup-cake-display-stand", image: "/product/cup-cake-display-stand.webp" },
+      { title: "Chocolate & Candy Confectionery Display Stand", slug: "chocolate-and-candy-confectionery-display-stand", image: "/product/Chocolate & Candy Confectionery Display Stand.webp" },
+      { title: "Bakery Bread Display Rack", slug: "bakery-bread-display-rack", image: "/product/Perforated Pegboard Wall Panel.webp" },
+      { title: "Cake Display Rack", slug: "cake-display-rack", image: "/product/Cosmetic Display Stand (1).webp" },
+      { title: "Cup Cake Display Stand", slug: "cup-cake-display-stand", image: "/product/Rice & Pulses Bin Display Rack.webp" },
     ],
   },
   {
@@ -6456,10 +6456,10 @@ These display racks are intended for chocolates, candies, toffees and confection
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Bakery Bread Display Rack", slug: "bakery-bread-display-rack", image: "/product/bakery-bread-display-rack.webp" },
-      { title: "Cake Display Rack", slug: "cake-display-rack", image: "/product/cake-display-rack.webp" },
-      { title: "Cup Cake Display Stand", slug: "cup-cake-display-stand", image: "/product/cup-cake-display-stand.webp" },
-      { title: "Countertop Bread Basket Stand", slug: "countertop-bread-basket-stand", image: "/product/countertop-bread-basket-stand.webp" },
+      { title: "Bakery Bread Display Rack", slug: "bakery-bread-display-rack", image: "/product/Perforated Pegboard Wall Panel.webp" },
+      { title: "Cake Display Rack", slug: "cake-display-rack", image: "/product/Cosmetic Display Stand (1).webp" },
+      { title: "Cup Cake Display Stand", slug: "cup-cake-display-stand", image: "/product/Rice & Pulses Bin Display Rack.webp" },
+      { title: "Countertop Bread Basket Stand", slug: "countertop-bread-basket-stand", image: "/product/Medical Store Wall Display Rack.webp" },
     ],
   },
   // ===================== Hardware, Paint & Tool Display Racks =====================
@@ -6543,10 +6543,10 @@ These display racks are intended for hardware shops. Retailers, dealers, store p
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Tool Display Pegboard Rack", slug: "tool-display-pegboard-rack", image: "/product/tool-display-pegboard-rack.webp" },
-      { title: "Fastener Bin Display Rack", slug: "fastener-bin-display-rack", image: "/product/fastener-bin-display-rack.webp" },
-      { title: "Paint Can Display Rack", slug: "paint-can-display-rack", image: "/product/paint-can-display-rack.webp" },
-      { title: "Electrical Items Display Rack", slug: "electrical-items-display-rack", image: "/product/electrical-items-display-rack.webp" },
+      { title: "Tool Display Pegboard Rack", slug: "tool-display-pegboard-rack", image: "/product/Wooden Finish Supermarket Rack.webp" },
+      { title: "Fastener Bin Display Rack", slug: "fastener-bin-display-rack", image: "/product/Fastener Bin Display Rack.webp" },
+      { title: "Paint Can Display Rack", slug: "paint-can-display-rack", image: "/product/Paint Can Display Rack.webp" },
+      { title: "Electrical Items Display Rack", slug: "electrical-items-display-rack", image: "/product/Electrical Items Display Rack.webp" },
     ],
   },
   {
@@ -6629,10 +6629,10 @@ These display racks are intended for tool & hardware stores. Retailers, dealers,
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Fastener Bin Display Rack", slug: "fastener-bin-display-rack", image: "/product/fastener-bin-display-rack.webp" },
-      { title: "Paint Can Display Rack", slug: "paint-can-display-rack", image: "/product/paint-can-display-rack.webp" },
-      { title: "Electrical Items Display Rack", slug: "electrical-items-display-rack", image: "/product/electrical-items-display-rack.webp" },
-      { title: "Pipe & Fittings Display Rack", slug: "pipe-and-fittings-display-rack", image: "/product/pipe-and-fittings-display-rack.webp" },
+      { title: "Fastener Bin Display Rack", slug: "fastener-bin-display-rack", image: "/product/Fastener Bin Display Rack.webp" },
+      { title: "Paint Can Display Rack", slug: "paint-can-display-rack", image: "/product/Paint Can Display Rack.webp" },
+      { title: "Electrical Items Display Rack", slug: "electrical-items-display-rack", image: "/product/Electrical Items Display Rack.webp" },
+      { title: "Pipe & Fittings Display Rack", slug: "pipe-and-fittings-display-rack", image: "/product/Pipe & Fittings Display Rack.png" },
     ],
   },
   {
@@ -6715,10 +6715,10 @@ These display racks are intended for nut-bolt & screw stores. Retailers, dealers
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Paint Can Display Rack", slug: "paint-can-display-rack", image: "/product/paint-can-display-rack.webp" },
-      { title: "Electrical Items Display Rack", slug: "electrical-items-display-rack", image: "/product/electrical-items-display-rack.webp" },
-      { title: "Pipe & Fittings Display Rack", slug: "pipe-and-fittings-display-rack", image: "/product/pipe-and-fittings-display-rack.webp" },
-      { title: "Sanitaryware Display Rack", slug: "sanitaryware-display-rack", image: "/product/sanitaryware-display-rack.webp" },
+      { title: "Paint Can Display Rack", slug: "paint-can-display-rack", image: "/product/Paint Can Display Rack.webp" },
+      { title: "Electrical Items Display Rack", slug: "electrical-items-display-rack", image: "/product/Electrical Items Display Rack.webp" },
+      { title: "Pipe & Fittings Display Rack", slug: "pipe-and-fittings-display-rack", image: "/product/Pipe & Fittings Display Rack.png" },
+      { title: "Sanitaryware Display Rack", slug: "sanitaryware-display-rack", image: "/product/Sanitaryware Display Rack.webp" },
     ],
   },
   {
@@ -6801,10 +6801,10 @@ These display racks are intended for paint & colour shops. Retailers, dealers, s
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Electrical Items Display Rack", slug: "electrical-items-display-rack", image: "/product/electrical-items-display-rack.webp" },
-      { title: "Pipe & Fittings Display Rack", slug: "pipe-and-fittings-display-rack", image: "/product/pipe-and-fittings-display-rack.webp" },
-      { title: "Sanitaryware Display Rack", slug: "sanitaryware-display-rack", image: "/product/sanitaryware-display-rack.webp" },
-      { title: "Bathroom Fittings Display Panel", slug: "bathroom-fittings-display-panel", image: "/product/bathroom-fittings-display-panel.webp" },
+      { title: "Electrical Items Display Rack", slug: "electrical-items-display-rack", image: "/product/Electrical Items Display Rack.webp" },
+      { title: "Pipe & Fittings Display Rack", slug: "pipe-and-fittings-display-rack", image: "/product/Pipe & Fittings Display Rack.png" },
+      { title: "Sanitaryware Display Rack", slug: "sanitaryware-display-rack", image: "/product/Sanitaryware Display Rack.webp" },
+      { title: "Bathroom Fittings Display Panel", slug: "bathroom-fittings-display-panel", image: "/product/Bathroom Fittings Display Panel.png" },
     ],
   },
   {
@@ -6887,10 +6887,10 @@ These display racks are intended for electrical shops. Retailers, dealers, store
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Pipe & Fittings Display Rack", slug: "pipe-and-fittings-display-rack", image: "/product/pipe-and-fittings-display-rack.webp" },
-      { title: "Sanitaryware Display Rack", slug: "sanitaryware-display-rack", image: "/product/sanitaryware-display-rack.webp" },
-      { title: "Bathroom Fittings Display Panel", slug: "bathroom-fittings-display-panel", image: "/product/bathroom-fittings-display-panel.webp" },
-      { title: "Tiles Display Rack", slug: "tiles-display-rack", image: "/product/tiles-display-rack.webp" },
+      { title: "Pipe & Fittings Display Rack", slug: "pipe-and-fittings-display-rack", image: "/product/Pipe & Fittings Display Rack.png" },
+      { title: "Sanitaryware Display Rack", slug: "sanitaryware-display-rack", image: "/product/Sanitaryware Display Rack.webp" },
+      { title: "Bathroom Fittings Display Panel", slug: "bathroom-fittings-display-panel", image: "/product/Bathroom Fittings Display Panel.png" },
+      { title: "Tiles Display Rack", slug: "tiles-display-rack", image: "/product/Tiles Display Rack.webp" },
     ],
   },
   {
@@ -6973,10 +6973,10 @@ These display racks are intended for plumbing & sanitary stores. Retailers, deal
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Sanitaryware Display Rack", slug: "sanitaryware-display-rack", image: "/product/sanitaryware-display-rack.webp" },
-      { title: "Bathroom Fittings Display Panel", slug: "bathroom-fittings-display-panel", image: "/product/bathroom-fittings-display-panel.webp" },
-      { title: "Tiles Display Rack", slug: "tiles-display-rack", image: "/product/tiles-display-rack.webp" },
-      { title: "Plywood & Laminate Display Rack", slug: "plywood-and-laminate-display-rack", image: "/product/plywood-and-laminate-display-rack.webp" },
+      { title: "Sanitaryware Display Rack", slug: "sanitaryware-display-rack", image: "/product/Sanitaryware Display Rack.webp" },
+      { title: "Bathroom Fittings Display Panel", slug: "bathroom-fittings-display-panel", image: "/product/Bathroom Fittings Display Panel.png" },
+      { title: "Tiles Display Rack", slug: "tiles-display-rack", image: "/product/Tiles Display Rack.webp" },
+      { title: "Plywood & Laminate Display Rack", slug: "plywood-and-laminate-display-rack", image: "/product/Rice & Pulses Bin Display Rack.webp" },
     ],
   },
   {
@@ -7059,10 +7059,10 @@ These display racks are intended for sanitaryware showrooms. Retailers, dealers,
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Bathroom Fittings Display Panel", slug: "bathroom-fittings-display-panel", image: "/product/bathroom-fittings-display-panel.webp" },
-      { title: "Tiles Display Rack", slug: "tiles-display-rack", image: "/product/tiles-display-rack.webp" },
-      { title: "Plywood & Laminate Display Rack", slug: "plywood-and-laminate-display-rack", image: "/product/plywood-and-laminate-display-rack.webp" },
-      { title: "Door Handle & Lock Display Board", slug: "door-handle-and-lock-display-board", image: "/product/door-handle-and-lock-display-board.webp" },
+      { title: "Bathroom Fittings Display Panel", slug: "bathroom-fittings-display-panel", image: "/product/Bathroom Fittings Display Panel.png" },
+      { title: "Tiles Display Rack", slug: "tiles-display-rack", image: "/product/Tiles Display Rack.webp" },
+      { title: "Plywood & Laminate Display Rack", slug: "plywood-and-laminate-display-rack", image: "/product/Rice & Pulses Bin Display Rack.webp" },
+      { title: "Door Handle & Lock Display Board", slug: "door-handle-and-lock-display-board", image: "/product/Door Handle & Lock Display Board.webp" },
     ],
   },
   {
@@ -7145,10 +7145,10 @@ These display racks are intended for bath fittings showrooms. Retailers, dealers
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Tiles Display Rack", slug: "tiles-display-rack", image: "/product/tiles-display-rack.webp" },
-      { title: "Plywood & Laminate Display Rack", slug: "plywood-and-laminate-display-rack", image: "/product/plywood-and-laminate-display-rack.webp" },
-      { title: "Door Handle & Lock Display Board", slug: "door-handle-and-lock-display-board", image: "/product/door-handle-and-lock-display-board.webp" },
-      { title: "Automobile Spare Parts Display Rack", slug: "automobile-spare-parts-display-rack", image: "/product/automobile-spare-parts-display-rack.webp" },
+      { title: "Tiles Display Rack", slug: "tiles-display-rack", image: "/product/Tiles Display Rack.webp" },
+      { title: "Plywood & Laminate Display Rack", slug: "plywood-and-laminate-display-rack", image: "/product/Rice & Pulses Bin Display Rack.webp" },
+      { title: "Door Handle & Lock Display Board", slug: "door-handle-and-lock-display-board", image: "/product/Door Handle & Lock Display Board.webp" },
+      { title: "Automobile Spare Parts Display Rack", slug: "automobile-spare-parts-display-rack", image: "/product/Automobile Spare Parts Display Rack.webp" },
     ],
   },
   {
@@ -7231,10 +7231,10 @@ These display racks are intended for tiles & ceramic showrooms. Retailers, deale
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Plywood & Laminate Display Rack", slug: "plywood-and-laminate-display-rack", image: "/product/plywood-and-laminate-display-rack.webp" },
-      { title: "Door Handle & Lock Display Board", slug: "door-handle-and-lock-display-board", image: "/product/door-handle-and-lock-display-board.webp" },
-      { title: "Automobile Spare Parts Display Rack", slug: "automobile-spare-parts-display-rack", image: "/product/automobile-spare-parts-display-rack.webp" },
-      { title: "Lubricant Oil Display Rack", slug: "lubricant-oil-display-rack", image: "/product/lubricant-oil-display-rack.webp" },
+      { title: "Plywood & Laminate Display Rack", slug: "plywood-and-laminate-display-rack", image: "/product/Rice & Pulses Bin Display Rack.webp" },
+      { title: "Door Handle & Lock Display Board", slug: "door-handle-and-lock-display-board", image: "/product/Door Handle & Lock Display Board.webp" },
+      { title: "Automobile Spare Parts Display Rack", slug: "automobile-spare-parts-display-rack", image: "/product/Automobile Spare Parts Display Rack.webp" },
+      { title: "Lubricant Oil Display Rack", slug: "lubricant-oil-display-rack", image: "/product/Lubricant Oil Display Rack.webp" },
     ],
   },
   {
@@ -7317,10 +7317,10 @@ These display racks are intended for plywood & laminate stores. Retailers, deale
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Door Handle & Lock Display Board", slug: "door-handle-and-lock-display-board", image: "/product/door-handle-and-lock-display-board.webp" },
-      { title: "Automobile Spare Parts Display Rack", slug: "automobile-spare-parts-display-rack", image: "/product/automobile-spare-parts-display-rack.webp" },
-      { title: "Lubricant Oil Display Rack", slug: "lubricant-oil-display-rack", image: "/product/lubricant-oil-display-rack.webp" },
-      { title: "Tyre Display Rack", slug: "tyre-display-rack", image: "/product/tyre-display-rack.webp" },
+      { title: "Door Handle & Lock Display Board", slug: "door-handle-and-lock-display-board", image: "/product/Door Handle & Lock Display Board.webp" },
+      { title: "Automobile Spare Parts Display Rack", slug: "automobile-spare-parts-display-rack", image: "/product/Automobile Spare Parts Display Rack.webp" },
+      { title: "Lubricant Oil Display Rack", slug: "lubricant-oil-display-rack", image: "/product/Lubricant Oil Display Rack.webp" },
+      { title: "Tyre Display Rack", slug: "tyre-display-rack", image: "/product/Tyre Display Rack.webp" },
     ],
   },
   {
@@ -7403,10 +7403,10 @@ These display racks are intended for hardware & architectural stores. Retailers,
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Automobile Spare Parts Display Rack", slug: "automobile-spare-parts-display-rack", image: "/product/automobile-spare-parts-display-rack.webp" },
-      { title: "Lubricant Oil Display Rack", slug: "lubricant-oil-display-rack", image: "/product/lubricant-oil-display-rack.webp" },
-      { title: "Tyre Display Rack", slug: "tyre-display-rack", image: "/product/tyre-display-rack.webp" },
-      { title: "Hardware Store Display Rack", slug: "hardware-store-display-rack", image: "/product/hardware-store-display-rack.webp" },
+      { title: "Automobile Spare Parts Display Rack", slug: "automobile-spare-parts-display-rack", image: "/product/Automobile Spare Parts Display Rack.webp" },
+      { title: "Lubricant Oil Display Rack", slug: "lubricant-oil-display-rack", image: "/product/Lubricant Oil Display Rack.webp" },
+      { title: "Tyre Display Rack", slug: "tyre-display-rack", image: "/product/Tyre Display Rack.webp" },
+      { title: "Hardware Store Display Rack", slug: "hardware-store-display-rack", image: "/product/Hardware Store Display Rack.png" },
     ],
   },
   {
@@ -7489,10 +7489,10 @@ These display racks are intended for auto parts shops. Retailers, dealers, store
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Lubricant Oil Display Rack", slug: "lubricant-oil-display-rack", image: "/product/lubricant-oil-display-rack.webp" },
-      { title: "Tyre Display Rack", slug: "tyre-display-rack", image: "/product/tyre-display-rack.webp" },
-      { title: "Hardware Store Display Rack", slug: "hardware-store-display-rack", image: "/product/hardware-store-display-rack.webp" },
-      { title: "Tool Display Pegboard Rack", slug: "tool-display-pegboard-rack", image: "/product/tool-display-pegboard-rack.webp" },
+      { title: "Lubricant Oil Display Rack", slug: "lubricant-oil-display-rack", image: "/product/Lubricant Oil Display Rack.webp" },
+      { title: "Tyre Display Rack", slug: "tyre-display-rack", image: "/product/Tyre Display Rack.webp" },
+      { title: "Hardware Store Display Rack", slug: "hardware-store-display-rack", image: "/product/Hardware Store Display Rack.png" },
+      { title: "Tool Display Pegboard Rack", slug: "tool-display-pegboard-rack", image: "/product/Wooden Finish Supermarket Rack.webp" },
     ],
   },
   {
@@ -7504,7 +7504,7 @@ These display racks are intended for auto parts shops. Retailers, dealers, store
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/lubricant-oil-display-rack.webp",
+    image: "/product/Lubricant Oil Display Rack.webp",
     gallery: ["/images/products/lubricant-oil-display-rack.webp"],
 
     // Hero short description
@@ -7575,10 +7575,10 @@ These display racks are intended for auto & lubricant shops. Retailers, dealers,
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Tyre Display Rack", slug: "tyre-display-rack", image: "/product/tyre-display-rack.webp" },
-      { title: "Hardware Store Display Rack", slug: "hardware-store-display-rack", image: "/product/hardware-store-display-rack.webp" },
-      { title: "Tool Display Pegboard Rack", slug: "tool-display-pegboard-rack", image: "/product/tool-display-pegboard-rack.webp" },
-      { title: "Fastener Bin Display Rack", slug: "fastener-bin-display-rack", image: "/product/fastener-bin-display-rack.webp" },
+      { title: "Tyre Display Rack", slug: "tyre-display-rack", image: "/product/Tyre Display Rack.webp" },
+      { title: "Hardware Store Display Rack", slug: "hardware-store-display-rack", image: "/product/Hardware Store Display Rack.png" },
+      { title: "Tool Display Pegboard Rack", slug: "tool-display-pegboard-rack", image: "/product/Wooden Finish Supermarket Rack.webp" },
+      { title: "Fastener Bin Display Rack", slug: "fastener-bin-display-rack", image: "/product/Fastener Bin Display Rack.webp" },
     ],
   },
   {
@@ -7661,10 +7661,10 @@ These display racks are intended for tyre shops & service centres. Retailers, de
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Hardware Store Display Rack", slug: "hardware-store-display-rack", image: "/product/hardware-store-display-rack.webp" },
-      { title: "Tool Display Pegboard Rack", slug: "tool-display-pegboard-rack", image: "/product/tool-display-pegboard-rack.webp" },
-      { title: "Fastener Bin Display Rack", slug: "fastener-bin-display-rack", image: "/product/fastener-bin-display-rack.webp" },
-      { title: "Paint Can Display Rack", slug: "paint-can-display-rack", image: "/product/paint-can-display-rack.webp" },
+      { title: "Hardware Store Display Rack", slug: "hardware-store-display-rack", image: "/product/Hardware Store Display Rack.png" },
+      { title: "Tool Display Pegboard Rack", slug: "tool-display-pegboard-rack", image: "/product/Wooden Finish Supermarket Rack.webp" },
+      { title: "Fastener Bin Display Rack", slug: "fastener-bin-display-rack", image: "/product/Fastener Bin Display Rack.webp" },
+      { title: "Paint Can Display Rack", slug: "paint-can-display-rack", image: "/product/Paint Can Display Rack.webp" },
     ],
   },
   // ===================== Stationery, Book & Toy Display Racks =====================
@@ -7748,10 +7748,10 @@ These display racks are intended for stationery shops. Retailers, dealers, store
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Pen Display Stand", slug: "pen-display-stand", image: "/product/pen-display-stand.webp" },
-      { title: "Notebook Display Rack", slug: "notebook-display-rack", image: "/product/notebook-display-rack.webp" },
-      { title: "Art & Craft Supplies Display Rack", slug: "art-and-craft-supplies-display-rack", image: "/product/art-and-craft-supplies-display-rack.webp" },
-      { title: "School Bag Display Rack", slug: "school-bag-display-rack", image: "/product/school-bag-display-rack.webp" },
+      { title: "Pen Display Stand", slug: "pen-display-stand", image: "/product/Pen Display Stand.webp" },
+      { title: "Notebook Display Rack", slug: "notebook-display-rack", image: "/product/Library Book Rack.webp" },
+      { title: "Art & Craft Supplies Display Rack", slug: "art-and-craft-supplies-display-rack", image: "/product/Art & Craft Supplies Display Rack.webp" },
+      { title: "School Bag Display Rack", slug: "school-bag-display-rack", image: "/product/Toy Display Rack.webp" },
     ],
   },
   {
@@ -7834,10 +7834,10 @@ These display racks are intended for stationery counters. Retailers, dealers, st
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Notebook Display Rack", slug: "notebook-display-rack", image: "/product/notebook-display-rack.webp" },
-      { title: "Art & Craft Supplies Display Rack", slug: "art-and-craft-supplies-display-rack", image: "/product/art-and-craft-supplies-display-rack.webp" },
-      { title: "School Bag Display Rack", slug: "school-bag-display-rack", image: "/product/school-bag-display-rack.webp" },
-      { title: "Book Display Rack", slug: "book-display-rack", image: "/product/book-display-rack.webp" },
+      { title: "Notebook Display Rack", slug: "notebook-display-rack", image: "/product/Library Book Rack.webp" },
+      { title: "Art & Craft Supplies Display Rack", slug: "art-and-craft-supplies-display-rack", image: "/product/Art & Craft Supplies Display Rack.webp" },
+      { title: "School Bag Display Rack", slug: "school-bag-display-rack", image: "/product/Toy Display Rack.webp" },
+      { title: "Book Display Rack", slug: "book-display-rack", image: "/product/Stationery Display Rack.webp" },
     ],
   },
   {
@@ -7920,9 +7920,9 @@ These display racks are intended for stationery & book shops. Retailers, dealers
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Art & Craft Supplies Display Rack", slug: "art-and-craft-supplies-display-rack", image: "/product/art-and-craft-supplies-display-rack.webp" },
-      { title: "School Bag Display Rack", slug: "school-bag-display-rack", image: "/product/school-bag-display-rack.webp" },
-      { title: "Book Display Rack", slug: "book-display-rack", image: "/product/book-display-rack.webp" },
+      { title: "Art & Craft Supplies Display Rack", slug: "art-and-craft-supplies-display-rack", image: "/product/Art & Craft Supplies Display Rack.webp" },
+      { title: "School Bag Display Rack", slug: "school-bag-display-rack", image: "/product/Toy Display Rack.webp" },
+      { title: "Book Display Rack", slug: "book-display-rack", image: "/product/Stationery Display Rack.webp" },
       { title: "Book Display Stand", slug: "book-display-stand", image: "/product/book-display-stand.webp" },
     ],
   },
@@ -8006,8 +8006,8 @@ These display racks are intended for stationery & hobby stores. Retailers, deale
 
     // Related products (same category)
     relatedProducts: [
-      { title: "School Bag Display Rack", slug: "school-bag-display-rack", image: "/product/School Bag Display Rack.webp" },
-      { title: "Book Display Rack", slug: "book-display-rack", image: "/product/Book Display Rack.webp" },
+      { title: "School Bag Display Rack", slug: "school-bag-display-rack", image: "/product/Toy Display Rack.webp" },
+      { title: "Book Display Rack", slug: "book-display-rack", image: "/product/Stationery Display Rack.webp" },
       { title: "Book Display Stand", slug: "book-display-stand", image: "/product/Book Display Stand.webp" },
       { title: "Library Book Rack", slug: "library-book-rack", image: "/product/Library Book Rack.webp" },
     ],
@@ -8092,10 +8092,10 @@ These display racks are intended for bag & stationery shops. Retailers, dealers,
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Book Display Rack", slug: "book-display-rack", image: "/product/book-display-rack.webp" },
+      { title: "Book Display Rack", slug: "book-display-rack", image: "/product/Stationery Display Rack.webp" },
       { title: "Book Display Stand", slug: "book-display-stand", image: "/product/book-display-stand.webp" },
-      { title: "Library Book Rack", slug: "library-book-rack", image: "/product/library-book-rack.webp" },
-      { title: "Magazine & Newspaper Display Stand", slug: "magazine-and-newspaper-display-stand", image: "/product/magazine-and-newspaper-display-stand.webp" },
+      { title: "Library Book Rack", slug: "library-book-rack", image: "/product/Library Book Rack.webp" },
+      { title: "Magazine & Newspaper Display Stand", slug: "magazine-and-newspaper-display-stand", image: "/product/Heavy Duty Supermarket Storage Rack.webp" },
     ],
   },
   {
@@ -8179,9 +8179,9 @@ These display racks are intended for bookstores. Retailers, dealers, store plann
     // Related products (same category)
     relatedProducts: [
       { title: "Book Display Stand", slug: "book-display-stand", image: "/product/book-display-stand.webp" },
-      { title: "Library Book Rack", slug: "library-book-rack", image: "/product/library-book-rack.webp" },
-      { title: "Magazine & Newspaper Display Stand", slug: "magazine-and-newspaper-display-stand", image: "/product/magazine-and-newspaper-display-stand.webp" },
-      { title: "Gift Items Display Rack", slug: "gift-items-display-rack", image: "/product/gift-items-display-rack.webp" },
+      { title: "Library Book Rack", slug: "library-book-rack", image: "/product/Library Book Rack.webp" },
+      { title: "Magazine & Newspaper Display Stand", slug: "magazine-and-newspaper-display-stand", image: "/product/Heavy Duty Supermarket Storage Rack.webp" },
+      { title: "Gift Items Display Rack", slug: "gift-items-display-rack", image: "/product/Cosmetic%20Display%20Stand%20(1).webp" },
     ],
   },
 
@@ -8265,10 +8265,10 @@ These display racks are intended for libraries & schools. Retailers, dealers, st
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Magazine & Newspaper Display Stand", slug: "magazine-and-newspaper-display-stand", image: "/product/magazine-and-newspaper-display-stand.webp" },
-      { title: "Gift Items Display Rack", slug: "gift-items-display-rack", image: "/product/gift-items-display-rack.webp" },
-      { title: "Toy Display Rack", slug: "toy-display-rack", image: "/product/toy-display-rack.webp" },
-      { title: "Stationery Display Rack", slug: "stationery-display-rack", image: "/product/stationery-display-rack.webp" },
+      { title: "Magazine & Newspaper Display Stand", slug: "magazine-and-newspaper-display-stand", image: "/product/Heavy Duty Supermarket Storage Rack.webp" },
+      { title: "Gift Items Display Rack", slug: "gift-items-display-rack", image: "/product/Cosmetic%20Display%20Stand%20(1).webp" },
+      { title: "Toy Display Rack", slug: "toy-display-rack", image: "/product/Toy Display Rack.webp" },
+      { title: "Stationery Display Rack", slug: "stationery-display-rack", image: "/product/Stationery Display Rack.webp" },
     ],
   },
   {
@@ -8351,10 +8351,10 @@ These display racks are intended for newsstands & waiting areas. Retailers, deal
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Gift Items Display Rack", slug: "gift-items-display-rack", image: "/product/gift-items-display-rack.webp" },
-      { title: "Toy Display Rack", slug: "toy-display-rack", image: "/product/toy-display-rack.webp" },
-      { title: "Stationery Display Rack", slug: "stationery-display-rack", image: "/product/stationery-display-rack.webp" },
-      { title: "Pen Display Stand", slug: "pen-display-stand", image: "/product/pen-display-stand.webp" },
+      { title: "Gift Items Display Rack", slug: "gift-items-display-rack", image: "/product/Cosmetic%20Display%20Stand%20(1).webp" },
+      { title: "Toy Display Rack", slug: "toy-display-rack", image: "/product/Toy Display Rack.webp" },
+      { title: "Stationery Display Rack", slug: "stationery-display-rack", image: "/product/Stationery Display Rack.webp" },
+      { title: "Pen Display Stand", slug: "pen-display-stand", image: "/product/Pen Display Stand.webp" },
     ],
   },
   {
@@ -8437,10 +8437,10 @@ These display racks are intended for gift shops. Retailers, dealers, store plann
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Toy Display Rack", slug: "toy-display-rack", image: "/product/toy-display-rack.webp" },
-      { title: "Stationery Display Rack", slug: "stationery-display-rack", image: "/product/stationery-display-rack.webp" },
-      { title: "Pen Display Stand", slug: "pen-display-stand", image: "/product/pen-display-stand.webp" },
-      { title: "Notebook Display Rack", slug: "notebook-display-rack", image: "/product/notebook-display-rack.webp" },
+      { title: "Toy Display Rack", slug: "toy-display-rack", image: "/product/Toy Display Rack.webp" },
+      { title: "Stationery Display Rack", slug: "stationery-display-rack", image: "/product/Stationery Display Rack.webp" },
+      { title: "Pen Display Stand", slug: "pen-display-stand", image: "/product/Pen Display Stand.webp" },
+      { title: "Notebook Display Rack", slug: "notebook-display-rack", image: "/product/Library Book Rack.webp" },
     ],
   },
   {
@@ -8523,10 +8523,10 @@ These display racks are intended for toy stores. Retailers, dealers, store plann
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Stationery Display Rack", slug: "stationery-display-rack", image: "/product/stationery-display-rack.webp" },
-      { title: "Pen Display Stand", slug: "pen-display-stand", image: "/product/pen-display-stand.webp" },
-      { title: "Notebook Display Rack", slug: "notebook-display-rack", image: "/product/notebook-display-rack.webp" },
-      { title: "Art & Craft Supplies Display Rack", slug: "art-and-craft-supplies-display-rack", image: "/product/art-and-craft-supplies-display-rack.webp" },
+      { title: "Stationery Display Rack", slug: "stationery-display-rack", image: "/product/Stationery Display Rack.webp" },
+      { title: "Pen Display Stand", slug: "pen-display-stand", image: "/product/Pen Display Stand.webp" },
+      { title: "Notebook Display Rack", slug: "notebook-display-rack", image: "/product/Library Book Rack.webp" },
+      { title: "Art & Craft Supplies Display Rack", slug: "art-and-craft-supplies-display-rack", image: "/product/Art & Craft Supplies Display Rack.webp" },
     ],
   },
   // ===================== Wall Mounted & Slatwall Display Systems =====================
@@ -8610,10 +8610,10 @@ These display racks are intended for any retail store wall. Retailers, dealers, 
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Slatwall Hooks & Accessories", slug: "slatwall-hooks-and-accessories", image: "/product/slatwall-hooks-and-accessories.webp" },
-      { title: "Perforated Pegboard Wall Panel", slug: "perforated-pegboard-wall-panel", image: "/product/perforated-pegboard-wall-panel.webp" },
-      { title: "Grid Wall Display Panel", slug: "grid-wall-display-panel", image: "/product/grid-wall-display-panel.webp" },
-      { title: "Wall Channel Shelving System", slug: "wall-channel-shelving-system", image: "/product/wall-channel-shelving-system.webp" },
+      { title: "Slatwall Hooks & Accessories", slug: "slatwall-hooks-and-accessories", image: "/product/Slatwall Mobile Accessories Rack.webp" },
+      { title: "Perforated Pegboard Wall Panel", slug: "perforated-pegboard-wall-panel", image: "/product/Perforated Pegboard Wall Panel.webp" },
+      { title: "Grid Wall Display Panel", slug: "grid-wall-display-panel", image: "/product/Grid Wall Display Panel.webp" },
+      { title: "Wall Channel Shelving System", slug: "wall-channel-shelving-system", image: "/product/Perfume Display Rack.webp" },
     ],
   },
   {
@@ -8696,10 +8696,10 @@ These display racks are intended for slatwall panel add-ons. Retailers, dealers,
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Perforated Pegboard Wall Panel", slug: "perforated-pegboard-wall-panel", image: "/product/perforated-pegboard-wall-panel.webp" },
-      { title: "Grid Wall Display Panel", slug: "grid-wall-display-panel", image: "/product/grid-wall-display-panel.webp" },
-      { title: "Wall Channel Shelving System", slug: "wall-channel-shelving-system", image: "/product/wall-channel-shelving-system.webp" },
-      { title: "Gondola Wall Shelving Unit", slug: "gondola-wall-shelving-unit", image: "/product/gondola-wall-shelving-unit.webp" },
+      { title: "Perforated Pegboard Wall Panel", slug: "perforated-pegboard-wall-panel", image: "/product/Perforated Pegboard Wall Panel.webp" },
+      { title: "Grid Wall Display Panel", slug: "grid-wall-display-panel", image: "/product/Grid Wall Display Panel.webp" },
+      { title: "Wall Channel Shelving System", slug: "wall-channel-shelving-system", image: "/product/Perfume Display Rack.webp" },
+      { title: "Gondola Wall Shelving Unit", slug: "gondola-wall-shelving-unit", image: "/product/Bright White Gondola Shelf Studio Shot.webp" },
     ],
   },
   {
@@ -8782,10 +8782,10 @@ These display racks are intended for hardware & accessory stores. Retailers, dea
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Grid Wall Display Panel", slug: "grid-wall-display-panel", image: "/product/grid-wall-display-panel.webp" },
-      { title: "Wall Channel Shelving System", slug: "wall-channel-shelving-system", image: "/product/wall-channel-shelving-system.webp" },
-      { title: "Gondola Wall Shelving Unit", slug: "gondola-wall-shelving-unit", image: "/product/gondola-wall-shelving-unit.webp" },
-      { title: "Wall Mounted Bracket Shelf Rack", slug: "wall-mounted-bracket-shelf-rack", image: "/product/wall-mounted-bracket-shelf-rack.webp" },
+      { title: "Grid Wall Display Panel", slug: "grid-wall-display-panel", image: "/product/Grid Wall Display Panel.webp" },
+      { title: "Wall Channel Shelving System", slug: "wall-channel-shelving-system", image: "/product/Perfume Display Rack.webp" },
+      { title: "Gondola Wall Shelving Unit", slug: "gondola-wall-shelving-unit", image: "/product/Bright White Gondola Shelf Studio Shot.webp" },
+      { title: "Wall Mounted Bracket Shelf Rack", slug: "wall-mounted-bracket-shelf-rack", image: "/product/Wall Mounted Shoe Display Rack.webp" },
     ],
   },
   {
@@ -8868,10 +8868,10 @@ These display racks are intended for accessory & gift stores. Retailers, dealers
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Wall Channel Shelving System", slug: "wall-channel-shelving-system", image: "/product/wall-channel-shelving-system.webp" },
-      { title: "Gondola Wall Shelving Unit", slug: "gondola-wall-shelving-unit", image: "/product/gondola-wall-shelving-unit.webp" },
-      { title: "Wall Mounted Bracket Shelf Rack", slug: "wall-mounted-bracket-shelf-rack", image: "/product/wall-mounted-bracket-shelf-rack.webp" },
-      { title: "Shelf Wall Display Rack", slug: "shelf-wall-display-rack", image: "/product/shelf-wall-display-rack.webp" },
+      { title: "Wall Channel Shelving System", slug: "wall-channel-shelving-system", image: "/product/Perfume Display Rack.webp" },
+      { title: "Gondola Wall Shelving Unit", slug: "gondola-wall-shelving-unit", image: "/product/Bright White Gondola Shelf Studio Shot.webp" },
+      { title: "Wall Mounted Bracket Shelf Rack", slug: "wall-mounted-bracket-shelf-rack", image: "/product/Wall Mounted Shoe Display Rack.webp" },
+      { title: "Shelf Wall Display Rack", slug: "shelf-wall-display-rack", image: "/product/Wall Mounted Garment Display Rack.webp" },
     ],
   },
   {
@@ -8954,10 +8954,10 @@ These display racks are intended for showrooms & retail walls. Retailers, dealer
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Gondola Wall Shelving Unit", slug: "gondola-wall-shelving-unit", image: "/product/gondola-wall-shelving-unit.webp" },
-      { title: "Wall Mounted Bracket Shelf Rack", slug: "wall-mounted-bracket-shelf-rack", image: "/product/wall-mounted-bracket-shelf-rack.webp" },
-      { title: "Shelf Wall Display Rack", slug: "shelf-wall-display-rack", image: "/product/shelf-wall-display-rack.webp" },
-      { title: "Wall Mounted Wooden Display Rack", slug: "wall-mounted-wooden-display-rack", image: "/product/wall-mounted-wooden-display-rack.webp" },
+      { title: "Gondola Wall Shelving Unit", slug: "gondola-wall-shelving-unit", image: "/product/Bright White Gondola Shelf Studio Shot.webp" },
+      { title: "Wall Mounted Bracket Shelf Rack", slug: "wall-mounted-bracket-shelf-rack", image: "/product/Wall Mounted Shoe Display Rack.webp" },
+      { title: "Shelf Wall Display Rack", slug: "shelf-wall-display-rack", image: "/product/Wall Mounted Garment Display Rack.webp" },
+      { title: "Wall Mounted Wooden Display Rack", slug: "wall-mounted-wooden-display-rack", image: "/product/Perfume%20Display%20Rack.webp" },
     ],
   },
   {
@@ -9040,10 +9040,10 @@ These display racks are intended for supermarket & retail walls. Retailers, deal
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Wall Mounted Bracket Shelf Rack", slug: "wall-mounted-bracket-shelf-rack", image: "/product/wall-mounted-bracket-shelf-rack.webp" },
-      { title: "Shelf Wall Display Rack", slug: "shelf-wall-display-rack", image: "/product/shelf-wall-display-rack.webp" },
-      { title: "Wall Mounted Wooden Display Rack", slug: "wall-mounted-wooden-display-rack", image: "/product/wall-mounted-wooden-display-rack.webp" },
-      { title: "Aluminium Profile Wall Display System", slug: "aluminium-profile-wall-display-system", image: "/product/aluminium-profile-wall-display-system.webp" },
+      { title: "Wall Mounted Bracket Shelf Rack", slug: "wall-mounted-bracket-shelf-rack", image: "/product/Wall Mounted Shoe Display Rack.webp" },
+      { title: "Shelf Wall Display Rack", slug: "shelf-wall-display-rack", image: "/product/Wall Mounted Garment Display Rack.webp" },
+      { title: "Wall Mounted Wooden Display Rack", slug: "wall-mounted-wooden-display-rack", image: "/product/Perfume%20Display%20Rack.webp" },
+      { title: "Aluminium Profile Wall Display System", slug: "aluminium-profile-wall-display-system", image: "/product/Aluminium Profile Wall Display System.webp" },
     ],
   },
   {
@@ -9126,10 +9126,10 @@ These display racks are intended for shops & offices. Retailers, dealers, store 
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Shelf Wall Display Rack", slug: "shelf-wall-display-rack", image: "/product/shelf-wall-display-rack.webp" },
-      { title: "Wall Mounted Wooden Display Rack", slug: "wall-mounted-wooden-display-rack", image: "/product/wall-mounted-wooden-display-rack.webp" },
-      { title: "Aluminium Profile Wall Display System", slug: "aluminium-profile-wall-display-system", image: "/product/aluminium-profile-wall-display-system.webp" },
-      { title: "Wall Display Rack", slug: "wall-display-rack", image: "/product/wall-display-rack.webp" },
+      { title: "Shelf Wall Display Rack", slug: "shelf-wall-display-rack", image: "/product/Wall Mounted Garment Display Rack.webp" },
+      { title: "Wall Mounted Wooden Display Rack", slug: "wall-mounted-wooden-display-rack", image: "/product/Perfume%20Display%20Rack.webp" },
+      { title: "Aluminium Profile Wall Display System", slug: "aluminium-profile-wall-display-system", image: "/product/Aluminium Profile Wall Display System.webp.webp" },
+      { title: "Wall Display Rack", slug: "wall-display-rack", image: "/product/Skin Care Products Display Rack.webp" },
     ],
   },
   {
@@ -9212,10 +9212,10 @@ These display racks are intended for premium showrooms. Retailers, dealers, stor
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Wall Mounted Wooden Display Rack", slug: "wall-mounted-wooden-display-rack", image: "/product/wall-mounted-wooden-display-rack.webp" },
-      { title: "Aluminium Profile Wall Display System", slug: "aluminium-profile-wall-display-system", image: "/product/aluminium-profile-wall-display-system.webp" },
-      { title: "Wall Display Rack", slug: "wall-display-rack", image: "/product/wall-display-rack.webp" },
-      { title: "Corner Wall Display Rack", slug: "corner-wall-display-rack", image: "/product/corner-wall-display-rack.webp" },
+      { title: "Wall Mounted Wooden Display Rack", slug: "wall-mounted-wooden-display-rack", image: "/product/Perfume%20Display%20Rack.webp" },
+      { title: "Aluminium Profile Wall Display System", slug: "aluminium-profile-wall-display-system", image: "/product/Aluminium Profile Wall Display System.webp.webp" },
+      { title: "Wall Display Rack", slug: "wall-display-rack", image: "/product/Skin Care Products Display Rack.webp" },
+      { title: "Corner Wall Display Rack", slug: "corner-wall-display-rack", image: "/product/Black and Yellow Retail Shelving Display.webp" },
     ],
   },
   {
@@ -9298,22 +9298,22 @@ These display racks are intended for boutiques & gift stores. Retailers, dealers
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Aluminium Profile Wall Display System", slug: "aluminium-profile-wall-display-system", image: "/product/aluminium-profile-wall-display-system.webp" },
-      { title: "Wall Display Rack", slug: "wall-display-rack", image: "/product/wall-display-rack.webp" },
-      { title: "Corner Wall Display Rack", slug: "corner-wall-display-rack", image: "/product/corner-wall-display-rack.webp" },
-      { title: "Slatwall Display Panel", slug: "slatwall-display-panel", image: "/product/slatwall-display-panel.webp" },
+      { title: "Aluminium Profile Wall Display System", slug: "aluminium-profile-wall-display-system", image: "/product/Aluminium Profile Wall Display System.webp.webp" },
+      { title: "Wall Display Rack", slug: "wall-display-rack", image: "/product/Skin Care Products Display Rack.webp" },
+      { title: "Corner Wall Display Rack", slug: "corner-wall-display-rack", image: "/product/Black and Yellow Retail Shelving Display.webp" },
+      { title: "Slatwall Display Panel", slug: "slatwall-display-panel", image: "/product/Slatwall Display Panel.webp" },
     ],
   },
   {
     id: "aluminium-profile-wall-display-system",
     slug: "aluminium-profile-wall-display-system",
-    title: "Aluminium Profile Wall Display System",
+    title: "Aluminium Profile Wall Display System.webp",
     category: "Wall Mounted & Slatwall Display Systems",
     eyebrow: "WALL MOUNTED & SLATWALL DISPLAY SYSTEMS",
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/aluminium-profile-wall-display-system.webp",
+    image: "/product/Aluminium Profile Wall Display System.webp",
     gallery: ["/images/products/aluminium-profile-wall-display-system.webp"],
 
     // Hero short description
@@ -9384,10 +9384,10 @@ These display racks are intended for modern showrooms. Retailers, dealers, store
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Wall Display Rack", slug: "wall-display-rack", image: "/product/wall-display-rack.webp" },
-      { title: "Corner Wall Display Rack", slug: "corner-wall-display-rack", image: "/product/corner-wall-display-rack.webp" },
-      { title: "Slatwall Display Panel", slug: "slatwall-display-panel", image: "/product/slatwall-display-panel.webp" },
-      { title: "Slatwall Hooks & Accessories", slug: "slatwall-hooks-and-accessories", image: "/product/slatwall-hooks-and-accessories.webp" },
+      { title: "Wall Display Rack", slug: "wall-display-rack", image: "/product/Skin Care Products Display Rack.webp" },
+      { title: "Corner Wall Display Rack", slug: "corner-wall-display-rack", image: "/product/Black and Yellow Retail Shelving Display.webp" },
+      { title: "Slatwall Display Panel", slug: "slatwall-display-panel", image: "/product/Slatwall Display Panel.webp" },
+      { title: "Slatwall Hooks & Accessories", slug: "slatwall-hooks-and-accessories", image: "/product/Slatwall Mobile Accessories Rack.webp" },
     ],
   },
   {
@@ -9470,10 +9470,10 @@ These display racks are intended for branded showrooms. Retailers, dealers, stor
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Corner Wall Display Rack", slug: "corner-wall-display-rack", image: "/product/corner-wall-display-rack.webp" },
-      { title: "Slatwall Display Panel", slug: "slatwall-display-panel", image: "/product/slatwall-display-panel.webp" },
-      { title: "Slatwall Hooks & Accessories", slug: "slatwall-hooks-and-accessories", image: "/product/slatwall-hooks-and-accessories.webp" },
-      { title: "Perforated Pegboard Wall Panel", slug: "perforated-pegboard-wall-panel", image: "/product/perforated-pegboard-wall-panel.webp" },
+      { title: "Corner Wall Display Rack", slug: "corner-wall-display-rack", image: "/product/Black and Yellow Retail Shelving Display.webp" },
+      { title: "Slatwall Display Panel", slug: "slatwall-display-panel", image: "/product/Slatwall Display Panel.webp" },
+      { title: "Slatwall Hooks & Accessories", slug: "slatwall-hooks-and-accessories", image: "/product/Slatwall Mobile Accessories Rack.webp" },
+      { title: "Perforated Pegboard Wall Panel", slug: "perforated-pegboard-wall-panel", image: "/product/Perforated Pegboard Wall Panel.webp" },
     ],
   },
   {
@@ -9556,10 +9556,10 @@ These display racks are intended for shop corners. Retailers, dealers, store pla
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Slatwall Display Panel", slug: "slatwall-display-panel", image: "/product/slatwall-display-panel.webp" },
-      { title: "Slatwall Hooks & Accessories", slug: "slatwall-hooks-and-accessories", image: "/product/slatwall-hooks-and-accessories.webp" },
-      { title: "Perforated Pegboard Wall Panel", slug: "perforated-pegboard-wall-panel", image: "/product/perforated-pegboard-wall-panel.webp" },
-      { title: "Grid Wall Display Panel", slug: "grid-wall-display-panel", image: "/product/grid-wall-display-panel.webp" },
+      { title: "Slatwall Display Panel", slug: "slatwall-display-panel", image: "/product/Slatwall Display Panel.webp" },
+      { title: "Slatwall Hooks & Accessories", slug: "slatwall-hooks-and-accessories", image: "/product/Slatwall Mobile Accessories Rack.webp" },
+      { title: "Perforated Pegboard Wall Panel", slug: "perforated-pegboard-wall-panel", image: "/product/Perforated Pegboard Wall Panel.webp" },
+      { title: "Grid Wall Display Panel", slug: "grid-wall-display-panel", image: "/product/Grid Wall Display Panel.webp" },
     ],
   },
   // ===================== Promotional & Countertop Display Stands =====================
@@ -9643,10 +9643,10 @@ These display racks are intended for billing counters. Retailers, dealers, store
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Branded Floor Standing Promotional Display Rack", slug: "branded-floor-standing-promotional-display-rack", image: "/product/branded-floor-standing-promotional-display-rack.webp" },
-      { title: "Spinner Display Rack", slug: "spinner-display-rack", image: "/product/spinner-display-rack.webp" },
-      { title: "Dump Bin Display rack", slug: "dump-bin-display-rack", image: "/product/dump-bin-display-rack.webp" },
-      { title: "Clip Strip & Sachet Hanging Display rack", slug: "clip-strip-and-sachet-hanging-display-rack", image: "/product/clip-strip-and-sachet-hanging-display-rack.webp" },
+      { title: "Branded Floor Standing Promotional Display Rack", slug: "branded-floor-standing-promotional-display-rack", image: "/product/Single%20Sided%20Wall%20Gondola%20Rack.webp" },
+      { title: "Spinner Display Rack", slug: "spinner-display-rack", image: "/product/Socks%20Display%20Rack.webp" },
+      { title: "Dump Bin Display rack", slug: "dump-bin-display-rack", image: "/product/Dump Bin Display rack.webp" },
+      { title: "Clip Strip & Sachet Hanging Display rack", slug: "clip-strip-and-sachet-hanging-display-rack", image: "/product/Clip Strip & Sachet Hanging Display rack.webp" },
     ],
   },
   {
@@ -9658,7 +9658,7 @@ These display racks are intended for billing counters. Retailers, dealers, store
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/branded-floor-standing-promotional-display-rack.webp",
+    image: "/product/Single%20Sided%20Wall%20Gondola%20Rack.webp",
     gallery: ["/images/products/branded-floor-standing-promotional-display-rack.webp"],
 
     // Hero short description
@@ -9729,10 +9729,10 @@ These display racks are intended for fmcg brand promotions. Retailers, dealers, 
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Spinner Display Rack", slug: "spinner-display-rack", image: "/product/spinner-display-rack.webp" },
-      { title: "Dump Bin Display rack", slug: "dump-bin-display-rack", image: "/product/dump-bin-display-rack.webp" },
-      { title: "Clip Strip & Sachet Hanging Display rack", slug: "clip-strip-and-sachet-hanging-display-rack", image: "/product/clip-strip-and-sachet-hanging-display-rack.webp" },
-      { title: "Brochure Display Stand", slug: "brochure-display-stand", image: "/product/brochure-display-stand.webp" },
+      { title: "Spinner Display Rack", slug: "spinner-display-rack", image: "/product/Socks%20Display%20Rack.webp" },
+      { title: "Dump Bin Display rack", slug: "dump-bin-display-rack", image: "/product/Dump Bin Display rack.webp" },
+      { title: "Clip Strip & Sachet Hanging Display rack", slug: "clip-strip-and-sachet-hanging-display-rack", image: "/product/Clip Strip & Sachet Hanging Display rack.webp" },
+      { title: "Brochure Display Stand", slug: "brochure-display-stand", image: "/product/Brochure Display Stand.webp" },
     ],
   },
   {
@@ -9744,7 +9744,7 @@ These display racks are intended for fmcg brand promotions. Retailers, dealers, 
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/spinner-display-rack.webp",
+    image: "/product/Socks%20Display%20Rack.webp",
     gallery: ["/images/products/spinner-display-rack.webp"],
 
     // Hero short description
@@ -9815,10 +9815,10 @@ These display racks are intended for small items & impulse buys. Retailers, deal
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Dump Bin Display rack", slug: "dump-bin-display-rack", image: "/product/dump-bin-display-rack.webp" },
-      { title: "Clip Strip & Sachet Hanging Display rack", slug: "clip-strip-and-sachet-hanging-display-rack", image: "/product/clip-strip-and-sachet-hanging-display-rack.webp" },
-      { title: "Brochure Display Stand", slug: "brochure-display-stand", image: "/product/brochure-display-stand.webp" },
-      { title: "Portable Exhibition Display Stand", slug: "portable-exhibition-display-stand", image: "/product/portable-exhibition-display-stand.webp" },
+      { title: "Dump Bin Display rack", slug: "dump-bin-display-rack", image: "/product/Dump Bin Display rack.webp" },
+      { title: "Clip Strip & Sachet Hanging Display rack", slug: "clip-strip-and-sachet-hanging-display-rack", image: "/product/Clip Strip & Sachet Hanging Display rack.webp" },
+      { title: "Brochure Display Stand", slug: "brochure-display-stand", image: "/product/Brochure Display Stand.webp" },
+      { title: "Portable Exhibition Display Stand", slug: "portable-exhibition-display-stand", image: "/product/Portable Exhibition Display Stand.webp" },
     ],
   },
   {
@@ -9830,7 +9830,7 @@ These display racks are intended for small items & impulse buys. Retailers, deal
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/dump-bin-display-rack.webp",
+    image: "/product/Dump Bin Display rack.webp",
     gallery: ["/images/products/dump-bin-display-rack.webp"],
 
     // Hero short description
@@ -9901,9 +9901,9 @@ These display racks are intended for discount & clearance offers. Retailers, dea
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Clip Strip & Sachet Hanging Display rack", slug: "clip-strip-and-sachet-hanging-display-rack", image: "/product/clip-strip-and-sachet-hanging-display-rack.webp" },
-      { title: "Brochure Display Stand", slug: "brochure-display-stand", image: "/product/brochure-display-stand.webp" },
-      { title: "Portable Exhibition Display Stand", slug: "portable-exhibition-display-stand", image: "/product/portable-exhibition-display-stand.webp" },
+      { title: "Clip Strip & Sachet Hanging Display rack", slug: "clip-strip-and-sachet-hanging-display-rack", image: "/product/Clip Strip & Sachet Hanging Display rack.webp" },
+      { title: "Brochure Display Stand", slug: "brochure-display-stand", image: "/product/Brochure Display Stand.webp" },
+      { title: "Portable Exhibition Display Stand", slug: "portable-exhibition-display-stand", image: "/product/Portable Exhibition Display Stand.webp" },
       { title: "Countertop Promotional Display Stand", slug: "countertop-promotional-display-stand", image: "/product/countertop-promotional-display-stand.webp" },
     ],
   },
@@ -9916,7 +9916,7 @@ These display racks are intended for discount & clearance offers. Retailers, dea
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/clip-strip-and-sachet-hanging-display-rack.webp",
+    image: "/product/Clip Strip & Sachet Hanging Display rack.webp",
     gallery: ["/images/products/clip-strip-and-sachet-hanging-display-rack.webp"],
 
     // Hero short description
@@ -9987,10 +9987,10 @@ These display racks are intended for hanging sachets & small packs. Retailers, d
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Brochure Display Stand", slug: "brochure-display-stand", image: "/product/brochure-display-stand.webp" },
-      { title: "Portable Exhibition Display Stand", slug: "portable-exhibition-display-stand", image: "/product/portable-exhibition-display-stand.webp" },
+      { title: "Brochure Display Stand", slug: "brochure-display-stand", image: "/product/Brochure Display Stand.webp" },
+      { title: "Portable Exhibition Display Stand", slug: "portable-exhibition-display-stand", image: "/product/Portable Exhibition Display Stand.webp" },
       { title: "Countertop Promotional Display Stand", slug: "countertop-promotional-display-stand", image: "/product/countertop-promotional-display-stand.webp" },
-      { title: "Branded Floor Standing Promotional Display Rack", slug: "branded-floor-standing-promotional-display-rack", image: "/product/branded-floor-standing-promotional-display-rack.webp" },
+      { title: "Branded Floor Standing Promotional Display Rack", slug: "branded-floor-standing-promotional-display-rack", image: "/product/Single%20Sided%20Wall%20Gondola%20Rack.webp" },
     ],
   },
   {
@@ -10002,7 +10002,7 @@ These display racks are intended for hanging sachets & small packs. Retailers, d
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/brochure-display-stand.webp",
+    image: "/product/Brochure Display Stand.webp",
     gallery: ["/images/products/brochure-display-stand.webp"],
 
     // Hero short description
@@ -10073,10 +10073,10 @@ These display racks are intended for offices & exhibitions. Retailers, dealers, 
 
     // Related products (same category)
     relatedProducts: [
-      { title: "Portable Exhibition Display Stand", slug: "portable-exhibition-display-stand", image: "/product/portable-exhibition-display-stand.webp" },
+      { title: "Portable Exhibition Display Stand", slug: "portable-exhibition-display-stand", image: "/product/Portable Exhibition Display Stand.webp" },
       { title: "Countertop Promotional Display Stand", slug: "countertop-promotional-display-stand", image: "/product/countertop-promotional-display-stand.webp" },
-      { title: "Branded Floor Standing Promotional Display Rack", slug: "branded-floor-standing-promotional-display-rack", image: "/product/branded-floor-standing-promotional-display-rack.webp" },
-      { title: "Spinner Display Rack", slug: "spinner-display-rack", image: "/product/spinner-display-rack.webp" },
+      { title: "Branded Floor Standing Promotional Display Rack", slug: "branded-floor-standing-promotional-display-rack", image: "/product/Single%20Sided%20Wall%20Gondola%20Rack.webp" },
+      { title: "Spinner Display Rack", slug: "spinner-display-rack", image: "/product/Socks%20Display%20Rack.webp" },
     ],
   },
   {
@@ -10088,7 +10088,7 @@ These display racks are intended for offices & exhibitions. Retailers, dealers, 
     brand: "Arya Insulation Pvt Ltd",
 
     // Product images
-    image: "/product/portable-exhibition-display-stand.webp",
+    image: "/product/Portable Exhibition Display Stand.webp",
     gallery: ["/images/products/portable-exhibition-display-stand.webp"],
 
     // Hero short description
@@ -10160,9 +10160,9 @@ These display racks are intended for trade fairs & expos. Retailers, dealers, st
     // Related products (same category)
     relatedProducts: [
       { title: "Countertop Promotional Display Stand", slug: "countertop-promotional-display-stand", image: "/product/countertop-promotional-display-stand.webp" },
-      { title: "Branded Floor Standing Promotional Display Rack", slug: "branded-floor-standing-promotional-display-rack", image: "/product/branded-floor-standing-promotional-display-rack.webp" },
-      { title: "Spinner Display Rack", slug: "spinner-display-rack", image: "/product/spinner-display-rack.webp" },
-      { title: "Dump Bin Display rack", slug: "dump-bin-display-rack", image: "/product/dump-bin-display-rack.webp" },
+      { title: "Branded Floor Standing Promotional Display Rack", slug: "branded-floor-standing-promotional-display-rack", image: "/product/Single%20Sided%20Wall%20Gondola%20Rack.webp" },
+      { title: "Spinner Display Rack", slug: "spinner-display-rack", image: "/product/Socks%20Display%20Rack.webp" },
+      { title: "Dump Bin Display rack", slug: "dump-bin-display-rack", image: "/product/Dump Bin Display rack.webp" },
     ],
   },
 ];

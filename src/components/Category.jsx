@@ -9,7 +9,7 @@ export default function Category({ category }) {
   return (
     <main>
 
-      <section className="bg-soft pb-16 pt-28">
+      <section className="bg-soft pb-16 pt-28 px-20">
         <div className="section-pad">
           <nav className="flex flex-wrap items-center gap-2 text-[13px] text-navy/60">
             <Link href="/" className="hover:text-brand">Home</Link>
