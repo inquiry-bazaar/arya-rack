@@ -113,11 +113,12 @@ export default function AboutUs() {
             </div>
 
             {/* EXPERIENCE / BRAND BOX */}
-            <div className="absolute -bottom-8 left-3 z-30 rounded-2xl bg-[#F26A12] px-5 py-4 text-white shadow-xl sm:-bottom-10 sm:left-8 sm:px-7 sm:py-5">
-              <p className="text-2xl font-extrabold sm:text-3xl">
+            <div className="absolute -bottom-8 left-3 z-30 rounded-2xl bg-[#F26A12] px-5 py-4 
+             shadow-xl sm:-bottom-10 sm:left-8 sm:px-7 sm:py-5">
+              <p className="text-2xl font-extrabold sm:text-3xl !text-white ">
                 ARYA
               </p>
-              <p className="text-xs font-semibold tracking-[0.18em]">
+              <p className="text-xs font-semibold tracking-[0.18em] !text-white">
                 INDUSTRY
               </p>
             </div>

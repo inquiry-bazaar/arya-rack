@@ -22,6 +22,7 @@ import {
 import { usePathname } from "next/navigation";
 import Popup from "./Popup";
 import { categoryList } from "@/Data/products";
+import Link from "next/link";
 
 /* ------------------------------------------------------------------ */
 /*  CONFIG                                                             */
@@ -210,7 +211,7 @@ if (pathname.startsWith("/admin")) return null;
                     }}
                     onMouseLeave={() => link.dropdown && setProductOpen(false)}
                   >
-                    <a
+                    <Link
                       href={link.href}
                       aria-current={active ? "page" : undefined}
                       aria-haspopup={link.dropdown ? "true" : undefined}
@@ -240,7 +241,7 @@ if (pathname.startsWith("/admin")) return null;
                           style={{ background: `linear-gradient(90deg,${C.orange},${C.orangeLight})` }}
                         />
                       )}
-                    </a>
+                    </Link>
 
                     {/* ===== MEGA DROPDOWN ===== */}
                     <AnimatePresence>
