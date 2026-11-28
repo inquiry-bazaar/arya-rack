@@ -20,6 +20,7 @@ import {
   Factory,
   PackageCheck,
 } from "lucide-react";
+import Popup from "@/components/Popup";
 
 const C = {
   navy: "#0A2457",
@@ -79,6 +80,7 @@ const fadeUp = {
 };
 
 export default function ContactUs() {
+  const [inquiryOpen, setInquiryOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -142,13 +144,13 @@ Message: ${formData.message}
             bg-white/[0.07] px-5 py-2.5">
               <span className="h-2 w-2 rounded-full bg-[#F26A12]" />
               <span className="text-xs font-bold uppercase tracking-[0.2em] text-blue-100">
-                Let's Connect
+                Let&apos;s Connect
               </span>
             </div>
 
             <h1 className="max-w-2xl text-5xl font-black leading-[1.08] tracking-tight sm:text-6xl 
             lg:text-[76px] !text-white">
-              Let's Build
+              Let&apos;s Build
               
                 Something
               
@@ -163,13 +165,14 @@ Message: ${formData.message}
             </p>
 
             <div className="mt-9 flex flex-wrap gap-4">
-              <a
-                href="#contact-form"
+              <button
+                type="button"
+                onClick={() => setInquiryOpen(true)}
                 className="group inline-flex items-center gap-3 rounded-full bg-[#F26A12] px-7 py-4 text-sm font-bold text-white transition hover:-translate-y-1 hover:bg-[#E4560A]"
               >
                 Send An Inquiry
                 <ArrowUpRight size={19} />
-              </a>
+              </button>
 
               <a
                 href="https://wa.me/91XXXXXXXXXX"
@@ -382,7 +385,7 @@ Message: ${formData.message}
           Find Us
         </span>
         <h2 className="mt-4 text-4xl font-extrabold sm:text-5xl">
-          Let's Connect <span className="text-[#F26A12]">In Person.</span>
+          Let&apos;s Connect <span className="text-[#F26A12]">In Person.</span>
         </h2>
       </div>
 
@@ -457,6 +460,7 @@ Message: ${formData.message}
 
     
 
+      <Popup open={inquiryOpen} onClose={() => setInquiryOpen(false)} />
     </main>
   );
 }
