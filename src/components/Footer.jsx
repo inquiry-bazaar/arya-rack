@@ -46,7 +46,7 @@ const exploreLinks = [
   { no: "03", label: "Products", href: "/products" },
   { no: "04", label: "Gallery", href: "/gallery" },
   { no: "05", label: "Articles", href: "/articles" },
-  { no: "06", label: "Contact", href: "/contact-us" },
+  { no: "06", label: "Contact Us", href: "/contact-us" },
 ];
 
 const productLinks = categoryList.map(({ name, slug }) => ({
