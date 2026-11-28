@@ -193,6 +193,7 @@ const css = `
 const ease = [0.22, 1, 0.36, 1];
 
 export default function HowWork() {
+
   const reduce = useReducedMotion();
   const list = { hidden: {}, show: { transition: { staggerChildren: reduce ? 0 : 0.15, delayChildren: 0.1 } } };
   const item = {

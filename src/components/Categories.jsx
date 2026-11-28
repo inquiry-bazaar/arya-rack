@@ -86,17 +86,17 @@ function CategoryCard({ item, index, reduce }) {
       </span>
 
       {/* Product image */}
-      <div className="relative flex h-[275px] items-center justify-center
-        overflow-hidden rounded-[15px] bg-[#F5F7FA] p-1
-        sm:h-[190px] xl:h-[175px]">
-        <motion.img
-          src={item.image}
-          alt={item.title}
-          loading="lazy"
-          className="h-[275px] w-full object-contain drop-shadow-[0_7px_10px_rgba(0,0,0,0.08)]"
-          whileHover={reduce ? undefined : { scale: 1.055 }}
-          transition={{ duration: 0.4 }}
-        />
+      <div className="relative flex h-[150px] items-center justify-center
+  overflow-hidden rounded-[15px] bg-[#F5F7FA] p-1
+  sm:h-[190px] xl:h-[175px]">
+       <motion.img
+  src={item.image}
+  alt={item.title}
+  loading="lazy"
+  className="h-full w-full object-contain drop-shadow-[0_7px_10px_rgba(0,0,0,0.08)]"
+  whileHover={reduce ? undefined : { scale: 1.055 }}
+  transition={{ duration: 0.4 }}
+/>
         <span className="absolute bottom-2 right-2 flex h-8 w-8 items-center
           justify-center rounded-full bg-white text-[#193653] shadow-sm
           transition-all duration-300 group-hover:bg-[#F67516]
@@ -175,8 +175,7 @@ export default function Categories() {
         </div>
 
         {/* Static category grid — 5 cards per row on large screens */}
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 md:grid-cols-3 xl:grid-cols-5">
-          {CATEGORIES.map((item, index) => (
+<div className="grid grid-cols-2 gap-3 sm:gap-5 md:grid-cols-3 xl:grid-cols-5">          {CATEGORIES.map((item, index) => (
             <CategoryCard
               key={item.href}
               item={item}

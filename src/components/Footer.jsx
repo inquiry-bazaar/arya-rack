@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import {
   ArrowUpRight,
@@ -26,15 +27,15 @@ import { categoryList } from "@/Data/products";
 
 
 const site = {
-  name: "Arya Insulation",
+  name: "Arya Insulation Pvt. Ltd.",
   shortName: "ARYA",
   tagline:
     "Retail and warehouse racking, planned, manufactured and installed for your store.",
-  phone: "+91 98765 43210",
-  whatsapp: "919876543210",
-  email: "info@aryainsulation.com",
+  phone: "+91 9711282675",
+  whatsapp: "919711282675",
+  email: "aryaindustry36@gmail.com",
   address: "Ground Floor Plote AT Kh No-13. 18/1 And 8 G Near Cocacola Factory Najafgarh South West Delhi-110043",
-  hours: "Mon – Sat, 9:30 am – 7:00 pm",
+
   credit: "Inquiry Bazaar Pvt. Ltd.",
   creditUrl: "https://inquirybazaar.com/",
 };
@@ -42,9 +43,9 @@ const site = {
 const exploreLinks = [
   { no: "01", label: "Home", href: "/" },
   { no: "02", label: "About Us", href: "/about-us" },
-  { no: "03", label: "How We Work", href: "/#how-we-work" },
-  { no: "04", label: "Our Racks", href: "/products" },
-  { no: "05", label: "Gallery", href: "https://www.youtube.com/@aryaindustry1074", external: true },
+  { no: "03", label: "Products", href: "/products" },
+  { no: "04", label: "Gallery", href: "/gallery" },
+  { no: "05", label: "Articles", href: "/articles" },
   { no: "06", label: "Contact", href: "/contact-us" },
 ];
 
@@ -67,7 +68,7 @@ const styles = `
 .af-cta:before{content:"";position:absolute;inset:0 auto 0 0;width:7px;background:var(--af-orange)}
 .af-cta:after{content:"";position:absolute;right:190px;top:-105px;width:250px;height:250px;border:1px solid rgba(8,38,75,.09);border-radius:50%;box-shadow:0 0 0 28px rgba(8,38,75,.025),0 0 0 56px rgba(8,38,75,.02);pointer-events:none}
 .af-cta-copy,.af-cta-actions{position:relative;z-index:1}
-.af-kicker{display:flex;align-items:center;gap:9px;color:var(--af-orange);font-size:11px;font-weight:800;letter-spacing:.19em;text-transform:uppercase}
+.af-kicker{display:flex;align-items:center;gap:9px;color:var(--af-orange);font-size:14px;font-weight:800;letter-spacing:.19em;text-transform:uppercase}
 .af-kicker:before{content:"";width:25px;height:2px;background:currentColor}
 .af-cta h2{margin:12px 0 0;font:800 clamp(25px,3vw,39px)/1.12 'Manrope',sans-serif;letter-spacing:-.045em}
 .af-cta h2 span{color:#e97816}
@@ -85,12 +86,13 @@ const styles = `
 .af-container{position:relative;z-index:1;max-width:1224px;margin:0 auto}
 .af-topline{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.15)}
 .af-brand{display:flex;align-items:center;gap:13px}
-.af-mark{width:48px;height:48px;display:grid;place-items:center;background:var(--af-orange);color:#fff;border-radius:13px 13px 13px 3px;font:800 23px 'Manrope',sans-serif;transform:skew(-7deg)}
+.af-mark{width:48px;height:48px;display:grid;place-items:center;overflow:hidden;background:#fff;border:1px solid rgba(255,255,255,.18);border-radius:13px 13px 13px 3px;transform:skew(-7deg)}
+.af-mark img{width:42px;height:42px;object-fit:contain;transform:skew(7deg)}
 .af-brand-name{font:800 21px 'Manrope',sans-serif;letter-spacing:-.04em;color:#fff}
 .af-brand-sub{margin-top:3px;color:#9fb3cf;font-size:10px;letter-spacing:.13em;text-transform:uppercase}
 .af-top-note{display:flex;align-items:center;gap:10px;color:#a9bad2;font-size:12px}
 .af-top-note b{color:#fff;font-weight:700}
-.af-content{display:grid;grid-template-columns:1.25fr .72fr .92fr 1.05fr;gap:48px;padding:54px 0 60px}
+.af-content{display:grid;grid-template-columns:1.25fr .72fr .92fr 1.05fr;gap:48px;padding:24px 0 40px}
 .af-manifesto{min-width:0}
 .af-manifesto .af-kicker{color:#ff9b43}
 .af-manifesto h2{margin:18px 0 16px;max-width:440px;color:#fff;font:800 clamp(34px,4.2vw,58px)/.99 'Manrope',sans-serif;letter-spacing:-.065em}
@@ -117,7 +119,7 @@ const styles = `
 .af-bigword strong{font:800 clamp(42px,10vw,132px)/.82 'Manrope',sans-serif;letter-spacing:-.085em;color:rgba(255,255,255,.07);white-space:nowrap}
 .af-bigword span{flex:none;color:#ff9b43;font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;writing-mode:vertical-rl}
 .af-bottom{border-top:1px solid rgba(255,255,255,.12);background:rgba(2,13,29,.28)}
-.af-bottom-inner{max-width:1224px;margin:0 auto;padding:18px 0;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;color:#8fa5c3;font-size:11px}
+.af-bottom-inner{max-width:1224px;margin:0 auto;padding:18px 0;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;color:#8fa5c3;font-size:14px}
 .af-bottom-links{display:flex;gap:20px;flex-wrap:wrap}
 .af-bottom a:hover{color:#fff}
 .af-credit a{color:#d9e4f4;text-decoration:underline;text-underline-offset:3px}
@@ -189,7 +191,9 @@ export default function Footer() {
         <div className="af-container">
           <motion.div className="af-topline" {...reveal(0.05)}>
             <Link href="/" className="af-brand" aria-label={`${site.name} home`}>
-              <span className="af-mark">A</span>
+              <span className="af-mark">
+                <Image src="/dest-1.webp" alt="" width={42} height={42} />
+              </span>
               <span>
                 <span className="af-brand-name">{site.name}</span>
               
@@ -299,8 +303,8 @@ export default function Footer() {
           <div className="af-container af-bottom-inner">
             <span>© {year} {site.name}. All rights reserved.</span>
             <div className="af-bottom-links">
-              <a href="/privacy-policy">Privacy Policy</a>
-              <a href="/terms-and-conditions">Terms</a>
+              <Link href="/privacy-policy">Privacy Policy</Link>
+              <Link href="/terms-and-conditions">Terms and Condition </Link>
             </div>
             <span className="af-credit">
               Website Designed By Inquiry Bazaar Pvt. Lt{" "}

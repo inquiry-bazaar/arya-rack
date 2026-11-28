@@ -121,7 +121,7 @@ export default function Industries() {
         </motion.div>
 
         {/* INDUSTRY GRID */}
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-7">
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4 lg:gap-7">
           {INDUSTRIES.map((item, index) => {
             const Icon = item.icon;
 
@@ -141,8 +141,7 @@ export default function Industries() {
                 className="group relative block overflow-hidden rounded-[18px] border border-[#E9EDF2] bg-white shadow-[0_5px_22px_rgba(20,40,70,0.045)] transition-shadow duration-300 hover:shadow-[0_15px_35px_rgba(20,40,70,0.11)]"
               >
                 {/* IMAGE */}
-                <div className="relative h-[240px] overflow-hidden bg-[#F1F3F6] sm:h-[220px] lg:h-[230px]">
-                  <motion.img
+<div className="relative h-[150px] overflow-hidden bg-[#F1F3F6] sm:h-[220px] lg:h-[230px]">                  <motion.img
                     src={item.image}
                     alt={item.title}
                     loading="lazy"
@@ -171,13 +170,11 @@ export default function Industries() {
                 </div>
 
                 {/* CONTENT */}
-                <div className="min-h-[140px] p-5">
-                  <h3 className="text-[18px] font-bold tracking-tight text-[#1D3048] transition-colors duration-300 group-hover:text-[#52799F]">
-                    {item.title}
+              <div className="min-h-[150px] p-3 sm:min-h-[140px] sm:p-5">
+<h3 className="text-[14px] font-bold tracking-tight text-[#1D3048] transition-colors duration-300 group-hover:text-[#52799F] sm:text-[18px]">                    {item.title}
                   </h3>
 
-                  <p className="mt-2 text-[13px] leading-[1.75] text-[#7A8796]">
-                    {item.description}
+<p className="mt-2 text-[11px] leading-[1.6] text-[#7A8796] sm:text-[13px] sm:leading-[1.75]">                    {item.description}
                   </p>
 
                   <div className="mt-4 h-[2px] w-8 rounded-full bg-[#DCE5EE] transition-all duration-300 group-hover:w-14 group-hover:bg-[#2252A3]" />

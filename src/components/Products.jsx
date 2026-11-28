@@ -100,7 +100,7 @@ export default function Products() {
         {/* Product Grid */}
         <div
           key={activeCategory + currentPage}
-          className="grid grid-cols-1 gap-x-6 gap-y-7 sm:grid-cols-2 lg:grid-cols-4"
+         className="grid grid-cols-2 gap-x-3 gap-y-5 sm:gap-x-6 sm:gap-y-7 lg:grid-cols-4"
         >
           {visibleProducts.map((product, index) => (
             <article
