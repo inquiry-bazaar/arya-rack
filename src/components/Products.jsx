@@ -42,6 +42,10 @@ export default function Products() {
   const totalPages = Math.ceil(
     filteredProducts.length / ITEMS_PER_PAGE
   );
+  const mobilePageStart = Math.max(
+    0,
+    Math.min(currentPage - 1, totalPages - 4)
+  );
 
   const visibleProducts = filteredProducts.slice(
     currentPage * ITEMS_PER_PAGE,
@@ -164,14 +168,14 @@ export default function Products() {
 
         {/* Pagination */}
         {totalPages > 1 && (
-          <div className="mt-9 flex items-center justify-center gap-4">
+          <div className="mt-9 flex items-center justify-center gap-1 sm:gap-4">
 
             <button
               onClick={() =>
                 setCurrentPage((prev) => Math.max(0, prev - 1))
               }
               disabled={currentPage === 0}
-              className="flex h-10 items-center gap-2 rounded-full border border-slate-200 px-5 text-xs font-medium text-[#183B67] transition-all hover:border-[#183B67] disabled:cursor-not-allowed disabled:opacity-40"
+              className="flex h-10 items-center gap-2 rounded-full border border-slate-200 px-2 text-xs font-medium text-[#183B67] transition-all hover:border-[#183B67] disabled:cursor-not-allowed disabled:opacity-40 sm:px-5"
             >
               <ChevronLeft size={15} />
               Previous
@@ -187,7 +191,7 @@ export default function Products() {
                     currentPage === index
                       ? "w-9 bg-[#183B67]"
                       : "w-4 bg-slate-200 hover:bg-slate-400"
-                  }`}
+                  } ${index < mobilePageStart || index >= mobilePageStart + 4 ? "hidden lg:block" : ""}`}
                 />
               ))}
             </div>
@@ -199,7 +203,7 @@ export default function Products() {
                 )
               }
               disabled={currentPage === totalPages - 1}
-              className="flex h-10 items-center gap-2 rounded-full border border-slate-200 px-5 text-xs font-medium text-[#183B67] transition-all hover:border-[#183B67] disabled:cursor-not-allowed disabled:opacity-40"
+              className="flex h-10 items-center gap-2 rounded-full border border-slate-200 px-2 text-xs font-medium text-[#183B67] transition-all hover:border-[#183B67] disabled:cursor-not-allowed disabled:opacity-40 sm:px-5"
             >
               Next
               <ChevronRight size={15} />

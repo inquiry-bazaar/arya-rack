@@ -655,11 +655,11 @@ ${form.message}
               {product.relatedProducts.map((item, index) => (
                 <Link
                   key={item.slug || index}
-                  href={`/products/${item.slug}`}
+                  href={`/${item.slug}`}
                   className="group overflow-hidden rounded-xl border border-[#e0e8ef] bg-white p-2 shadow-[0_7px_20px_rgba(20,50,80,0.05)] transition hover:-translate-y-1 hover:shadow-lg"
                 >
 
-                  <div className="flex aspect-[4/3] items-center justify-center overflow-hidden rounded-lg bg-[#edf3f8] p-3">
+                  <div className="flex aspect-square items-center justify-center overflow-hidden rounded-lg bg-[#edf3f8] p-3">
 
                     {item.image && (
                       <img
