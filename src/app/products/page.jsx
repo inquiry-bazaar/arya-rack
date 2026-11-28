@@ -134,7 +134,7 @@ export default function ProductsPage() {
       </div>
 
       {/* ───────────── Category sections ───────────── */}
-      <section className="bg-soft pb-20 pt-4 px-15">
+      <section className="bg-soft px-0 pb-20 pt-4 md:px-15">
         <div className="section-pad">
           {grouped.map((c, i) => (
             <div
