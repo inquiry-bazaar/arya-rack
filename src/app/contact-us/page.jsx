@@ -21,6 +21,7 @@ import {
   PackageCheck,
 } from "lucide-react";
 import Popup from "@/components/Popup";
+import { openInquiryWhatsApp, sendInquiry } from "@/lib/inquiries";
 
 const C = {
   navy: "#0A2457",
@@ -81,6 +82,8 @@ const fadeUp = {
 
 export default function ContactUs() {
   const [inquiryOpen, setInquiryOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -98,29 +101,40 @@ export default function ContactUs() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    setStatus("Sending...");
 
-    const whatsappNumber = "919711282675";
-
-    const message = `
-Hello Arya Industry,
-
-I would like to make an inquiry.
-
-Name: ${formData.name}
-Mobile: ${formData.phone}
-City: ${formData.city}
-Product: ${formData.product}
-
-Message: ${formData.message}
-    `;
-
-    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-      message
-    )}`;
-
-    window.open(url, "_blank");
+    try {
+      await sendInquiry({
+        name: formData.name,
+        phone: formData.phone,
+        email: "",
+        place: formData.city,
+        product: formData.product,
+        message: formData.message,
+      });
+      setStatus("✅ Enquiry sent successfully!");
+      openInquiryWhatsApp({
+        name: formData.name,
+        phone: formData.phone,
+        product: formData.product,
+        message: formData.message,
+      });
+      setFormData({
+        name: "",
+        phone: "",
+        city: "",
+        product: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Contact enquiry submission failed:", error);
+      setStatus("❌ Failed to send. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -309,11 +323,18 @@ Message: ${formData.message}
 
                 <button
                   type="submit"
+                  disabled={loading}
                   className="group flex w-full items-center justify-center gap-3 rounded-xl bg-[#F26A12] px-6 py-4 text-sm font-extrabold text-white shadow-lg shadow-orange-500/20 transition hover:-translate-y-1 hover:bg-[#E4560A]"
                 >
-                  Submit Inquiry On WhatsApp
+                  {loading ? "Sending..." : "Submit Inquiry"}
                   <ArrowRight size={19} className="transition group-hover:translate-x-1" />
                 </button>
+
+                {status && (
+                  <p role="status" className="text-center text-sm font-semibold text-slate-600">
+                    {status}
+                  </p>
+                )}
 
                 <p className="text-center text-xs text-slate-400">
                   Your details are only used to respond to your inquiry.

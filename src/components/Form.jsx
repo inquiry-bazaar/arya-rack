@@ -23,6 +23,7 @@ import {
   CheckCircle2,
   Sparkles,
 } from "lucide-react";
+import { openInquiryWhatsApp, sendInquiry } from "@/lib/inquiries";
 
 const BLUE = "#12469C";
 const ORANGE = "#F67516";
@@ -136,11 +137,26 @@ export default function Form({
       if (onSubmit) {
         await onSubmit(data);
       } else {
-        console.log("Quote request:", data);
+        await sendInquiry({
+          name: data.name,
+          phone: data.mobile,
+          email: data.email,
+          place: data.location,
+          product: data.storeType,
+          message: data.message,
+        });
+        openInquiryWhatsApp({
+          name: data.name,
+          phone: data.mobile,
+          email: data.email,
+          product: data.storeType,
+          message: data.message,
+        });
       }
 
       setStatus("done");
-    } catch {
+    } catch (error) {
+      console.error("Homepage quote submission failed:", error);
       setStatus("idle");
       setErrors({
         form: "Something went wrong. Please try again.",

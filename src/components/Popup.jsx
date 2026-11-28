@@ -3,13 +3,14 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Mail, Phone, User, X } from "lucide-react";
-
-const BUSINESS_EMAIL = "aryaindustry36@gmail.com";
+import { openInquiryWhatsApp, sendInquiry } from "@/lib/inquiries";
 const EASE = [0.22, 1, 0.36, 1];
 
 export default function Popup({ open, onClose }) {
   const reduce = useReducedMotion();
   const [form, setForm] = useState({ name: "", phone: "", email: "", requirement: "" });
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState("");
 
   useEffect(() => {
     if (!open) return;
@@ -29,13 +30,36 @@ export default function Popup({ open, onClose }) {
     setForm((current) => ({ ...current, [event.target.name]: event.target.value }));
   };
 
-  const submit = (event) => {
+  const submit = async (event) => {
     event.preventDefault();
-    const subject = encodeURIComponent(`Quote Request - ${form.name}`);
-    const body = encodeURIComponent(
-      `Name: ${form.name}\nPhone: ${form.phone}\nEmail: ${form.email || "Not provided"}\nRequirement: ${form.requirement || "Not provided"}`
-    );
-    window.location.href = `mailto:${BUSINESS_EMAIL}?subject=${subject}&body=${body}`;
+    setLoading(true);
+    setStatus("Sending...");
+
+    try {
+      await sendInquiry({
+        name: form.name,
+        phone: form.phone,
+        email: form.email,
+        place: "N/A",
+        product: "N/A",
+        message: form.requirement,
+      });
+      setStatus("✅ Enquiry sent successfully!");
+      openInquiryWhatsApp({
+        name: form.name,
+        email: form.email,
+        phone: form.phone,
+        product: "N/A",
+        message: form.requirement,
+      });
+      setForm({ name: "", phone: "", email: "", requirement: "" });
+      setTimeout(onClose, 3000);
+    } catch (error) {
+      console.error("Quote request submission failed:", error);
+      setStatus("❌ Failed to send. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -104,9 +128,14 @@ export default function Popup({ open, onClose }) {
                 <textarea id="quote-requirement" name="requirement" rows={3} value={form.requirement} onChange={update} placeholder="Tell us about the racks or display system you need..." className="w-full resize-none rounded-xl border border-[#E1E7F0] bg-[#F8FAFD] px-4 py-3 text-sm text-[#172746] outline-none transition focus:border-[#0B57E3] focus:bg-white focus:ring-4 focus:ring-[#0B57E3]/10" />
               </div>
 
-              <button type="submit" className="group flex h-[50px] w-full items-center justify-center gap-3 rounded-xl text-sm font-extrabold text-white shadow-[0_10px_22px_rgba(242,106,18,0.25)] transition hover:-translate-y-0.5 hover:shadow-[0_14px_28px_rgba(242,106,18,0.32)]" style={{ background: "linear-gradient(90deg,#F26A12,#FF8A1F)" }}>
-                Submit Quote Request <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+              <button type="submit" disabled={loading} className="group flex h-[50px] w-full items-center justify-center gap-3 rounded-xl text-sm font-extrabold text-white shadow-[0_10px_22px_rgba(242,106,18,0.25)] transition hover:-translate-y-0.5 hover:shadow-[0_14px_28px_rgba(242,106,18,0.32)] disabled:cursor-wait disabled:opacity-60" style={{ background: "linear-gradient(90deg,#F26A12,#FF8A1F)" }}>
+                {loading ? "Sending..." : "Submit Quote Request"} <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
               </button>
+              {status && (
+                <p role="status" className="text-center text-sm font-semibold text-slate-600">
+                  {status}
+                </p>
+              )}
             </form>
           </motion.section>
         </motion.div>

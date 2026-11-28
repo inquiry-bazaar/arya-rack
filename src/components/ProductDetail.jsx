@@ -4,6 +4,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Popup from "./Popup";
+import { openInquiryWhatsApp, sendInquiry } from "@/lib/inquiries";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -34,6 +35,8 @@ export default function ProductDetail({ product }) {
     email: "",
     message: "",
   });
+  const [formStatus, setFormStatus] = useState("");
+  const [formLoading, setFormLoading] = useState(false);
 
 
  // PRODUCT SPECIFICATIONS
@@ -112,26 +115,35 @@ const quickSpecs = [
   };
 
   // FORM SUBMIT
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setFormLoading(true);
+    setFormStatus("Sending...");
 
-    const message = `
-Hello Arya Industry,
-
-Product: ${product.title}
-
-Name: ${form.name}
-Phone: ${form.phone}
-Email: ${form.email}
-
-Requirement:
-${form.message}
-`;
-
-    window.open(
-      `https://wa.me/918587901795?text=${encodeURIComponent(message)}`,
-      "_blank"
-    );
+    try {
+      await sendInquiry({
+        name: form.name,
+        phone: form.phone,
+        email: form.email,
+        place: "N/A",
+        product: product.title,
+        message: form.message,
+      });
+      setFormStatus("✅ Enquiry sent successfully!");
+      openInquiryWhatsApp({
+        name: form.name,
+        phone: form.phone,
+        email: form.email,
+        product: product.title,
+        message: form.message,
+      });
+      setForm({ name: "", phone: "", email: "", message: "" });
+    } catch (error) {
+      console.error("Product enquiry submission failed:", error);
+      setFormStatus("❌ Failed to send. Please try again.");
+    } finally {
+      setFormLoading(false);
+    }
   };
 
   // IMAGE NAVIGATION
@@ -469,11 +481,18 @@ ${form.message}
 
                 <button
                   type="submit"
-                  className="inline-flex h-11 items-center justify-center gap-2 rounded-lg bg-[#f47721] px-5 text-xs font-extrabold text-white shadow-md transition hover:bg-[#e56815] sm:col-span-2"
+                  disabled={formLoading}
+                  className="inline-flex h-11 items-center justify-center gap-2 rounded-lg bg-[#f47721] px-5 text-xs font-extrabold text-white shadow-md transition hover:bg-[#e56815] disabled:cursor-wait disabled:opacity-60 sm:col-span-2"
                 >
-                  Submit Enquiry
+                  {formLoading ? "Sending..." : "Submit Enquiry"}
                   <Send size={14} />
                 </button>
+
+                {formStatus && (
+                  <p role="status" className="text-xs font-semibold text-slate-600 sm:col-span-2">
+                    {formStatus}
+                  </p>
+                )}
 
               </form>
             </div>

@@ -219,14 +219,14 @@ export default function Footer() {
               </h2>
               <p>{site.tagline}</p>
               <div className="af-socials" aria-label="Social links">
-                <a href="https://www.instagram.com/" aria-label="Instagram" target="_blank" rel="noreferrer">
+                <a href="https://www.instagram.com/aryadisplay/?igsh=MTJlaDFhaGgxeXl4eQ%3D%3D#" aria-label="Instagram" target="_blank" rel="noreferrer">
                   <span style={{ fontSize: 16, fontWeight: 800 }}>in</span>
                 </a>
-                <a href="https://www.facebook.com/" aria-label="Facebook" target="_blank" rel="noreferrer">
+                <a href="https://www.facebook.com/people/Arya-Industries/61571410907364/" aria-label="Facebook" target="_blank" rel="noreferrer">
                   <span style={{ fontSize: 18, fontWeight: 800 }}>f</span>
                 </a>
-                <a href="https://www.linkedin.com/" aria-label="LinkedIn" target="_blank" rel="noreferrer">
-                  <span style={{ fontSize: 14, fontWeight: 800 }}>in</span>
+                <a href="https://www.youtube.com/" aria-label="youtube" target="_blank" rel="noreferrer">
+                  <span style={{ fontSize: 14, fontWeight: 800 }}>Yot</span>
                 </a>
               </div>
             </motion.div>
