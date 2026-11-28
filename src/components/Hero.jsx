@@ -830,7 +830,7 @@ export default function Banner() {
             "
             style={{ color: C.navy }}
           >
-            Designed to Showcase,
+            Supermarket Display Rack
           </motion.span>
 
           {/* ORANGE HEADING */}
@@ -909,10 +909,10 @@ export default function Banner() {
                 sm:px-10 sm:py-1
                 sm:text-[clamp(32px,4.8vw,48px)]
                 lg:px-[4.4vw] lg:py-[0.4vw]
-                lg:text-[clamp(40px,4.4vw,88px)]
+                lg:text-[clamp(40px,4.4vw,75px)]
               "
             >
-              Built to Sell.
+              Manufacturer in Delhi
             </motion.span>
           </span>
         </h1>

@@ -31,8 +31,8 @@ const site = {
   shortName: "ARYA",
   tagline:
     "Retail and warehouse racking, planned, manufactured and installed for your store.",
-  phone: "+91 9711282675",
-  whatsapp: "919711282675",
+  phone: "+91 8587901795",
+  whatsapp: "918587901795",
   email: "aryaindustry36@gmail.com",
   address: "Ground Floor Plote AT Kh No-13. 18/1 And 8 G Near Cocacola Factory Najafgarh South West Delhi-110043",
 
@@ -219,14 +219,14 @@ export default function Footer() {
               </h2>
               <p>{site.tagline}</p>
               <div className="af-socials" aria-label="Social links">
-                <a href="https://www.instagram.com/aryadisplay/?igsh=MTJlaDFhaGgxeXl4eQ%3D%3D#" aria-label="Instagram" target="_blank" rel="noreferrer">
+                <a href="https://www.instagram.com/aryadisplay/" aria-label="Instagram" target="_blank" rel="noreferrer">
                   <span style={{ fontSize: 16, fontWeight: 800 }}>in</span>
                 </a>
                 <a href="https://www.facebook.com/people/Arya-Industries/61571410907364/" aria-label="Facebook" target="_blank" rel="noreferrer">
                   <span style={{ fontSize: 18, fontWeight: 800 }}>f</span>
                 </a>
-                <a href="https://www.youtube.com/" aria-label="youtube" target="_blank" rel="noreferrer">
-                  <span style={{ fontSize: 14, fontWeight: 800 }}>Yot</span>
+                <a href="https://www.youtube.com/@aryaindustry1074" aria-label="YouTube" target="_blank" rel="noreferrer">
+                  <span style={{ fontSize: 14, fontWeight: 800 }}>YT</span>
                 </a>
               </div>
             </motion.div>

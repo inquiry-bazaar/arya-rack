@@ -4,9 +4,9 @@ import React from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { Phone, MessageCircle } from "lucide-react";
 
-// Replace these placeholders with your official contact details.
-const CONTACT_PHONE = "+919876543210";
-const WHATSAPP_NUMBER = "919876543210";
+// Official contact details.
+const CONTACT_PHONE = "+918587901795";
+const WHATSAPP_NUMBER = "918587901795";
 
 export default function CTA() {
   const reduce = useReducedMotion();

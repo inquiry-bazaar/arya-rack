@@ -43,13 +43,15 @@ const products = [
   "Other Products",
 ];
 
+const GOOGLE_BUSINESS_URL = "https://maps.app.goo.gl/tZeM2MWPVeogfQP29";
+
 const contactDetails = [
   {
     icon: Phone,
     title: "Call Our Team",
-    value: "+91-9711282675",
+    value: "+91-8587901795",
 
-    href: "tel:+91-9711282675",
+    href: "tel:+918587901795",
     color: "blue",
   },
  
@@ -66,7 +68,7 @@ const contactDetails = [
     title: "Our Location",
     value: "India",
     detail: "Ground Floor Plote AT Kh No-13. 18/1 And 8 G Near Cocacola Factory Najafgarh South West Delhi-110043",
-    href: "#office",
+    href: GOOGLE_BUSINESS_URL,
     color: "orange",
   },
 ];
@@ -87,7 +89,7 @@ export default function ContactUs() {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
-    city: "",
+    email: "",
     product: "",
     message: "",
   });
@@ -110,14 +112,15 @@ export default function ContactUs() {
       await sendInquiry({
         name: formData.name,
         phone: formData.phone,
-        email: "",
-        place: formData.city,
+        email: formData.email,
+        place: "N/A",
         product: formData.product,
         message: formData.message,
       });
       setStatus("✅ Enquiry sent successfully!");
       openInquiryWhatsApp({
         name: formData.name,
+        email: formData.email,
         phone: formData.phone,
         product: formData.product,
         message: formData.message,
@@ -125,7 +128,7 @@ export default function ContactUs() {
       setFormData({
         name: "",
         phone: "",
-        city: "",
+        email: "",
         product: "",
         message: "",
       });
@@ -173,7 +176,7 @@ export default function ContactUs() {
 
             <p className="mt-7 max-w-xl text-base leading-8 !text-white sm:text-lg">
               Looking for reliable supermarket display racks and retail
-              shelving solutions? Connect with Arya Industry. Our team is
+              shelving solutions? Connect with Arya Insulation. Our team is
               ready to understand your requirements and help you find the
               right solution.
             </p>
@@ -189,7 +192,7 @@ export default function ContactUs() {
               </button>
 
               <a
-                href="https://wa.me/919711282675"
+                href="https://wa.me/918587901795"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex w-full items-center justify-center gap-3 rounded-full border border-white/25 px-5 py-3.5 text-sm font-bold text-white transition hover:border-[#F26A12] hover:bg-white/10 sm:w-auto sm:px-7 sm:py-4"
@@ -267,7 +270,9 @@ export default function ContactUs() {
                       type="tel"
                       name="phone"
                       required
-                      pattern="[0-9+\-\s()]{10,16}"
+                      minLength={10}
+                      maxLength={10}
+                      pattern="[0-9]{10}"
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="Enter mobile number"
@@ -279,12 +284,12 @@ export default function ContactUs() {
                 <div>
                  
                   <input
-                    type="text"
-                    name="city"
+                    type="email"
+                    name="email"
                     required
-                    value={formData.city}
+                    value={formData.email}
                     onChange={handleChange}
-                    placeholder="Enter your city"
+                    placeholder="Enter your email"
                     className="w-full rounded-xl border border-slate-200 bg-[#F7F9FC] px-4 py-3.5 text-sm outline-none transition focus:border-[#F26A12] focus:bg-white focus:ring-4 focus:ring-orange-100"
                   />
                 </div>
@@ -411,7 +416,7 @@ export default function ContactUs() {
       </div>
 
       <p className="max-w-md text-sm leading-7 text-slate-500">
-        Connect with Arya Industry to discuss your retail display
+        Connect with Arya Insulation to discuss your retail display
         rack requirements and explore our solutions.
       </p>
     </div>
@@ -428,7 +433,7 @@ export default function ContactUs() {
           loading="lazy"
           allowFullScreen
           referrerPolicy="no-referrer-when-downgrade"
-          title="Arya Industry Location"
+          title="Arya Insulation Location"
           className="absolute inset-0 h-full w-full"
         />
       </div>
@@ -441,7 +446,7 @@ export default function ContactUs() {
         </div>
 
         <p className="mt-9 text-xs font-bold uppercase tracking-[0.2em] text-orange-400">
-          Arya Industry
+          Arya Insulation
         </p>
 
         <h3 className="mt-3 text-2xl font-extrabold !text-white sm:text-3xl">
@@ -456,11 +461,11 @@ export default function ContactUs() {
         <div className="my-8 h-px bg-white/15" />
 
         <a
-          href="tel:+919711282675"
+          href="tel:+918587901795"
           className="flex items-center gap-3 text-sm font-semibold transition hover:text-orange-400 sm:gap-4"
         >
           <Phone size={20} className="text-[#F26A12]" />
-          +91 9711282675
+          +91 8587901795
         </a>
 
         <a
@@ -471,7 +476,15 @@ export default function ContactUs() {
           aryaindustry36@gmail.com
         </a>
 
-      
+        <a
+          href={GOOGLE_BUSINESS_URL}
+          target="_blank"
+          rel="noreferrer"
+          className="mt-6 flex items-center gap-3 text-sm font-semibold transition hover:text-orange-400"
+        >
+          <MapPin size={20} className="shrink-0 text-[#F26A12]" />
+          View location on Google Maps
+        </a>
 
       </div>
     </div>

@@ -45,8 +45,8 @@ const NAV_LINKS = [
   { label: "Contact Us", href: "/contact-us" },
 ];
 
-const PHONE = "+919711282675";
-const PHONE_DISPLAY = "+91 9711282675";
+const PHONE = "+918587901795";
+const PHONE_DISPLAY = "+91 8587901795";
 const EMAIL = "aryaindustry36@gmail.com";
 const WHATSAPP_URL = `https://wa.me/${PHONE.replace("+", "")}`;
 

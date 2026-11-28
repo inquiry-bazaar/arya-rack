@@ -714,7 +714,7 @@ const quickSpecs = [
       <div className="fixed inset-x-0 bottom-0 z-50 grid grid-cols-2 gap-2 border-t border-gray-200 bg-white/95 p-2 shadow-lg backdrop-blur lg:hidden">
 
         <a
-          href="tel:+919711282675"
+          href="tel:+918587901795"
           className="flex items-center justify-center gap-2 rounded-lg bg-[#174f7e] py-3 text-xs font-bold text-white"
         >
           <Phone size={15} />
