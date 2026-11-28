@@ -13,6 +13,13 @@ import VideosSection from "@/components/VideosSection";
 import { Heading2 } from "lucide-react";
 import Image from "next/image";
 
+export const metadata = {
+  title: "Supermarket Rack Manufacturer in Delhi | Arya Insulation",
+  description:
+    "Supermarket rack manufacturer in Delhi for kirana, grocery and departmental stores. Gondola and wall display racks, custom layouts and on-site installation.",
+
+};
+
 export default function Home() {
   return (
     <>

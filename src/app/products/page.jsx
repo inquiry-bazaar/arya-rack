@@ -3,10 +3,9 @@ import ProductCard from "@/components/ProductCard";
 import { catalogue, categoryList } from "@/Data/products";
 
 export const metadata = {
-  title: "All Products | Arya Display Rack, New Delhi",
+  title: "Display Racks for Shops & Supermarkets | Arya Insulation",
   description:
-    "Browse all supermarket display racks, garment racks, counters, trolleys and baskets by Arya Display Rack.",
-};
+"Buy display racks for supermarket, kirana, garment, shoe, pharmacy, mobile and bakery shops. 116 rack designs made in Delhi. Get a free quote today.",};
 
 function Arrow({ className = "" }) {
   return (
