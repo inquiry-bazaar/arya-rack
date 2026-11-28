@@ -3,7 +3,8 @@ import { ArrowUpRight } from "lucide-react";
 
 export default function ProductCard({ p }) {
   return (
-    <article className="group overflow-hidden rounded-2xl border border-slate-200 bg-white transition hover:-translate-y-1 hover:border-orange-300 hover:shadow-lg">
+    <article className="group overflow-hidden rounded-2xl border border-slate-200 
+    bg-white transition hover:-translate-y-1 hover:border-orange-300 hover:shadow-lg">
       <Link href={`/${p.slug}`} className="block bg-slate-50">
         <div className="relative aspect-[4/3] p-4">
           <img

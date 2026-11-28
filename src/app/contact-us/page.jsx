@@ -133,7 +133,7 @@ Message: ${formData.message}
         <div className="absolute -right-20 -top-20 h-[400px] w-[400px] rounded-full border border-white/[0.07]" />
         <div className="absolute -bottom-52 -left-32 h-[500px] w-[500px] rounded-full bg-[#0B57E3]/20 blur-[100px]" />
 
-        <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 pb-24 pt-20 sm:px-8 sm:pt-28 lg:grid-cols-2 lg:gap-16 lg:px-12 lg:pb-32">
+        <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 pb-16 pt-14 sm:gap-12 sm:px-8 sm:pb-24 sm:pt-28 lg:grid-cols-2 lg:gap-16 lg:px-12 lg:pb-32">
 
           <motion.div
             initial="hidden"
@@ -148,7 +148,7 @@ Message: ${formData.message}
               </span>
             </div>
 
-            <h1 className="max-w-2xl text-5xl font-black leading-[1.08] tracking-tight sm:text-6xl 
+            <h1 className="max-w-2xl text-4xl font-black leading-[1.08] tracking-tight sm:text-6xl 
             lg:text-[76px] !text-white">
               Let&apos;s Build
               
@@ -164,11 +164,11 @@ Message: ${formData.message}
               right solution.
             </p>
 
-            <div className="mt-9 flex flex-wrap gap-4">
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
               <button
                 type="button"
                 onClick={() => setInquiryOpen(true)}
-                className="group inline-flex items-center gap-3 rounded-full bg-[#F26A12] px-7 py-4 text-sm font-bold text-white transition hover:-translate-y-1 hover:bg-[#E4560A]"
+                className="group inline-flex w-full items-center justify-center gap-3 rounded-full bg-[#F26A12] px-5 py-3.5 text-sm font-bold text-white transition hover:-translate-y-1 hover:bg-[#E4560A] sm:w-auto sm:px-7 sm:py-4"
               >
                 Send An Inquiry
                 <ArrowUpRight size={19} />
@@ -178,14 +178,14 @@ Message: ${formData.message}
                 href="https://wa.me/919711282675"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-3 rounded-full border border-white/25 px-7 py-4 text-sm font-bold text-white transition hover:border-[#F26A12] hover:bg-white/10"
+                className="inline-flex w-full items-center justify-center gap-3 rounded-full border border-white/25 px-5 py-3.5 text-sm font-bold text-white transition hover:border-[#F26A12] hover:bg-white/10 sm:w-auto sm:px-7 sm:py-4"
               >
                 <MessageCircle size={19} />
                 WhatsApp Us
               </a>
             </div>
 
-            <div className="mt-12 grid max-w-lg grid-cols-3 gap-5 border-t border-white/15 pt-8">
+            <div className="mt-10 grid max-w-lg grid-cols-3 gap-3 border-t border-white/15 pt-6 sm:mt-12 sm:gap-5 sm:pt-8">
               {[
                 ["01", "Expert Guidance"],
                 ["02", "Quality Products"],
@@ -211,9 +211,9 @@ Message: ${formData.message}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            <div className="absolute -right-3 -top-3 h-full w-full rounded-[28px] bg-[#F26A12] sm:-right-4 sm:-top-4" />
+            <div className="absolute -right-2 -top-2 h-full w-full rounded-[24px] bg-[#F26A12] sm:-right-4 sm:-top-4 sm:rounded-[28px]" />
 
-            <div className="relative rounded-[26px] bg-white p-6 text-[#0A2457] shadow-2xl sm:p-9">
+            <div className="relative rounded-[22px] bg-white p-5 text-[#0A2457] shadow-2xl sm:rounded-[26px] sm:p-9">
 
               <div className="mb-8 flex items-start justify-between gap-4">
                 <div>
@@ -325,7 +325,7 @@ Message: ${formData.message}
       </section>
 
       {/* CONTACT CARDS */}
-      <section className="relative z-10 mx-auto -mt-10 w-7xl px-5 sm:px-8 lg:px-3">
+      <section className="relative z-10 mx-auto -mt-8 w-full max-w-7xl px-4 sm:-mt-10 sm:px-8 lg:px-3">
         <div className="grid overflow-hidden rounded-2xl border border-slate-100 bg-white
          shadow-[0_15px_55px_rgba(6,24,62,0.10)] sm:grid-cols-2 lg:grid-cols-3">
 
@@ -343,8 +343,8 @@ Message: ${formData.message}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className={`group flex items-center gap-4 p-6 transition hover:bg-[#F7F9FC] sm:p-7 ${
-                  index !== 3 ? "lg:border-r lg:border-slate-100" : ""
+                className={`group flex min-w-0 items-center gap-4 p-5 transition hover:bg-[#F7F9FC] sm:p-7 ${
+                  index !== contactDetails.length - 1 ? "lg:border-r lg:border-slate-100" : ""
                 }`}
               >
                 <div
@@ -376,7 +376,7 @@ Message: ${formData.message}
 
     
 {/* LOCATION / MAP SECTION */}
-<section className="bg-[#F5F6F3] px-5 py-24 sm:px-10 lg:px-16 lg:py-15">
+<section className="bg-[#F5F6F3] px-4 py-14 sm:px-10 sm:py-20 lg:px-16 lg:py-24">
   <div className="mx-auto max-w-[1400px]">
 
     <div className="mb-12 flex flex-col justify-between gap-5 md:flex-row md:items-end">
@@ -384,7 +384,7 @@ Message: ${formData.message}
         <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#F26A12]">
           Find Us
         </span>
-        <h2 className="mt-4 text-4xl font-extrabold sm:text-5xl">
+        <h2 className="mt-4 text-3xl font-extrabold sm:text-5xl">
           Let&apos;s Connect <span className="text-[#F26A12]">In Person.</span>
         </h2>
       </div>
@@ -398,12 +398,12 @@ Message: ${formData.message}
     <div className="grid overflow-hidden bg-white shadow-xl lg:grid-cols-[1fr_360px]">
 
       {/* GOOGLE MAP IFRAME */}
-      <div className="relative min-h-[350px] sm:min-h-[480px]">
+      <div className="relative h-[320px] sm:h-[480px]">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d224146.35148607552!2d76.995778!3d28.621167!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjjCsDM3JzE2LjIiTiA3NsKwNTknNDQuOCJF!5e0!3m2!1sen!2sus!4v1795259569576!5m2!1sen!2sus"
           width="100%"
           height="100%"
-          style={{ border: 0, minHeight: "350px" }}
+          style={{ border: 0 }}
           loading="lazy"
           allowFullScreen
           referrerPolicy="no-referrer-when-downgrade"
@@ -413,7 +413,7 @@ Message: ${formData.message}
       </div>
 
       {/* LOCATION INFORMATION */}
-      <div className="flex flex-col justify-center bg-[#071D49] p-8 text-white sm:p-12">
+      <div className="flex flex-col justify-center bg-[#071D49] p-6 text-white sm:p-12">
 
         <div className="flex h-14 w-14 items-center justify-center bg-[#F26A12]">
           <Building2 size={27} />
@@ -423,7 +423,7 @@ Message: ${formData.message}
           Arya Industry
         </p>
 
-        <h3 className="mt-3 text-3xl font-extrabold !text-white">
+        <h3 className="mt-3 text-2xl font-extrabold !text-white sm:text-3xl">
           Your Retail Display Partner.
         </h3>
 
@@ -436,7 +436,7 @@ Message: ${formData.message}
 
         <a
           href="tel:+919711282675"
-          className="flex items-center gap-4 text-sm font-semibold transition hover:text-orange-400"
+          className="flex items-center gap-3 text-sm font-semibold transition hover:text-orange-400 sm:gap-4"
         >
           <Phone size={20} className="text-[#F26A12]" />
           +91 9711282675

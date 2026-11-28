@@ -37,7 +37,7 @@ export default function ProductsPage() {
   return (
     <main>
       {/* ───────────── Page header ───────────── */}
-      <section className="relative overflow-hidden bg-soft pb-10 pt-28 px-15">
+      <section className="relative overflow-hidden bg-soft pb-10 pt-28 px-5 md:px-15">
         {/* soft brand glow */}
         <div
           aria-hidden="true"
@@ -86,7 +86,7 @@ export default function ProductsPage() {
 
       {/* ───────────── Sticky category jump-nav ───────────── */}
       <div className="sticky top-[64px] z-30 bg-white/90 shadow-[0_8px_24px_-12px_rgba(15,29,74,0.18)]
-       backdrop-blur-md supports-[backdrop-filter]:bg-white/75 px-15">
+       backdrop-blur-md supports-[backdrop-filter]:bg-white/75 px-5 md:px-15">
         <div className="section-pad">
           <div className="flex items-center gap-5 py-3.5">
             {/* label */}

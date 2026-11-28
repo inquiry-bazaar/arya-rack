@@ -161,7 +161,8 @@ ${form.message}
 
       <section className="relative overflow-hidden bg-[#f2f6fa]">
 
-        <div className="pointer-events-none absolute -right-20 -top-28 h-[500px] w-[500px] rounded-full border-[55px] border-white/70" />
+        <div className="pointer-events-none absolute -right-20 -top-28 h-[500px] w-[500px]
+         rounded-full border-[55px] border-white/70" />
 
         <div className="pointer-events-none absolute -right-10 top-20 h-[350px] w-[350px] rounded-full border-[35px] border-white/40" />
 
@@ -200,7 +201,10 @@ ${form.message}
 
               {/* MAIN PRODUCT IMAGE */}
 
-              <div className="relative flex min-h-[310px] items-center justify-center overflow-hidden rounded-[20px] border border-white bg-gradient-to-br from-white to-[#eaf1f7] p-5 shadow-[0_15px_35px_rgba(15,45,75,0.07)] sm:min-h-[440px] sm:p-8">
+              <div className="relative flex min-h-[310px] items-center justify-center 
+              overflow-hidden rounded-[20px] border border-white bg-gradient-to-br
+               from-white to-[#eaf1f7] p-5 shadow-[0_15px_35px_rgba(15,45,75,0.07)] 
+               sm:min-h-[440px] sm:p-8">
 
                 {currentImage ? (
                   <img
@@ -691,7 +695,7 @@ ${form.message}
       <div className="fixed inset-x-0 bottom-0 z-50 grid grid-cols-2 gap-2 border-t border-gray-200 bg-white/95 p-2 shadow-lg backdrop-blur lg:hidden">
 
         <a
-          href="tel:+918587901795"
+          href="tel:+919711282675"
           className="flex items-center justify-center gap-2 rounded-lg bg-[#174f7e] py-3 text-xs font-bold text-white"
         >
           <Phone size={15} />
