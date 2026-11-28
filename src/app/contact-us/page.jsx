@@ -46,9 +46,9 @@ const contactDetails = [
   {
     icon: Phone,
     title: "Call Our Team",
-    value: "+91-8587901795",
+    value: "+91-9711282675",
 
-    href: "tel:+91-8587901795",
+    href: "tel:+91-9711282675",
     color: "blue",
   },
  
@@ -101,7 +101,7 @@ export default function ContactUs() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const whatsappNumber = "91XXXXXXXXXX";
+    const whatsappNumber = "919711282675";
 
     const message = `
 Hello Arya Industry,
@@ -175,7 +175,7 @@ Message: ${formData.message}
               </button>
 
               <a
-                href="https://wa.me/91XXXXXXXXXX"
+                href="https://wa.me/919711282675"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-3 rounded-full border border-white/25 px-7 py-4 text-sm font-bold text-white transition hover:border-[#F26A12] hover:bg-white/10"
@@ -435,11 +435,11 @@ Message: ${formData.message}
         <div className="my-8 h-px bg-white/15" />
 
         <a
-          href="tel:+918587901795"
+          href="tel:+919711282675"
           className="flex items-center gap-4 text-sm font-semibold transition hover:text-orange-400"
         >
           <Phone size={20} className="text-[#F26A12]" />
-          +91 85879 01795
+          +91 9711282675
         </a>
 
         <a

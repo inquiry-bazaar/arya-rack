@@ -304,7 +304,7 @@ export default function Footer() {
             <span>© {year} {site.name}. All rights reserved.</span>
             <div className="af-bottom-links">
               <Link href="/privacy-policy">Privacy Policy</Link>
-              <Link href="/terms-and-conditions">Terms and Condition </Link>
+              <Link href="/terms-and-conditions">Terms &amp; Conditions</Link>
             </div>
             <span className="af-credit">
               Website Designed By Inquiry Bazaar Pvt. Lt{" "}

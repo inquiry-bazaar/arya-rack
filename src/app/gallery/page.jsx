@@ -14,7 +14,7 @@ import {
 const rackImages = [
   "/racks/1711775886_fifoflowrack (1).webp",
   "/racks/about-syd.webp",
-  "/racks/arya-display-rack-2.webp",
+
   "/racks/arya-display-rack-3.webp",
   "/racks/arya-display-rack-4.webp",
   "/racks/arya-display-rack-9.webp",
